@@ -3,7 +3,7 @@ title: Change Management
 
 document_id: CHANGE_MANAGEMENT_README
 
-version: 1.0.0
+version: 1.1.0
 
 status: Draft
 
@@ -28,21 +28,26 @@ language: en
 repository: BHG-GOVERNANCE
 
 governed_by:
-  - GOVERNANCE_MODEL.md
-  - ENGINEERING_GOVERNANCE_MODEL.md
+
+- GOVERNANCE_MODEL.md
+- ENGINEERING_GOVERNANCE_MODEL.md
 
 governs:
-  - GOVERNANCE_CHANGE_REQUEST_STANDARD.md
-  - GOVERNANCE_CHANGE_REQUEST_TEMPLATE.md
-  - GOVERNANCE_IMPLEMENTATION_WORKFLOW.md
+
+- GOVERNANCE_CHANGE_REQUEST_STANDARD.md
+- GOVERNANCE_CHANGE_REQUEST_TEMPLATE.md
+- GOVERNANCE_IMPLEMENTATION_WORKFLOW.md
 
 depends_on:
-  - GOVERNANCE_MODEL.md
+
+- GOVERNANCE_MODEL.md
 
 related_to:
-  - ADR_STANDARD.md
-  - VERSIONING_POLICY.md
-  - CHANGELOG_POLICY.md
+
+- ADR_STANDARD.md
+- VERSIONING_POLICY.md
+- CHANGELOG_POLICY.md
+
 ---
 
 # Change Management
@@ -92,61 +97,55 @@ Every governance change shall:
 Every significant change follows the same lifecycle.
 
 ```text
-Architecture Decision
-        │
-        ▼
-Governance Change Request
-        │
-        ▼
+Approved Architecture Decision Record (ADR)
+                │
+                ▼
+Governance Change Request (GCR)
+                │
+                ▼
 Implementation
-        │
-        ▼
+                │
+                ▼
 Technical Review
-        │
-        ▼
+                │
+                ▼
 Validation
-        │
-        ▼
+                │
+                ▼
 Merge
-```
 
----
+# Governance Rule
+
+A Governance Change Request (GCR) shall not be created unless the corresponding Architecture Decision Record (ADR) has reached the Approved lifecycle state.
+
+ADR documents in Draft or Proposed status may be discussed, reviewed and refined, but they shall not authorize implementation activities.
 
 # Repository Structure
 
 This directory contains the official Change Management framework.
 
-| Document | Purpose |
-|----------|---------|
-| GOVERNANCE_CHANGE_REQUEST_STANDARD.md | Defines the Governance Change Request (GCR) standard |
-| GOVERNANCE_CHANGE_REQUEST_TEMPLATE.md | Official template for creating GCRs |
-| GOVERNANCE_IMPLEMENTATION_WORKFLOW.md | Defines the implementation lifecycle |
-
----
-
+Document	Purpose
+GOVERNANCE_CHANGE_REQUEST_STANDARD.md	Defines the Governance Change Request (GCR) standard
+GOVERNANCE_CHANGE_REQUEST_TEMPLATE.md	Official template for creating GCRs
+GOVERNANCE_IMPLEMENTATION_WORKFLOW.md	Defines the implementation lifecycle
 # Relationship with ADR
 
-Architecture Decision Records (ADR) define **what** decision has been made.
+Architecture Decision Records (ADR) define what decision has been made.
 
-Governance Change Requests (GCR) define **how** that decision shall be implemented.
+Governance Change Requests (GCR) define how that decision shall be implemented.
 
-Both artifacts are complementary.
-
----
+Both artifacts are complementary and operate together to preserve governance traceability.
 
 # Scope
 
 The Change Management framework applies to:
 
-- governance repositories;
-- documentation repositories;
-- software repositories;
-- infrastructure repositories;
-- automation repositories;
-- Artificial Intelligence repositories.
-
----
-
+governance repositories;
+documentation repositories;
+software repositories;
+infrastructure repositories;
+automation repositories;
+Artificial Intelligence repositories.
 # Institutional Principle
 
-> Every significant change begins with governance, continues through controlled implementation and ends with validated institutional knowledge.
+Every significant change begins with an approved governance decision, continues through controlled implementation and ends with validated institutional knowledge.
