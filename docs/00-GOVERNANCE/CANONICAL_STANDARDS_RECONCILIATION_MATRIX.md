@@ -1,4 +1,5 @@
 ---
+title: Canonical Standards Reconciliation Matrix
 document_id: CANONICAL_STANDARDS_RECONCILIATION_MATRIX
 document_type: Governance Reconciliation Matrix
 governance_level: Enterprise
