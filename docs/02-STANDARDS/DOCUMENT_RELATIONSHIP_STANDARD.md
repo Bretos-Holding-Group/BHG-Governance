@@ -1,722 +1,170 @@
 ---
 title: Document Relationship Standard
 document_id: DOCUMENT_RELATIONSHIP_STANDARD
-version: 1.2.0
-status: Approved
+version: 1.3.0
+status: Draft
 document_type: Standard
 governance_level: Enterprise
 owner: BHG Governance Council
 approval_authority: BHG Governance Council
 created: 2026-07-21
-last_updated: 2026-07-22
-effective_date: 2026-07-22
+last_updated: 2026-08-14
+effective_date: null
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 
 governed_by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - DOCUMENT_POLICY.md
-  - DOCUMENT_METADATA_STANDARD.md
-  - DOCUMENT_IDENTIFIER_STANDARD.md
-  - DOCUMENT_CLASSIFICATION_STANDARD.md
-  - LANGUAGE_POLICY.md
-  - DOCUMENT_SCHEMA_STANDARD.md
-
-governs:
-  - GOVERNANCE_REGISTRY_MODEL.md
-  - DOCUMENT_HISTORY_MODEL.md
-  - REPOSITORY_HISTORY_LEDGER.md
-  - GOVERNANCE_DECISION_LOG.md
-  - BASELINE_REGISTRY.md
-  - DOCUMENT_VALIDATION_STANDARD.md
-  - GENESIS_DEPENDENCY_ENGINE.md
-  - All Governance Documents
+  - DOCUMENT_STANDARD.md
 
 depends_on:
   - DOCUMENT_METADATA_STANDARD.md
   - DOCUMENT_IDENTIFIER_STANDARD.md
-  - DOCUMENT_CLASSIFICATION_STANDARD.md
-  - LANGUAGE_POLICY.md
+  - DOCUMENT_SCHEMA_STANDARD.md
 
 related_to:
-  - DOCUMENT_STANDARD.md
   - TRACEABILITY_STANDARD.md
-  - DOCUMENT_COMPILER_STANDARD.md
+  - DOCUMENT_HISTORY_MODEL.md
+  - DOCUMENT_VALIDATION_STANDARD.md
   - REPOSITORY_STANDARD.md
 ---
 
 # Document Relationship Standard
 
-> Defines the canonical relationship model between governance documents across the Breto's Holding Group ecosystem.
+## 1. Purpose
 
----
+This standard defines the canonical semantics and validation rules for relationships between BHG documentary artifacts. It is the sole semantic owner of the official documentary relationship vocabulary.
 
-# Purpose
+## 2. Scope
 
-This standard establishes the official relationship model connecting governance documents into a unified institutional knowledge graph.
+The standard applies to relationships declared by official BHG documents and to systems that parse, validate, index or resolve those relationships.
 
-Document relationships define how governance artifacts interact with each other through:
+## 3. Semantic ownership
 
-- authority;
-- dependency;
-- implementation;
-- reference;
-- historical evolution;
-- structural association.
+DOCUMENT_RELATIONSHIP_STANDARD owns relationship meaning. DOCUMENT_METADATA_STANDARD stores relationship fields; DOCUMENT_IDENTIFIER_STANDARD owns document identity; DOCUMENT_SCHEMA_STANDARD owns structural representation.
 
-Every governance document exists as part of a governed documentary ecosystem and shall not be treated as an isolated artifact.
+No metadata schema, template, linter, workflow or automation implementation may redefine relationship meaning.
 
-The relationship model enables:
+## 4. Canonical relationship vocabulary
 
-- deterministic governance navigation;
-- dependency analysis;
-- impact assessment;
-- automated validation;
-- Artificial Intelligence interpretation;
-- long-term institutional preservation.
+The canonical relationship types are:
 
----
+### Authority
 
-# Objectives
+- `governed_by` — superior authority from which the current document derives legitimacy.
+- `governs` — downstream artifact or scope receiving authority from the current document.
 
-This standard shall:
+### Dependency
 
-- establish canonical documentary relationship types;
-- define relationship validation rules;
-- preserve governance authority chains;
-- enable deterministic dependency resolution;
-- support Genesis ecosystem processing;
-- maintain Governance Registry integrity;
-- facilitate AI knowledge graph construction;
-- improve documentary traceability;
-- preserve institutional continuity.
+- `depends_on` — prerequisite required for interpretation, implementation, validation or operation without necessarily establishing superior authority.
 
----
+### Context
 
-# Guiding Principles
+- `related_to` — contextual association without authority inheritance.
+- `references` — informational reference without authority inheritance.
 
-Document relationships shall be:
+### Evolution
 
-## Explicit
+- `supersedes` — current artifact replaces a prior artifact or version.
+- `superseded_by` — current artifact has been replaced.
+- `replaces` — controlled replacement of an artifact.
+- `replaced_by` — current artifact has been replaced by another artifact.
 
-Every relevant relationship shall be declared.
+### Implementation
 
-Implicit relationships shall not be considered official governance relationships.
+- `implements` — artifact provides an implementation or operational realization of another artifact.
+- `implemented_by` — artifacts or systems implementing the current artifact.
 
----
+## 5. Authority rules
 
-## Canonical
+Authority flows from superior to subordinate documents. A lower-level document shall not override a superior authority.
 
-Relationships shall reference official document identities.
+Authority relationships shall be acyclic unless an explicitly approved governance model defines an exceptional case.
 
-The preferred reference mechanism shall be:
-document_id
+Repository placement, chronology, filename, title or approval timestamp shall not be interpreted as authority.
 
-Filenames alone shall not represent authoritative relationships.
+## 6. Dependency rules
 
-Deterministic
+`depends_on` identifies prerequisites and shall not be used as a substitute for `governed_by`.
 
-The same relationship definition shall always produce the same governance interpretation.
+A document may depend on a superior, peer or specialized contract when required for correct interpretation or implementation. Such dependency does not change the authority hierarchy.
 
-Traceable
+## 7. Context and implementation rules
 
-Every relationship shall be auditable through:
+`related_to` and `references` do not create authority or mandatory inheritance.
 
-origin;
-target;
-relationship type;
-lifecycle state;
-modification history.
+`implements` and `implemented_by` describe realization relationships and do not change normative ownership.
 
-Bidirectional
+## 8. Evolution rules
 
-Relationships shall allow interpretation from both connected documents when applicable.
+Evolution relationships shall preserve historical identity and decision evidence. They shall not be used to silently overwrite prior versions.
 
-Machine-readable
+A replacement relationship requires the applicable governance approval and migration/impact analysis.
 
-Relationships shall support automated governance systems.
+## 9. Relationship target rules
 
-Human-readable
+Every relationship target shall resolve to a canonical `document_id` whenever the target is a governed documentary artifact.
 
-Relationships shall remain understandable without automation.
+Filenames and paths may be used as repository navigation aids, but are not authoritative identity references.
 
+Every target shall exist or be explicitly classified as an approved external reference under the applicable schema.
 
----
-
-# Canonical Relationship Types
-
-The official BHG documentary relationship types are:
-
----
-
-## governed_by
-
-Defines the superior documents that provide normative authority.
-
-This relationship establishes inheritance of governance authority.
-
-Example:
-
-governed_by:
-  - DOCUMENT_METADATA_STANDARD.md
-
-A document shall not define governance rules that contradict documents listed under `governed_by`.
-
----
-
-## governs
-
-Defines documents that receive authority from the current document.
-
-This relationship represents downward governance inheritance.
-
-Example:
-governs:
-  - DOCUMENT_VALIDATION_STANDARD.md
-
-A document listed under `governs` shall maintain compatibility with the governing document.
-
----
-
-## depends_on
-
-Defines documents required for correct interpretation, implementation, validation or operation.
-
-Dependencies may include:
-
-* standards;
-* schemas;
-* models;
-* policies;
-* procedures;
-* technical specifications.
-
-Mandatory dependencies shall be resolved before approval.
-
----
-
-## related_to
-
-Defines contextual relationships without creating authority inheritance.
-
-Examples:
-
-* complementary documents;
-* supporting references;
-* historical connections;
-* associated governance artifacts.
-
----
-
-## supersedes
-
-Defines that the current document replaces a previous document version or artifact.
-
-This relationship preserves historical continuity.
-
----
-
-## superseded_by
-
-Defines that another document has replaced the current document.
-
-The original document shall remain traceable.
-
----
-
-## references
-
-Defines informational references without governance inheritance.
-
-References provide context but do not create obligations.
-
----
-
-## implements
-
-Defines that a document provides implementation guidance or operational realization of another document.
-
----
-
-## implemented_by
-
-Defines the documents or systems that implement the current governance artifact.
-
----
-
-## replaces
-
-Defines a controlled replacement relationship between governance artifacts.
-
-Replacement requires:
-
-* governance approval;
-* historical preservation;
-* migration analysis.
-
----
-
-## replaced_by
-
-Defines that the current document has been replaced by another approved artifact.
-
----
-
-# Relationship Architecture
-
-The BHG documentary relationship model is structured into four relationship layers.
-
----
-
-# Layer 1 — Authority Relationships
-
-Authority relationships define governance inheritance.
-
-Supported relationships:
-
-* governed_by;
-* governs.
-
-Rules:
-
-* authority flows from superior to subordinate documents;
-* lower-level documents cannot override higher-level authority;
-* circular authority relationships are prohibited.
-
-Authority resolution shall follow:
-
-Constitution
-
-↓
-
-Governance Models
-
-↓
-
-Policies
-
-↓
-
-Standards
-
-↓
-
-Procedures
-
-↓
-
-Operational Documents
-
----
-
-# Layer 2 — Dependency Relationships
-
-Dependency relationships define structural requirements.
-
-Supported relationship:
-
-* depends_on.
-
-Dependencies shall identify:
-
-* required interpretation sources;
-* required validation sources;
-* required implementation sources.
-
-Dependency resolution shall allow systems to determine:
-
-* impact scope;
-* validation order;
-* update propagation.
-
----
-
-# Layer 3 — Context Relationships
-
-Context relationships provide additional understanding.
-
-Supported relationships:
-
-* related_to;
-* references.
-
-These relationships:
-
-* do not create authority;
-* do not create mandatory implementation;
-* improve navigation and knowledge discovery.
-
----
-
-# Layer 4 — Evolution Relationships
-
-Evolution relationships preserve documentary history.
-
-Supported relationships:
-
-* supersedes;
-* superseded_by;
-* replaces;
-* replaced_by.
-
-Evolution relationships shall preserve:
-
-* previous identity;
-* historical versions;
-* migration evidence;
-* decision records.
-
----
-
-# Relationship Declaration Rules
-
-Every declared relationship shall:
-
-* reference an existing document identifier;
-* comply with DOCUMENT_IDENTIFIER_STANDARD.md;
-* preserve metadata consistency;
-* be validated before approval.
-
-Relationship targets shall exist within:
-
-* Governance Registry;
-* Baseline Registry;
-* approved repository structures.
-
----
-
-# Relationship Integrity Rules
+## 10. Integrity invariants
 
 The following conditions are mandatory:
 
-## Valid Target
+1. No authority cycle.
+2. No relationship that contradicts the Canonical Authority Model.
+3. No unresolved mandatory target.
+4. No duplicate competing relationship semantics.
+5. No use of `depends_on` to encode normative superiority.
+6. No use of `related_to` or `references` to create hidden authority.
+7. No relationship target identified only by filename when canonical identity is required.
 
-Every relationship target must exist.
+## 11. Relationship graph
 
-Invalid references create governance findings.
+The governance relationship graph consists of documentary nodes and typed edges. It shall support:
 
----
+- authority resolution;
+- dependency analysis;
+- impact analysis;
+- baseline validation;
+- lifecycle analysis;
+- governed knowledge retrieval.
 
-## No Identity Ambiguity
+## 12. Validation
 
-A relationship shall reference:
+Relationship validation shall verify:
 
-* document_id;
-
-not:
-
-* filename only;
-* title only;
-* folder path only.
-
----
-
-## No Unauthorized Authority
-
-A relationship shall not create authority beyond the governance hierarchy.
-
----
-
-## No Circular Governance
-
-The following is prohibited:
-Document A governs Document B
-
-AND
-Document B governs Document A
-
-
-unless explicitly approved as a special governance model.
-
----
-
-# Dependency Graph Model
-
-The BHG ecosystem shall maintain a documentary dependency graph.
-
-The graph shall represent:
-
-* nodes = governance documents;
-* edges = declared relationships.
-
-The graph enables:
-
-* dependency analysis;
-* change impact analysis;
-* baseline validation;
-* governance discovery;
-* AI reasoning.
-
----
-
-# Relationship Validation Framework
-
-The Corporate Compliance Engine shall validate every documentary relationship before:
-
-- document approval;
-- repository publication;
-- Genesis Baseline inclusion;
-- governance certification.
-
-Validation shall verify:
-
-- relationship existence;
-- target document identity;
+- vocabulary validity;
+- target existence;
 - identifier validity;
-- authority compatibility;
+- authority direction;
 - dependency integrity;
-- lifecycle compatibility;
-- relationship direction;
-- registry consistency.
+- cycle detection;
+- registry consistency;
+- compatibility with the Canonical Authority Model.
 
----
+Validation is an enforcement mechanism and does not itself create normative authority.
 
-# Relationship Validation Rules
+## 13. Automation and AI
 
-## Existence Validation
+Automation and AI may parse, validate, visualize and analyze relationships. They shall not independently create, delete or reinterpret normative relationships without authorized governance change.
 
-Every declared relationship shall reference an existing governance artifact.
+## 14. Repository independence
 
-Missing targets shall generate validation failures.
+Relationship meaning shall survive repository migration, folder changes, storage-system changes and documentation-platform changes. Canonical identity, not physical location, is the authoritative reference point.
 
----
+## 15. Audit and preservation
 
-## Identity Validation
+Relationship changes shall preserve previous state, changed relationship, rationale, responsible authority, approval evidence and effective date where applicable.
 
-Every relationship target shall use the canonical:
-document_id
+Historical relationships shall remain reconstructable.
 
-as the primary reference.
+## 16. Compliance
 
-Filename-based relationships shall not be considered authoritative.
+Documents containing invalid authority relationships, unresolved mandatory dependencies, unauthorized authority chains or non-canonical relationship terms are non-compliant and shall not enter a canonical baseline until remediated or formally excepted.
 
----
+## 17. Institutional principle
 
-## Authority Validation
-
-The validation system shall confirm that:
-
-* governance inheritance is valid;
-* authority direction is correct;
-* no lower-level document overrides superior authority.
-
----
-
-## Dependency Validation
-
-The validation system shall detect:
-
-* unresolved dependencies;
-* missing required standards;
-* invalid dependency chains;
-* circular dependency risks.
-
----
-
-## Graph Validation
-
-The documentary relationship graph shall be analyzed for:
-
-* orphan documents;
-* broken relationships;
-* inconsistent authority chains;
-* duplicate relationship definitions;
-* unexpected cycles.
-
----
-
-# Genesis Ecosystem Compatibility
-
-Genesis systems shall use documentary relationships as the structural foundation for:
-
-* repository discovery;
-* dependency resolution;
-* validation ordering;
-* baseline certification;
-* governance analysis.
-
-The following Genesis components shall consume relationship data:
-
-* Genesis Parser Engine;
-* Genesis Dependency Engine;
-* Genesis Validation Engine;
-* Genesis Compiler Engine.
-
-Relationship information shall allow Genesis to determine:
-
-* document processing order;
-* affected artifacts after changes;
-* governance coverage;
-* certification readiness.
-
----
-
-# Governance Registry Compatibility
-
-The Governance Registry shall maintain documentary relationships as first-class governance data.
-
-Registry records shall support:
-
-* relationship indexing;
-* authority resolution;
-* dependency mapping;
-* impact analysis;
-* historical reconstruction.
-
-The registry shall preserve relationship history across document evolution.
-
----
-
-# Artificial Intelligence Compatibility
-
-Artificial Intelligence systems shall use documentary relationships to:
-
-* reconstruct governance knowledge graphs;
-* identify authoritative sources;
-* analyze dependencies;
-* detect inconsistencies;
-* explain governance context;
-* support semantic navigation.
-
-AI systems shall not:
-
-* create official relationships without authorization;
-* modify governance inheritance;
-* remove mandatory dependencies;
-* override relationship rules.
-
-AI interpretation shall remain subordinate to approved governance definitions.
-
----
-
-# BKOs Compatibility
-
-BKOs shall use documentary relationships to maintain institutional knowledge structures.
-
-BKOs capabilities include:
-
-* relationship indexing;
-* dependency visualization;
-* authority chain discovery;
-* impact analysis;
-* governance navigation.
-
-BKOs shall treat relationship metadata as part of the documentary identity model.
-
----
-
-# BEiA Compatibility
-
-BEiA shall use documentary relationships to:
-
-* explain document context;
-* identify applicable governance rules;
-* summarize affected areas;
-* generate governance reports;
-* support decision preparation.
-
-BEiA recommendations shall remain advisory.
-
-Human governance authorities retain final approval authority.
-
----
-
-# Repository Integration
-
-Repository systems containing BHG governance artifacts shall preserve:
-
-* document relationships;
-* relationship history;
-* canonical identifiers;
-* dependency references.
-
-Repository migration shall not break documentary relationships.
-
-Relationship resolution shall depend on:
-document_id
-
-and not physical storage location.
-
----
-
-# Audit Requirements
-
-Every relationship modification shall preserve evidence.
-
-Audit records shall allow reconstruction of:
-
-* previous relationship state;
-* modified relationship;
-* responsible authority;
-* justification;
-* approval evidence;
-* effective date.
-
-Relationship history shall remain available for institutional analysis.
-
----
-
-# Long-Term Preservation
-
-Document relationships represent institutional memory.
-
-The relationship model shall survive:
-
-* repository migration;
-* technology evolution;
-* organizational restructuring;
-* documentation platform changes.
-
-The BHG knowledge graph shall preserve meaning across generations.
-
----
-
-# Compliance
-
-Compliance with this standard is mandatory for all governance documents within the Breto's Holding Group ecosystem.
-
-Documents containing:
-
-* invalid relationships;
-* unresolved mandatory dependencies;
-* unauthorized authority chains;
-
-shall not be considered compliant governance artifacts.
-
-Non-compliant documents shall enter the established remediation process.
-
----
-
-# Institutional Principle
-
-> Documents become institutional knowledge when their relationships become explicit.
-
-> A connected governance ecosystem preserves organizational intelligence, enables deterministic automation and supports continuity across generations.
-
----
-
-# Document Change Summary
-
-Version updated:
-
-
-previous_version: 1.1.0
-new_version: 1.2.0
-change_type: Minor
-
-Changes introduced:
-
-* Added formal documentary relationship architecture.
-* Expanded canonical relationship definitions.
-* Added four-layer relationship model.
-* Added dependency graph governance.
-* Added Genesis ecosystem integration.
-* Added Governance Registry compatibility.
-* Added relationship validation framework.
-* Added AI, BKOs and BEiA compatibility rules.
-* Strengthened repository independence.
-* Added advanced audit and preservation requirements.
-
----
+> Explicit relationships transform isolated documents into a governed institutional knowledge graph.
