@@ -59,6 +59,16 @@ Mandatory fields:
 
 `document_id` is the permanent identity of the document and remains stable across versions. Identifier syntax and uniqueness rules are owned by DOCUMENT_IDENTIFIER_STANDARD.
 
+### 4.1.1 Canonical document type values
+
+For the documentary classes governed by this normalization scope, `document_type` shall use one of the following canonical values:
+
+- `Standard`
+- `Governance Model`
+- `Governance Reconciliation Matrix`
+
+Values are case-sensitive. Legacy aliases or alternate casing are non-canonical and shall not be used in normalized documents.
+
 ### 4.2 Governance authority
 
 Mandatory fields:
@@ -153,6 +163,7 @@ The following invariants are mandatory:
 6. `effective_date` shall not be interpreted as approval evidence by itself.
 7. Relationship fields shall use only canonical relationship vocabulary.
 8. Metadata shall not encode authority that conflicts with the Canonical Authority Model.
+9. `document_type` shall use the canonical controlled vocabulary defined in §4.1.1.
 
 ## 7. Metadata immutability and controlled change
 
@@ -187,7 +198,8 @@ Validation shall verify:
 - authority consistency;
 - dependency integrity;
 - lifecycle consistency;
-- version compatibility.
+- version compatibility;
+- canonical `document_type` value.
 
 A technical validation state shall never replace the official lifecycle `status`.
 
