@@ -1,263 +1,141 @@
 ---
 title: Document Linting Standard
-version: 1.1.0
-status: Approved
-document-type: Standard
-governance-level: Enterprise
+document_id: DOCUMENT_LINTING_STANDARD
+version: 1.2.0
+status: Draft
+document_type: Standard
+governance_level: Enterprise
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
-language: en
+approval_authority: BHG Governance Council
+created: 2026-07-21
+last_updated: 2026-08-14
+effective_date: null
 classification: Internal
+language: en
+repository: BHG-GOVERNANCE
 
-applies-to:
-  - Entire BHG Ecosystem
-
-governed-by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
+governed_by:
   - DOCUMENT_STANDARD.md
-  - DOCUMENT_SCHEMA_STANDARD.md
   - DOCUMENT_VALIDATION_STANDARD.md
-  - DOCUMENT_AUTOMATION_STANDARD.md
 
-governs:
-  - Genesis Lint Engine
-  - Documentation CI/CD
-  - AI Review Engine
-  - Repository Validation Engine
-  - Continuous Compliance Engine
-  - Documentation IDE Extensions
+depends_on:
+  - DOCUMENT_METADATA_STANDARD.md
+  - DOCUMENT_SCHEMA_STANDARD.md
+  - DOCUMENT_GRAMMAR_STANDARD.md
+  - DOCUMENT_RELATIONSHIP_STANDARD.md
+
+related_to:
+  - DOCUMENT_AUTOMATION_STANDARD.md
+  - TRACEABILITY_STANDARD.md
 ---
 
 # Document Linting Standard
 
-> Defines the official static analysis framework used to detect documentation quality issues before governance validation and compilation.
+## 1. Purpose
 
----
+This standard defines static-analysis rules that detect documentary defects before or alongside formal validation. Linting is an enforcement mechanism over approved canonical contracts; it does not create normative authority.
 
-# Purpose
+## 2. Scope
 
-Linting identifies documentation issues as early as possible.
+Linting may inspect metadata, structure, grammar, identifiers, relationships, dependencies, naming, version consistency and traceability requirements defined by canonical standards.
 
-Its purpose is preventive.
+## 3. Semantic boundary
 
-Linting improves documentation quality before formal validation.
+Linting rules shall reference canonical standards rather than redefine them. A rule that detects a violation must identify the governing contract or rule source.
 
----
+Lint output is evidence of technical conformance and shall not by itself approve, activate or canonicalize a document.
 
-# Objectives
-
-The linting framework shall:
-
-- detect documentation defects;
-- enforce institutional standards;
-- improve consistency;
-- reduce governance errors;
-- support continuous quality assurance;
-- enable Governance as Code.
-
----
-
-# Linting Principles
+## 4. Principles
 
 Linting shall be:
 
-- Automatic
-- Deterministic
-- Repeatable
-- Non-destructive
-- Machine Verifiable
-- Traceable
+- automatic where feasible;
+- deterministic;
+- repeatable;
+- non-destructive;
+- machine-verifiable;
+- traceable.
 
-Linting shall never modify institutional content automatically.
+Linting shall not modify institutional content automatically unless a separately approved remediation mechanism explicitly authorizes such behavior.
 
----
+## 5. Rule categories
 
-# Linting Scope
+### Metadata
 
-Linting may analyze:
+Verify required fields, field names, field types, identifier presence and metadata consistency against DOCUMENT_METADATA_STANDARD.
 
-- metadata;
-- headings;
-- structure;
-- document hierarchy;
-- grammar compliance;
-- schema compliance;
-- references;
-- dependencies;
-- naming conventions;
-- version consistency;
-- governance metadata.
+### Structural
 
----
+Verify schema conformance and required structural patterns against DOCUMENT_SCHEMA_STANDARD.
 
-# Rule Categories
+### Grammar
 
-Lint rules are organized into:
+Verify headings, section grammar, prohibited aliases and representation rules against DOCUMENT_GRAMMAR_STANDARD.
 
-## Metadata Rules
+### Identity
 
-Verify:
+Verify identifier syntax and uniqueness against DOCUMENT_IDENTIFIER_STANDARD.
 
-- required fields;
-- metadata consistency;
-- identifier uniqueness;
-- version formatting.
+### Relationships
 
----
+Verify canonical relationship vocabulary, target resolution, authority direction and cycle constraints against DOCUMENT_RELATIONSHIP_STANDARD.
 
-## Structural Rules
+### Lifecycle and history
 
-Verify:
+Verify version syntax and historical continuity against DOCUMENT_HISTORY_MODEL and applicable versioning policy.
 
-- heading hierarchy;
-- section ordering;
-- mandatory sections;
-- document organization.
+### Traceability
 
----
+Verify required evidence and references where mandated by the applicable governance contract.
 
-## Governance Rules
+## 6. Severity
 
-Verify:
-
-- governed-by references;
-- governs references;
-- authority consistency;
-- governance level.
-
----
-
-## Dependency Rules
-
-Verify:
-
-- missing references;
-- circular dependencies;
-- invalid dependencies;
-- orphan documents.
-
----
-
-## Naming Rules
-
-Verify:
-
-- filenames;
-- identifiers;
-- document titles;
-- repository conventions.
-
----
-
-## Version Rules
-
-Verify:
-
-- semantic versioning;
-- version synchronization;
-- deprecated references;
-- incompatible versions.
-
----
-
-## Traceability Rules
-
-Verify:
-
-- identifiers;
-- audit references;
-- governance links;
-- certification references.
-
----
-
-# Severity Levels
-
-Every lint finding shall be classified as:
+Every finding shall use one of:
 
 - Info
 - Warning
 - Error
 - Critical
 
-Critical findings shall block governance progression.
+Critical findings shall block the applicable governance gate when the referenced governing contract designates the condition as blocking.
 
----
+The linting standard shall not invent blocking authority independently.
 
-# Lint Report
+## 7. Rule identity and reports
 
-Every execution shall generate:
+Every lint rule shall have a stable rule identifier and declare its source contract.
 
-- Rule Identifier
-- Severity
-- Location
-- Description
-- Recommendation
-- Detection Timestamp
+A lint execution should record:
 
-Reports shall be machine-readable.
+- rule identifier;
+- governing standard reference;
+- severity;
+- location;
+- description;
+- recommendation;
+- detection timestamp;
+- execution/version identifier.
 
----
+Reports shall be machine-readable and suitable for audit evidence.
 
-# IDE Integration
+## 8. Continuous execution
 
-Linting engines should support:
+Linting may run before commits, pull requests, CI execution, publication and scheduled audits according to repository governance and automation policy.
 
-- Visual Studio Code
-- Cursor
-- GitHub Copilot
-- Claude Code
-- Codex
-- BEiA
+Execution frequency does not change normative authority.
 
-Real-time feedback is recommended.
+## 9. AI compatibility
 
----
+AI systems may execute rules, classify findings and recommend remediation. They shall not independently approve governance compliance or change the canonical rule set.
 
-# Continuous Linting
+## 10. Rule evolution
 
-Repositories shall execute linting:
+New lint rules require a documented source contract, stable rule identity and impact assessment. Rule changes shall preserve backward compatibility where feasible and shall be version-controlled.
 
-- before commits;
-- before pull requests;
-- during CI;
-- before publication;
-- during scheduled audits.
+## 11. Compliance
 
----
+Linting conformance is a technical quality gate. A document may pass linting and still require governance review, approval or canonicalization.
 
-# AI Compatibility
+## 12. Institutional principle
 
-Artificial Intelligence systems may:
-
-- execute lint rules;
-- classify findings;
-- recommend corrections;
-- prioritize remediation.
-
-AI systems shall not automatically approve governance compliance.
-
----
-
-# Governance as Code
-
-Lint rules shall be executable by software without human interpretation.
-
-Rule definitions shall remain version-controlled.
-
----
-
-# Extensibility
-
-Additional lint rules may be introduced while preserving backward compatibility.
-
-The lint engine shall support plug-in based rule extensions.
-
----
-
-# Institutional Principle
-
-> Prevention is more efficient than correction.
-
-Institutional quality begins before governance approval.
+> Linting enforces canonical contracts; it does not become a canonical contract merely because software executes it.
