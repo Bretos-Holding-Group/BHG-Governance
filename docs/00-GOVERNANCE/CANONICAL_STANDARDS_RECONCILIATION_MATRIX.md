@@ -13,10 +13,10 @@ effective: false
 automation_ready: false
 
 governed_by:
-  - CANONICAL_AUTHORITY_MODEL
+  - BHG-GOV-CAM-001
 
 depends_on:
-  - NORMATIVE_CONFLICT_REGISTER
+  - BHG-AUD-NORM-001
   - DOCUMENT_STANDARD
   - DOCUMENT_METADATA_STANDARD
   - DOCUMENT_IDENTIFIER_STANDARD
@@ -49,7 +49,7 @@ The matrix does not grant authority merely because a document exists, is marked 
 
 ## 2. Governing model
 
-The matrix is subordinate to `CANONICAL_AUTHORITY_MODEL`. The canonical authority model establishes the authority hierarchy; this matrix operationalizes that hierarchy for the documentary standards layer.
+The matrix is subordinate to `BHG-GOV-CAM-001`. The canonical authority model establishes the authority hierarchy; this matrix operationalizes that hierarchy for the documentary standards layer.
 
 The following distinctions are mandatory:
 
