@@ -2,7 +2,7 @@
 document_id: BHG-GOV-CAM-001
 document_type: governance_model
 governance_level: enterprise
-version: 0.2.0
+version: 0.2.1
 status: draft
 created: 2026-08-14
 last_updated: 2026-08-14
@@ -11,9 +11,9 @@ approval_authority: pending
 governed_by:
   - BHG_CONSTITUTION.md
   - GOVERNANCE_MODEL.md
-  - AUTHORITY_MODEL.md
 depends_on:
   - docs/06-AUDIT/NORMATIVE_CONFLICT_REGISTER.md
+  - AUTHORITY_MODEL.md
   - LEGAL_HIERARCHY.md
   - POLICY_HIERARCHY.md
   - GOVERNANCE_APPROVAL_MODEL.md
