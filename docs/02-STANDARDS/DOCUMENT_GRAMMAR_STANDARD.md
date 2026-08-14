@@ -1,257 +1,139 @@
 ---
 title: Document Grammar Standard
-version: 1.1.0
-status: Approved
-document-type: Standard
-governance-level: Enterprise
+document_id: DOCUMENT_GRAMMAR_STANDARD
+version: 1.2.0
+status: Draft
+document_type: Standard
+governance_level: Enterprise
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
-language: en
+approval_authority: BHG Governance Council
+created: 2026-07-21
+last_updated: 2026-08-14
+effective_date: null
 classification: Internal
+language: en
+repository: BHG-GOVERNANCE
 
-applies-to:
-  - Entire BHG Ecosystem
-
-governed-by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - GOVERNANCE_PIPELINE.md
-  - DOCUMENT_POLICY.md
+governed_by:
   - DOCUMENT_STANDARD.md
+  - DOCUMENT_SCHEMA_STANDARD.md
 
-governs:
-  - All Corporate Documents
-  - Document Compiler
-  - Document Validator
-  - Document Generator
-  - Documentation Automation
+depends_on:
+  - DOCUMENT_METADATA_STANDARD.md
+
+related_to:
+  - DOCUMENT_LINTING_STANDARD.md
+  - DOCUMENT_VALIDATION_STANDARD.md
+  - DOCUMENT_RENDERING_STANDARD.md
 ---
 
 # Document Grammar Standard
 
-> Defines the canonical structural grammar for every document produced within Breto's Holding Group.
+## 1. Purpose
 
----
+This standard defines the canonical textual and Markdown grammar used to represent official BHG documents. It owns representation and content-order conventions, not metadata semantics, structural schema semantics or governance authority.
 
-# Purpose
+## 2. Semantic boundary
 
-This standard defines the universal grammar used by every document inside the BHG ecosystem.
+- DOCUMENT_STANDARD owns the umbrella documentary contract.
+- DOCUMENT_METADATA_STANDARD owns metadata meaning.
+- DOCUMENT_SCHEMA_STANDARD owns structural representation.
+- DOCUMENT_RELATIONSHIP_STANDARD owns relationship meaning.
+- DOCUMENT_GRAMMAR_STANDARD owns textual representation, section grammar and deterministic document-body conventions.
 
-Documents shall no longer be treated as plain Markdown files.
+Grammar rules shall not redefine fields, identifiers or authority relationships owned by other standards.
 
-Documents shall be treated as structured governance objects.
+## 3. Document layers
 
-This grammar enables:
+The canonical textual representation consists of:
 
-- Automatic generation
-- Automatic validation
-- Automatic auditing
-- Dependency analysis
-- Governance as Code
-- AI-assisted authoring
+1. Front matter / metadata.
+2. Document title and body.
+3. Controlled sections.
+4. Institutional conclusion where applicable.
 
----
+Metadata remains structurally separate from body content even when serialized together in Markdown.
 
-# Guiding Principles
+## 4. Canonical section order
 
-The document grammar shall be:
+Unless the document class explicitly defines another approved order, the preferred sequence is:
 
-- Canonical
-- Deterministic
-- Machine Readable
-- Human Readable
-- Extensible
-- Versioned
-- Traceable
-- Governable
-
----
-
-# Document Model
-
-Every document shall contain five logical layers.
-
-Layer 1
-
-Identity
-
-Defines what the document is.
-
-Includes:
-
-- Title
-- Version
-- Status
-- Owner
-- Authority
-- Classification
-
----
-
-Layer 2
-
-Governance
-
-Defines why the document exists.
-
-Includes:
-
-- Purpose
-- Scope
-- Authority
-- Responsibilities
-- Governance Level
-
----
-
-Layer 3
-
-Knowledge
-
-Contains the institutional knowledge.
-
-May include:
-
-- Principles
-- Rules
-- Standards
-- Policies
-- Procedures
-- Models
-
----
-
-Layer 4
-
-Automation
-
-Defines how machines interpret the document.
-
-Includes:
-
-- Metadata
-- Dependencies
-- Governance Gates
-- Validation Rules
-- Automation Rules
-
----
-
-Layer 5
-
-Evolution
-
-Defines how the document changes.
-
-Includes:
-
-- Version History
-- Changelog
-- Superseded Documents
-- Migration Rules
-
----
-
-# Mandatory Metadata
-
-Every document shall include metadata describing:
-
-- Identifier
-- Title
-- Version
-- Status
-- Document Type
-- Governance Level
-- Owner
-- Approval Authority
-- Language
-- Classification
-
----
-
-# Mandatory Governance Metadata
-
-Every document shall declare:
-
-- governed-by
-- governs
-- related-documents
-- dependencies
-- successors
-- predecessors
-
-No document shall exist in isolation.
-
----
-
-# Canonical Sections
-
-Whenever applicable, documents should follow this canonical order:
-
-1. Metadata
-2. Purpose
-3. Scope
+1. Purpose
+2. Scope
+3. Definitions
 4. Principles
-5. Definitions
-6. Requirements
-7. Governance
-8. Responsibilities
-9. Automation
-10. Validation
+5. Requirements / Rules
+6. Governance / Responsibilities
+7. Procedures or Implementation
+8. Validation / Compliance
+9. Exceptions
+10. References
 11. Institutional Principle
 
----
+A document class may omit non-applicable sections without inventing competing grammar.
 
-# Machine Readability
+## 5. Markdown requirements
 
-Every section shall be parsable.
+Official Markdown documents shall use deterministic constructs:
 
-The grammar shall avoid ambiguous structures.
+- one primary H1 title;
+- hierarchical H2/H3 headings;
+- fenced code blocks for machine-readable examples;
+- Markdown lists and tables where appropriate;
+- no ambiguous pseudo-headings;
+- no duplicated normative sections without explicit historical classification.
 
-Documents shall expose explicit relationships.
+## 6. Metadata representation
 
----
+Metadata shall be represented using the canonical field names and structure defined by DOCUMENT_METADATA_STANDARD and DOCUMENT_SCHEMA_STANDARD.
 
-# Semantic Relationships
+The grammar shall not introduce alternate field spellings such as `document-type` where the canonical field is `document_type`.
 
-Documents shall explicitly define:
+## 7. Relationship representation
 
-- inheritance
-- dependency
-- reference
-- authority
-- supersession
-- implementation
+Relationship fields shall use the canonical relationship vocabulary defined by DOCUMENT_RELATIONSHIP_STANDARD.
 
-Relationships shall be machine-discoverable.
+Legacy aliases such as `related-documents`, `dependencies`, `successors` or `predecessors` shall not be treated as canonical fields unless explicitly mapped by an approved migration rule.
 
----
+## 8. Content grammar
 
-# Governance as Code
+Body content shall:
 
-Whenever technically feasible, the grammar shall enable automated verification of:
+- express one coherent semantic purpose per section;
+- avoid repeating normative definitions owned by another document;
+- reference canonical authorities rather than reproduce competing definitions;
+- use consistent terminology;
+- distinguish normative requirements from explanatory material.
 
-- metadata
-- document structure
-- authority chain
-- dependencies
-- version consistency
-- naming
-- hierarchy
-- traceability
+## 9. Machine readability
 
----
+Documents shall use predictable headings, metadata, relationship fields and controlled terminology so parsers and validators can process them deterministically.
 
-# Grammar Stability
+Grammar conformance does not grant normative authority.
 
-Breaking changes to this grammar shall require approval by the BHG Governance Council.
+## 10. Compatibility and evolution
 
-Backward compatibility should be preserved whenever possible.
+Grammar revisions shall preserve backward compatibility where possible. Breaking changes require the applicable governance approval and migration guidance.
 
----
+## 11. Validation
 
-# Institutional Principle
+Grammar validation may verify:
 
-> Documents are executable knowledge.
+- front matter presence;
+- canonical field names;
+- heading hierarchy;
+- section order where mandatory;
+- duplicate normative sections;
+- prohibited aliases;
+- code-block and table structure;
+- canonical terminology.
 
-> A document that cannot be interpreted consistently by humans and machines is not governance-ready.
+Validation and linting enforce this standard but do not independently create authority.
+
+## 12. AI and automation
+
+AI and automation systems may generate, parse or validate documents only within the approved grammar. They shall not infer new normative semantics from formatting alone.
+
+## 13. Institutional principle
+
+> Grammar defines how governed knowledge is represented; it does not redefine what that knowledge means.
