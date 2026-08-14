@@ -2,7 +2,7 @@
 document_id: BHG-GOV-CAM-001
 document_type: governance_model
 governance_level: enterprise
-version: 0.1.0
+version: 0.2.0
 status: draft
 created: 2026-08-14
 last_updated: 2026-08-14
@@ -12,14 +12,14 @@ governed_by:
   - BHG_CONSTITUTION.md
   - GOVERNANCE_MODEL.md
   - AUTHORITY_MODEL.md
-  - AUTHORITY_MATRIX.md
 depends_on:
   - docs/06-AUDIT/NORMATIVE_CONFLICT_REGISTER.md
   - LEGAL_HIERARCHY.md
   - POLICY_HIERARCHY.md
   - GOVERNANCE_APPROVAL_MODEL.md
-related_to:
   - GOVERNANCE_INTEROPERABILITY_MODEL.md
+related_to:
+  - AUTHORITY_MATRIX.md
   - DOCUMENT_STANDARD.md
   - DOCUMENT_METADATA_STANDARD.md
   - DOCUMENT_SCHEMA_STANDARD.md
@@ -31,33 +31,27 @@ related_to:
 
 ## 1. Purpose
 
-This document defines the proposed canonical model for normative authority across the BHG documentation ecosystem and its connected repositories.
+This document defines the proposed canonical normative-authority model for the BHG documentation ecosystem and its four connected repositories.
 
-It is a **draft normalization artifact**. It does not supersede the BHG Constitution, Governance Model, Authority Model, Authority Matrix, Legal Hierarchy, Policy Hierarchy, or any approved standard until formally reviewed and approved under the applicable governance process.
+It is a **draft normalization artifact**. It does not itself supersede any approved governing artifact. Its purpose is to establish the authority rules that will be used to reconcile the existing manually-created documentation before canonicalization and automated enforcement.
 
-Its purpose is to establish one explicit authority model that can later be used to reconcile existing documents, prevent downward contradiction, and serve as the normative foundation for automated validation.
+## 2. Foundational rule
 
-## 2. Governing principle
+The authority of a normative artifact is determined by its approved governance position, scope, and explicit normative relationships—not by filename, directory, repository location, creation order, commit history, or the identity of the person who created it.
 
-A normative document at a lower authority level may specialize, operationalize, or constrain a superior rule within the superior rule's declared scope. It must not contradict, weaken, redefine, bypass, or silently supersede the superior authority.
-
-For a normative relationship `A governs B`:
+For a normative relationship:
 
 ```text
-authority(A) > authority(B)
+A governs B
+=> authority(A) > authority(B)
+=> B must remain compatible with A
 ```
 
-and:
+A descendant may specialize, operationalize, or add stricter requirements within the superior's permitted scope. It may not contradict, weaken, redefine, bypass, or silently supersede the superior.
 
-```text
-rules(B) must be compatible with applicable rules(A)
-```
+## 3. Authority dimensions
 
-A downstream document may be more specific without becoming more authoritative.
-
-## 3. Core distinction
-
-The following concepts are independent and must not be conflated:
+The following concepts are independent:
 
 ```text
 normative authority
@@ -65,15 +59,14 @@ approval authority
 delegated authority
 operational responsibility
 ownership
+scope
 ```
 
-Approval of a lower-level artifact does not elevate that artifact above its governing authority.
+Approval of a lower-level artifact does not elevate its normative authority. Delegation grants authority only within the delegated scope and does not authorize contradiction of the rule that created the delegation.
 
-Delegation grants authority within a defined scope and does not permit contradiction of the superior rule that created the delegation.
+## 4. Canonical normative hierarchy
 
-## 4. Proposed canonical hierarchy
-
-The following hierarchy is the canonicalization target proposed by this draft:
+The normalization target is the following single normative hierarchy:
 
 ```text
 LEVEL 1 — SUPREME GOVERNANCE
@@ -84,96 +77,107 @@ LEVEL 2 — FOUNDATIONAL GOVERNANCE
     Authority Model
     Foundational governance models
 
-LEVEL 3 — GOVERNANCE POLICIES
-    Enterprise policies
-    Domain policies
-    Company policies
-    Product policies
-    Operational policies
+LEVEL 3 — POLICIES
+    Enterprise
+    Domain
+    Company
+    Product
+    Operational
 
 LEVEL 4 — STANDARDS
-    Enterprise standards
-    Domain standards
-    Company standards
-    Product standards
-    Engineering standards
-    AI standards
-    Repository standards
-    Document standards
+    Enterprise
+    Domain
+    Company
+    Product
+    Engineering
+    AI
+    Repository
+    Document
 
 LEVEL 5 — PROCEDURES
     Approved procedures implementing policies and standards
 
 LEVEL 6 — GUIDELINES
-    Non-binding or advisory guidance explicitly subordinate to applicable policies,
-    standards, and procedures
+    Explicitly subordinate guidance; non-binding unless a superior artifact
+    explicitly gives it normative force
 
 LEVEL 7 — IMPLEMENTATIONS
-    Code, configurations, repository structures, workflows, services, and other
-    operational implementations
+    Code, configuration, repository structures, workflows, services, and other
+    operational realizations
 
 LEVEL 8 — RECORDS AND EVIDENCE
-    Audit records, execution records, evidence, reports, logs, and other historical
-    or evidentiary artifacts
+    Audit records, execution records, evidence, reports, logs, and historical
+    artifacts
 ```
 
-This hierarchy reconciles the need for a single normative ordering with the more detailed levels identified in `LEGAL_HIERARCHY.md`. It remains subject to formal approval because existing governing artifacts currently express the hierarchy differently.
-
-## 5. Authority ordering
-
-For normative documents:
+The ordering is:
 
 ```text
-Level 1 > Level 2 > Level 3 > Level 4 > Level 5 > Level 6 > Level 7 > Level 8
+L1 > L2 > L3 > L4 > L5 > L6 > L7 > L8
 ```
 
-Within a level, authority is determined by declared scope and specificity, subject to the applicable governance and approval rules.
+### 4.1 Resolution of the hierarchy conflict
 
-A more specific document at the same level may constrain a broader document only when the broader document permits specialization and the scopes do not conflict.
+`LEGAL_HIERARCHY.md` is treated as the detailed hierarchy specification for the same eight-level authority model. Where the Constitution expresses the hierarchy more compactly, the detailed hierarchy is a refinement and must not introduce a competing authority system.
 
-A later version does not automatically acquire authority over a different document merely because it is newer. Supersession must be explicit and governed.
+`AUTHORITY_MODEL.md` and other Level 2 models are members of Foundational Governance; they are not independent roots above the Constitution.
 
-## 6. Relationship semantics
+This is a **draft reconciliation decision** and requires formal approval before becoming effective.
 
-The following relations must remain distinct:
+## 5. Authority versus approval hierarchy
 
-### 6.1 `governed_by`
-
-Normative subordination.
+Normative level and approval level are separate dimensions.
 
 ```text
-A governed_by B
-=> B has normative authority over A
+NORMATIVE LEVEL
+    answers: "How authoritative is this rule?"
+
+APPROVAL LEVEL
+    answers: "Who may approve this artifact within its delegated scope?"
 ```
 
-### 6.2 `governs`
+`GOVERNANCE_APPROVAL_MODEL.md` therefore cannot redefine the normative hierarchy merely by assigning an approval level.
 
-Inverse of `governed_by`.
+A lower-level artifact may be approved by a delegated authority while remaining normatively subordinate to its governing artifact.
+
+## 6. Core authority graph
+
+The canonical target graph is:
 
 ```text
-B governs A
-=> authority(B) > authority(A)
+BHG CONSTITUTION (L1)
+        |
+        v
+FOUNDATIONAL GOVERNANCE (L2)
+        |
+        +-- Governance Model
+        +-- Authority Model
+        +-- other approved Foundation models
+        |
+        v
+POLICIES (L3)
+        |
+        v
+STANDARDS (L4)
+        |
+        v
+PROCEDURES (L5)
+        |
+        v
+GUIDELINES (L6)
+        |
+        v
+IMPLEMENTATIONS (L7)
+        |
+        v
+RECORDS / EVIDENCE (L8)
 ```
 
-### 6.3 `depends_on`
-
-Technical, semantic, procedural, or informational dependency. It does **not** by itself establish normative authority.
-
-### 6.4 `related_to`
-
-Association without authority implication.
-
-### 6.5 `implements`
-
-A lower-level artifact realizes a rule or requirement established elsewhere. Implementation does not acquire the authority of the artifact it implements.
-
-### 6.6 `supersedes`
-
-Explicit replacement of an earlier artifact under approved change governance. It must never be inferred solely from version or date.
+This graph is normative. A relationship such as `depends_on`, `related_to`, or `references` does not automatically create a position in this hierarchy.
 
 ## 7. Cross-repository authority
 
-The four repositories are treated as one connected normative ecosystem for purposes of authority consistency:
+The following repositories are one normative ecosystem:
 
 ```text
 BHG-Governance
@@ -182,248 +186,307 @@ bhg-knowledge
 ZivaLatam
 ```
 
-A repository boundary does not create independent normative sovereignty.
+Repository boundaries do not create independent normative sovereignty.
 
-A repository-specific policy or standard may specialize a global BHG rule only when:
-
-1. its scope is explicitly declared;
-2. its superior authority is identified;
-3. it does not contradict the superior rule;
-4. any specialization is within the superior rule's permitted scope; and
-5. its approval authority is valid for that scope.
-
-## 8. Cross-repository bridge model
-
-The target model is:
+The cross-repository target is:
 
 ```text
-                         BHG CONSTITUTION
-                                |
-                                v
-                     FOUNDATIONAL GOVERNANCE
-                                |
-              +-----------------+-----------------+
-              |                 |                 |
-              v                 v                 v
-       BHG-Governance   Ecosystem Foundation   Shared Contracts
-              |                 |                 |
-              +-----------------+-----------------+
-                                |
-                                v
-                         Policies / Standards
-                                |
-                +---------------+---------------+
-                |                               |
-                v                               v
-          bhg-knowledge                       ZivaLatam
-          specialization                     specialization
-                |                               |
-                +---------------+---------------+
-                                v
-                    Procedures / Implementations
-                                |
-                                v
-                       Records / Evidence
+                    BHG CONSTITUTION
+                           |
+                           v
+                FOUNDATIONAL GOVERNANCE
+                           |
+             +-------------+-------------+
+             |             |             |
+             v             v             v
+       BHG-Governance  Ecosystem     Shared Contracts
+                       Foundation
+             |             |             |
+             +-------------+-------------+
+                           |
+                           v
+                    Policies / Standards
+                           |
+              +------------+------------+
+              |                         |
+              v                         v
+        bhg-knowledge               ZivaLatam
+        specialization             specialization
+              |                         |
+              +------------+------------+
+                           v
+                 Procedures / Implementations
+                           |
+                           v
+                    Records / Evidence
 ```
 
-This diagram represents the intended authority relationship, not an assertion that every current repository document already complies with it.
+A repository-specific normative artifact is valid only if its superior authority, scope, and specialization are explicit.
 
-## 9. Shared canonical contracts
+## 8. Ziva authority bridge
 
-The following concepts require one canonical semantic owner before automated validation is implemented:
+Ziva's engineering governance is treated as a **domain specialization of the BHG hierarchy**, not as an independent constitutional root.
 
-- document identity;
-- document metadata;
-- document schema;
-- document grammar;
-- document relationships;
-- document lifecycle;
-- repository identity;
-- repository classification;
-- repository lifecycle;
-- governance authority;
-- approval authority;
-- dependency semantics.
-
-Domain repositories may reference and specialize these contracts, but must not silently fork their meaning.
-
-## 10. Document authority model
-
-The canonical document-system target is:
+The working chain is:
 
 ```text
-DOCUMENT STANDARD
-        |
-        +--> METADATA STANDARD
-        |
-        +--> IDENTIFIER STANDARD
-        |
-        +--> SCHEMA STANDARD
-        |
-        +--> GRAMMAR STANDARD
-        |
-        +--> RELATIONSHIP STANDARD
-        |
-        +--> LIFECYCLE MODEL
-        |
-        +--> VALIDATION STANDARD
-        |
-        +--> LINTING / AUTOMATION / COMPILER
+BHG Constitution
+    -> BHG foundational governance
+    -> applicable BHG policies / standards
+    -> Ziva engineering governance
+    -> Ziva implementation rules
 ```
 
-The exact parent-child relationships among these artifacts remain subject to the conflict register. This model establishes that specialized document standards cannot independently redefine shared semantics owned by the canonical document system.
+`00_ENGINEERING_CHARTER`, `DOCUMENTATION_FIRST_POLICY`, and `ZES_ENGINEERING_RULES` may introduce Ziva-specific requirements only inside that delegated/domain scope.
 
-## 11. Downward consistency rule
+## 9. Foundation authority bridge
 
-Every normative descendant must satisfy all applicable superior rules.
+Foundation artifacts are treated as Level 2 Foundational Governance unless their approved content is explicitly classified at another level.
 
-The minimum validation condition is:
+`FOUNDATION_MANIFESTO`, identity/ecosystem models, and related Foundation artifacts therefore do not acquire authority above the BHG Constitution merely because they are stored in the Foundation repository.
 
-```text
-For every document D:
+Where a Foundation artifact defines an enterprise-wide principle, its relationship to the Constitution and Governance Model must be explicit rather than inferred from repository placement.
 
-  for every normative ancestor A of D:
-      D must be compatible with A
-```
-
-A contradiction includes, at minimum:
-
-- assigning a different meaning to a superior-defined term;
-- redefining a canonical field;
-- replacing a canonical relationship with an incompatible one;
-- lowering a mandatory requirement without authorization;
-- creating an incompatible hierarchy;
-- declaring independent authority where only delegated authority exists;
-- bypassing a mandatory approval or governance control;
-- silently superseding an existing rule.
-
-## 12. Specialization rule
-
-A descendant may add specificity.
-
-Example:
-
-```text
-Global standard:
-    Every controlled document has a permanent document_id.
-
-Domain standard:
-    Every audit document has a permanent document_id and an audit_record_id.
-```
-
-This is compatible if `audit_record_id` is a distinct domain identifier and does not redefine `document_id`.
-
-The following would be incompatible:
-
-```text
-Global standard:
-    document_id is permanent.
-
-Domain standard:
-    document_id changes with every version.
-```
-
-## 13. Approval and delegation
-
-Approval authority is a governance mechanism, not an independent normative hierarchy.
-
-Therefore:
-
-```text
-approval authority != normative authority
-```
-
-A delegated organization, company, product team, or domain may approve an artifact within its delegated scope while remaining subordinate to the rules that define that scope.
-
-No approval record may be interpreted as authority to contradict a superior rule unless the superior governance mechanism explicitly grants such authority.
-
-## 14. Canonical ownership rule
+## 10. Canonical semantic ownership
 
 Every shared normative concept must have exactly one canonical semantic owner.
 
-Other documents must either:
+Initial ownership targets for normalization are:
 
-1. reference the owner;
-2. specialize the owner's rule within scope; or
-3. operationalize the owner's rule.
+| Concept | Canonical owner target | Downstream rule |
+|---|---|---|
+| Constitutional authority | BHG Constitution | No descendant may contradict it |
+| Governance structure | Governance Model | Domain governance specializes it |
+| Authority semantics | Authority Model | Matrices operationalize it |
+| Approval mechanics | Governance Approval Model | Approval does not elevate normative authority |
+| Policy hierarchy | Policy Hierarchy | Lower policies cannot contradict higher policies |
+| Document identity | Document Identifier Standard | Domain IDs must remain distinct |
+| Document metadata | Document Metadata Standard | Schema/Grammar must conform |
+| Document structure | Document Schema Standard | Grammar maps to the canonical schema |
+| Document grammar | Document Grammar Standard | Must not redefine metadata semantics |
+| Document relationships | Document Relationship Standard | Local vocabularies map to canonical relations |
+| Document lifecycle | Document Lifecycle model | Metadata represents lifecycle state; model owns semantics |
+| Repository semantics | Repository standards after ownership reconciliation | Local rules reference canonical repository contracts |
+| Engineering specialization | Domain engineering governance | Must remain under BHG authority |
 
-They must not create an independent competing definition without an explicit approved supersession or delegation relationship.
+These are **normalization targets**, not yet approved canonical ownership assignments.
 
-## 15. Conflict-resolution precedence
+## 11. Document-system authority model
 
-When two normative artifacts appear to conflict, resolution must proceed in this order:
-
-1. higher authority level prevails;
-2. explicit `governed_by` relationship prevails over inferred folder location;
-3. narrower valid scope may specialize a broader scope without contradicting it;
-4. explicit approved supersession prevails over simple chronology;
-5. approval authority is considered only within its delegated scope;
-6. if authority remains ambiguous, the conflict is BLOCKING and must not be resolved by implementation convention.
-
-## 16. Repository placement is not authority
-
-A document's directory, filename, repository, commit history, or creation order does not independently establish normative authority.
-
-Those attributes may provide evidence, but authority must be derived from the declared and approved governance model.
-
-This is particularly important during the current normalization phase because the existing repositories were populated manually and contain historical placement decisions that may not represent the final canonical structure.
-
-## 17. Normalization consequences
-
-Once this model is approved, normalization shall proceed in this order:
+The document standards are organized as a contract stack rather than competing authorities:
 
 ```text
-1. establish canonical authority
-2. establish canonical metadata
-3. establish canonical vocabulary
-4. establish canonical relationships
-5. establish canonical document structure
-6. normalize existing normative documents
-7. normalize downstream documents
-8. validate the four repository baselines
-9. implement automated enforcement
+DOCUMENT STANDARD
+    |
+    +-- METADATA CONTRACT
+    |      -> DOCUMENT_METADATA_STANDARD
+    |
+    +-- IDENTITY CONTRACT
+    |      -> DOCUMENT_IDENTIFIER_STANDARD
+    |
+    +-- STRUCTURE CONTRACT
+    |      -> DOCUMENT_SCHEMA_STANDARD
+    |
+    +-- GRAMMAR CONTRACT
+    |      -> DOCUMENT_GRAMMAR_STANDARD
+    |
+    +-- RELATIONSHIP CONTRACT
+    |      -> DOCUMENT_RELATIONSHIP_STANDARD
+    |
+    +-- LIFECYCLE CONTRACT
+    |      -> DOCUMENT_LIFECYCLE
+    |
+    +-- VALIDATION CONTRACT
+           -> DOCUMENT_VALIDATION_STANDARD
 ```
 
-No automated validator should be treated as authoritative until the underlying normative semantics are approved.
+The contracts are complementary. They must not independently redefine the same semantic field, relation, lifecycle state, or identity rule.
 
-## 18. Required canonicalization decisions
+## 12. Metadata normalization rule
 
-The following decisions remain open and must be resolved before this model can become effective:
+`DOCUMENT_METADATA_STANDARD` is the target owner of shared document metadata semantics.
 
-- final relationship between Constitution and Foundation Manifesto;
-- exact placement of Foundation models within Level 2;
-- final hierarchy representation used by `LEGAL_HIERARCHY.md`;
-- relationship between normative levels and approval levels;
-- canonical owner of repository identity, classification, lifecycle, and registry semantics;
-- canonical owner of document metadata;
-- canonical mapping between Schema and Grammar;
-- canonical relationship vocabulary;
-- canonical lifecycle model;
-- exact normative position of Ziva engineering governance;
-- status and treatment of empty or placeholder normative artifacts in `bhg-knowledge`.
+The normalization target is one canonical vocabulary, with `snake_case` field names unless a future approved standard explicitly establishes another convention.
 
-These decisions correspond to unresolved findings in `NORMATIVE_CONFLICT_REGISTER.md` and must not be silently assumed to be resolved by this draft.
+Equivalent aliases such as:
 
-## 19. Canonicalization acceptance criteria
+```text
+document-type
 
-This model may become `approved` only when:
+document_type
+```
 
-- every Level 1-8 authority is assigned a single semantic definition;
-- every normative document has a declared superior or is explicitly designated as a root;
-- all cross-repository normative bridges are documented;
+must not coexist as independent canonical meanings.
+
+Schema, Grammar, templates, validators, and domain documents must reference the canonical metadata contract.
+
+## 13. Relationship normalization rule
+
+`DOCUMENT_RELATIONSHIP_STANDARD` is the target owner of shared relationship semantics.
+
+The normalization target is the canonical vocabulary declared there, including:
+
+```text
+governed_by
+governs
+depends_on
+related_to
+supersedes
+superseded_by
+references
+implements
+implemented_by
+replaces
+replaced_by
+```
+
+Terms such as `dependencies`, `successors`, `predecessors`, and `related-documents` must either be retired or explicitly mapped as non-canonical aliases during normalization.
+
+## 14. Relationship semantics
+
+These relations are not interchangeable:
+
+```text
+governed_by  = normative subordination
+governs       = inverse normative relation
+depends_on    = dependency without inherent authority
+related_to    = association without authority
+implements    = realization of another rule
+supersedes    = approved replacement
+```
+
+A dependency must never be interpreted as governance merely because one artifact depends on another.
+
+## 15. Downward consistency rule
+
+For every normative document `D`, every applicable normative ancestor `A` must remain compatible with `D`:
+
+```text
+for every D:
+    for every normative ancestor A:
+        compatible(D, A) = true
+```
+
+A contradiction includes:
+
+- redefining a superior term;
+- changing the meaning of a canonical field;
+- replacing a canonical relation with an incompatible relation;
+- lowering a mandatory requirement without authorization;
+- creating an incompatible hierarchy;
+- claiming independent authority where only delegation exists;
+- bypassing mandatory governance or approval controls;
+- silently superseding a superior or peer rule.
+
+## 16. Specialization rule
+
+A descendant may add specificity without changing the superior semantic contract.
+
+Valid:
+
+```text
+Global: every controlled document has permanent document_id.
+Domain: every audit document also has audit_record_id.
+```
+
+Invalid:
+
+```text
+Global: document_id is permanent.
+Domain: document_id changes on every version.
+```
+
+The second rule changes the superior meaning and is therefore a contradiction.
+
+## 17. Conflict-resolution precedence
+
+When two normative artifacts appear to conflict:
+
+1. higher normative authority prevails;
+2. explicit `governed_by` prevails over folder location;
+3. valid narrower scope may specialize broader scope;
+4. explicit approved `supersedes` prevails over chronology;
+5. approval authority is considered only within delegated scope;
+6. unresolved authority is BLOCKING and must not be resolved by implementation convention.
+
+## 18. Repository placement is not authority
+
+Directory, filename, repository, creation order, and historical manual placement are evidence, not authority.
+
+This rule is mandatory for the current normalization phase because the four repositories were populated manually and were not created through an automated canonical-document pipeline.
+
+## 19. Normalization sequence
+
+The approved target sequence is:
+
+```text
+1. Canonical Authority Model
+2. Canonical semantic ownership
+3. Canonical metadata contract
+4. Canonical vocabulary
+5. Canonical relationship semantics
+6. Canonical document structure
+7. Normalize existing normative documents
+8. Normalize downstream documents
+9. Establish four-repository canonical baselines
+10. Implement automated validation and enforcement
+```
+
+Automation must enforce an approved semantic model; it must not invent or decide normative authority.
+
+## 20. Conflict disposition matrix
+
+The current draft resolves the authority question as follows:
+
+| Conflict | Draft disposition |
+|---|---|
+| NORM-001 | Resolve as one 8-level normative hierarchy; Legal Hierarchy is a refinement |
+| NORM-002 | Governance Model and Authority Model are distinct Level 2 artifacts with explicit model relationships |
+| NORM-003 | Foundation is subordinate to the Constitution; repository location does not create sovereignty |
+| NORM-004 | Repository Naming Standard must surrender unrelated semantic ownership to canonical repository contracts |
+| NORM-005 | Ziva engineering governance is domain specialization under BHG authority |
+| NORM-006 | Empty engineering standard cannot act as authority until classified or completed |
+| NORM-007 | Guidelines and Records/Evidence are valid lower levels, not competing hierarchy roots |
+| NORM-008 | Authority Model defines semantics; Authority Matrix operationalizes authority assignments |
+| NORM-009 | Metadata Standard owns metadata semantics; Schema consumes them |
+| NORM-010 | Metadata Standard owns field semantics; Grammar consumes them |
+| NORM-011 | Schema owns structural object model; Grammar must map to it explicitly |
+| NORM-012 | Relationship Standard owns relationship semantics |
+| NORM-013 | Document Standard owns overall document contract; Metadata Standard owns metadata contract |
+| NORM-014 | Duplicate internal normative sections must be consolidated during document normalization |
+| NORM-015 | Schema must conform to the canonical metadata contract |
+| NORM-016 | Lifecycle model owns lifecycle semantics; metadata carries state representation |
+| NORM-017 | Domain relationship rules must reference canonical relationship semantics |
+| NORM-018 | ZES chain is valid only as Ziva specialization under BHG authority |
+| NORM-019 | Repository identity/classification/lifecycle/registry require one canonical ownership map |
+| NORM-020 | Manual historical state is baseline evidence, not a normative exception |
+| NORM-021 | Approval levels are separate from normative levels |
+| NORM-022 | Delegated approval cannot elevate normative authority |
+| NORM-023 | Interoperability defines cross-domain requirements; concrete contracts retain single semantic owners |
+| NORM-024 | Interoperability principles must not duplicate concrete dependency/schema/repository ownership |
+
+## 21. Acceptance criteria for canonical status
+
+This model may become `approved`, `canonical: true`, and `effective: true` only when:
+
+- the authority hierarchy has been formally approved;
+- all Level 1-8 semantics are defined;
+- every normative document has a superior or an explicitly approved root status;
+- all four-repository bridges are documented;
+- shared contracts have one semantic owner;
 - no approved descendant contradicts an approved ancestor;
-- shared contracts have one canonical owner;
-- approval authority and normative authority are explicitly separated;
-- the conflict register contains no unresolved BLOCKER affecting the authority model;
-- the model has passed the applicable governance approval process.
+- approval and normative authority are explicitly separated;
+- no unresolved BLOCKER remains in the authority model;
+- the applicable governance approval process has been completed.
 
-## 20. Current status
+## 22. Current status
 
 ```text
 status: DRAFT
 canonical: false
 effective: false
 automation_ready: false
+normalization_target: true
 ```
 
-This document is the proposed authority target for the normalization phase. It must be reviewed against the complete conflict register before any existing standard is declared canonical.
+This version is a reconciliation draft produced from the current Conflict Register. It is intended to govern the next normalization analysis; it is not yet an effective governing instrument.
