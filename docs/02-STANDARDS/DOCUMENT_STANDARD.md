@@ -28,6 +28,7 @@ governs:
   - DOCUMENT_SCHEMA_STANDARD.md
   - DOCUMENT_GRAMMAR_STANDARD.md
   - DOCUMENT_HISTORY_MODEL.md
+  - DOCUMENT_VALIDATION_STANDARD.md
   - DOCUMENT_LINTING_STANDARD.md
 
 depends_on:
@@ -69,6 +70,7 @@ The canonical semantic owners are:
 | Structural schema | DOCUMENT_SCHEMA_STANDARD |
 | Content and Markdown grammar | DOCUMENT_GRAMMAR_STANDARD |
 | Version and history semantics | DOCUMENT_HISTORY_MODEL |
+| Conformance validation | DOCUMENT_VALIDATION_STANDARD |
 | Static linting and enforcement | DOCUMENT_LINTING_STANDARD |
 
 A specialized standard may constrain or extend implementation within its domain, but shall not redefine the meaning owned by another canonical standard.
