@@ -1,42 +1,42 @@
 ---
-document_id: BHG-GOV-CSTRM-001
-document_type: governance_reconciliation_matrix
-governance_level: enterprise
+document_id: CANONICAL_STANDARDS_RECONCILIATION_MATRIX
+document_type: Governance Reconciliation Matrix
+governance_level: Enterprise
 version: 0.2.0
-status: draft
+status: Draft
 created: 2026-08-14
 last_updated: 2026-08-14
 effective_date: null
-approval_authority: pending
+approval_authority: BHG Governance Council
 canonical: false
 effective: false
 automation_ready: false
 
 governed_by:
-  - docs/00-GOVERNANCE/CANONICAL_AUTHORITY_MODEL.md
+  - CANONICAL_AUTHORITY_MODEL
 
 depends_on:
-  - docs/06-AUDIT/NORMATIVE_CONFLICT_REGISTER.md
-  - docs/02-STANDARDS/DOCUMENT_STANDARD.md
-  - docs/02-STANDARDS/DOCUMENT_METADATA_STANDARD.md
-  - docs/02-STANDARDS/DOCUMENT_IDENTIFIER_STANDARD.md
-  - docs/02-STANDARDS/DOCUMENT_RELATIONSHIP_STANDARD.md
-  - docs/02-STANDARDS/DOCUMENT_SCHEMA_STANDARD.md
-  - docs/02-STANDARDS/DOCUMENT_GRAMMAR_STANDARD.md
-  - docs/02-STANDARDS/DOCUMENT_VALIDATION_STANDARD.md
-  - docs/02-STANDARDS/DOCUMENT_LINTING_STANDARD.md
-  - docs/02-STANDARDS/DOCUMENT_HISTORY_MODEL.md
+  - NORMATIVE_CONFLICT_REGISTER
+  - DOCUMENT_STANDARD
+  - DOCUMENT_METADATA_STANDARD
+  - DOCUMENT_IDENTIFIER_STANDARD
+  - DOCUMENT_RELATIONSHIP_STANDARD
+  - DOCUMENT_SCHEMA_STANDARD
+  - DOCUMENT_GRAMMAR_STANDARD
+  - DOCUMENT_VALIDATION_STANDARD
+  - DOCUMENT_LINTING_STANDARD
+  - DOCUMENT_HISTORY_MODEL
 
 related_to:
-  - docs/02-STANDARDS/DOCUMENT_AUTOMATION_STANDARD.md
-  - docs/02-STANDARDS/DOCUMENT_CLASSIFICATION_STANDARD.md
-  - docs/02-STANDARDS/DOCUMENT_DEPENDENCY_STANDARD.md
-  - docs/02-STANDARDS/DOCUMENT_RENDERING_STANDARD.md
-  - docs/02-STANDARDS/NAMING_STANDARD.md
-  - docs/02-STANDARDS/QUALITY_STANDARD.md
-  - docs/02-STANDARDS/REPOSITORY_STANDARD.md
-  - docs/02-STANDARDS/TRACEABILITY_STANDARD.md
-  - docs/02-STANDARDS/WRITING_STANDARD.md
+  - DOCUMENT_AUTOMATION_STANDARD
+  - DOCUMENT_CLASSIFICATION_STANDARD
+  - DOCUMENT_DEPENDENCY_STANDARD
+  - DOCUMENT_RENDERING_STANDARD
+  - NAMING_STANDARD
+  - QUALITY_STANDARD
+  - REPOSITORY_STANDARD
+  - TRACEABILITY_STANDARD
+  - WRITING_STANDARD
 ---
 
 # Canonical Standards Reconciliation Matrix
@@ -49,7 +49,7 @@ The matrix does not grant authority merely because a document exists, is marked 
 
 ## 2. Governing model
 
-The matrix is subordinate to `CANONICAL_AUTHORITY_MODEL.md`. The canonical authority model establishes the authority hierarchy; this matrix operationalizes that hierarchy for the documentary standards layer.
+The matrix is subordinate to `CANONICAL_AUTHORITY_MODEL`. The canonical authority model establishes the authority hierarchy; this matrix operationalizes that hierarchy for the documentary standards layer.
 
 The following distinctions are mandatory:
 
@@ -79,26 +79,26 @@ The repository currently contains the following documentary standards in `docs/0
 
 | ID | Standard | Semantic domain | Target role | Current phase disposition |
 |---|---|---|---|---|
-| STD-001 | DOCUMENT_STANDARD.md | Umbrella document contract | Framework standard | NORMALIZED-CANDIDATE |
-| STD-002 | DOCUMENT_METADATA_STANDARD.md | Metadata semantics | Canonical metadata contract | NORMALIZED-CANDIDATE |
-| STD-003 | DOCUMENT_IDENTIFIER_STANDARD.md | Permanent document identity | Canonical identity contract | NORMALIZED-CANDIDATE |
-| STD-004 | DOCUMENT_RELATIONSHIP_STANDARD.md | Relationship vocabulary and semantics | Canonical relationship contract | NORMALIZED-CANDIDATE |
-| STD-005 | DOCUMENT_SCHEMA_STANDARD.md | Structural representation | Canonical schema contract | NORMALIZED-CANDIDATE |
-| STD-006 | DOCUMENT_GRAMMAR_STANDARD.md | Text/Markdown grammar | Canonical grammar contract | NORMALIZED-CANDIDATE |
-| STD-007 | DOCUMENT_VALIDATION_STANDARD.md | Conformance validation | Canonical validation contract | NORMALIZED-CANDIDATE |
-| STD-008 | DOCUMENT_LINTING_STANDARD.md | Static linting | Enforcement specialization | NORMALIZED-CANDIDATE |
-| STD-009 | DOCUMENT_HISTORY_MODEL.md | Version/history semantics | Canonical history contract | NORMALIZED-CANDIDATE |
-| STD-010 | DOCUMENT_DEPENDENCY_STANDARD.md | Dependency semantics | Adjacent specialized contract | PENDING RECONCILIATION |
-| STD-011 | DOCUMENT_CLASSIFICATION_STANDARD.md | Information classification | Adjacent specialized contract | PENDING RECONCILIATION |
-| STD-012 | DOCUMENT_AUTOMATION_STANDARD.md | Documentary automation | Adjacent enforcement/automation contract | PENDING RECONCILIATION |
-| STD-013 | DOCUMENT_COMPILER_STANDARD.md | Document compilation | Adjacent implementation contract | PENDING RECONCILIATION |
-| STD-014 | DOCUMENT_RENDERING_STANDARD.md | Rendering/presentation | Adjacent representation contract | PENDING RECONCILIATION |
-| STD-015 | DOCUMENT_TEMPLATE_ENGINE_STANDARD.md | Template generation | Adjacent implementation contract | PENDING RECONCILIATION |
-| STD-016 | NAMING_STANDARD.md | Naming conventions | Cross-cutting naming contract | PENDING RECONCILIATION |
-| STD-017 | QUALITY_STANDARD.md | Documentation quality | Cross-cutting quality contract | PENDING RECONCILIATION |
-| STD-018 | REPOSITORY_STANDARD.md | Repository documentary environment | Repository contract | PENDING RECONCILIATION |
-| STD-019 | TRACEABILITY_STANDARD.md | Traceability | Cross-cutting evidence contract | PENDING RECONCILIATION |
-| STD-020 | WRITING_STANDARD.md | Writing style and language | Representation/style contract | PENDING RECONCILIATION |
+| STD-001 | DOCUMENT_STANDARD | Umbrella document contract | Framework standard | NORMALIZED-CANDIDATE |
+| STD-002 | DOCUMENT_METADATA_STANDARD | Metadata semantics | Canonical metadata contract | NORMALIZED-CANDIDATE |
+| STD-003 | DOCUMENT_IDENTIFIER_STANDARD | Permanent document identity | Canonical identity contract | NORMALIZED-CANDIDATE |
+| STD-004 | DOCUMENT_RELATIONSHIP_STANDARD | Relationship vocabulary and semantics | Canonical relationship contract | NORMALIZED-CANDIDATE |
+| STD-005 | DOCUMENT_SCHEMA_STANDARD | Structural representation | Canonical schema contract | NORMALIZED-CANDIDATE |
+| STD-006 | DOCUMENT_GRAMMAR_STANDARD | Text/Markdown grammar | Canonical grammar contract | NORMALIZED-CANDIDATE |
+| STD-007 | DOCUMENT_VALIDATION_STANDARD | Conformance validation | Canonical validation contract | NORMALIZED-CANDIDATE |
+| STD-008 | DOCUMENT_LINTING_STANDARD | Static linting | Enforcement specialization | NORMALIZED-CANDIDATE |
+| STD-009 | DOCUMENT_HISTORY_MODEL | Version/history semantics | Canonical history contract | NORMALIZED-CANDIDATE |
+| STD-010 | DOCUMENT_DEPENDENCY_STANDARD | Dependency semantics | Adjacent specialized contract | PENDING RECONCILIATION |
+| STD-011 | DOCUMENT_CLASSIFICATION_STANDARD | Information classification | Adjacent specialized contract | PENDING RECONCILIATION |
+| STD-012 | DOCUMENT_AUTOMATION_STANDARD | Documentary automation | Adjacent enforcement/automation contract | PENDING RECONCILIATION |
+| STD-013 | DOCUMENT_COMPILER_STANDARD | Document compilation | Adjacent implementation contract | PENDING RECONCILIATION |
+| STD-014 | DOCUMENT_RENDERING_STANDARD | Rendering/presentation | Adjacent representation contract | PENDING RECONCILIATION |
+| STD-015 | DOCUMENT_TEMPLATE_ENGINE_STANDARD | Template generation | Adjacent implementation contract | PENDING RECONCILIATION |
+| STD-016 | NAMING_STANDARD | Naming conventions | Cross-cutting naming contract | PENDING RECONCILIATION |
+| STD-017 | QUALITY_STANDARD | Documentation quality | Cross-cutting quality contract | PENDING RECONCILIATION |
+| STD-018 | REPOSITORY_STANDARD | Repository documentary environment | Repository contract | PENDING RECONCILIATION |
+| STD-019 | TRACEABILITY_STANDARD | Traceability | Cross-cutting evidence contract | PENDING RECONCILIATION |
+| STD-020 | WRITING_STANDARD | Writing style and language | Representation/style contract | PENDING RECONCILIATION |
 
 This inventory deliberately distinguishes the **core canonical documentary stack** from adjacent standards. Adjacent standards cannot be treated as canonical documentary foundations until their ownership and dependencies are reconciled.
 
@@ -268,7 +268,7 @@ No downstream document shall establish a competing metadata, identity or relatio
 ## 13. Status
 
 ```text
-status: draft
+status: Draft
 canonical: false
 effective: false
 automation_ready: false
