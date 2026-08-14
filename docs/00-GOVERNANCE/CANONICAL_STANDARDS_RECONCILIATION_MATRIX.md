@@ -1,6 +1,6 @@
 ---
-document_id: BHG-AUD-CSTRM-001
-document_type: audit_reconciliation_matrix
+document_id: BHG-GOV-CSTRM-001
+document_type: governance_reconciliation_matrix
 governance_level: enterprise
 version: 0.2.0
 status: draft
@@ -170,7 +170,7 @@ Observed defect: multiple peer standards were declared as superior authority. No
 
 ### 7.8 DOCUMENT_VALIDATION_STANDARD
 
-Observed defect: grammar, schema and compiler were treated as superior authorities without a clear semantic boundary. Normalization makes validation an enforcement contract subordinate to the documentary framework and canonical structural contracts.
+Observed defect: grammar, schema and compiler were treated as superior authorities without a clear semantic boundary. Normalization makes validation an enforcement contract subordinate to the documentary framework while consuming the canonical structural and semantic contracts as dependencies.
 
 ### 7.9 DOCUMENT_LINTING_STANDARD
 
