@@ -1,30 +1,22 @@
 ---
 title: BHG Constitution
+document_id: BHG-GOV-CON-001
 version: 1.1.0
 status: Approved
-document-type: Constitution
-governance-level: Supreme
+document_type: Constitution
+governance_level: Supreme
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
-effective-date: 2026-01-01
-language: en
-audience:
-  - Board
-  - Executives
-  - Managers
-  - Employees
-  - AI Systems
+approval_authority: BHG Governance Council
+created: 2026-07-05
+last_updated: 2026-07-08
+effective_date: 2026-01-01
 classification: Internal
-applies-to:
-  - Entire BHG Ecosystem
-supersedes:
-  - BHG Constitution v1.0.0
-related-documents:
-  - AUTHORITY_MODEL.md
-  - AUTHORITY_MATRIX.md
-  - GOVERNANCE_MODEL.md
-  - GOVERNANCE_EVOLUTION_POLICY.md
-  - LEGAL_HIERARCHY.md
+language: en
+repository: BHG-GOVERNANCE
+governed_by: []
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # BHG Constitution
@@ -217,15 +209,10 @@ Human governance bodies retain exclusive decision-making authority.
 Knowledge shall be:
 
 - documented
-
 - versioned
-
 - reusable
-
 - searchable
-
 - protected
-
 - continuously improved
 
 ---
@@ -235,11 +222,8 @@ Knowledge shall be:
 Security protects:
 
 - information
-
 - governance
-
 - intellectual property
-
 - organizational continuity
 
 Security requirements apply to every governance artifact.
