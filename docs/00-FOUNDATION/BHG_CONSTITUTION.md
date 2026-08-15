@@ -1,15 +1,15 @@
 ---
 title: BHG Constitution
 document_id: BHG-GOV-CON-001
-version: 1.1.0
-status: Approved
+version: 1.2.0
+status: Review
 document_type: Constitution
 governance_level: Supreme
 owner: BHG Governance Council
-approval_authority: BHG Governance Council
+approval_authority: BHG Board
 created: 2026-07-05
-last_updated: 2026-07-08
-effective_date: 2026-01-01
+last_updated: 2026-08-15
+effective_date: null
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
@@ -227,6 +227,53 @@ Security protects:
 - organizational continuity
 
 Security requirements apply to every governance artifact.
+
+---
+
+# Title XI — Constitutional Supremacy and Amendment
+
+## Article 11.1 — Constitutional Supremacy
+
+This Constitution is the supreme normative authority of Breto's Holding Group.
+
+No governance body, repository, company, subholding, subsidiary, project, service, product, AI system, policy, standard, procedure, implementation or other governance artifact may override, suspend, weaken, reinterpret or contradict this Constitution through subordinate authority.
+
+## Article 11.2 — Constitutional Authority Boundary
+
+All authority exercised within BHG shall derive from, remain compatible with, or be explicitly permitted by this Constitution.
+
+Delegated authority may be exercised operationally by subordinate governance bodies, but delegation shall never transfer or diminish the supreme constitutional authority of BHG.
+
+## Article 11.3 — Constitutional Amendment
+
+Any proposal to amend this Constitution shall be treated as a constitutional governance proposal and shall preserve full documentary traceability.
+
+A constitutional amendment proposal shall include, at minimum:
+
+- the proposed change;
+- rationale;
+- supporting evidence;
+- impact analysis;
+- compatibility analysis against subordinate governance artifacts;
+- review record;
+- approval record;
+- effective date.
+
+## Article 11.4 — Human Approval
+
+A constitutional amendment shall not become effective unless it is approved by the authorized human constitutional approval authority defined by the BHG governance system.
+
+The BHG Board is designated as the constitutional approval authority in the current Authority Model, subject to independent verification and formal governance approval of this constitutional provision.
+
+## Article 11.5 — No AI Constitutional Authority
+
+Artificial Intelligence systems may analyze, audit, simulate and recommend constitutional changes, but shall never approve, reject, enact or independently publish a constitutional amendment.
+
+## Article 11.6 — Subordinate Reconciliation
+
+When this Constitution is amended, every subordinate governance artifact affected by the amendment shall undergo a compatibility review before continued certification or effective use.
+
+No subordinate artifact may use its existing status, location, metadata, implementation or historical approval to preserve a contradiction with the Constitution.
 
 ---
 
