@@ -2,10 +2,10 @@
   "phase": "N1",
   "mode": "read_only_content_extraction",
   "source_modification": false,
-  "artifact_count": 206,
+  "artifact_count": 207,
   "frontmatter_count": 206,
-  "frontmatter_missing_count": 0,
-  "required_metadata_gap_count": 0,
+  "frontmatter_missing_count": 1,
+  "required_metadata_gap_count": 1,
   "duplicate_document_ids": [],
   "frontmatter_keyset_count": 2,
   "status_distribution": {
@@ -9835,6 +9835,39 @@
         "governs",
         "related_to"
       ]
+    },
+    {
+      "path": "normalization-output/N1_CONTENT_INVENTORY.md",
+      "sha256": "ddfba27d856250a74c6d6e8e93c5e9170c8aeea38b3c37acd6e0498a8e616b3e",
+      "bytes": 567,
+      "frontmatter_present": false,
+      "frontmatter_keys": [],
+      "missing_required_metadata": [
+        "approval_authority",
+        "classification",
+        "created",
+        "document_id",
+        "document_type",
+        "governance_level",
+        "language",
+        "last_updated",
+        "owner",
+        "repository",
+        "status",
+        "title",
+        "version"
+      ],
+      "document_id": null,
+      "title": null,
+      "document_type": null,
+      "version": null,
+      "status": null,
+      "canonical": null,
+      "effective": null,
+      "governance_level": null,
+      "owner": null,
+      "approval_authority": null,
+      "relationships_declared": []
     }
   ],
   "contract_dependency_cluster": {

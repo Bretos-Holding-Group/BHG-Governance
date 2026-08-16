@@ -1,9 +1,9 @@
 # BHG Governance Core — N1 Content Inventory
 
-- Artifacts: **206**
+- Artifacts: **207**
 - Frontmatter present: **206**
-- Frontmatter missing: **0**
-- Required-metadata gaps: **0**
+- Frontmatter missing: **1**
+- Required-metadata gaps: **1**
 - Frontmatter keysets: **2**
 
 ## Duplicate document IDs
