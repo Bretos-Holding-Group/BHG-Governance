@@ -10,7 +10,6 @@ on:
 permissions:
   contents: write
 
-# Controlled execution branch; the bot commit is intentionally excluded from reruns.
 jobs:
   remediate:
     if: ${{ github.event_name == 'push' || !contains(github.event.pull_request.head.commit.message, '[n3-n5-remediation]') }}
@@ -23,13 +22,16 @@ jobs:
         run: python3 -m pip install pyyaml
       - name: Execute controlled remediation
         run: python3 tools/bhg_normalization/remediate_n3_n5_safe.py
+      - name: Finalize canonical top-level metadata schema
+        run: python3 tools/bhg_normalization/finalize_schema_v0_1.py
       - name: Run normalization audit
         run: python3 tools/bhg_normalization/normalization_audit.py
       - name: Record generated evidence
         run: |
           git status --short
           mkdir -p artifacts
-          cp normalization-output/n3-n5-remediation-register.json artifacts/
+          cp normalization-output/n3-n5-remediation-register.json artifacts/ || true
+          cp normalization-output/schema-finalization-register.json artifacts/ || true
           cp normalization-output/n1-inventory.json artifacts/ || true
       - name: Commit remediation
         run: |
