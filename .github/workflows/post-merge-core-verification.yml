@@ -1,0 +1,106 @@
+name: BHG Post-Merge Core Verification
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  core-verification:
+    name: Verify canonical governance core
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact merge target
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify repository state
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${GITHUB_REF_NAME}" = "main" || test "${GITHUB_EVENT_NAME}" = "workflow_dispatch"
+          git rev-parse HEAD
+          echo "Verified commit: $(git rev-parse HEAD)"
+
+      - name: Validate Markdown frontmatter and canonical metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import pathlib, sys
+          docs = sorted(pathlib.Path("docs").rglob("*.md"))
+          assert docs, "No governed Markdown corpus found"
+          required = {"title", "document_id", "version", "status", "document_type", "governance_level", "owner", "approval_authority"}
+          ids = set()
+          errors = []
+          for p in docs:
+              text = p.read_text(encoding="utf-8")
+              if not text.startswith("---\n"):
+                  errors.append(f"missing frontmatter: {p}")
+                  continue
+              end = text.find("\n---", 4)
+              if end < 0:
+                  errors.append(f"invalid frontmatter delimiter: {p}")
+                  continue
+              block = text[4:end]
+              keys = set()
+              for line in block.splitlines():
+                  if line and not line.startswith((" ", "\t")) and ":" in line:
+                      keys.add(line.split(":",1)[0].strip())
+              missing = required - keys
+              if missing:
+                  errors.append(f"metadata gap {p}: {sorted(missing)}")
+              for line in block.splitlines():
+                  if line.startswith("document_id:"):
+                      did = line.split(":",1)[1].strip().strip("'\"")
+                      if did in ids:
+                          errors.append(f"duplicate document_id: {did}")
+                      ids.add(did)
+          if errors:
+              print("\n".join(errors))
+              sys.exit(1)
+          print(f"PASS: {len(docs)} governed Markdown documents; {len(ids)} document IDs checked")
+          PY
+
+      - name: Validate governance authority boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f docs/00-FOUNDATION/BHG_CONSTITUTION.md
+          grep -q 'status: Approved' docs/00-FOUNDATION/BHG_CONSTITUTION.md
+          grep -q 'governance_level: Supreme' docs/00-FOUNDATION/BHG_CONSTITUTION.md
+          grep -q 'BHG Constitution' docs/00-FOUNDATION/BHG_CONSTITUTION.md
+          echo "PASS: supreme constitutional authority present"
+
+      - name: Validate no mutation capability
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'contents: read' .github/workflows/post-merge-core-verification.yml
+          echo "PASS: post-merge verification is read-only"
+
+      - name: Produce verification manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p verification-output
+          {
+            echo "commit=$(git rev-parse HEAD)"
+            echo "event=${GITHUB_EVENT_NAME}"
+            echo "workflow=${GITHUB_WORKFLOW}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "result=PASS"
+            echo "authority=BHG Constitution"
+            echo "mode=non-authoritative-observational"
+          } > verification-output/core-verification-manifest.txt
+
+      - name: Upload evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhg-post-merge-core-verification
+          path: verification-output/core-verification-manifest.txt
