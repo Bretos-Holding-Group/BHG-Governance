@@ -13,25 +13,26 @@ effective_date: 2026-07-21
 classification: Internal
 language: English
 repository: BHG Governance
-
 governed_by:
-  - README.md
-  - ARCHITECTURE_MAP.md
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-
+- README.md
+- ARCHITECTURE_MAP.md
+- docs/00-FOUNDATION/BHG_CONSTITUTION.md
+- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
 governs:
-  - All BHG governance documentation
-  - All future repositories adopting BHG governance terminology
-
+- All BHG governance documentation
+- All future repositories adopting BHG governance terminology
 depends_on:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-
+- docs/00-FOUNDATION/BHG_CONSTITUTION.md
+- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
 related_to:
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-  - docs/00-FOUNDATION/BHG_FOUNDATION_BOOK.md
+- docs/00-FOUNDATION/AUTHORITY_MODEL.md
+- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
+- docs/00-FOUNDATION/BHG_FOUNDATION_BOOK.md
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Corporate Glossary

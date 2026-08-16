@@ -13,31 +13,32 @@ effective_date: 2026-07-21
 classification: Internal
 language: English
 repository: BHG Governance
-
 governed_by:
-  - README.md
-  - ARCHITECTURE_MAP.md
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-  - docs/00-FOUNDATION/GLOSSARY.md
-
+- README.md
+- ARCHITECTURE_MAP.md
+- docs/00-FOUNDATION/BHG_CONSTITUTION.md
+- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
+- docs/00-FOUNDATION/AUTHORITY_MODEL.md
+- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
+- docs/00-FOUNDATION/GLOSSARY.md
 governs:
-  - Governance proposal lifecycle
-  - Governance change management
-  - Governance review processes
-  - Governance approval workflow
-
+- Governance proposal lifecycle
+- Governance change management
+- Governance review processes
+- Governance approval workflow
 depends_on:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-
+- docs/00-FOUNDATION/BHG_CONSTITUTION.md
+- docs/00-FOUNDATION/AUTHORITY_MODEL.md
+- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
 related_to:
-  - docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-  - docs/00-FOUNDATION/GOVERNANCE_PROPOSAL_STANDARD.md
-  - docs/00-FOUNDATION/GOVERNANCE_CONFLICT_RESOLUTION.md
+- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
+- docs/00-FOUNDATION/GOVERNANCE_PROPOSAL_STANDARD.md
+- docs/00-FOUNDATION/GOVERNANCE_CONFLICT_RESOLUTION.md
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Governance Pipeline

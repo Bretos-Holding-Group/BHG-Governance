@@ -7,36 +7,35 @@ document_type: Governance Model
 governance_level: Corporate
 owner: BHG Governance Council
 approval_authority: BHG Governance Council
-
 created: 2026-07-20
 last_updated: 2026-07-20
 effective_date: 2026-07-20
-
 classification: Internal
 language: en
 repository: BHG Governance
-
 governed_by:
-  - BHG_CONSTITUTION
-  - GOVERNANCE_MODEL
-  - AUTHORITY_MODEL
-  - LEGAL_HIERARCHY
-
+- BHG_CONSTITUTION
+- GOVERNANCE_MODEL
+- AUTHORITY_MODEL
+- LEGAL_HIERARCHY
 governs:
-  - COMPANY_CONSTITUTION_TEMPLATE
-  - ENTERPRISE_MODEL
-  - PROJECT_GOVERNANCE_MODEL
-  - SERVICE_MODEL
-  - AI_CONSTITUTION
-  - AUTOMATION_CONSTITUTION
-
+- COMPANY_CONSTITUTION_TEMPLATE
+- ENTERPRISE_MODEL
+- PROJECT_GOVERNANCE_MODEL
+- SERVICE_MODEL
+- AI_CONSTITUTION
+- AUTOMATION_CONSTITUTION
 depends_on:
-  - BHG_CONSTITUTION
-  - GOVERNANCE_MODEL
-
+- BHG_CONSTITUTION
+- GOVERNANCE_MODEL
 related_to:
-  - AUTHORITY_MATRIX
-  - GOVERNANCE_PIPELINE
+- AUTHORITY_MATRIX
+- GOVERNANCE_PIPELINE
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Federated Governance Model

@@ -1,51 +1,34 @@
 ---
 title: Governance Change Request Template
-
 document_id: GOVERNANCE_CHANGE_REQUEST_TEMPLATE
-
 version: 1.0.0
-
 status: Draft
-
 document_type: Template
-
 governance_level: Enterprise
-
 owner: BHG Governance Council
-
 approval_authority: BHG Governance Council
-
 created: 2026-08-06
-
 last_updated: 2026-08-06
-
 effective_date: 2026-08-06
-
 classification: Internal
-
 language: en
-
 repository: BHG-GOVERNANCE
-
 governed_by:
-
 - GOVERNANCE_CHANGE_REQUEST_STANDARD.md
 - CHANGE_MANAGEMENT_README.md
-
 governs:
-
 - Future Governance Change Requests
-
 depends_on:
-
 - DOCUMENT_METADATA_STANDARD.md
 - VERSIONING_POLICY.md
-
 related_to:
-
 - ADR_STANDARD.md
 - CHANGELOG_POLICY.md
-
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Governance Change Request Template

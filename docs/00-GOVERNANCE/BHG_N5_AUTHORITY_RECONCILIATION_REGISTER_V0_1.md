@@ -5,20 +5,31 @@ document_type: governance_reconciliation_register
 governance_level: Enterprise
 version: 0.1.0
 status: Review
-canonical: false
-effective: false
-automation_ready: false
-normalization_phase: N5
-approval_readiness: CONDITIONAL
 created: 2026-08-16
 last_updated: 2026-08-16
 approval_authority: BHG Governance Council
 governed_by:
-  - BHG_CONSTITUTION
-  - BHG-GOV-CAM-001
+- BHG_CONSTITUTION
+- BHG-GOV-CAM-001
 depends_on:
-  - BHG-GOV-N4-RNR-001
-  - BHG-GOV-N3-IDR-001
+- BHG-GOV-N4-RNR-001
+- BHG-GOV-N3-IDR-001
+owner: BHG Governance Council
+effective_date: null
+classification: Internal
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    canonical: false
+    effective: false
+    automation_ready: false
+    normalization_phase: N5
+    approval_readiness: CONDITIONAL
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # BHG N5 Authority Reconciliation Register v0.1

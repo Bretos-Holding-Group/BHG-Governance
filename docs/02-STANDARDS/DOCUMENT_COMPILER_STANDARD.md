@@ -2,30 +2,38 @@
 title: Document Compiler Standard
 version: 1.1.0
 status: Approved
-document-type: Standard
-governance-level: Enterprise
+document_type: Standard
+governance_level: Enterprise
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-
-applies-to:
-  - Entire BHG Ecosystem
-
-governed-by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - GOVERNANCE_PIPELINE.md
-  - DOCUMENT_GRAMMAR_STANDARD.md
-  - DOCUMENT_SCHEMA_STANDARD.md
-  - DOCUMENT_TEMPLATE_ENGINE_STANDARD.md
-
+governed_by:
+- BHG_CONSTITUTION.md
+- GOVERNANCE_MODEL.md
+- GOVERNANCE_PIPELINE.md
+- DOCUMENT_GRAMMAR_STANDARD.md
+- DOCUMENT_SCHEMA_STANDARD.md
+- DOCUMENT_TEMPLATE_ENGINE_STANDARD.md
 governs:
-  - Document Validation Engine
-  - Document Rendering Engine
-  - Document Export Engine
-  - AI Document Generator
-  - Governance Automation Engine
+- Document Validation Engine
+- Document Rendering Engine
+- Document Export Engine
+- AI Document Generator
+- Governance Automation Engine
+document_id: BHG-MIG-9783A5418C4A
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - Entire BHG Ecosystem
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Document Compiler Standard

@@ -13,28 +13,29 @@ effective_date: 2026-07-21
 classification: Internal
 language: en
 repository: BHG Governance
-
 governed_by:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-  - docs/00-FOUNDATION/LEGAL_HIERARCHY.md
-  - docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
-
+- docs/00-FOUNDATION/BHG_CONSTITUTION.md
+- docs/00-FOUNDATION/AUTHORITY_MODEL.md
+- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
+- docs/00-FOUNDATION/LEGAL_HIERARCHY.md
+- docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
 governs:
-  - Governance conflict resolution process
-  - Governance dispute escalation
-  - Conflict decision records
-
+- Governance conflict resolution process
+- Governance dispute escalation
+- Conflict decision records
 depends_on:
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-  - docs/00-FOUNDATION/LEGAL_HIERARCHY.md
-
+- docs/00-FOUNDATION/AUTHORITY_MODEL.md
+- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
+- docs/00-FOUNDATION/LEGAL_HIERARCHY.md
 related_to:
-  - docs/00-FOUNDATION/GOVERNANCE_PROPOSAL_STANDARD.md
-  - docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
+- docs/00-FOUNDATION/GOVERNANCE_PROPOSAL_STANDARD.md
+- docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
+- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Governance Conflict Resolution

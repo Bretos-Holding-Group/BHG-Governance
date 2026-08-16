@@ -4,18 +4,26 @@ title: BHG Canonical Status Registry
 document_type: governance_record
 version: 1.0.1
 status: Effective
-canonical: true
-effective: true
 governance_level: Enterprise
 created: 2026-08-16
 last_updated: 2026-08-16
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
-
 governed_by:
-  - BHG_CONSTITUTION
-  - BHG-GOV-CDRM-001
+- BHG_CONSTITUTION
+- BHG-GOV-CDRM-001
+owner: BHG Governance Council
+approval_authority: BHG Governance Council
+effective_date: null
+extensions:
+  legacy_metadata:
+    canonical: true
+    effective: true
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # BHG Canonical Status Registry

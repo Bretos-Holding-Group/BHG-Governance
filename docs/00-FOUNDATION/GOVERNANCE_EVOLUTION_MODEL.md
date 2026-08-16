@@ -3,31 +3,37 @@ title: Governance Evolution Model
 document_id: GOVERNANCE_EVOLUTION_MODEL
 version: 1.1.0
 status: Approved
-document-type: Governance Model
-governance-level: Foundation
+document_type: Governance Model
+governance_level: Foundation
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
-effective-date: 2026-01-01
+approval_authority: BHG Governance Council
+effective_date: 2026-01-01
 language: en
 classification: Internal
-
-applies-to:
-  - Entire BHG Ecosystem
-
-governed-by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - GOVERNANCE_AUTONOMY_MODEL.md
-  - GOVERNANCE_DELEGATION_MODEL.md
-  - GOVERNANCE_EVOLUTION_POLICY.md
-
+governed_by:
+- BHG_CONSTITUTION.md
+- GOVERNANCE_MODEL.md
+- GOVERNANCE_AUTONOMY_MODEL.md
+- GOVERNANCE_DELEGATION_MODEL.md
+- GOVERNANCE_EVOLUTION_POLICY.md
 governs:
-  - GOVERNANCE_PIPELINE.md
-  - GOVERNANCE_PROPOSAL_STANDARD.md
-  - CHANGE_POLICY.md
-  - VERSIONING_POLICY.md
-  - GOVERNANCE_COUNCIL.md
-  - DOCUMENT_LIFECYCLE.md
+- GOVERNANCE_PIPELINE.md
+- GOVERNANCE_PROPOSAL_STANDARD.md
+- CHANGE_POLICY.md
+- VERSIONING_POLICY.md
+- GOVERNANCE_COUNCIL.md
+- DOCUMENT_LIFECYCLE.md
+created: '2026-07-20'
+last_updated: '2026-07-20'
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - Entire BHG Ecosystem
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Governance Evolution Model

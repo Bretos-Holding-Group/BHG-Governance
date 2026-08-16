@@ -2,29 +2,39 @@
 title: BHG Constitution
 version: 1.1.0
 status: Approved
-document-type: Constitution
-governance-level: Supreme
+document_type: Constitution
+governance_level: Supreme
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
-effective-date: 2026-01-01
+approval_authority: BHG Governance Council
+effective_date: 2026-01-01
 language: en
-audience:
-  - Board
-  - Executives
-  - Managers
-  - Employees
-  - AI Systems
 classification: Internal
-applies-to:
-  - Entire BHG Ecosystem
-supersedes:
-  - BHG Constitution v1.0.0
-related-documents:
-  - AUTHORITY_MODEL.md
-  - AUTHORITY_MATRIX.md
-  - GOVERNANCE_MODEL.md
-  - GOVERNANCE_EVOLUTION_POLICY.md
-  - LEGAL_HIERARCHY.md
+document_id: BHG-MIG-5456F6E19A27
+created: '2026-07-05'
+last_updated: '2026-07-08'
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    audience:
+    - Board
+    - Executives
+    - Managers
+    - Employees
+    - AI Systems
+    applies-to:
+    - Entire BHG Ecosystem
+    supersedes:
+    - BHG Constitution v1.0.0
+    related-documents:
+    - AUTHORITY_MODEL.md
+    - AUTHORITY_MATRIX.md
+    - GOVERNANCE_MODEL.md
+    - GOVERNANCE_EVOLUTION_POLICY.md
+    - LEGAL_HIERARCHY.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # BHG Constitution

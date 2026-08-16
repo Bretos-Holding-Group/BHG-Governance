@@ -13,29 +13,30 @@ effective_date: 2026-07-21
 classification: Strategic
 language: English
 repository: BHG Governance
-
 governed_by:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - ARCHITECTURE_MAP.md
-  - README.md
-
+- docs/00-FOUNDATION/BHG_CONSTITUTION.md
+- ARCHITECTURE_MAP.md
+- README.md
 governs:
-  - Institutional philosophy interpretation
-  - Foundational principles interpretation
-  - Long-term organizational purpose
-
+- Institutional philosophy interpretation
+- Foundational principles interpretation
+- Long-term organizational purpose
 depends_on:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-
+- docs/00-FOUNDATION/BHG_CONSTITUTION.md
+- docs/00-FOUNDATION/AUTHORITY_MODEL.md
+- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
 related_to:
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-  - docs/00-FOUNDATION/ECOSYSTEM_MODEL.md
-  - docs/00-FOUNDATION/ENTERPRISE_MODEL.md
-  - docs/00-FOUNDATION/SUBHOLDING_MODEL.md
-  - docs/00-FOUNDATION/SUBSIDIARY_MODEL.md
-  - docs/00-FOUNDATION/GLOSSARY.md
+- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
+- docs/00-FOUNDATION/ECOSYSTEM_MODEL.md
+- docs/00-FOUNDATION/ENTERPRISE_MODEL.md
+- docs/00-FOUNDATION/SUBHOLDING_MODEL.md
+- docs/00-FOUNDATION/SUBSIDIARY_MODEL.md
+- docs/00-FOUNDATION/GLOSSARY.md
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Breto's Holding Group Foundation Book

@@ -1,53 +1,37 @@
 ---
 title: Governance Change Request Standard
-
 document_id: GOVERNANCE_CHANGE_REQUEST_STANDARD
-
 version: 1.0.0
-
 status: Draft
-
 document_type: Standard
-
 governance_level: Enterprise
-
 owner: BHG Governance Council
-
 approval_authority: BHG Governance Council
-
 created: 2026-08-06
-
 last_updated: 2026-08-06
-
 effective_date: 2026-08-06
-
 classification: Internal
-
 language: en
-
 repository: BHG-GOVERNANCE
-
 governed_by:
-
 - GOVERNANCE_MODEL.md
 - ENGINEERING_GOVERNANCE_MODEL.md
 - CHANGE_MANAGEMENT_README.md
-
 governs:
-
 - GOVERNANCE_CHANGE_REQUEST_TEMPLATE.md
 - GOVERNANCE_IMPLEMENTATION_WORKFLOW.md
-
 depends_on:
-
 - CHANGE_MANAGEMENT_README.md
 - DOCUMENT_METADATA_STANDARD.md
 - VERSIONING_POLICY.md
-
 related_to:
-
 - ADR_STANDARD.md
 - CHANGELOG_POLICY.md
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Governance Change Request Standard

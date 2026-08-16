@@ -13,16 +13,20 @@ effective_date: null
 classification: Internal
 language: en
 repository: BHG-Governance
-
 governed_by:
-  - BHG-GOV-CAM-001
+- BHG-GOV-CAM-001
 depends_on:
-  - CANONICAL_STANDARDS_RECONCILIATION_MATRIX
-  - BHG-AUD-NORM-001
+- CANONICAL_STANDARDS_RECONCILIATION_MATRIX
+- BHG-AUD-NORM-001
 related_to:
-  - BHG-Ecosystem-Foundation
-  - bhg-knowledge
-  - ZivaLatam
+- BHG-Ecosystem-Foundation
+- bhg-knowledge
+- ZivaLatam
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # BHG Repository Authority Sequence

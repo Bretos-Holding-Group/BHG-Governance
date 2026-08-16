@@ -2,32 +2,40 @@
 title: Document Rendering Standard
 version: 1.1.0
 status: Approved
-document-type: Standard
-governance-level: Enterprise
+document_type: Standard
+governance_level: Enterprise
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-
-applies-to:
-  - Entire BHG Ecosystem
-
-governed-by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - DOCUMENT_SCHEMA_STANDARD.md
-  - DOCUMENT_COMPILER_STANDARD.md
-  - DOCUMENT_VALIDATION_STANDARD.md
-  - DOCUMENT_DEPENDENCY_STANDARD.md
-
+governed_by:
+- BHG_CONSTITUTION.md
+- GOVERNANCE_MODEL.md
+- DOCUMENT_SCHEMA_STANDARD.md
+- DOCUMENT_COMPILER_STANDARD.md
+- DOCUMENT_VALIDATION_STANDARD.md
+- DOCUMENT_DEPENDENCY_STANDARD.md
 governs:
-  - Rendering Engine
-  - Markdown Renderer
-  - HTML Renderer
-  - PDF Renderer
-  - Documentation Portal
-  - Genesis Preview Engine
-  - AI Visualization Engine
+- Rendering Engine
+- Markdown Renderer
+- HTML Renderer
+- PDF Renderer
+- Documentation Portal
+- Genesis Preview Engine
+- AI Visualization Engine
+document_id: BHG-MIG-49D1A6CF8892
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - Entire BHG Ecosystem
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Document Rendering Standard

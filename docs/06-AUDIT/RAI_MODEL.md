@@ -1,41 +1,39 @@
 ---
 title: Repository Audit Instruction Model
-
 document_id: RAI-MODEL
-
 version: 1.0.0
-
 status: Draft
-
 classification: Internal
-
-owners:
-  - BHG Architecture Council
-  - Genesis Engineering
-
-approvers:
-  - BHG Governance Council
-
 created: 2026-07-13
-
-updated: 2026-07-13
-
+last_updated: 2026-07-13
 language: English
-
-namespace: Audit
-
-applies_to:
-  - Repository Audit Instructions
-
 depends_on:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - AUTHORITY_MODEL.md
-
+- BHG_CONSTITUTION.md
+- GOVERNANCE_MODEL.md
+- AUTHORITY_MODEL.md
 governs:
-  - RAI_FRAMEWORK_SPECIFICATION.md
-
-generated_by: Human Governance
+- RAI_FRAMEWORK_SPECIFICATION.md
+document_type: Audit Record
+governance_level: Audit
+owner: BHG Governance Council
+approval_authority: BHG Governance Council
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    owners:
+    - BHG Architecture Council
+    - Genesis Engineering
+    approvers:
+    - BHG Governance Council
+    namespace: Audit
+    applies_to:
+    - Repository Audit Instructions
+    generated_by: Human Governance
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Repository Audit Instruction (RAI) Model

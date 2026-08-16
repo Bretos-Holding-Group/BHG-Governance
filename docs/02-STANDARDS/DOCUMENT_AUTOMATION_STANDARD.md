@@ -2,32 +2,40 @@
 title: Document Automation Standard
 version: 1.1.0
 status: Approved
-document-type: Standard
-governance-level: Enterprise
+document_type: Standard
+governance_level: Enterprise
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-
-applies-to:
-  - Entire BHG Ecosystem
-
-governed-by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - GOVERNANCE_PIPELINE.md
-  - DOCUMENT_COMPILER_STANDARD.md
-  - DOCUMENT_VALIDATION_STANDARD.md
-  - DOCUMENT_RENDERING_STANDARD.md
-  - DOCUMENT_EXPORT_STANDARD.md
-
+governed_by:
+- BHG_CONSTITUTION.md
+- GOVERNANCE_MODEL.md
+- GOVERNANCE_PIPELINE.md
+- DOCUMENT_COMPILER_STANDARD.md
+- DOCUMENT_VALIDATION_STANDARD.md
+- DOCUMENT_RENDERING_STANDARD.md
+- DOCUMENT_EXPORT_STANDARD.md
 governs:
-  - Genesis Automation Engine
-  - Continuous Governance Pipeline
-  - Documentation CI/CD
-  - AI Automation Engine
-  - Repository Automation
-  - Governance Event Engine
+- Genesis Automation Engine
+- Continuous Governance Pipeline
+- Documentation CI/CD
+- AI Automation Engine
+- Repository Automation
+- Governance Event Engine
+document_id: BHG-MIG-0D51FDB8DC4F
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - Entire BHG Ecosystem
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Document Automation Standard

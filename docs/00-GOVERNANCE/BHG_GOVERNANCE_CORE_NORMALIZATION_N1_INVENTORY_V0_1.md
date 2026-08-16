@@ -3,9 +3,6 @@ document_id: BHG-GOV-N1-001
 title: BHG Governance Core Normalization N1 Inventory and Classification Register
 version: 0.1.0
 status: Review
-canonical: false
-effective: false
-approval_readiness: NOT_YET_APPROVAL_READY
 document_type: normalization_control_register
 governance_level: Enterprise
 owner: BHG Governance Council
@@ -15,14 +12,24 @@ last_updated: 2026-08-16
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
-normalization_phase: N1
-scope: BHG-Governance core
-baseline_branch: main
-baseline_commit: d3abf0044655021fe671e513740491143f5a3f81
-baseline_tree: bf3e319509c05cfdeb215bc665085d12b30cfae7
-n0_control: BHG-GOV-N0-001
-n1_mode: inventory_and_classification_only
-source_modification_permitted: false
+effective_date: null
+extensions:
+  legacy_metadata:
+    canonical: false
+    effective: false
+    approval_readiness: NOT_YET_APPROVAL_READY
+    normalization_phase: N1
+    scope: BHG-Governance core
+    baseline_branch: main
+    baseline_commit: d3abf0044655021fe671e513740491143f5a3f81
+    baseline_tree: bf3e319509c05cfdeb215bc665085d12b30cfae7
+    n0_control: BHG-GOV-N0-001
+    n1_mode: inventory_and_classification_only
+    source_modification_permitted: false
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # BHG Governance Core Normalization — N1 Inventory and Classification Register v0.1

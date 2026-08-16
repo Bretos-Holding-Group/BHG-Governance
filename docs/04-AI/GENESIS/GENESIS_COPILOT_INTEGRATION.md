@@ -4,36 +4,41 @@ document_id: GENESIS-COPILOT-INTEGRATION
 version: 1.1.0
 status: Approved
 classification: Internal
-
-owners:
-  - BHG Architecture Council
-  - Genesis Engineering
-
-approvers:
-  - BHG Governance Council
-
 created: 2026-07-11
-updated: 2026-07-11
-
+last_updated: 2026-07-11
 language: English
-namespace: Genesis
-
-applies_to:
-  - GitHub Copilot
-
 depends_on:
-  - GENESIS_PROFILE.md
-  - GENESIS_EXECUTION_CONTRACT.md
-  - GENESIS_COMMAND_PROTOCOL.md
-  - GENESIS_CONTEXT_ENGINE.md
-  - GENESIS_REPOSITORY_SCANNER.md
-  - GENESIS_REPOSITORY_AUDITOR.md
-  - GENESIS_HEALTH_MODEL.md
-  - GENESIS_PLANNING_ENGINE.md
-
+- GENESIS_PROFILE.md
+- GENESIS_EXECUTION_CONTRACT.md
+- GENESIS_COMMAND_PROTOCOL.md
+- GENESIS_CONTEXT_ENGINE.md
+- GENESIS_REPOSITORY_SCANNER.md
+- GENESIS_REPOSITORY_AUDITOR.md
+- GENESIS_HEALTH_MODEL.md
+- GENESIS_PLANNING_ENGINE.md
 governs:
-  - GENESIS_PROVIDER_ABSTRACTION.md
-  - GENESIS_EXECUTION_RUNTIME.md
+- GENESIS_PROVIDER_ABSTRACTION.md
+- GENESIS_EXECUTION_RUNTIME.md
+document_type: AI Document
+governance_level: AI
+owner: BHG Governance Council
+approval_authority: BHG Governance Council
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    owners:
+    - BHG Architecture Council
+    - Genesis Engineering
+    approvers:
+    - BHG Governance Council
+    namespace: Genesis
+    applies_to:
+    - GitHub Copilot
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Genesis Copilot Integration

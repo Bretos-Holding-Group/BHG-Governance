@@ -4,24 +4,34 @@ document_id: GEN-BHG-ENG-013
 version: 1.1.0
 status: Approved
 owner: BHG Architecture Council
-review_authority: BHG Governance Council
 effective_date: TBD
 classification: Internal
-category: AI Runtime
-
-parent_documents:
-  - GENESIS_PROFILE.md
-  - GENESIS_EXECUTION_CONTRACT.md
-  - GENESIS_COMMAND_PROTOCOL.md
-
-related_documents:
-  - GENESIS_EXECUTION_RUNTIME.md
-  - GENESIS_COPILOT_INTEGRATION.md
-
-supersedes: null
-superseded_by: null
-
+document_type: AI Document
+governance_level: AI
+approval_authority: BHG Governance Council
+created: '2026-07-12'
+last_updated: '2026-07-12'
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    review_authority: BHG Governance Council
+    category: AI Runtime
+    parent_documents:
+    - GENESIS_PROFILE.md
+    - GENESIS_EXECUTION_CONTRACT.md
+    - GENESIS_COMMAND_PROTOCOL.md
+    related_documents:
+    - GENESIS_EXECUTION_RUNTIME.md
+    - GENESIS_COPILOT_INTEGRATION.md
+    supersedes: null
+    superseded_by: null
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
+
 # Genesis Provider Abstraction
 
 ## 1. Purpose

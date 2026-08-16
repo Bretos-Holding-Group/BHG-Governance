@@ -13,20 +13,22 @@ effective_date: null
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
-
 governed_by:
-  - DOCUMENT_STANDARD
-  - VERSIONING_POLICY
-
+- DOCUMENT_STANDARD
+- VERSIONING_POLICY
 depends_on:
-  - DOCUMENT_METADATA_STANDARD
-  - GOVERNANCE_REGISTRY_MODEL
-
+- DOCUMENT_METADATA_STANDARD
+- GOVERNANCE_REGISTRY_MODEL
 related_to:
-  - DOCUMENT_VALIDATION_STANDARD
-  - DOCUMENT_COMPILER_STANDARD
-  - TRACEABILITY_STANDARD
-  - REPOSITORY_STANDARD
+- DOCUMENT_VALIDATION_STANDARD
+- DOCUMENT_COMPILER_STANDARD
+- TRACEABILITY_STANDARD
+- REPOSITORY_STANDARD
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Document Identifier Standard

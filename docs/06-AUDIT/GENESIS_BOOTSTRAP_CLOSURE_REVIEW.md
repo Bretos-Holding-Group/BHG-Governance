@@ -5,18 +5,30 @@ version: 1.0.0
 status: Draft
 classification: Internal Audit
 owner: BHG Governance Council
-approved_by: Pending Approval
-
 depends_on:
-  - GENESIS_BOOTSTRAP_REAUDIT.md
-  - GENESIS_BOOTSTRAP_CERTIFICATION.md
-  - RAI_FRAMEWORK_SPECIFICATION.md
-  - ARCHITECTURE_MAP.md
-  - README.md
-
+- GENESIS_BOOTSTRAP_REAUDIT.md
+- GENESIS_BOOTSTRAP_CERTIFICATION.md
+- RAI_FRAMEWORK_SPECIFICATION.md
+- ARCHITECTURE_MAP.md
+- README.md
 related_to:
-  - CHANGELOG.md
-  - RAI_MODEL.md
+- CHANGELOG.md
+- RAI_MODEL.md
+document_type: Audit Record
+governance_level: Audit
+approval_authority: BHG Governance Council
+created: '2026-07-19'
+last_updated: '2026-07-19'
+effective_date: null
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    approved_by: Pending Approval
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Genesis Bootstrap Closure Review

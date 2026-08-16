@@ -1,17 +1,31 @@
 ---
 title: Project Governance Model
 version: 1.0.0
-status: Official
+status: Review
 classification: Foundation
 owner: BHG Governance Council
-approved_by: Governance Council
 effective_date: TBD
-last_review: TBD
 language: English
-parent:
-  - GOVERNANCE_MODEL.md
-  - PROJECT_MODEL.md
-  - PROJECT_LIFECYCLE.md
+document_id: BHG-MIG-B6F5272CD7D6
+document_type: Governance Model
+governance_level: Enterprise
+approval_authority: BHG Governance Council
+created: '2026-07-08'
+last_updated: '2026-07-08'
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    approved_by: Governance Council
+    last_review: TBD
+    parent:
+    - GOVERNANCE_MODEL.md
+    - PROJECT_MODEL.md
+    - PROJECT_LIFECYCLE.md
+    legacy_status: Official
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Project Governance Model

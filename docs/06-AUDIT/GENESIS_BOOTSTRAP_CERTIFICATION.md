@@ -5,19 +5,31 @@ version: 1.1.0
 status: Approved
 classification: Internal Certification
 owner: BHG Architecture Council
-approved_by: BHG Governance Council
-
 depends_on:
-  - GENESIS_BOOTSTRAP_AUDIT_REPORT.md
-  - GENESIS_BOOTSTRAP_RESPONSE.md
-  - GENESIS_BOOTSTRAP_REMEDIATION_PLAN.md
-  - GENESIS_BOOTSTRAP_REVALIDATION_REQUEST.md
-  - GENESIS_BOOTSTRAP_REAUDIT.md
-
+- GENESIS_BOOTSTRAP_AUDIT_REPORT.md
+- GENESIS_BOOTSTRAP_RESPONSE.md
+- GENESIS_BOOTSTRAP_REMEDIATION_PLAN.md
+- GENESIS_BOOTSTRAP_REVALIDATION_REQUEST.md
+- GENESIS_BOOTSTRAP_REAUDIT.md
 related_to:
-  - ARCHITECTURE_MAP.md
-  - README.md
-  - CHANGELOG.md
+- ARCHITECTURE_MAP.md
+- README.md
+- CHANGELOG.md
+document_type: Audit Record
+governance_level: Audit
+approval_authority: BHG Governance Council
+created: '2026-07-19'
+last_updated: '2026-07-19'
+effective_date: null
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    approved_by: BHG Governance Council
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Genesis Bootstrap Certification

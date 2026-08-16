@@ -2,23 +2,34 @@
 title: AI Agent Permission Model
 version: 1.1.0
 status: Approved
-document-type: Model
-governance-level: Automation
+document_type: Model
+governance_level: Automation
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-applies-to:
-  - All Authorized AI Agents
-governed-by:
-  - AUTOMATION_CONSTITUTION.md
-  - AI_AGENT_IDENTITY_STANDARD.md
-  - AI_AGENT_CERTIFICATION_STANDARD.md
-  - AI_AGENT_REGISTRY.md
-  - AUTHORITY_MODEL.md
-related-documents:
-  - AI_AGENT_ACCESS_POLICY.md
-  - AI_AGENT_AUDIT_STANDARD.md
+governed_by:
+- AUTOMATION_CONSTITUTION.md
+- AI_AGENT_IDENTITY_STANDARD.md
+- AI_AGENT_CERTIFICATION_STANDARD.md
+- AI_AGENT_REGISTRY.md
+- AUTHORITY_MODEL.md
+document_id: BHG-MIG-219314071203
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - All Authorized AI Agents
+    related-documents:
+    - AI_AGENT_ACCESS_POLICY.md
+    - AI_AGENT_AUDIT_STANDARD.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # AI Agent Permission Model

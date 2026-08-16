@@ -13,27 +13,28 @@ effective_date: 2026-07-20
 classification: Internal
 language: en
 repository: BHG Governance
-
 governed_by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - FEDERATED_GOVERNANCE_MODEL.md
-  - AUTHORITY_MODEL.md
-  - AUTHORITY_MATRIX.md
-
+- BHG_CONSTITUTION.md
+- GOVERNANCE_MODEL.md
+- FEDERATED_GOVERNANCE_MODEL.md
+- AUTHORITY_MODEL.md
+- AUTHORITY_MATRIX.md
 governs:
-  - GOVERNANCE_CHANGE_WORKFLOW.md
-  - GOVERNANCE_APPROVAL_STANDARD.md
-  - GOVERNANCE_COUNCIL.md
-  - AI_GOVERNANCE_POLICY.md
-  - CHANGE_POLICY.md
-
+- GOVERNANCE_CHANGE_WORKFLOW.md
+- GOVERNANCE_APPROVAL_STANDARD.md
+- GOVERNANCE_COUNCIL.md
+- AI_GOVERNANCE_POLICY.md
+- CHANGE_POLICY.md
 depends_on:
-  - FEDERATED_GOVERNANCE_MODEL.md
-
+- FEDERATED_GOVERNANCE_MODEL.md
 related_to:
-  - GOVERNANCE_PIPELINE.md
-  - LEGAL_HIERARCHY.md
+- GOVERNANCE_PIPELINE.md
+- LEGAL_HIERARCHY.md
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Governance Approval Model

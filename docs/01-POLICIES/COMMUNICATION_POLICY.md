@@ -14,25 +14,30 @@ classification: Internal
 language: en
 repository: BHG-Governance
 governed_by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - LEGAL_HIERARCHY.md
-  - POLICY_HIERARCHY.md
-  - DOCUMENT_POLICY.md
-  - VERSIONING_POLICY.md
-  - DECISION_POLICY.md
+- BHG_CONSTITUTION.md
+- GOVERNANCE_MODEL.md
+- LEGAL_HIERARCHY.md
+- POLICY_HIERARCHY.md
+- DOCUMENT_POLICY.md
+- VERSIONING_POLICY.md
+- DECISION_POLICY.md
 governs:
-  - Institutional Communications
-  - System Communications
-  - AI Agent Communications
-  - Knowledge Communications
+- Institutional Communications
+- System Communications
+- AI Agent Communications
+- Knowledge Communications
 depends_on:
-  - DOCUMENT_CLASSIFICATION_STANDARD.md
-  - TRACEABILITY_STANDARD.md
+- DOCUMENT_CLASSIFICATION_STANDARD.md
+- TRACEABILITY_STANDARD.md
 related_to:
-  - DOCUMENT_POLICY.md
-  - DECISION_POLICY.md
-  - AI_GOVERNANCE_POLICY.md
+- DOCUMENT_POLICY.md
+- DECISION_POLICY.md
+- AI_GOVERNANCE_POLICY.md
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 Communication Policy

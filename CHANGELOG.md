@@ -5,16 +5,28 @@ version: 1.1.0
 status: Active
 classification: Internal Governance
 owner: BHG Governance Council
-approved_by: BHG Governance Council
-
 depends_on:
-  - VERSIONING_POLICY.md
-  - CHANGE_POLICY.md
-  - GOVERNANCE_MODEL.md
-
+- VERSIONING_POLICY.md
+- CHANGE_POLICY.md
+- GOVERNANCE_MODEL.md
 related_to:
-  - README.md
-  - ARCHITECTURE_MAP.md
+- README.md
+- ARCHITECTURE_MAP.md
+document_type: Repository Record
+governance_level: Repository
+approval_authority: BHG Governance Council
+created: '2026-07-06'
+last_updated: '2026-07-19'
+effective_date: null
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    approved_by: BHG Governance Council
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Changelog

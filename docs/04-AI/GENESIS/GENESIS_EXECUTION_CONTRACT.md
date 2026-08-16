@@ -4,29 +4,41 @@ document_id: GENESIS-EXECUTION-CONTRACT
 version: 1.1.0
 status: Approved
 classification: Internal
-owners:
-  - BHG Architecture Council
-  - Genesis Engineering
-approvers:
-  - BHG Governance Council
 created: 2026-07-11
-updated: 2026-07-11
+last_updated: 2026-07-11
 language: English
-namespace: Genesis
-applies_to:
-  - GitHub Copilot
-  - ChatGPT
-  - Claude
-  - Cursor
-  - Future BKOs Runtime
 depends_on:
-  - GENESIS_PROFILE.md
+- GENESIS_PROFILE.md
 governs:
-  - GENESIS_COMMAND_PROTOCOL.md
-  - GENESIS_CONTEXT_ENGINE.md
-  - GENESIS_REPOSITORY_SCANNER.md
-  - GENESIS_REPOSITORY_AUDITOR.md
-  - GENESIS_HEALTH_MODEL.md
+- GENESIS_COMMAND_PROTOCOL.md
+- GENESIS_CONTEXT_ENGINE.md
+- GENESIS_REPOSITORY_SCANNER.md
+- GENESIS_REPOSITORY_AUDITOR.md
+- GENESIS_HEALTH_MODEL.md
+document_type: AI Document
+governance_level: AI
+owner: BHG Governance Council
+approval_authority: BHG Governance Council
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    owners:
+    - BHG Architecture Council
+    - Genesis Engineering
+    approvers:
+    - BHG Governance Council
+    namespace: Genesis
+    applies_to:
+    - GitHub Copilot
+    - ChatGPT
+    - Claude
+    - Cursor
+    - Future BKOs Runtime
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Genesis Execution Contract

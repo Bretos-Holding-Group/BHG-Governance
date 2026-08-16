@@ -1,3 +1,25 @@
+---
+title: AI Code Review Policy
+document_id: BHG-MIG-2FB0C2D083A9
+document_type: AI Document
+version: 0.1.0
+status: Draft
+governance_level: AI
+owner: BHG Governance Council
+approval_authority: BHG Governance Council
+created: '2026-07-06'
+last_updated: '2026-07-06'
+effective_date: null
+classification: Internal
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+---
+
 # AI Code Review Policy
 
 Version: 1.0.0

@@ -5,18 +5,29 @@ document_type: Governance Reconciliation Matrix
 governance_level: Enterprise
 version: 0.1.0
 status: Review
-canonical: false
-effective: false
-automation_ready: false
-normalization_phase: N2
-approval_readiness: SUPPORTING_ARTIFACT
 created: 2026-08-16
 last_updated: 2026-08-16
 approval_authority: BHG Governance Council
 governed_by:
-  - BHG-GOV-CAM-001
+- BHG-GOV-CAM-001
 related_to:
-  - BHG-GOV-N2-CCR-001
+- BHG-GOV-N2-CCR-001
+owner: BHG Governance Council
+effective_date: null
+classification: Internal
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    canonical: false
+    effective: false
+    automation_ready: false
+    normalization_phase: N2
+    approval_readiness: SUPPORTING_ARTIFACT
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # BHG Core Contract Dependency Map v0.1

@@ -13,29 +13,31 @@ effective_date: 2026-07-21
 classification: Internal
 language: en
 repository: BHG Governance
-
 governed_by:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-
+- docs/00-FOUNDATION/BHG_CONSTITUTION.md
+- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
+- docs/00-FOUNDATION/AUTHORITY_MODEL.md
 governs:
-  - Normative hierarchy
-  - Governance authority relationships
-  - Document authority interpretation
-  - Normative conflict resolution rules
-
+- Normative hierarchy
+- Governance authority relationships
+- Document authority interpretation
+- Normative conflict resolution rules
 depends_on:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-
+- docs/00-FOUNDATION/BHG_CONSTITUTION.md
+- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
+- docs/00-FOUNDATION/AUTHORITY_MODEL.md
 related_to:
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-  - docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
-  - docs/00-FOUNDATION/GOVERNANCE_CONFLICT_RESOLUTION.md
-  - docs/00-FOUNDATION/GLOSSARY.md
+- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
+- docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
+- docs/00-FOUNDATION/GOVERNANCE_CONFLICT_RESOLUTION.md
+- docs/00-FOUNDATION/GLOSSARY.md
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
+
 # Legal Hierarchy
 
 > Official Normative Hierarchy Model of Breto's Holding Group.

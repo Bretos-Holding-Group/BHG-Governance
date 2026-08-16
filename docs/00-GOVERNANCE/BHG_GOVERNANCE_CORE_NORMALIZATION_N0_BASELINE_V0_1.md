@@ -1,4 +1,26 @@
 ---
+title: BHG Governance Core Normalization — N0 Baseline v0.1
+document_id: BHG-MIG-A6044F9DB243
+document_type: Governance Document
+version: 0.1.0
+status: Draft
+governance_level: Enterprise
+owner: BHG Governance Council
+approval_authority: BHG Governance Council
+created: '2026-08-16'
+last_updated: '2026-08-16'
+effective_date: null
+classification: Internal
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+---
+
+---
 document_id: BHG-GOV-N0-001
 title: BHG Governance Core Normalization N0 Baseline
 version: 0.1.0

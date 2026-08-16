@@ -2,24 +2,35 @@
 title: AI Agent Monitoring Standard
 version: 1.1.0
 status: Approved
-document-type: Standard
-governance-level: Automation
+document_type: Standard
+governance_level: Automation
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-applies-to:
-  - All Authorized AI Agents
-governed-by:
-  - AUTOMATION_CONSTITUTION.md
-  - AI_AGENT_RUNTIME_STANDARD.md
-  - AI_AGENT_CONFIGURATION_STANDARD.md
-  - SECURITY_STANDARD.md
-  - TRACEABILITY_STANDARD.md
-related-documents:
-  - AI_AGENT_LOGGING_STANDARD.md
-  - AI_AGENT_OBSERVABILITY_STANDARD.md
-  - AI_AGENT_INCIDENT_RESPONSE_STANDARD.md
+governed_by:
+- AUTOMATION_CONSTITUTION.md
+- AI_AGENT_RUNTIME_STANDARD.md
+- AI_AGENT_CONFIGURATION_STANDARD.md
+- SECURITY_STANDARD.md
+- TRACEABILITY_STANDARD.md
+document_id: BHG-MIG-4EF6926C68EA
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - All Authorized AI Agents
+    related-documents:
+    - AI_AGENT_LOGGING_STANDARD.md
+    - AI_AGENT_OBSERVABILITY_STANDARD.md
+    - AI_AGENT_INCIDENT_RESPONSE_STANDARD.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # AI Agent Monitoring Standard

@@ -1,6 +1,6 @@
 ---
 title: Change Policy
-document_id: BHG-POL-001
+document_id: BHG-MIG-DA57580E8D90
 version: 1.1.0
 status: Approved
 document_type: Corporate Policy
@@ -13,27 +13,28 @@ effective_date: 2026-07-21
 classification: Internal
 language: en
 repository: BHG Governance
-
 governed_by:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-  - docs/00-FOUNDATION/LEGAL_HIERARCHY.md
-
+- docs/00-FOUNDATION/BHG_CONSTITUTION.md
+- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
+- docs/00-FOUNDATION/AUTHORITY_MODEL.md
+- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
+- docs/00-FOUNDATION/LEGAL_HIERARCHY.md
 governs:
-  - Change management process
-  - Change registration
-  - Change evaluation
-  - Change approval lifecycle
-
+- Change management process
+- Change registration
+- Change evaluation
+- Change approval lifecycle
 depends_on:
-  - docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
-  - docs/00-FOUNDATION/GOVERNANCE_PROPOSAL_STANDARD.md
-
+- docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
+- docs/00-FOUNDATION/GOVERNANCE_PROPOSAL_STANDARD.md
 related_to:
-  - docs/00-FOUNDATION/GOVERNANCE_CONFLICT_RESOLUTION.md
-  - docs/00-FOUNDATION/BHG_FOUNDATION_BOOK.md
+- docs/00-FOUNDATION/GOVERNANCE_CONFLICT_RESOLUTION.md
+- docs/00-FOUNDATION/BHG_FOUNDATION_BOOK.md
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Change Policy

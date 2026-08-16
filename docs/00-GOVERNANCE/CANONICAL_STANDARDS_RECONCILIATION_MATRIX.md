@@ -9,26 +9,33 @@ created: 2026-08-14
 last_updated: 2026-08-14
 effective_date: null
 approval_authority: BHG Governance Council
-canonical: false
-effective: false
-automation_ready: false
-
 governed_by:
-  - BHG-GOV-CAM-001
-
+- BHG-GOV-CAM-001
 depends_on:
-  - BHG-AUD-NORM-001
-  - DOCUMENT_STANDARD
-  - DOCUMENT_METADATA_STANDARD
-  - DOCUMENT_IDENTIFIER_STANDARD
-  - DOCUMENT_RELATIONSHIP_STANDARD
-  - DOCUMENT_SCHEMA_STANDARD
-  - DOCUMENT_GRAMMAR_STANDARD
-  - DOCUMENT_VALIDATION_STANDARD
-  - DOCUMENT_LINTING_STANDARD
-  - DOCUMENT_HISTORY_MODEL
-
+- BHG-AUD-NORM-001
+- DOCUMENT_STANDARD
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
+- DOCUMENT_RELATIONSHIP_STANDARD
+- DOCUMENT_SCHEMA_STANDARD
+- DOCUMENT_GRAMMAR_STANDARD
+- DOCUMENT_VALIDATION_STANDARD
+- DOCUMENT_LINTING_STANDARD
+- DOCUMENT_HISTORY_MODEL
 related_to: []
+owner: BHG Governance Council
+classification: Internal
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    canonical: false
+    effective: false
+    automation_ready: false
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Canonical Standards Reconciliation Matrix

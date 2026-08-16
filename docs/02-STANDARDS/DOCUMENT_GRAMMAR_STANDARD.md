@@ -13,18 +13,20 @@ effective_date: null
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
-
 governed_by:
-  - DOCUMENT_STANDARD
-
+- DOCUMENT_STANDARD
 depends_on:
-  - DOCUMENT_METADATA_STANDARD
-  - DOCUMENT_SCHEMA_STANDARD
-
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_SCHEMA_STANDARD
 related_to:
-  - DOCUMENT_LINTING_STANDARD
-  - DOCUMENT_VALIDATION_STANDARD
-  - DOCUMENT_RENDERING_STANDARD
+- DOCUMENT_LINTING_STANDARD
+- DOCUMENT_VALIDATION_STANDARD
+- DOCUMENT_RENDERING_STANDARD
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Document Grammar Standard

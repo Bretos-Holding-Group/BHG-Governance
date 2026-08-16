@@ -3,8 +3,6 @@ document_id: BHG-GOV-NORMALIZATION-EXEC-001
 title: BHG Governance Core Normalization N1-N7 Execution Record
 version: 0.1.0
 status: Review
-canonical: false
-effective: false
 document_type: normalization_execution_record
 governance_level: Enterprise
 owner: BHG Governance Council
@@ -15,12 +13,21 @@ classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 governed_by:
-  - BHG_CONSTITUTION
-  - BHG-GOV-CAM-001
-  - BHG-GOV-CDRM-001
+- BHG_CONSTITUTION
+- BHG-GOV-CAM-001
+- BHG-GOV-CDRM-001
 depends_on:
-  - BHG-GOV-N0-001
-  - BHG-GOV-N1-001
+- BHG-GOV-N0-001
+- BHG-GOV-N1-001
+effective_date: null
+extensions:
+  legacy_metadata:
+    canonical: false
+    effective: false
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # BHG Governance Core Normalization — N1-N7 Execution Record v0.1

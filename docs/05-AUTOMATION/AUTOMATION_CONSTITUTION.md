@@ -2,23 +2,34 @@
 title: Automation Constitution
 version: 1.1.0
 status: Approved
-document-type: Constitution
-governance-level: Foundation
+document_type: Constitution
+governance_level: Foundation
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-applies-to:
-  - Entire BHG Automation Ecosystem
-governed-by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - AI_CONSTITUTION.md
-related-documents:
-  - AI_REPOSITORY_UPDATE_PROTOCOL.md
-  - DOCUMENT_UPDATE_WORKFLOW.md
-  - AUTOMATED_IMPACT_ANALYSIS.md
-  - AUTOMATED_TRACEABILITY_STANDARD.md
+governed_by:
+- BHG_CONSTITUTION.md
+- GOVERNANCE_MODEL.md
+- AI_CONSTITUTION.md
+document_id: BHG-MIG-2F763FF54F97
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - Entire BHG Automation Ecosystem
+    related-documents:
+    - AI_REPOSITORY_UPDATE_PROTOCOL.md
+    - DOCUMENT_UPDATE_WORKFLOW.md
+    - AUTOMATED_IMPACT_ANALYSIS.md
+    - AUTOMATED_TRACEABILITY_STANDARD.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Automation Constitution

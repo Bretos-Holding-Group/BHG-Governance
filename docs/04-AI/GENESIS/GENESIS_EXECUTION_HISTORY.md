@@ -1,42 +1,44 @@
 ---
 title: Genesis Execution History
-
-document_id: GEN-BHG-ENG-013
-
+document_id: BHG-MIG-1C032575B890
 version: 1.1.0
-
 status: Approved
-
 owner: BHG Architecture Council
-
-review_authority: BHG Governance Council
-
 effective_date: TBD
-
 classification: Internal
-
-category: Execution Engine
-
-parent_documents:
-  - GENESIS_PROFILE.md
-  - GENESIS_EXECUTION_CONTRACT.md
-  - GENESIS_RUNTIME.md
-  - GENESIS_COMMAND_PROTOCOL.md
-  - GENESIS_CERTIFICATION_ENGINE.md
-  - TRACEABILITY_STANDARD.md
-
-related_documents:
-  - GENESIS_STATE_MACHINE.md
-  - GENESIS_PROVIDER_ABSTRACTION.md
-  - GENESIS_EXECUTION_RUNTIME.md
-  - GENESIS_DIAGNOSTICS_ENGINE.md
-
 governs:
-  - Execution History Records
-  - Execution Audit Trail
-  - Execution Replay
-  - Execution Traceability
-  - Execution Persistence
+- Execution History Records
+- Execution Audit Trail
+- Execution Replay
+- Execution Traceability
+- Execution Persistence
+document_type: AI Document
+governance_level: AI
+approval_authority: BHG Governance Council
+created: '2026-07-12'
+last_updated: '2026-07-12'
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    review_authority: BHG Governance Council
+    category: Execution Engine
+    parent_documents:
+    - GENESIS_PROFILE.md
+    - GENESIS_EXECUTION_CONTRACT.md
+    - GENESIS_RUNTIME.md
+    - GENESIS_COMMAND_PROTOCOL.md
+    - GENESIS_CERTIFICATION_ENGINE.md
+    - TRACEABILITY_STANDARD.md
+    related_documents:
+    - GENESIS_STATE_MACHINE.md
+    - GENESIS_PROVIDER_ABSTRACTION.md
+    - GENESIS_EXECUTION_RUNTIME.md
+    - GENESIS_DIAGNOSTICS_ENGINE.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Genesis Execution History

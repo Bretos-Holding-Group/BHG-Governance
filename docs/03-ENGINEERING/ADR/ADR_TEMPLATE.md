@@ -1,52 +1,35 @@
 ---
 title: Architecture Decision Record Template
-
 document_id: ADR_TEMPLATE
-
 version: 1.0.0
-
 status: Draft
-
 document_type: Template
-
 governance_level: Enterprise
-
 owner: BHG Governance Council
-
 approval_authority: BHG Governance Council
-
 created: 2026-08-06
-
 last_updated: 2026-08-06
-
 effective_date: 2026-08-06
-
 classification: Internal
-
 language: en
-
 repository: BHG-GOVERNANCE
-
 governed_by:
-
 - ADR_STANDARD.md
 - ENGINEERING_GOVERNANCE_MODEL.md
-
 governs:
-
 - Future ADR Documents
-
 depends_on:
-
 - ADR_STANDARD.md
 - DOCUMENT_METADATA_STANDARD.md
 - VERSIONING_POLICY.md
-
 related_to:
-
 - GOVERNANCE_CHANGE_REQUEST_STANDARD.md
 - GOVERNANCE_IMPLEMENTATION_WORKFLOW.md
-
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Architecture Decision Record Template

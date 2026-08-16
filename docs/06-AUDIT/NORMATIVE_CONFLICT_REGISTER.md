@@ -3,29 +3,39 @@ document_id: BHG-AUD-NORM-001
 document_type: audit
 governance_level: enterprise
 version: 0.2.0
-status: draft
+status: Draft
 created: 2026-08-14
 last_updated: 2026-08-14
 effective_date: null
 approval_authority: pending
 governed_by:
-  - BHG_CONSTITUTION.md
-  - AUTHORITY_MODEL.md
-  - AUTHORITY_MATRIX.md
+- BHG_CONSTITUTION.md
+- AUTHORITY_MODEL.md
+- AUTHORITY_MATRIX.md
 depends_on:
-  - LEGAL_HIERARCHY.md
-  - POLICY_HIERARCHY.md
-  - DOCUMENT_STANDARD.md
-  - DOCUMENT_METADATA_STANDARD.md
-  - DOCUMENT_SCHEMA_STANDARD.md
-  - DOCUMENT_GRAMMAR_STANDARD.md
-  - DOCUMENT_RELATIONSHIP_STANDARD.md
-  - DOCUMENT_VALIDATION_STANDARD.md
+- LEGAL_HIERARCHY.md
+- POLICY_HIERARCHY.md
+- DOCUMENT_STANDARD.md
+- DOCUMENT_METADATA_STANDARD.md
+- DOCUMENT_SCHEMA_STANDARD.md
+- DOCUMENT_GRAMMAR_STANDARD.md
+- DOCUMENT_RELATIONSHIP_STANDARD.md
+- DOCUMENT_VALIDATION_STANDARD.md
 related_to:
-  - F001_CHANGE_GOVERNANCE_VALIDATION.md
-  - RAI-001_REPOSITORY_INTEGRITY.md
-  - RAI-002_DOCUMENTATION_INTEGRITY.md
-  - RAI-003_ARCHITECTURE_ALIGNMENT.md
+- F001_CHANGE_GOVERNANCE_VALIDATION.md
+- RAI-001_REPOSITORY_INTEGRITY.md
+- RAI-002_DOCUMENTATION_INTEGRITY.md
+- RAI-003_ARCHITECTURE_ALIGNMENT.md
+title: Normative Conflict Register
+owner: BHG Governance Council
+classification: Internal
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Normative Conflict Register

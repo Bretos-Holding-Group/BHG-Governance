@@ -4,18 +4,31 @@ document_id: GEN-BHG-PROT-008
 version: 1.1.0
 status: Approved
 owner: BHG Architecture Council
-review_authority: BHG Governance Council
 effective_date: TBD
 classification: Internal
-category: Repository Discovery
-parent_documents:
-  - GENESIS_PROFILE.md
-  - GENESIS_EXECUTION_CONTRACT.md
-  - GENESIS_CONTEXT_ENGINE.md
-related_documents:
-  - GENESIS_REPOSITORY_SCANNER.md
-  - GENESIS_REPOSITORY_AUDITOR.md
-  - GENESIS_HEALTH_MODEL.md
+document_type: AI Document
+governance_level: AI
+approval_authority: BHG Governance Council
+created: '2026-07-11'
+last_updated: '2026-07-11'
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    review_authority: BHG Governance Council
+    category: Repository Discovery
+    parent_documents:
+    - GENESIS_PROFILE.md
+    - GENESIS_EXECUTION_CONTRACT.md
+    - GENESIS_CONTEXT_ENGINE.md
+    related_documents:
+    - GENESIS_REPOSITORY_SCANNER.md
+    - GENESIS_REPOSITORY_AUDITOR.md
+    - GENESIS_HEALTH_MODEL.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Genesis Repository Discovery Protocol

@@ -2,23 +2,34 @@
 title: Authority Model
 version: 1.1.0
 status: Approved
-document-type: Governance Model
-governance-level: Foundation
+document_type: Governance Model
+governance_level: Foundation
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-applies-to:
-  - Entire BHG Ecosystem
-supersedes:
-  - Authority Model v1.0.0
-governed-by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-related-documents:
-  - AUTHORITY_MATRIX.md
-  - GOVERNANCE_PIPELINE.md
-  - GOVERNANCE_PROPOSAL_STANDARD.md
+governed_by:
+- BHG_CONSTITUTION.md
+- GOVERNANCE_MODEL.md
+document_id: BHG-MIG-C43A05E01439
+created: '2026-07-06'
+last_updated: '2026-07-08'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - Entire BHG Ecosystem
+    supersedes:
+    - Authority Model v1.0.0
+    related-documents:
+    - AUTHORITY_MATRIX.md
+    - GOVERNANCE_PIPELINE.md
+    - GOVERNANCE_PROPOSAL_STANDARD.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Authority Model

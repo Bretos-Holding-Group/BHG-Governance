@@ -13,32 +13,33 @@ effective_date: TBD
 classification: Internal
 language: en
 repository: BHG Governance
-
 governed_by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - GOVERNANCE_EVOLUTION_MODEL.md
-  - VERSIONING_POLICY.md
-  - CHANGE_POLICY.md
-
+- BHG_CONSTITUTION.md
+- GOVERNANCE_MODEL.md
+- GOVERNANCE_EVOLUTION_MODEL.md
+- VERSIONING_POLICY.md
+- CHANGE_POLICY.md
 governs:
-  - Baseline Planning
-  - Repository Evolution
-  - Governance Priorities
-  - Bootstrap Closure
-  - Long-Term Governance Development
-
+- Baseline Planning
+- Repository Evolution
+- Governance Priorities
+- Bootstrap Closure
+- Long-Term Governance Development
 depends_on:
-  - GOVERNANCE_MODEL.md
-  - GOVERNANCE_PIPELINE.md
-  - GOVERNANCE_EVOLUTION_MODEL.md
-
+- GOVERNANCE_MODEL.md
+- GOVERNANCE_PIPELINE.md
+- GOVERNANCE_EVOLUTION_MODEL.md
 related_to:
-  - CHANGELOG.md
-  - DOCUMENT_HISTORY_MODEL.md
-  - REPOSITORY_HISTORY_LEDGER.md
-  - GOVERNANCE_DECISION_LOG.md
-  - BASELINE_REGISTRY.md
+- CHANGELOG.md
+- DOCUMENT_HISTORY_MODEL.md
+- REPOSITORY_HISTORY_LEDGER.md
+- GOVERNANCE_DECISION_LOG.md
+- BASELINE_REGISTRY.md
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # BHG Governance Roadmap

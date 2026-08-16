@@ -5,28 +5,39 @@ document_type: Governance Reconciliation Matrix
 governance_level: Enterprise
 version: 0.1.0
 status: Review
-canonical: false
-effective: false
-automation_ready: false
-normalization_phase: N2
-approval_readiness: NOT_YET_READY
 created: 2026-08-16
 last_updated: 2026-08-16
 approval_authority: BHG Governance Council
 governed_by:
-  - BHG_CONSTITUTION
-  - BHG-GOV-CAM-001
+- BHG_CONSTITUTION
+- BHG-GOV-CAM-001
 depends_on:
-  - DOCUMENT_STANDARD
-  - DOCUMENT_METADATA_STANDARD
-  - DOCUMENT_IDENTIFIER_STANDARD
-  - DOCUMENT_SCHEMA_STANDARD
-  - DOCUMENT_RELATIONSHIP_STANDARD
-  - DOCUMENT_GRAMMAR_STANDARD
-  - DOCUMENT_HISTORY_MODEL
-  - DOCUMENT_VALIDATION_STANDARD
+- DOCUMENT_STANDARD
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
+- DOCUMENT_SCHEMA_STANDARD
+- DOCUMENT_RELATIONSHIP_STANDARD
+- DOCUMENT_GRAMMAR_STANDARD
+- DOCUMENT_HISTORY_MODEL
+- DOCUMENT_VALIDATION_STANDARD
 related_to:
-  - CANONICAL_STANDARDS_RECONCILIATION_MATRIX
+- CANONICAL_STANDARDS_RECONCILIATION_MATRIX
+owner: BHG Governance Council
+effective_date: null
+classification: Internal
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    canonical: false
+    effective: false
+    automation_ready: false
+    normalization_phase: N2
+    approval_readiness: NOT_YET_READY
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # BHG Core Contract Reconciliation Dossier v0.1

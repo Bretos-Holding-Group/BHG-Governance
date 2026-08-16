@@ -3,27 +3,41 @@ title: Enterprise Model
 version: 1.0.0
 status: Approved
 classification: Foundation
-governing-body: Breto's Holding Group Governance Council
 owner: Enterprise Governance
-approved-by: Governance Council
 language: English
-audience:
-  - Board Members
-  - Executives
-  - Company Directors
-  - AI Systems
-  - Auditors
-  - Contributors
-depends-on:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - AUTHORITY_MODEL.md
-  - ECOSYSTEM_MODEL.md
-related-documents:
-  - SUBHOLDING_MODEL.md
-  - BUSINESS_UNIT_MODEL.md
-  - COMPANY_LIFECYCLE.md
-last-reviewed: YYYY-MM-DD
+depends_on:
+- BHG_CONSTITUTION.md
+- GOVERNANCE_MODEL.md
+- AUTHORITY_MODEL.md
+- ECOSYSTEM_MODEL.md
+document_id: BHG-MIG-6F1F2862B6EF
+document_type: Governance Model
+governance_level: Enterprise
+approval_authority: BHG Governance Council
+created: '2026-07-08'
+last_updated: '2026-07-08'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    governing-body: Breto's Holding Group Governance Council
+    approved-by: Governance Council
+    audience:
+    - Board Members
+    - Executives
+    - Company Directors
+    - AI Systems
+    - Auditors
+    - Contributors
+    related-documents:
+    - SUBHOLDING_MODEL.md
+    - BUSINESS_UNIT_MODEL.md
+    - COMPANY_LIFECYCLE.md
+    last-reviewed: YYYY-MM-DD
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
 ---
 
 # Enterprise Model
