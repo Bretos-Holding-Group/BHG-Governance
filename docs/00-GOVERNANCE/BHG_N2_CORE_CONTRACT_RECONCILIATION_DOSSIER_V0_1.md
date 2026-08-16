@@ -38,6 +38,7 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+governs: []
 ---
 
 # BHG Core Contract Reconciliation Dossier v0.1

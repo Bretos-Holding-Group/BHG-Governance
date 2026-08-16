@@ -14,9 +14,16 @@ classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 governed_by:
-  - BHG_CONSTITUTION
-  - DOCUMENT_METADATA_STANDARD
-  - DOCUMENT_IDENTIFIER_STANDARD
+- BHG_CONSTITUTION
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
+governs: []
+depends_on: []
+related_to: []
+extensions:
+  normalization:
+    mode: canonical_keyset_enforcement
+    performed: '2026-08-16'
 ---
 
 # BHG Document ID Migration Register v0.1
