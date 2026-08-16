@@ -14,6 +14,15 @@ language: en
 repository: BHG-Governance
 canonical: false
 effective: false
+extensions:
+  normalization:
+    state: normalized
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    date: '2026-08-16'
+related_to: []
+governs: []
+governed_by: []
+depends_on: []
 ---
 
 # BHG N3-N5 Post-Remediation Execution v0.1

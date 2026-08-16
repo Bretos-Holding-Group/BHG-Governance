@@ -1,6 +1,6 @@
 {
   "mode": "loss_minimizing_structural_remediation",
-  "modified_count": 4,
+  "modified_count": 207,
   "records": [
     {
       "path": "ARCHITECTURE_MAP.md",
@@ -21,6 +21,1021 @@
       "path": "README.md",
       "provisional": [],
       "document_id": "BHG-README"
+    },
+    {
+      "path": "docs/00-FOUNDATION/AUTHORITY_MATRIX.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-54D9BFC94609"
+    },
+    {
+      "path": "docs/00-FOUNDATION/AUTHORITY_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-C43A05E01439"
+    },
+    {
+      "path": "docs/00-FOUNDATION/BHG_CONSTITUTION.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-5456F6E19A27"
+    },
+    {
+      "path": "docs/00-FOUNDATION/BHG_FOUNDATION_BOOK.md",
+      "provisional": [],
+      "document_id": "BHG-FDN-001"
+    },
+    {
+      "path": "docs/00-FOUNDATION/BHG_GOVERNANCE_ROADMAP.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-ROADMAP"
+    },
+    {
+      "path": "docs/00-FOUNDATION/COMPANY_CONSTITUTION_TEMPLATE.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-375CFA146C47"
+    },
+    {
+      "path": "docs/00-FOUNDATION/COMPANY_LIFECYCLE.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-3BF586BB0FC3"
+    },
+    {
+      "path": "docs/00-FOUNDATION/DOCUMENT_LIFECYCLE.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-0661113660AF"
+    },
+    {
+      "path": "docs/00-FOUNDATION/ECOSYSTEM_GOVERNANCE_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-DFBD585055B0"
+    },
+    {
+      "path": "docs/00-FOUNDATION/ECOSYSTEM_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-7A0A081D01D7"
+    },
+    {
+      "path": "docs/00-FOUNDATION/ENTERPRISE_CREATION_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-8ADAEADCB910"
+    },
+    {
+      "path": "docs/00-FOUNDATION/ENTERPRISE_LIFECYCLE.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-DF08E9DD5DBA"
+    },
+    {
+      "path": "docs/00-FOUNDATION/ENTERPRISE_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-6F1F2862B6EF"
+    },
+    {
+      "path": "docs/00-FOUNDATION/FEDERATED_GOVERNANCE_MODEL.md",
+      "provisional": [],
+      "document_id": "FEDERATED_GOVERNANCE_MODEL"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GLOSSARY.md",
+      "provisional": [],
+      "document_id": "BHG-FDN-002"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_ADOPTION_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-E606B92408A9"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_APPROVAL_MODEL.md",
+      "provisional": [],
+      "document_id": "GOVERNANCE-APPROVAL-MODEL"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_AUTONOMY_MODEL.md",
+      "provisional": [],
+      "document_id": "GOVERNANCE_AUTONOMY_MODEL"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_CHANGE_WORKFLOW.md",
+      "provisional": [],
+      "document_id": "GOVERNANCE-CHANGE-WORKFLOW"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_COMMUNICATION_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-3C7E0B1FAFD4"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_CONFLICT_RESOLUTION.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-009"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_COUNCIL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-B417AA972D08"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_DELEGATION_MODEL.md",
+      "provisional": [],
+      "document_id": "GOVERNANCE_DELEGATION_MODEL"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_ESCALATION_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-58110D17685B"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_EVOLUTION_MODEL.md",
+      "provisional": [],
+      "document_id": "GOVERNANCE_EVOLUTION_MODEL"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_EVOLUTION_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-AED1E90028CE"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_INTERACTION_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-5633C859E170"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_INTEROPERABILITY_MODEL.md",
+      "provisional": [],
+      "document_id": "GOVERNANCE_INTEROPERABILITY_MODEL"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_LIFECYCLE.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-A23716A300A3"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_MODEL.md",
+      "provisional": [],
+      "document_id": "GOVERNANCE_MODEL"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-002"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_PROPOSAL_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-GPS-001"
+    },
+    {
+      "path": "docs/00-FOUNDATION/GOVERNANCE_REGISTRY_MODEL.md",
+      "provisional": [],
+      "document_id": "GOVERNANCE_REGISTRY_MODEL"
+    },
+    {
+      "path": "docs/00-FOUNDATION/LEGAL_HIERARCHY.md",
+      "provisional": [],
+      "document_id": "BHG-LH-001"
+    },
+    {
+      "path": "docs/00-FOUNDATION/PROJECT_GOVERNANCE_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-B6F5272CD7D6"
+    },
+    {
+      "path": "docs/00-FOUNDATION/PROJECT_LIFECYCLE.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-6B197C06BC23"
+    },
+    {
+      "path": "docs/00-FOUNDATION/PROJECT_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-97A52CE9713C"
+    },
+    {
+      "path": "docs/00-FOUNDATION/SERVICE_LIFECYCLE.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-F4F3E819EF05"
+    },
+    {
+      "path": "docs/00-FOUNDATION/SERVICE_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-6DD950A4121B"
+    },
+    {
+      "path": "docs/00-FOUNDATION/SUBHOLDING_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-8040E24DD2E1"
+    },
+    {
+      "path": "docs/00-FOUNDATION/SUBSIDIARY_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-0A508CC2886A"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_CANONICAL_DOCUMENT_RELATIONSHIP_MODEL_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-CDRM-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_CANONICAL_STANDARDS_APPROVAL_READINESS_MATRIX_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-CSARM-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_CANONICAL_STATUS_REGISTRY.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-CSR-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_CORE_CONTRACT_APPROVAL_CANDIDATE_PACKAGE_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-ACP-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_CORE_CONTRACT_DEPENDENCY_MAP_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-N2-CDM-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_DOCUMENT_ID_MIGRATION_REGISTER_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-DIMR-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_GOVERNANCE_CORE_NORMALIZATION_N0_BASELINE_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-A6044F9DB243"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_GOVERNANCE_CORE_NORMALIZATION_N1_INVENTORY_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-N1-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_GOVERNANCE_CORE_NORMALIZATION_N1_N7_EXECUTION_RECORD_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-NORMALIZATION-EXEC-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_N2_B1_B7_CLOSURE_MATRIX_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-AC075EAE5ACD"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_N2_CORE_CONTRACT_RECONCILIATION_DOSSIER_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-N2-CCR-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_N3_IDENTITY_NORMALIZATION_REGISTER_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-N3-IDR-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_N3_N5_CORPUS_EVIDENCE_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-N3N5-EVD-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_N3_N5_POST_REMEDIATION_EXECUTION_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-N3N5-PRE-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_N4_RELATIONSHIP_NORMALIZATION_REGISTER_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-N4-RNR-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_N5_AUTHORITY_RECONCILIATION_REGISTER_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-N5-ARR-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_N6_PHYSICAL_NORMALIZATION_CONTROL_PLAN_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-N6-PNC-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_N7_CERTIFICATION_GATE_SPEC_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-N7-CGS-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_RELATIONSHIP_TARGET_RECONCILIATION_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-RTRR-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_REPOSITORY_AUTHORITY_SEQUENCE.md",
+      "provisional": [],
+      "document_id": "BHG_REPOSITORY_AUTHORITY_SEQUENCE"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/CANONICAL_AUTHORITY_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-CAM-001"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/CANONICAL_STANDARDS_RECONCILIATION_MATRIX.md",
+      "provisional": [],
+      "document_id": "CANONICAL_STANDARDS_RECONCILIATION_MATRIX"
+    },
+    {
+      "path": "docs/01-POLICIES/CHANGE_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-DA57580E8D90"
+    },
+    {
+      "path": "docs/01-POLICIES/COMMUNICATION_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-POL-COM-001"
+    },
+    {
+      "path": "docs/01-POLICIES/DECISION_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-POL-DECISION"
+    },
+    {
+      "path": "docs/01-POLICIES/DOCUMENT_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-POL-002"
+    },
+    {
+      "path": "docs/01-POLICIES/LANGUAGE_POLICY.md",
+      "provisional": [],
+      "document_id": "LANGUAGE_POLICY"
+    },
+    {
+      "path": "docs/01-POLICIES/POLICY_HIERARCHY.md",
+      "provisional": [],
+      "document_id": "BHG-POL-001"
+    },
+    {
+      "path": "docs/01-POLICIES/VERSIONING_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-POL-VERSIONING"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_AUTOMATION_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-0D51FDB8DC4F"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_CLASSIFICATION_STANDARD.md",
+      "provisional": [],
+      "document_id": "DOCUMENT_CLASSIFICATION_STANDARD"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_COMPILER_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-9783A5418C4A"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_DEPENDENCY_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-60CC86A5A2D3"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_GRAMMAR_STANDARD.md",
+      "provisional": [],
+      "document_id": "DOCUMENT_GRAMMAR_STANDARD"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_HISTORY_MODEL.md",
+      "provisional": [],
+      "document_id": "DOCUMENT_HISTORY_MODEL"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_IDENTIFIER_STANDARD.md",
+      "provisional": [],
+      "document_id": "DOCUMENT_IDENTIFIER_STANDARD"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_LINTING_STANDARD.md",
+      "provisional": [],
+      "document_id": "DOCUMENT_LINTING_STANDARD"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_METADATA_STANDARD.md",
+      "provisional": [],
+      "document_id": "DOCUMENT_METADATA_STANDARD"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_RELATIONSHIP_STANDARD.md",
+      "provisional": [],
+      "document_id": "DOCUMENT_RELATIONSHIP_STANDARD"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_RENDERING_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-49D1A6CF8892"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_SCHEMA_STANDARD.md",
+      "provisional": [],
+      "document_id": "DOCUMENT_SCHEMA_STANDARD"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_STANDARD.md",
+      "provisional": [],
+      "document_id": "DOCUMENT_STANDARD"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_TEMPLATE_ENGINE_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-DF2BC2DF9A4A"
+    },
+    {
+      "path": "docs/02-STANDARDS/DOCUMENT_VALIDATION_STANDARD.md",
+      "provisional": [],
+      "document_id": "DOCUMENT_VALIDATION_STANDARD"
+    },
+    {
+      "path": "docs/02-STANDARDS/NAMING_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-52D57B6334D2"
+    },
+    {
+      "path": "docs/02-STANDARDS/QUALITY_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-B3CB73765057"
+    },
+    {
+      "path": "docs/02-STANDARDS/REPOSITORY_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-D42CF4B63138"
+    },
+    {
+      "path": "docs/02-STANDARDS/TRACEABILITY_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-8327291A8F30"
+    },
+    {
+      "path": "docs/02-STANDARDS/WRITING_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-563B1AE41D8F"
+    },
+    {
+      "path": "docs/03-ENGINEERING/ADR/ADR-0001-DEPENDENCY-RELATIONSHIP-SEMANTICS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-B1D0077270AD"
+    },
+    {
+      "path": "docs/03-ENGINEERING/ADR/ADR_STANDARD.md",
+      "provisional": [],
+      "document_id": "ADR_STANDARD"
+    },
+    {
+      "path": "docs/03-ENGINEERING/ADR/ADR_TEMPLATE.md",
+      "provisional": [],
+      "document_id": "ADR_TEMPLATE"
+    },
+    {
+      "path": "docs/03-ENGINEERING/API_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-641BC0E4C649"
+    },
+    {
+      "path": "docs/03-ENGINEERING/ARCHITECTURE_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-0E7900388A31"
+    },
+    {
+      "path": "docs/03-ENGINEERING/CHANGE_MANAGEMENT/GOVERNANCE_CHANGE_REQUEST_STANDARD.md",
+      "provisional": [],
+      "document_id": "GOVERNANCE_CHANGE_REQUEST_STANDARD"
+    },
+    {
+      "path": "docs/03-ENGINEERING/CHANGE_MANAGEMENT/GOVERNANCE_CHANGE_REQUEST_TEMPLATE.md",
+      "provisional": [],
+      "document_id": "GOVERNANCE_CHANGE_REQUEST_TEMPLATE"
+    },
+    {
+      "path": "docs/03-ENGINEERING/CHANGE_MANAGEMENT/GOVERNANCE_IMPLEMENTATION_WORKFLOW.md",
+      "provisional": [],
+      "document_id": "GOVERNANCE_IMPLEMENTATION_WORKFLOW"
+    },
+    {
+      "path": "docs/03-ENGINEERING/CHANGE_MANAGEMENT/README.md",
+      "provisional": [],
+      "document_id": "CHANGE_MANAGEMENT_README"
+    },
+    {
+      "path": "docs/03-ENGINEERING/CODING_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-54A2C975361F"
+    },
+    {
+      "path": "docs/03-ENGINEERING/DOCUMENTATION_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-A79FB32DBA31"
+    },
+    {
+      "path": "docs/03-ENGINEERING/ENGINEERING_CONSTITUTION.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-0B3CBEED0432"
+    },
+    {
+      "path": "docs/03-ENGINEERING/GENESIS_AUTOMATION_ENGINE.md",
+      "provisional": [],
+      "document_id": "GENESIS-AUTOMATION"
+    },
+    {
+      "path": "docs/03-ENGINEERING/GENESIS_COMPILER_ENGINE.md",
+      "provisional": [],
+      "document_id": "GENESIS-COMPILER"
+    },
+    {
+      "path": "docs/03-ENGINEERING/GENESIS_DEPENDENCY_ENGINE.md",
+      "provisional": [],
+      "document_id": "GENESIS-DEPENDENCY"
+    },
+    {
+      "path": "docs/03-ENGINEERING/GENESIS_EXPORT_ENGINE.md",
+      "provisional": [],
+      "document_id": "GENESIS-EXPORT"
+    },
+    {
+      "path": "docs/03-ENGINEERING/GENESIS_PARSER_ENGINE.md",
+      "provisional": [],
+      "document_id": "GENESIS-PARSER"
+    },
+    {
+      "path": "docs/03-ENGINEERING/GENESIS_RUNTIME.md",
+      "provisional": [],
+      "document_id": "GENESIS-RUNTIME"
+    },
+    {
+      "path": "docs/03-ENGINEERING/GENESIS_SCHEMA_ENGINE.md",
+      "provisional": [],
+      "document_id": "GENESIS-SCHEMA"
+    },
+    {
+      "path": "docs/03-ENGINEERING/GENESIS_VALIDATION_ENGINE.md",
+      "provisional": [],
+      "document_id": "GENESIS-VALIDATION"
+    },
+    {
+      "path": "docs/03-ENGINEERING/SECURITY_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-E9EA7A778331"
+    },
+    {
+      "path": "docs/03-ENGINEERING/SOFTWARE_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-0B2E838486DB"
+    },
+    {
+      "path": "docs/03-ENGINEERING/TESTING_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-3D56813EDF52"
+    },
+    {
+      "path": "docs/04-AI/AI_CONSTITUTION.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-37146C17795F"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_CERTIFICATION_ENGINE.md",
+      "provisional": [],
+      "document_id": "GENESIS-CERTIFICATION-ENGINE"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_COMMAND_PROTOCOL.md",
+      "provisional": [],
+      "document_id": "GENESIS-COMMAND-PROTOCOL"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_CONTEXT_ENGINE.md",
+      "provisional": [],
+      "document_id": "GENESIS-CONTEXT-ENGINE"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_COPILOT_INTEGRATION.md",
+      "provisional": [],
+      "document_id": "GENESIS-COPILOT-INTEGRATION"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_EXECUTION_CONTRACT.md",
+      "provisional": [],
+      "document_id": "GENESIS-EXECUTION-CONTRACT"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_EXECUTION_HISTORY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-1C032575B890"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_EXECUTION_HISTORY_STANDARD.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-STD-016"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_EXECUTION_REPORT_STANDARD.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-STD-011"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_EXECUTION_RUNTIME.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-ENG-014"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_FINDING_CLASSIFICATION_STANDARD.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-STD-010"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_HEALTH_CALCULATION_STANDARD.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-STD-009"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_HEALTH_MODEL.md",
+      "provisional": [],
+      "document_id": "GENESIS-HEALTH-MODEL"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_PLANNING_ENGINE.md",
+      "provisional": [],
+      "document_id": "GENESIS-PLANNING-ENGINE"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_PROFILE.md",
+      "provisional": [],
+      "document_id": "GENESIS-PROFILE"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_PROVIDER_ABSTRACTION.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-ENG-013"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_REPOSITORY_AUDITOR.md",
+      "provisional": [],
+      "document_id": "GENESIS-REPOSITORY-AUDITOR"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_REPOSITORY_DISCOVERY_PROTOCOL.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-PROT-008"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_REPOSITORY_SCANNER.md",
+      "provisional": [],
+      "document_id": "GENESIS-REPOSITORY-SCANNER"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_RUNTIME_BOOTSTRAP.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-RUN-013"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_RUNTIME_DIAGNOSTICS.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-RUN-017"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_RUNTIME_RECOVERY_PROTOCOL.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-RUN-018"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_RUNTIME_STATE_MACHINE.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-RUN-014"
+    },
+    {
+      "path": "docs/04-AI/GENESIS/GENESIS_SESSION_CONTEXT.md",
+      "provisional": [],
+      "document_id": "GEN-BHG-RUN-015"
+    },
+    {
+      "path": "docs/04-AI/GOVERNANCE/AI_CODE_REVIEW_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-2FB0C2D083A9"
+    },
+    {
+      "path": "docs/04-AI/GOVERNANCE/AI_DECISION_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-95937EFFD864"
+    },
+    {
+      "path": "docs/04-AI/GOVERNANCE/AI_DOCUMENTATION_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-AD2B68986D86"
+    },
+    {
+      "path": "docs/04-AI/GOVERNANCE/AI_GOVERNANCE_POLICY.md",
+      "provisional": [],
+      "document_id": "AI_GOVERNANCE_POLICY"
+    },
+    {
+      "path": "docs/04-AI/GOVERNANCE/AI_PROMPT_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-629EE0BA95F4"
+    },
+    {
+      "path": "docs/04-AI/GOVERNANCE/AI_SECURITY_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-04D89E3B1895"
+    },
+    {
+      "path": "docs/04-AI/STANDARDS/AI_AGENT_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-0ABAA4EE6126"
+    },
+    {
+      "path": "docs/04-AI/STANDARDS/MULTI_AGENT_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-10517E83BAA4"
+    },
+    {
+      "path": "docs/04-AI/STANDARDS/PROMPT_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-F86E17B1CAA4"
+    },
+    {
+      "path": "docs/04-AI/STANDARDS/TOOL_INTEGRATION_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-BB54CED576B1"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_ACCESS_POLICY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-56AC28EE9C2F"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_AUDIT_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-96B4D7F018D4"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_CAPABILITY_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-8BC565E56AFA"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_CERTIFICATION_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-83D9ED68E10F"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_CHANGE_MANAGEMENT.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-38F961165834"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_CONFIGURATION_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-D13DBA24B680"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_DEPLOYMENT_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-304657D4691E"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_IDENTITY_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-A3693040E527"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_LIFECYCLE.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-D140A7A5674C"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_LOGGING_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-006AEABA4B29"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_MONITORING_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-4EF6926C68EA"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_OBSERVABILITY_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-6B761EDB20E2"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_OFFBOARDING_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-EEAEA9337E31"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_ONBOARDING_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-A74F1283AA01"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_OPERATION_GUIDE.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-A34CC03890EC"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_PERMISSION_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-219314071203"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_RECERTIFICATION_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-83A30C7D861D"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_RELEASE_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-41AF04DE69C3"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_REPUTATION_MODEL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-BFC579538D6F"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_RUNTIME_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-AB1A5B8A9156"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_AGENT_VERSIONING_STANDARD.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-71A9F2A90F32"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AI_REPOSITORY_UPDATE_PROTOCOL.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-B0AFE226CC65"
+    },
+    {
+      "path": "docs/05-AUTOMATION/AUTOMATION_CONSTITUTION.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-2F763FF54F97"
+    },
+    {
+      "path": "docs/05-AUTOMATION/DOCUMENT_UPDATE_WORKFLOW.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-7022A0E5539B"
+    },
+    {
+      "path": "docs/06-AUDIT/F001_CHANGE_GOVERNANCE_VALIDATION.md",
+      "provisional": [],
+      "document_id": "F001_CHANGE_GOVERNANCE_VALIDATION"
+    },
+    {
+      "path": "docs/06-AUDIT/GENESIS_BOOTSTRAP_CERTIFICATION.md",
+      "provisional": [],
+      "document_id": "GENESIS-BOOTSTRAP-CERTIFICATION"
+    },
+    {
+      "path": "docs/06-AUDIT/GENESIS_BOOTSTRAP_CLOSURE_REVIEW.md",
+      "provisional": [],
+      "document_id": "GENESIS-BOOTSTRAP-CLOSURE-REVIEW"
+    },
+    {
+      "path": "docs/06-AUDIT/GENESIS_BOOTSTRAP_REAUDIT.md",
+      "provisional": [],
+      "document_id": "GENESIS-BOOTSTRAP-REAUDIT"
+    },
+    {
+      "path": "docs/06-AUDIT/GENESIS_BOOTSTRAP_REMEDIATION_PLAN.md",
+      "provisional": [],
+      "document_id": "GENESIS-BOOTSTRAP-REMEDIATION-PLAN"
+    },
+    {
+      "path": "docs/06-AUDIT/GENESIS_BOOTSTRAP_RESPONSE.md",
+      "provisional": [],
+      "document_id": "GENESIS-BOOTSTRAP-RESPONSE"
+    },
+    {
+      "path": "docs/06-AUDIT/GENESIS_BOOTSTRAP_REVALIDATION_REQUEST.md",
+      "provisional": [],
+      "document_id": "GENESIS-BOOTSTRAP-REVALIDATION-REQUEST"
+    },
+    {
+      "path": "docs/06-AUDIT/NORMATIVE_CONFLICT_REGISTER.md",
+      "provisional": [],
+      "document_id": "BHG-AUD-NORM-001"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-001_REPOSITORY_INTEGRITY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-4B3BE97AA0EF"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-002_DOCUMENTATION_INTEGRITY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-A737C098A84F"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-003_ARCHITECTURE_ALIGNMENT.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-F54CD7390C00"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-004_SECURITY_POSTURE.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-8CCA4D7A20FE"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-005_GOVERNANCE_COMPLIANCE.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-DF91FE4E0EF5"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-006_OPERATIONAL_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-CA50C2959181"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-007_SCALABILITY_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-2652CC4D8EF0"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-008_MAINTAINABILITY_ASSESSMENT.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-4DC63BDA6F02"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-009_RELEASE_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-F357B0321080"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-010_CONTINUOUS_IMPROVEMENT.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-2469231672A0"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-011_ENGINEERING_MATURITY.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-CBE896509DEE"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-012_AI_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-60F486563979"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-013_AUTOMATION_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-F09A67E2BA02"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-014_PLATFORM_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-844D50465BF3"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-015_DATA_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-D263FFAD1C91"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-016_OBSERVABILITY_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-2FD1DAF2F133"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-017_COMPLIANCE_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-E784E470A8BF"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-018_RESILIENCE_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-B95A1E207CF3"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-019_IDENTITY_TRUST_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-A33ABED690DE"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI-020_ECOSYSTEM_READINESS.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-E86DCA8BD524"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI_FRAMEWORK_SPECIFICATION.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-71BF9217C532"
+    },
+    {
+      "path": "docs/06-AUDIT/RAI_MODEL.md",
+      "provisional": [],
+      "document_id": "RAI-MODEL"
+    },
+    {
+      "path": "docs/06-AUDIT/README.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-B5818CB49EB6"
+    },
+    {
+      "path": "docs/99-HISTORY/AUDITS/2026/2026-07-17-GENESIS-BOOTSTRAP/README.md",
+      "provisional": [],
+      "document_id": "AUDIT-EVIDENCE-2026-001"
     }
   ]
 }

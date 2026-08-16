@@ -1,10 +1,10 @@
 # BHG Governance Core — N1 Content Inventory
 
-- Artifacts: **207**
-- Frontmatter present: **206**
+- Artifacts: **208**
+- Frontmatter present: **207**
 - Frontmatter missing: **1**
 - Required-metadata gaps: **1**
-- Frontmatter keysets: **1**
+- Frontmatter keysets: **2**
 
 ## Duplicate document IDs
 
@@ -16,7 +16,7 @@
 - `Approved`: 97
 - `Draft`: 82
 - `Effective`: 2
-- `Review`: 21
+- `Review`: 22
 
 ## N1 interpretation
 
