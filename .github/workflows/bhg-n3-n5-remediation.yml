@@ -12,7 +12,9 @@ permissions:
 
 jobs:
   remediate:
-    if: ${{ github.event_name == 'push' || !contains(github.event.pull_request.head.commit.message, '[n3-n5-remediation]') }}
+    # This workflow is mutating by design and is strictly limited to the
+    # dedicated normalization branch. Governance/document PRs are never mutated.
+    if: ${{ (github.event_name == 'push' && github.ref_name == 'normalization/N3-N5-remediation-v0.1') || (github.event_name == 'pull_request' && github.event.pull_request.head.ref == 'normalization/N3-N5-remediation-v0.1') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

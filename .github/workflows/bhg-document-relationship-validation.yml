@@ -24,7 +24,6 @@ jobs:
         run: |
           from pathlib import Path
           import re
-          import sys
 
           model = Path('docs/00-GOVERNANCE/BHG_CANONICAL_DOCUMENT_RELATIONSHIP_MODEL_V0_1.md')
           registry = Path('docs/00-GOVERNANCE/BHG_CANONICAL_STATUS_REGISTRY.md')
@@ -53,18 +52,27 @@ jobs:
           if 'Canonical | Effective' not in registry_text and 'true | true' not in registry_text:
               raise SystemExit('FAIL: effective canonical status is not registered')
 
-          # Guardrail: automation may validate approved state, but cannot silently
-          # promote a draft artifact. A direct metadata mismatch is reported.
+          # Guardrail: validation reads the canonical metadata contract without
+          # modifying or promoting the document. The current schema stores the
+          # legacy compatibility flags under extensions.legacy_metadata.
           frontmatter = model_text.split('---', 2)[1] if model_text.startswith('---') else ''
-          canonical = re.search(r'^canonical:\s*(true|false)\s*$', frontmatter, re.M)
-          effective = re.search(r'^effective:\s*(true|false)\s*$', frontmatter, re.M)
+          legacy_block = re.search(
+              r'(?ms)^extensions:\s*\n(?:^[ \t]+.*\n)*?^[ \t]+legacy_metadata:\s*\n(?P<body>(?:^[ \t]+.*\n)*)',
+              frontmatter,
+          )
+          if not legacy_block:
+              raise SystemExit('FAIL: model extensions.legacy_metadata block is missing')
+
+          legacy = legacy_block.group('body')
+          canonical = re.search(r'^\s+canonical:\s*(true|false)\s*$', legacy, re.M)
+          effective = re.search(r'^\s+effective:\s*(true|false)\s*$', legacy, re.M)
           if not canonical or not effective:
-              raise SystemExit('FAIL: model canonical/effective flags are missing')
+              raise SystemExit('FAIL: model extensions.legacy_metadata canonical/effective flags are missing')
 
           if canonical.group(1) == 'false' or effective.group(1) == 'false':
-              print('WARNING: registry authorizes Canonical + Effective, but model frontmatter has not yet been synchronized.')
+              print('WARNING: model compatibility flags are not both true.')
               print('VALIDATION MODE: structural validation only; no normative promotion performed by automation.')
           else:
-              print('PASS: model frontmatter and registry both declare Canonical + Effective.')
+              print('PASS: model extensions.legacy_metadata declares Canonical + Effective.')
 
           print('PASS: documentary relationship model structure and authority chains are present.')
