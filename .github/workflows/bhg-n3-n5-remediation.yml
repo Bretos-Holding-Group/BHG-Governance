@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - normalization/N3-N5-remediation-v0.1
+    paths:
+      - tools/bhg_normalization/remediate_n3_n5.py
   workflow_dispatch:
 
 permissions:
