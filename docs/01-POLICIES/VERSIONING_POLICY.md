@@ -40,6 +40,8 @@ extensions:
       baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
       performed: '2026-08-16'
       mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
   legacy_relationships:
   - relationship: governs
     target: DOCUMENT_VERSIONING_STANDARD.md
@@ -61,9 +63,6 @@ extensions:
     target: VERSION_HISTORY_STANDARD.md
     classification: missing_document_target
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
-normalization_state: normalized
-normalization_baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
-normalization_date: '2026-08-16'
 ---
 
 # Versioning Policy

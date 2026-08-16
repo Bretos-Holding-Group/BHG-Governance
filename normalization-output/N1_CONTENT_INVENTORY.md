@@ -4,7 +4,7 @@
 - Frontmatter present: **206**
 - Frontmatter missing: **1**
 - Required-metadata gaps: **1**
-- Frontmatter keysets: **2**
+- Frontmatter keysets: **1**
 
 ## Duplicate document IDs
 
