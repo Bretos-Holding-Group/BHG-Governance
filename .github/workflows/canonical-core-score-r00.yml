@@ -1,0 +1,37 @@
+name: BHG Canonical Core Score R00
+
+on:
+  push:
+    branches:
+      - audit/canonical-core-discovery-r00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout governance branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Checkout comparison repositories
+        run: |
+          mkdir -p _corpus
+          git clone --depth 1 https://github.com/Bretos-Holding-Group/BHG-Ecosystem-Foundation.git _corpus/BHG-Ecosystem-Foundation
+          git clone --depth 1 https://github.com/Bretos-Holding-Group/bhg-knowledge.git _corpus/bhg-knowledge
+          git clone --depth 1 https://github.com/Bretos-Holding-Group/ZivaLatam.git _corpus/ZivaLatam
+
+      - name: Score complete documentary corpus
+        run: python3 tools/canonical_core_score_r00.py
+
+      - name: Commit generated discovery artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add artifacts/canonical-core-score-r00.json artifacts/canonical-core-score-r00.md
+          git diff --cached --quiet || git commit -m 'audit: generate canonical core score R00'
+          git push

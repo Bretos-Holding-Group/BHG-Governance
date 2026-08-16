@@ -1,0 +1,41 @@
+name: BHG Canonical Core Qualification R00
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qualify:
+    name: Qualify 60 Canonical Core discovery candidates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+      - name: Run qualification engine
+        run: python3 tools/canonical_core_qualification.py
+      - name: Validate reproducibility invariants
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('artifacts/canonical-core-qualification-r00.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          assert d['discovery_candidates'] == 60
+          assert len(d['rows']) == 60
+          assert sum(d['counts'].values()) == 60
+          assert Path('audit/canonical-core-qualification-matrix-r00.md').exists()
+          print('PASS: 60/60 candidates qualified with reproducible bounded decisions')
+          print(json.dumps(d['counts'], indent=2))
+          PY
+      - name: Upload qualification evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhg-canonical-core-qualification-r00
+          path: |
+            artifacts/canonical-core-qualification-r00.json
+            audit/canonical-core-qualification-matrix-r00.md
