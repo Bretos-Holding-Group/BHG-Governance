@@ -1,0 +1,72 @@
+# BHG Canonical Core Score R00
+
+- Corpus documents: **485**
+- Ranked candidates: **60**
+- Authority effect: **NONE**
+- Source normative documents modified: **NO**
+
+| Rank | Score | Document ID | Repository | Status | Type | Layer evidence |
+|---:|---:|---|---|---|---|---|
+| 1 | 93 | `BHG-MIG-2F763FF54F97` | BHG-Governance | Approved | Constitution | constitutional/supreme; foundational governance level; governance-contract indicators |
+| 2 | 84 | `BHG-MIG-5456F6E19A27` | BHG-Governance | Approved | Constitution | constitutional/supreme; foundation location; governance-contract indicators |
+| 3 | 75 | `BHG-LH-001` | BHG-Governance | Approved | Foundational Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 4 | 70 | `BHG-MIG-54D9BFC94609` | BHG-Governance | Approved | Governance Matrix | foundational governance level; shared contract/model type; foundation location |
+| 5 | 70 | `BHG-MIG-C43A05E01439` | BHG-Governance | Approved | Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 6 | 67 | `BHG-GOV-002` | BHG-Governance | Approved | Governance Process | foundational governance level; foundation location; governance-contract indicators |
+| 7 | 67 | `BHG-GOV-CAM-001` | BHG-Governance | Draft | governance_model | foundational governance level; shared contract/model type; governance-contract indicators |
+| 8 | 63 | `BHG-GPS-001` | BHG-Governance | Approved | Standard | foundational governance level; shared contract/model type; foundation location |
+| 9 | 59 | `BHG-POL-002` | BHG-Governance | Approved | Policy | shared contract/model type; governance-contract indicators; inbound centrality=16 |
+| 10 | 57 | `BHG-POL-VERSIONING` | BHG-Governance | Approved | Corporate Policy | shared contract/model type; governance-contract indicators; inbound centrality=21 |
+| 11 | 55 | `GOVERNANCE-APPROVAL-MODEL` | BHG-Governance | Approved | Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 12 | 53 | `GOVERNANCE_INTEROPERABILITY_MODEL` | BHG-Governance | Approved | Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 13 | 52 | `BHG-GOV-009` | BHG-Governance | Approved | Governance Process | foundational governance level; foundation location; governance-contract indicators |
+| 14 | 52 | `GOVERNANCE_REGISTRY_MODEL` | BHG-Governance | Approved | Model | foundational governance level; shared contract/model type; foundation location |
+| 15 | 52 | `BHG-MIG-DA57580E8D90` | BHG-Governance | Approved | Corporate Policy | shared contract/model type; governance-contract indicators; inbound centrality=14 |
+| 16 | 50 | `ECOSYSTEM_ARCHITECTURE` | BHG-Governance | Approved | Ecosystem Architecture Model | foundational governance level; shared contract/model type; foundation location |
+| 17 | 50 | `BHG-MIG-9783A5418C4A` | BHG-Governance | Approved | Standard | foundational governance level; shared contract/model type; governance-contract indicators |
+| 18 | 49 | `GOVERNANCE_AUTONOMY_MODEL` | BHG-Governance | Approved | Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 19 | 49 | `GOVERNANCE_DELEGATION_MODEL` | BHG-Governance | Approved | Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 20 | 49 | `GOVERNANCE_EVOLUTION_MODEL` | BHG-Governance | Approved | Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 21 | 49 | `GOVERNANCE_MODEL` | BHG-Governance | Approved | Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 22 | 48 | `ECOSYSTEM_MODEL` | BHG-Governance | Approved | Ecosystem Model | foundational governance level; shared contract/model type; foundation location |
+| 23 | 48 | `ORGANIZATION_MODEL` | BHG-Governance | Approved | Organization Architecture Standard | foundational governance level; shared contract/model type; foundation location |
+| 24 | 48 | `GROWTH_MODEL` | BHG-Governance | Draft | Ecosystem Growth Model | foundational governance level; shared contract/model type; foundation location |
+| 25 | 47 | `ECOSYSTEM_PRINCIPLES` | BHG-Governance | Approved | Ecosystem Architecture Standard | foundational governance level; shared contract/model type; foundation location |
+| 26 | 47 | `REPOSITORY_LIFECYCLE` | BHG-Governance | Approved | Repository Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 27 | 47 | `REPOSITORY_REGISTRY` | BHG-Governance | Approved | Repository Registry Model | foundational governance level; shared contract/model type; foundation location |
+| 28 | 47 | `BHG-FDN-001` | BHG-Governance | Approved | Institutional Foundation Book | foundational governance level; foundation location; governance-contract indicators |
+| 29 | 47 | `BHG-FDN-002` | BHG-Governance | Approved | Foundation Reference | foundational governance level; foundation location; governance-contract indicators |
+| 30 | 47 | `BHG-GOV-CDRM-001` | BHG-Governance | Effective | governance_model | foundational governance level; shared contract/model type; governance-contract indicators |
+| 31 | 47 | `BHG-POL-001` | BHG-Governance | Approved | Corporate Policy | shared contract/model type; governance-contract indicators; inbound centrality=9 |
+| 32 | 46 | `ARCHITECTURE_MAP` | BHG-Governance | Draft | Repository Architecture Map | foundational governance level; shared contract/model type; foundation location |
+| 33 | 46 | `ECOSYSTEM_BOUNDARIES` | BHG-Governance | Approved | Ecosystem Architecture Standard | foundational governance level; shared contract/model type; foundation location |
+| 34 | 46 | `ECOSYSTEM_LAYERS` | BHG-Governance | Approved | Ecosystem Architecture Standard | foundational governance level; shared contract/model type; foundation location |
+| 35 | 46 | `BUSINESS_CAPABILITY_MODEL` | BHG-Governance | Approved | Organization Architecture Standard | foundational governance level; shared contract/model type; foundation location |
+| 36 | 46 | `REPOSITORY_CLASSIFICATION` | BHG-Governance | Approved | Repository Governance Standard | foundational governance level; shared contract/model type; foundation location |
+| 37 | 46 | `REPOSITORY_DEPENDENCY_MODEL` | BHG-Governance | Approved | Repository Architecture Model | foundational governance level; shared contract/model type; foundation location |
+| 38 | 46 | `REPOSITORY_NAMING_STANDARD` | BHG-Governance | Approved | Repository Governance Standard | foundational governance level; shared contract/model type; foundation location |
+| 39 | 46 | `CROSS_REPOSITORY_MODEL` | BHG-Governance | Approved | Ecosystem Integration Model | foundational governance level; shared contract/model type; foundation location |
+| 40 | 46 | `MATURITY_MODEL` | BHG-Governance | Draft | Ecosystem Maturity Model | foundational governance level; shared contract/model type; foundation location |
+| 41 | 46 | `BHG-MIG-6F1F2862B6EF` | BHG-Governance | Approved | Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 42 | 46 | `BHG-MIG-B417AA972D08` | BHG-Governance | Draft | Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 43 | 45 | `BUSINESS_DOMAIN_MODEL` | BHG-Governance | Approved | Organization Architecture Standard | foundational governance level; shared contract/model type; foundation location |
+| 44 | 45 | `ECOSYSTEM_SYNCHRONIZATION` | BHG-Governance | Approved | Ecosystem Integration Model | foundational governance level; shared contract/model type; foundation location |
+| 45 | 45 | `SOURCE_OF_TRUTH_MODEL` | BHG-Governance | Approved | Ecosystem Integration Model | foundational governance level; shared contract/model type; foundation location |
+| 46 | 45 | `EVOLUTION_MODEL` | BHG-Governance | Approved | Ecosystem Evolution Model | foundational governance level; shared contract/model type; foundation location |
+| 47 | 45 | `BHG-MIG-B6F5272CD7D6` | BHG-Governance | Review | Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 48 | 45 | `DOCUMENT_STANDARD` | BHG-Governance | Draft | Standard | foundational governance level; shared contract/model type; governance-contract indicators |
+| 49 | 45 | `BHG-MIG-8327291A8F30` | BHG-Governance | Draft | Standard | shared contract/model type; governance-contract indicators; inbound centrality=18 |
+| 50 | 44 | `IDENTITY_MODEL` | BHG-Governance | Draft | Identity Model | foundational governance level; shared contract/model type; foundation location |
+| 51 | 44 | `HOLDING_MODEL` | BHG-Governance | Approved | Organization Architecture Standard | foundational governance level; shared contract/model type; foundation location |
+| 52 | 44 | `SHARED_ASSET_MODEL` | BHG-Governance | Approved | Ecosystem Integration Model | foundational governance level; shared contract/model type; foundation location |
+| 53 | 44 | `ROADMAP_MODEL` | BHG-Governance | Approved | Ecosystem Roadmap Model | foundational governance level; shared contract/model type; foundation location |
+| 54 | 44 | `HISTORY_ARCHIVE_README` | BHG-Governance | Draft | Historical Repository Guide | foundational governance level; shared contract/model type; foundation location |
+| 55 | 44 | `BHG-MIG-375CFA146C47` | BHG-Governance | Review | Governance Model | foundational governance level; shared contract/model type; foundation location |
+| 56 | 44 | `BHG-MIG-49D1A6CF8892` | BHG-Governance | Approved | Standard | foundational governance level; shared contract/model type; governance-contract indicators |
+| 57 | 44 | `BHG-AUD-NORM-001` | BHG-Governance | Draft | audit | foundational governance level; governance-contract indicators; inbound centrality=3 |
+| 58 | 43 | `FOUNDATION_NORMALIZATION_ROADMAP` | BHG-Ecosystem-Foundation | Draft | Ecosystem Execution Roadmap | foundational governance level; foundation location; governance-contract indicators |
+| 59 | 43 | `BHG_GOVERNANCE_ARCHITECTURE_MAP` | BHG-Governance | Draft | Repository Architecture Map | foundational governance level; shared contract/model type; governance-contract indicators |
+| 60 | 43 | `BRAND_ARCHITECTURE` | BHG-Governance | Approved | Foundation Identity Model | foundational governance level; shared contract/model type; foundation location |
+
+## Interpretation
+This is a discovery ranking only. Scores do not create canonical status or normative authority. Cycles and unresolved authority conflicts remain preserved for semantic review.
