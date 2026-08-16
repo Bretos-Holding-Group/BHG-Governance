@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 permissions:
   contents: read
@@ -26,7 +23,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test "${GITHUB_REF_NAME}" = "main" || test "${GITHUB_EVENT_NAME}" = "workflow_dispatch" || test "${GITHUB_EVENT_NAME}" = "pull_request"
+          test "${GITHUB_REF_NAME}" = "main" || test "${GITHUB_EVENT_NAME}" = "workflow_dispatch"
           echo "Verified commit: $(git rev-parse HEAD)"
 
       - name: Validate Markdown frontmatter, metadata and unique IDs
@@ -38,7 +35,6 @@ jobs:
           import sys, re
           docs=sorted(Path('docs').rglob('*.md'))
           required={'title','document_id','version','status','document_type','governance_level','owner','approval_authority'}
-          # These are the lifecycle values actually present in the governed corpus.
           allowed_status={'Concept','Draft','Review','Proposed','Pre-Verified','Independently Reviewed','Approved','Canonical','Active','Effective','Enforced','Retired','Deprecated','Archived'}
           ids={}; errors=[]
           for p in docs:
