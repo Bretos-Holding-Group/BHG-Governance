@@ -1,0 +1,219 @@
+name: BHG Authority Dependency Reconciliation
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  authority-dependency-reconciliation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install parser dependency
+        run: python3 -m pip install --disable-pip-version-check --no-input pyyaml
+      - name: Reconcile documentary authority and dependency graph
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import Counter, defaultdict
+          from datetime import datetime, timezone
+          import csv, hashlib, json, os, re
+          import yaml
+
+          ROOT=Path('docs')
+          OUT=Path('authority-dependency-evidence')
+          OUT.mkdir()
+          CANONICAL_RELATIONS={
+              'governed_by','governs','depends_on','related_to','references',
+              'supersedes','superseded_by','replaces','replaced_by',
+              'implements','implemented_by'
+          }
+          RELATION_KEYS=CANONICAL_RELATIONS
+
+          def frontmatter(text):
+              if not text.startswith('---\n'):
+                  return None
+              end=text.find('\n---',4)
+              if end < 0:
+                  return None
+              raw=text[4:end]
+              try:
+                  data=yaml.safe_load(raw) or {}
+              except Exception as exc:
+                  return {'__parse_error__':str(exc)}
+              return data if isinstance(data,dict) else {'__parse_error__':'frontmatter root is not a mapping'}
+
+          docs=[]
+          by_id={}
+          for path in sorted(ROOT.rglob('*.md')):
+              text=path.read_text(encoding='utf-8',errors='replace')
+              fm=frontmatter(text)
+              rel=str(path)
+              row={
+                  'path':rel,
+                  'document_id':'',
+                  'status':'MISSING_FRONTMATTER',
+                  'document_type':'',
+                  'governance_level':'',
+                  'owner':'',
+                  'approval_authority':'',
+                  'governed_by':'',
+                  'depends_on':'',
+                  'relationship_fields':'',
+                  'parse_error':''
+              }
+              if fm is None:
+                  docs.append(row); continue
+              if '__parse_error__' in fm:
+                  row['parse_error']=fm['__parse_error__']
+                  docs.append(row); continue
+              row['document_id']=str(fm.get('document_id','') or '')
+              row['status']=str(fm.get('status','') or '')
+              row['document_type']=str(fm.get('document_type','') or '')
+              row['governance_level']=str(fm.get('governance_level','') or '')
+              row['owner']=str(fm.get('owner','') or '')
+              row['approval_authority']=str(fm.get('approval_authority','') or '')
+              row['governed_by']=json.dumps(fm.get('governed_by',[]),ensure_ascii=False,sort_keys=True)
+              row['depends_on']=json.dumps(fm.get('depends_on',[]),ensure_ascii=False,sort_keys=True)
+              relkeys=[]
+              for k in fm:
+                  if k in RELATION_KEYS:
+                      relkeys.append(k)
+              row['relationship_fields']=';'.join(sorted(relkeys))
+              docs.append(row)
+              did=row['document_id']
+              if did:
+                  by_id.setdefault(did,[]).append(rel)
+
+          def as_list(value):
+              if value is None: return []
+              if isinstance(value,list): return [str(x) for x in value if x is not None]
+              return [str(value)]
+
+          matrix=[]
+          findings=[]
+          edges=[]
+          for path in sorted(ROOT.rglob('*.md')):
+              text=path.read_text(encoding='utf-8',errors='replace')
+              fm=frontmatter(text)
+              if not isinstance(fm,dict) or '__parse_error__' in fm: continue
+              source=str(fm.get('document_id','') or '')
+              if not source: continue
+              for rel in sorted(RELATION_KEYS):
+                  for target_raw in as_list(fm.get(rel)):
+                      target=str(target_raw).strip()
+                      target_doc=target if target in by_id and len(by_id[target])==1 else ''
+                      resolution='document_id' if target_doc else ''
+                      if not target_doc:
+                          stem=Path(target).stem
+                          candidates=[did for did,paths in by_id.items() if len(paths)==1 and Path(paths[0]).stem==stem]
+                          if len(candidates)==1:
+                              target_doc=candidates[0]; resolution='filename-derived (non-authoritative)'
+                      if target_doc:
+                          target_path=by_id[target_doc][0]
+                          target_text=Path(target_path).read_text(encoding='utf-8',errors='replace')
+                          target_fm=frontmatter(target_text) or {}
+                          target_status=str(target_fm.get('status','') or '')
+                          result='VALID'
+                          reason='Canonical target resolved by document_id.'
+                          if rel=='governed_by' and target_doc==source:
+                              result='CONTRADICTION'; reason='Self-governing authority edge.'
+                          edges.append((source,rel,target_doc))
+                      else:
+                          target_path=''; target_status=''; result='MISSING_EVIDENCE'
+                          reason='Relationship target does not resolve to a unique canonical document_id.'
+                      matrix.append({
+                          'source_id':source,'source_path':str(path),'source_status':str(fm.get('status','') or ''),
+                          'relationship':rel,'target_raw':target,'target_id':target_doc,'target_path':target_path,
+                          'target_status':target_status,'resolution':resolution,'result':result,'reason':reason
+                      })
+                      if result!='VALID': findings.append(matrix[-1])
+
+          # Duplicate IDs are always a blocking identity finding for deterministic resolution.
+          duplicate_ids={did:paths for did,paths in by_id.items() if len(paths)>1}
+          for did,paths in sorted(duplicate_ids.items()):
+              findings.append({'source_id':did,'source_path':'','source_status':'','relationship':'identity','target_raw':';'.join(paths),'target_id':did,'target_path':'','target_status':'','resolution':'','result':'CONTRADICTION','reason':'Duplicate canonical document_id prevents deterministic target resolution.'})
+
+          # Unknown relationship-like frontmatter keys are reported, not silently interpreted.
+          relationship_aliases={'governed','governs_document','depends','dependency','requires','parent','child','authority','derived_from'}
+          for path in sorted(ROOT.rglob('*.md')):
+              fm=frontmatter(path.read_text(encoding='utf-8',errors='replace'))
+              if not isinstance(fm,dict) or '__parse_error__' in fm: continue
+              for key in fm:
+                  if key in relationship_aliases:
+                      findings.append({'source_id':str(fm.get('document_id','') or ''),'source_path':str(path),'source_status':str(fm.get('status','') or ''),'relationship':key,'target_raw':json.dumps(fm[key],ensure_ascii=False,sort_keys=True),'target_id':'','target_path':'','target_status':'','resolution':'','result':'INVALID','reason':'Relationship-like field is not in the canonical relationship vocabulary.'})
+
+          # Detect directed authority cycles using governed_by edges only.
+          auth=defaultdict(list)
+          for s,r,t in edges:
+              if r=='governed_by': auth[s].append(t)
+          color={}; cycle_nodes=set()
+          def dfs(n,stack):
+              color[n]=1; stack.append(n)
+              for nxt in auth.get(n,[]):
+                  if color.get(nxt,0)==0: dfs(nxt,stack)
+                  elif color.get(nxt)==1:
+                      cycle_nodes.update(stack[stack.index(nxt):])
+              stack.pop(); color[n]=2
+          for n in list(auth):
+              if color.get(n,0)==0: dfs(n,[])
+          for n in sorted(cycle_nodes):
+              findings.append({'source_id':n,'source_path':by_id.get(n,[''])[0],'source_status':'','relationship':'governed_by','target_raw':'cycle','target_id':'','target_path':'','target_status':'','resolution':'','result':'CONTRADICTION','reason':'governed_by authority cycle detected.'})
+
+          # Write evidence files.
+          fields=['source_id','source_path','source_status','relationship','target_raw','target_id','target_path','target_status','resolution','result','reason']
+          with (OUT/'authority-dependency-matrix.csv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerows(matrix)
+          with (OUT/'document-authority-inventory.csv').open('w',newline='',encoding='utf-8') as f:
+              fields2=list(docs[0].keys()) if docs else ['path']
+              w=csv.DictWriter(f,fieldnames=fields2); w.writeheader(); w.writerows(docs)
+          with (OUT/'reconciliation-findings.csv').open('w',newline='',encoding='utf-8') as f:
+              w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerows(findings)
+
+          counts=Counter(x['result'] for x in matrix)
+          finding_counts=Counter(x['result'] for x in findings)
+          summary={
+              'repository':'Bretos-Holding-Group/BHG-Governance',
+              'scope':'docs/**/*.md',
+              'document_count':len(docs),
+              'documents_with_document_id':sum(bool(x['document_id']) for x in docs),
+              'duplicate_document_id_count':len(duplicate_ids),
+              'relationship_edge_count':len(matrix),
+              'relationship_result_counts':dict(sorted(counts.items())),
+              'finding_result_counts':dict(sorted(finding_counts.items())),
+              'authority_cycle_nodes':sorted(cycle_nodes),
+              'constitutional_boundary':'This workflow observes and reconciles evidence; it does not approve, canonicalize, activate, or create normative authority.'
+          }
+          (OUT/'reconciliation-summary.json').write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+          manifest={
+              'repository':'Bretos-Holding-Group/BHG-Governance',
+              'scope':'docs/**/*.md',
+              'commit_sha':os.environ.get('GITHUB_SHA',''),
+              'workflow_run_id':os.environ.get('GITHUB_RUN_ID',''),
+              'generated_at':datetime.now(timezone.utc).isoformat(),
+              'evidence_files':sorted(p.name for p in OUT.iterdir()),
+              'non_authoritative_statement':summary['constitutional_boundary']
+          }
+          (OUT/'reconciliation-manifest.json').write_text(json.dumps(manifest,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+          print(json.dumps(summary,indent=2,sort_keys=True))
+          PY
+      - name: Hash reconciliation evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum authority-dependency-evidence/* | tee authority-dependency-evidence/SHA256SUMS
+      - name: Upload reconciliation evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhg-authority-dependency-reconciliation-${{ github.sha }}
+          path: authority-dependency-evidence/
+          if-no-files-found: error
+          retention-days: 90
