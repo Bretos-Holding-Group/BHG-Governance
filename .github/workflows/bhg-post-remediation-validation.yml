@@ -1,0 +1,72 @@
+name: BHG Post-Remediation N3-N5 Validation
+
+on:
+  push:
+    branches:
+      - normalization/N3-N5-remediation-v0.1
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install YAML parser
+        run: python -m pip install pyyaml
+      - name: Validate N3-N5 exit conditions
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from collections import Counter, defaultdict
+          import yaml, json, hashlib, re, sys
+          docs=sorted(Path('.').rglob('*.md'))
+          docs=[p for p in docs if '.git/' not in str(p)]
+          required=['title','document_id','document_type','version','status','governance_level','owner','approval_authority','created','last_updated','classification','language','repository']
+          allowed_status={'Concept','Draft','Review','Approved','Active','Effective','Deprecated','Archived'}
+          rows=[]; ids=defaultdict(list); keysets=Counter(); invalid_status=[]; missing=[]; rel_legacy=[]
+          canonical_rel={'governed_by','governs','depends_on','related_to'}
+          legacy_rel={'references','implements','implemented_by','supersedes','superseded_by','replaces','replaced_by'}
+          for p in docs:
+              t=p.read_text(encoding='utf-8',errors='replace'); fm={}
+              if t.startswith('---\n'):
+                  end=t.find('\n---',4)
+                  if end>=0:
+                      try: fm=yaml.safe_load(t[4:end]) or {}
+                      except Exception: fm={}
+              miss=[k for k in required if k not in fm or fm[k] is None]
+              if miss: missing.append((str(p),miss))
+              did=fm.get('document_id')
+              if did: ids[str(did)].append(str(p))
+              keysets[tuple(sorted(fm.keys()))]+=1
+              if fm.get('status') not in allowed_status: invalid_status.append((str(p),fm.get('status')))
+              for k in legacy_rel:
+                  if k in fm: rel_legacy.append((str(p),k))
+              rows.append({'path':str(p),'document_id':did,'status':fm.get('status'),'missing':miss})
+          dup={k:v for k,v in ids.items() if len(v)>1}
+          out=Path('post-remediation-evidence'); out.mkdir(exist_ok=True)
+          report={'documents':len(docs),'missing_frontmatter':sum(1 for p in docs if not (p.read_text(encoding='utf-8',errors='replace').startswith('---\n'))),'metadata_gap_documents':len(missing),'duplicate_ids':dup,'keyset_count':len(keysets),'keysets':{'|'.join(k):v for k,v in keysets.items()},'invalid_status':invalid_status,'legacy_relationship_fields':rel_legacy}
+          (out/'n3-n5-exit-evidence.json').write_text(json.dumps(report,indent=2,ensure_ascii=False),encoding='utf-8')
+          md=['# BHG N3-N5 Post-Remediation Exit Evidence','',f'- Markdown documents: **{len(docs)}**',f'- Missing frontmatter: **{report["missing_frontmatter"]}**',f'- Documents with metadata gaps: **{len(missing)}**',f'- Duplicate document IDs: **{len(dup)}**',f'- Frontmatter keysets: **{len(keysets)}**',f'- Invalid lifecycle statuses: **{len(invalid_status)}**',f'- Legacy relationship fields: **{len(rel_legacy)}**','', '## Exit decision','']
+          blockers=[]
+          if report['missing_frontmatter']: blockers.append('missing frontmatter')
+          if missing: blockers.append('required metadata gaps')
+          if dup: blockers.append('duplicate document IDs')
+          if len(keysets)!=1: blockers.append('multiple top-level metadata keysets')
+          if invalid_status: blockers.append('invalid lifecycle statuses')
+          if blockers:
+              md.append('**CONDITIONAL FAIL:** ' + ', '.join(blockers))
+          else:
+              md.append('**PASS — structural N3 metadata/identity exit conditions.**')
+          md += ['', 'This validation is observational and does not approve, canonicalize, or activate normative artifacts.']
+          (out/'n3-n5-exit-evidence.md').write_text('\n'.join(md)+'\n',encoding='utf-8')
+          print(json.dumps(report,indent=2,ensure_ascii=False))
+          if blockers: sys.exit(1)
+          PY
+      - name: Upload post-remediation evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhg-n3-n5-post-remediation-evidence
+          path: post-remediation-evidence/
