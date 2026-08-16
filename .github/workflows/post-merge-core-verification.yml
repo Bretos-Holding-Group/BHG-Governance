@@ -5,13 +5,16 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
 
 jobs:
   core-verification:
-    name: Verify canonical governance core
+    name: Verify complete canonical governance core
     runs-on: ubuntu-latest
     steps:
       - name: Checkout exact merge target
@@ -23,51 +26,109 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test "${GITHUB_REF_NAME}" = "main" || test "${GITHUB_EVENT_NAME}" = "workflow_dispatch"
-          git rev-parse HEAD
+          test "${GITHUB_REF_NAME}" = "main" || test "${GITHUB_EVENT_NAME}" = "workflow_dispatch" || test "${GITHUB_EVENT_NAME}" = "pull_request"
           echo "Verified commit: $(git rev-parse HEAD)"
 
-      - name: Validate Markdown frontmatter and canonical metadata
+      - name: Validate Markdown frontmatter, metadata and unique IDs
         shell: bash
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          import pathlib, sys
-          docs = sorted(pathlib.Path("docs").rglob("*.md"))
-          assert docs, "No governed Markdown corpus found"
-          required = {"title", "document_id", "version", "status", "document_type", "governance_level", "owner", "approval_authority"}
-          ids = set()
-          errors = []
+          from pathlib import Path
+          import sys, re
+          docs=sorted(Path('docs').rglob('*.md'))
+          required={'title','document_id','version','status','document_type','governance_level','owner','approval_authority'}
+          allowed_status={'Draft','Proposed','Pre-Verified','Independently Reviewed','Approved','Canonical','Effective','Enforced','Retired'}
+          ids={}; errors=[]
           for p in docs:
-              text = p.read_text(encoding="utf-8")
-              if not text.startswith("---\n"):
-                  errors.append(f"missing frontmatter: {p}")
-                  continue
-              end = text.find("\n---", 4)
-              if end < 0:
-                  errors.append(f"invalid frontmatter delimiter: {p}")
-                  continue
-              block = text[4:end]
-              keys = set()
-              for line in block.splitlines():
-                  if line and not line.startswith((" ", "\t")) and ":" in line:
-                      keys.add(line.split(":",1)[0].strip())
-              missing = required - keys
-              if missing:
-                  errors.append(f"metadata gap {p}: {sorted(missing)}")
-              for line in block.splitlines():
-                  if line.startswith("document_id:"):
-                      did = line.split(":",1)[1].strip().strip("'\"")
-                      if did in ids:
-                          errors.append(f"duplicate document_id: {did}")
-                      ids.add(did)
+              t=p.read_text(encoding='utf-8',errors='replace')
+              if not t.startswith('---\n'):
+                  errors.append(f'missing frontmatter: {p}'); continue
+              end=t.find('\n---',4)
+              if end<0: errors.append(f'invalid frontmatter: {p}'); continue
+              fm={}
+              for line in t[4:end].splitlines():
+                  m=re.match(r'^([A-Za-z0-9_-]+):\s*(.*)$',line)
+                  if m: fm[m.group(1)]=m.group(2).strip().strip("'\"")
+              miss=required-set(fm)
+              if miss: errors.append(f'metadata gap {p}: {sorted(miss)}')
+              did=fm.get('document_id','')
+              if did: ids.setdefault(did,[]).append(str(p))
+              if fm.get('status') not in allowed_status:
+                  errors.append(f'invalid status {p}: {fm.get("status")}')
+          dup={k:v for k,v in ids.items() if len(v)>1}
+          if dup: errors.append(f'duplicate document IDs: {dup}')
           if errors:
-              print("\n".join(errors))
-              sys.exit(1)
-          print(f"PASS: {len(docs)} governed Markdown documents; {len(ids)} document IDs checked")
+              print('\n'.join(errors)); sys.exit(1)
+          print(f'PASS: {len(docs)} documents; {len(ids)} unique IDs; 0 metadata/status/ID blockers')
           PY
 
-      - name: Validate governance authority boundaries
+      - name: Validate canonical relationship model and status registry
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import sys
+          model=Path('docs/00-GOVERNANCE/BHG_CANONICAL_DOCUMENT_RELATIONSHIP_MODEL_V0_1.md')
+          registry=Path('docs/00-GOVERNANCE/BHG_CANONICAL_STATUS_REGISTRY.md')
+          if not model.exists() or not registry.exists(): sys.exit('FAIL: canonical relationship/status artifacts missing')
+          mt=model.read_text(encoding='utf-8'); rt=registry.read_text(encoding='utf-8')
+          for x in ['document_id: BHG-GOV-CDRM-001','governed_by:','`governed_by`','ZivaID → ZivaLatam → BHG → BHG Constitution','BHG Constitution → BHG → ZivaLatam → ZivaID']:
+              if x not in mt: sys.exit(f'FAIL: missing canonical relationship requirement: {x}')
+          if 'BHG-GOV-CDRM-001' not in rt: sys.exit('FAIL: relationship model not registered')
+          if 'Canonical | Effective' not in rt and 'true | true' not in rt: sys.exit('FAIL: effective canonical status not registered')
+          print('PASS: canonical relationship model and status registry')
+          PY
+
+      - name: Validate documentary relationship targets and authority graph
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --disable-pip-version-check pyyaml
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import defaultdict
+          import yaml, sys
+          docs=sorted(Path('docs').rglob('*.md')); by_id={}; records=[]
+          for p in docs:
+              t=p.read_text(encoding='utf-8',errors='replace'); fm={}
+              if t.startswith('---\n'):
+                  e=t.find('\n---',4)
+                  if e>=0:
+                      try: fm=yaml.safe_load(t[4:e]) or {}
+                      except Exception: fm={}
+              did=str(fm.get('document_id',''))
+              if did: by_id[did]=str(p)
+              records.append((did,fm,str(p)))
+          unresolved=[]; authority=defaultdict(set); seen=set(); duplicate=[]
+          def vals(v): return v if isinstance(v,list) else ([] if v is None else [v])
+          for did,fm,p in records:
+              for key in ('governed_by','governs','depends_on','related_to','references','supersedes','superseded_by','replaces','replaced_by','implements','implemented_by'):
+                  for target in vals(fm.get(key)):
+                      target=str(target)
+                      if target not in by_id: unresolved.append((p,key,target)); continue
+                      edge=(did,key,target)
+                      if edge in seen: duplicate.append(edge)
+                      seen.add(edge)
+                      if key=='governed_by': authority[did].add(target)
+                      elif key=='governs': authority[target].add(did)
+          state={}; cycles=[]
+          def dfs(n,path):
+              state[n]=1; path.append(n)
+              for x in authority.get(n,()):
+                  if state.get(x)==1: cycles.append(path[path.index(x):]+[x])
+                  elif not state.get(x): dfs(x,path)
+              path.pop(); state[n]=2
+          for n in authority:
+              if not state.get(n): dfs(n,[])
+          if unresolved: print('UNRESOLVED',unresolved); sys.exit(1)
+          if duplicate: print('DUPLICATE',duplicate); sys.exit(1)
+          if cycles: print('CYCLES',cycles); sys.exit(1)
+          print(f'PASS: {len(seen)} canonical relationship edges; 0 unresolved targets; 0 duplicate edges; 0 authority cycles')
+          PY
+
+      - name: Validate constitutional authority and non-authoritative automation boundary
         shell: bash
         run: |
           set -euo pipefail
@@ -75,16 +136,10 @@ jobs:
           grep -q 'status: Approved' docs/00-FOUNDATION/BHG_CONSTITUTION.md
           grep -q 'governance_level: Supreme' docs/00-FOUNDATION/BHG_CONSTITUTION.md
           grep -q 'BHG Constitution' docs/00-FOUNDATION/BHG_CONSTITUTION.md
-          echo "PASS: supreme constitutional authority present"
-
-      - name: Validate no mutation capability
-        shell: bash
-        run: |
-          set -euo pipefail
           grep -q 'contents: read' .github/workflows/post-merge-core-verification.yml
-          echo "PASS: post-merge verification is read-only"
+          echo 'PASS: supreme authority present and verification gate is read-only'
 
-      - name: Produce verification manifest
+      - name: Produce complete verification manifest
         shell: bash
         run: |
           set -euo pipefail
@@ -94,13 +149,16 @@ jobs:
             echo "event=${GITHUB_EVENT_NAME}"
             echo "workflow=${GITHUB_WORKFLOW}"
             echo "run_id=${GITHUB_RUN_ID}"
+            echo "metadata=PASS"
+            echo "relationships=PASS"
+            echo "authority=PASS"
+            echo "mutation_boundary=PASS"
             echo "result=PASS"
-            echo "authority=BHG Constitution"
             echo "mode=non-authoritative-observational"
           } > verification-output/core-verification-manifest.txt
 
       - name: Upload evidence
         uses: actions/upload-artifact@v4
         with:
-          name: bhg-post-merge-core-verification
+          name: bhg-post-merge-complete-core-verification
           path: verification-output/core-verification-manifest.txt
