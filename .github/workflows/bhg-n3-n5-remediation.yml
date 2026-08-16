@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - normalization/N3-N5-remediation-v0.1
+  pull_request:
+    types: [opened, synchronize]
 
 permissions:
   contents: write
@@ -11,12 +13,12 @@ permissions:
 # Controlled execution branch; the bot commit is intentionally excluded from reruns.
 jobs:
   remediate:
-    if: ${{ !contains(github.event.head_commit.message, '[n3-n5-remediation]') }}
+    if: ${{ github.event_name == 'push' || !contains(github.event.pull_request.head.commit.message, '[n3-n5-remediation]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
       - name: Install parser
         run: python3 -m pip install pyyaml
       - name: Execute controlled remediation
@@ -38,5 +40,5 @@ jobs:
             echo 'No remediation changes.'
           else
             git commit -m 'chore(normalization): apply N3-N5 structural remediation [n3-n5-remediation]'
-            git push origin HEAD:${{ github.ref_name }}
+            git push origin HEAD:${{ github.event.pull_request.head.ref || github.ref_name }}
           fi
