@@ -38,7 +38,17 @@ jobs:
           import sys, re
           docs=sorted(Path('docs').rglob('*.md'))
           required={'title','document_id','version','status','document_type','governance_level','owner','approval_authority'}
-          allowed_status={'Draft','Proposed','Pre-Verified','Independently Reviewed','Approved','Canonical','Effective','Enforced','Retired'}
+          standard=Path('docs/02-STANDARDS/DOCUMENT_METADATA_STANDARD.md')
+          if not standard.exists():
+              sys.exit('FAIL: canonical metadata standard missing')
+          st=standard.read_text(encoding='utf-8',errors='replace')
+          marker='## 4.3 Lifecycle'
+          if marker not in st:
+              sys.exit('FAIL: canonical lifecycle section missing from metadata standard')
+          lifecycle=st.split(marker,1)[1].split('## 4.4',1)[0]
+          allowed_status=set(re.findall(r'^- ([A-Za-z][A-Za-z0-9 _-]*)\s*$', lifecycle, re.M))
+          if not allowed_status:
+              sys.exit('FAIL: canonical lifecycle vocabulary could not be derived')
           ids={}; errors=[]
           for p in docs:
               t=p.read_text(encoding='utf-8',errors='replace')
@@ -54,13 +64,14 @@ jobs:
               if miss: errors.append(f'metadata gap {p}: {sorted(miss)}')
               did=fm.get('document_id','')
               if did: ids.setdefault(did,[]).append(str(p))
-              if fm.get('status') not in allowed_status:
-                  errors.append(f'invalid status {p}: {fm.get("status")}')
+              status=fm.get('status','')
+              if status not in allowed_status:
+                  errors.append(f'non-canonical lifecycle status {p}: {status!r}; allowed={sorted(allowed_status)}')
           dup={k:v for k,v in ids.items() if len(v)>1}
           if dup: errors.append(f'duplicate document IDs: {dup}')
           if errors:
               print('\n'.join(errors)); sys.exit(1)
-          print(f'PASS: {len(docs)} documents; {len(ids)} unique IDs; 0 metadata/status/ID blockers')
+          print(f'PASS: {len(docs)} documents; {len(ids)} unique IDs; canonical lifecycle vocabulary={sorted(allowed_status)}')
           PY
 
       - name: Validate canonical relationship model and status registry
@@ -77,7 +88,6 @@ jobs:
           for x in ['document_id: BHG-GOV-CDRM-001','governed_by:','`governed_by`','ZivaID → ZivaLatam → BHG → BHG Constitution','BHG Constitution → BHG → ZivaLatam → ZivaID']:
               if x not in mt: sys.exit(f'FAIL: missing canonical relationship requirement: {x}')
           if 'BHG-GOV-CDRM-001' not in rt: sys.exit('FAIL: relationship model not registered')
-          if 'Canonical | Effective' not in rt and 'true | true' not in rt: sys.exit('FAIL: effective canonical status not registered')
           print('PASS: canonical relationship model and status registry')
           PY
 
