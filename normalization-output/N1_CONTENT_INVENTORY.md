@@ -1,3 +1,31 @@
+---
+title: BHG Governance Core N1 Content Inventory
+document_id: BHG_GOVERNANCE_CORE_N1_CONTENT_INVENTORY
+version: 1.0.0
+status: Draft
+document_type: Evidence
+governance_level: Enterprise
+owner: BHG Governance Council
+approval_authority: BHG Governance Council
+created: 2026-08-16
+last_updated: 2026-08-16
+effective_date: null
+classification: Internal
+language: en
+repository: BHG-GOVERNANCE
+governed_by:
+- DOCUMENT_STANDARD
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
+- DOCUMENT_HISTORY_MODEL
+depends_on:
+- DOCUMENT_SCHEMA_STANDARD
+- DOCUMENT_LINTING_STANDARD
+related_to: []
+extensions: {}
+governs: []
+---
+
 # BHG Governance Core — N1 Content Inventory
 
 - Artifacts: **207**
