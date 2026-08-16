@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - normalization/N3-N5-remediation-v0.1
+      - normalization/post-remediation-N3-N5-evidence-v0.1
   pull_request:
     types: [opened, synchronize]
   workflow_dispatch:
