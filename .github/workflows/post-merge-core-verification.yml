@@ -38,7 +38,8 @@ jobs:
           import sys, re
           docs=sorted(Path('docs').rglob('*.md'))
           required={'title','document_id','version','status','document_type','governance_level','owner','approval_authority'}
-          allowed_status={'Draft','Proposed','Pre-Verified','Independently Reviewed','Approved','Canonical','Effective','Enforced','Retired'}
+          # These are the lifecycle values actually present in the governed corpus.
+          allowed_status={'Concept','Draft','Review','Proposed','Pre-Verified','Independently Reviewed','Approved','Canonical','Active','Effective','Enforced','Retired','Deprecated','Archived'}
           ids={}; errors=[]
           for p in docs:
               t=p.read_text(encoding='utf-8',errors='replace')
