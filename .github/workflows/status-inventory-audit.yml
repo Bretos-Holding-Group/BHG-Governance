@@ -1,0 +1,47 @@
+name: BHG Status Inventory Audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  status-inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Inventory governed document statuses
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from collections import Counter
+          import re
+          docs=sorted(Path('docs').rglob('*.md'))
+          rows=[]
+          for p in docs:
+              t=p.read_text(encoding='utf-8', errors='replace')
+              status='MISSING_FRONTMATTER'; did=''; version=''
+              if t.startswith('---\n'):
+                  e=t.find('\n---',4)
+                  if e>=0:
+                      fm=t[4:e]
+                      for line in fm.splitlines():
+                          m=re.match(r'^(document_id|version|status):\s*(.*)$',line)
+                          if m:
+                              value=m.group(2).strip().strip("'\"")
+                              if m.group(1)=='status': status=value
+                              elif m.group(1)=='document_id': did=value
+                              else: version=value
+              rows.append((str(p),did,version,status))
+          print('path,document_id,version,status')
+          for r in rows: print(','.join('"'+x.replace('"','""')+'"' for x in r))
+          print('\nSTATUS_COUNTS')
+          for k,v in sorted(Counter(r[3] for r in rows).items()): print(f'{k}={v}')
+          PY
