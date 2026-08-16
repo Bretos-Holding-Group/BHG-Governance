@@ -53,15 +53,19 @@ jobs:
           if 'Canonical | Effective' not in registry_text and 'true | true' not in registry_text:
               raise SystemExit('FAIL: effective canonical status is not registered')
 
-          # Guardrail: automation may validate approved state, but cannot silently
-          # promote a draft artifact. A direct metadata mismatch is reported.
+          # Guardrail: canonical/effective metadata may be represented through
+          # the canonical schema's extensions.legacy_metadata namespace. The
+          # validator must not require deprecated top-level keys.
           frontmatter = model_text.split('---', 2)[1] if model_text.startswith('---') else ''
-          canonical = re.search(r'^canonical:\s*(true|false)\s*$', frontmatter, re.M)
-          effective = re.search(r'^effective:\s*(true|false)\s*$', frontmatter, re.M)
+          canonical = re.search(r'^(?:canonical:\s*(true|false)|\s+canonical:\s*(true|false))\s*$', frontmatter, re.M)
+          effective = re.search(r'^(?:effective:\s*(true|false)|\s+effective:\s*(true|false))\s*$', frontmatter, re.M)
           if not canonical or not effective:
-              raise SystemExit('FAIL: model canonical/effective flags are missing')
+              raise SystemExit('FAIL: model canonical/effective flags are missing from canonical metadata or extensions.legacy_metadata')
 
-          if canonical.group(1) == 'false' or effective.group(1) == 'false':
+          canonical_value = next(group for group in canonical.groups() if group is not None)
+          effective_value = next(group for group in effective.groups() if group is not None)
+
+          if canonical_value == 'false' or effective_value == 'false':
               print('WARNING: registry authorizes Canonical + Effective, but model frontmatter has not yet been synchronized.')
               print('VALIDATION MODE: structural validation only; no normative promotion performed by automation.')
           else:
