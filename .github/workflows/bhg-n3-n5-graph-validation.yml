@@ -24,7 +24,7 @@ jobs:
           import yaml, json, sys
           docs=sorted(Path('.').rglob('*.md'))
           docs=[p for p in docs if '.git/' not in str(p)]
-          by_id={}; by_name={}; records=[]
+          by_id={}; records=[]
           for p in docs:
               t=p.read_text(encoding='utf-8',errors='replace'); fm={}
               if t.startswith('---\n'):
@@ -33,9 +33,7 @@ jobs:
                       try: fm=yaml.safe_load(t[4:end]) or {}
                       except Exception: fm={}
               did=str(fm.get('document_id',''))
-              by_id[did]=str(p) if did else by_id.get(did)
-              by_name[p.name]=did
-              by_name[str(p)]=did
+              if did: by_id[did]=str(p)
               records.append((str(p),did,fm))
           unresolved=[]; edges=[]; authority=defaultdict(set)
           relkeys=['governed_by','governs','depends_on','related_to']
@@ -43,25 +41,15 @@ jobs:
               if v is None:return []
               if isinstance(v,list):return [str(x) for x in v]
               return [str(v)]
-          def resolve(x):
-              x=x.strip()
-              if x in by_id:return by_id[x]
-              if x in by_name:return by_id.get(by_name[x],'')
-              if x.startswith('./') and x[2:] in by_name:return by_id.get(by_name[x[2:]],'')
-              for k,did in by_name.items():
-                  if k.endswith('/'+x):return by_id.get(did,'')
-              return ''
           for path,did,fm in records:
               for key in relkeys:
                   for target in values(fm.get(key)):
-                      resolved=resolve(target)
-                      if not resolved:
+                      if target not in by_id:
                           unresolved.append({'source':path,'relationship':key,'target':target})
-                      else:
-                          edges.append((did,key,by_name.get(resolved,resolved)))
-                          if key=='governed_by': authority[did].add(resolved)
-                          if key=='governs': authority[resolved].add(did)
-          # detect directed cycles in authority graph
+                          continue
+                      edges.append((did,key,target))
+                      if key=='governed_by': authority[did].add(target)
+                      if key=='governs': authority[target].add(did)
           state={}; cycles=[]
           def dfs(n,stack):
               state[n]=1; stack.append(n)
@@ -73,15 +61,21 @@ jobs:
               stack.pop(); state[n]=2
           for n in list(authority):
               if state.get(n,0)==0: dfs(n,[])
+          duplicate_edges=[]
+          seen=set()
+          for e in edges:
+              if e in seen: duplicate_edges.append(e)
+              seen.add(e)
           out=Path('graph-evidence'); out.mkdir(exist_ok=True)
-          report={'documents':len(records),'relationship_edges':len(edges),'unresolved_targets':unresolved,'authority_cycle_count':len(cycles),'authority_cycles':cycles,'relationship_vocabulary':sorted({e[1] for e in edges})}
+          report={'documents':len(records),'relationship_edges':len(edges),'unresolved_canonical_targets':unresolved,'authority_cycle_count':len(cycles),'authority_cycles':cycles,'duplicate_edges':duplicate_edges,'relationship_vocabulary':sorted({e[1] for e in edges})}
           (out/'n4-n5-graph-evidence.json').write_text(json.dumps(report,indent=2,ensure_ascii=False),encoding='utf-8')
-          md=['# BHG N4-N5 Graph Evidence','',f'- Documents: **{len(records)}**',f'- Relationship edges resolved: **{len(edges)}**',f'- Unresolved relationship targets: **{len(unresolved)}**',f'- Authority cycles: **{len(cycles)}**','']
+          md=['# BHG N4-N5 Graph Evidence','',f'- Documents: **{len(records)}**',f'- Canonical relationship edges: **{len(edges)}**',f'- Unresolved canonical targets: **{len(unresolved)}**',f'- Authority cycles: **{len(cycles)}**',f'- Duplicate edges: **{len(duplicate_edges)}**','']
           blockers=[]
-          if unresolved:blockers.append('unresolved relationship targets')
+          if unresolved:blockers.append('unresolved canonical relationship targets')
           if cycles:blockers.append('authority cycles')
+          if duplicate_edges:blockers.append('duplicate relationship edges')
           md.append('**PASS — relationship/authority graph structural gate.**' if not blockers else '**FAIL:** '+', '.join(blockers))
-          md.append(''); md.append('This gate is observational and does not grant normative authority.')
+          md.append(''); md.append('Legacy/external relationship targets are preserved under metadata extensions and are not treated as canonical documentary edges. This gate is observational and does not grant normative authority.')
           (out/'n4-n5-graph-evidence.md').write_text('\n'.join(md)+'\n',encoding='utf-8')
           print(json.dumps(report,indent=2,ensure_ascii=False))
           if blockers: sys.exit(1)
