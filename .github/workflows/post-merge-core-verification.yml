@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -23,7 +26,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test "${GITHUB_REF_NAME}" = "main" || test "${GITHUB_EVENT_NAME}" = "workflow_dispatch"
+          test "${GITHUB_REF_NAME}" = "main" || test "${GITHUB_EVENT_NAME}" = "workflow_dispatch" || test "${GITHUB_EVENT_NAME}" = "pull_request"
           echo "Verified commit: $(git rev-parse HEAD)"
 
       - name: Validate Markdown frontmatter, metadata and unique IDs
@@ -66,13 +69,12 @@ jobs:
           set -euo pipefail
           python3 - <<'PY'
           from pathlib import Path
-          import re, sys
+          import sys
           model=Path('docs/00-GOVERNANCE/BHG_CANONICAL_DOCUMENT_RELATIONSHIP_MODEL_V0_1.md')
           registry=Path('docs/00-GOVERNANCE/BHG_CANONICAL_STATUS_REGISTRY.md')
           if not model.exists() or not registry.exists(): sys.exit('FAIL: canonical relationship/status artifacts missing')
           mt=model.read_text(encoding='utf-8'); rt=registry.read_text(encoding='utf-8')
-          required=['document_id: BHG-GOV-CDRM-001','governed_by:','`governed_by`','ZivaID → ZivaLatam → BHG → BHG Constitution','BHG Constitution → BHG → ZivaLatam → ZivaID']
-          for x in required:
+          for x in ['document_id: BHG-GOV-CDRM-001','governed_by:','`governed_by`','ZivaID → ZivaLatam → BHG → BHG Constitution','BHG Constitution → BHG → ZivaLatam → ZivaID']:
               if x not in mt: sys.exit(f'FAIL: missing canonical relationship requirement: {x}')
           if 'BHG-GOV-CDRM-001' not in rt: sys.exit('FAIL: relationship model not registered')
           if 'Canonical | Effective' not in rt and 'true | true' not in rt: sys.exit('FAIL: effective canonical status not registered')
@@ -83,12 +85,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          python3 -m pip install --disable-pip-version-check pyyaml
           python3 - <<'PY'
           from pathlib import Path
           from collections import defaultdict
           import yaml, sys
-          docs=sorted(Path('docs').rglob('*.md'))
-          by_id={}; records=[]
+          docs=sorted(Path('docs').rglob('*.md')); by_id={}; records=[]
           for p in docs:
               t=p.read_text(encoding='utf-8',errors='replace'); fm={}
               if t.startswith('---\n'):
@@ -105,8 +107,7 @@ jobs:
               for key in ('governed_by','governs','depends_on','related_to','references','supersedes','superseded_by','replaces','replaced_by','implements','implemented_by'):
                   for target in vals(fm.get(key)):
                       target=str(target)
-                      if target not in by_id:
-                          unresolved.append((p,key,target)); continue
+                      if target not in by_id: unresolved.append((p,key,target)); continue
                       edge=(did,key,target)
                       if edge in seen: duplicate.append(edge)
                       seen.add(edge)
