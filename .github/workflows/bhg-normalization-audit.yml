@@ -25,6 +25,26 @@ jobs:
           name: bhg-n1-normalization-evidence
           path: normalization-output/
 
+  authority-dependency-reconciliation:
+    name: Authority/dependency reconciliation (read-only)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install YAML parser
+        run: python3 -m pip install --disable-pip-version-check --no-input pyyaml
+      - name: Run authority/dependency reconciliation
+        run: python3 tools/bhg_normalization/authority_dependency_reconciliation.py
+      - name: Hash reconciliation evidence
+        shell: bash
+        run: sha256sum authority-dependency-evidence/* | tee authority-dependency-evidence/SHA256SUMS
+      - name: Upload reconciliation evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhg-authority-dependency-reconciliation-${{ github.sha }}
+          path: authority-dependency-evidence/
+          if-no-files-found: error
+          retention-days: 90
+
   n2-n7-gates:
     name: N2-N7 governance gates (non-authoritative)
     runs-on: ubuntu-latest
