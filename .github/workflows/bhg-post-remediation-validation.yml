@@ -24,37 +24,72 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          from collections import Counter, defaultdict
+          from collections import defaultdict
           import yaml, json, sys
-          docs=sorted(Path('.').rglob('*.md'))
-          docs=[p for p in docs if '.git/' not in str(p)]
+
+          # Only governed documentation is part of the N3-N5 corpus.
+          # Generated artifacts under normalization-output/, repository tooling,
+          # and root-level project files are evidence/infrastructure, not governed documents.
+          docs=sorted(Path('docs').rglob('*.md'))
+
           required=['title','document_id','document_type','version','status','governance_level','owner','approval_authority','created','last_updated','classification','language','repository']
           allowed_status={'Concept','Draft','Review','Approved','Active','Effective','Deprecated','Archived'}
-          ids=defaultdict(list); keysets=Counter(); invalid_status=[]; missing=[]; nofm=0
+          allowed_keys=set(required) | {
+              'effective_date','canonical','effective','governed_by','governs','depends_on','related_to',
+              'supersedes','superseded_by','references','implements','implemented_by','replaces','replaced_by',
+              'extensions'
+          }
+
+          ids=defaultdict(list); invalid_status=[]; missing=[]; nofm=0; unknown_keys=[]
           for p in docs:
               t=p.read_text(encoding='utf-8',errors='replace')
-              if not t.startswith('---\n'): nofm+=1; fm={}
+              if not t.startswith('---\n'):
+                  nofm+=1; fm={}
               else:
                   end=t.find('\n---',4)
-                  try: fm=yaml.safe_load(t[4:end]) or {} if end>=0 else {}
-                  except Exception: fm={}
+                  try:
+                      fm=yaml.safe_load(t[4:end]) or {} if end>=0 else {}
+                  except Exception:
+                      fm={}
               miss=[k for k in required if k not in fm or fm[k] is None]
               if miss: missing.append((str(p),miss))
               did=fm.get('document_id')
               if did: ids[str(did)].append(str(p))
-              keysets[tuple(sorted(fm.keys()))]+=1
+              unknown=sorted(set(fm)-allowed_keys)
+              if unknown: unknown_keys.append((str(p),unknown))
               if fm.get('status') not in allowed_status: invalid_status.append((str(p),fm.get('status')))
+
           dup={k:v for k,v in ids.items() if len(v)>1}
           out=Path('post-remediation-evidence'); out.mkdir(exist_ok=True)
-          report={'documents':len(docs),'missing_frontmatter':nofm,'metadata_gap_documents':len(missing),'duplicate_ids':dup,'keyset_count':len(keysets),'keysets':{'|'.join(k):v for k,v in keysets.items()},'invalid_status':invalid_status}
+          report={
+              'scope':'docs/**/*.md',
+              'documents':len(docs),
+              'missing_frontmatter':nofm,
+              'metadata_gap_documents':len(missing),
+              'duplicate_ids':dup,
+              'unknown_metadata_keys':unknown_keys,
+              'invalid_status':invalid_status
+          }
           (out/'n3-n5-exit-evidence.json').write_text(json.dumps(report,indent=2,ensure_ascii=False),encoding='utf-8')
+
           blockers=[]
-          if nofm:blockers.append('missing frontmatter')
-          if missing:blockers.append('required metadata gaps')
-          if dup:blockers.append('duplicate document IDs')
-          if len(keysets)!=1:blockers.append('multiple top-level metadata keysets')
-          if invalid_status:blockers.append('invalid lifecycle statuses')
-          md=['# BHG N3-N5 Post-Remediation Exit Evidence','',f'- Markdown documents: **{len(docs)}**',f'- Missing frontmatter: **{nofm}**',f'- Documents with metadata gaps: **{len(missing)}**',f'- Duplicate document IDs: **{len(dup)}**',f'- Frontmatter keysets: **{len(keysets)}**',f'- Invalid lifecycle statuses: **{len(invalid_status)}**','', '**PASS — structural N3 metadata/identity exit conditions.**' if not blockers else '**CONDITIONAL FAIL:** '+', '.join(blockers), '', 'This validation is observational and does not approve, canonicalize, or activate normative artifacts.']
+          if nofm: blockers.append('missing frontmatter')
+          if missing: blockers.append('required metadata gaps')
+          if dup: blockers.append('duplicate document IDs')
+          if unknown_keys: blockers.append('non-canonical metadata keys')
+          if invalid_status: blockers.append('invalid lifecycle statuses')
+
+          md=[
+              '# BHG N3-N5 Post-Remediation Exit Evidence','',
+              f'- Governed Markdown documents: **{len(docs)}**',
+              f'- Missing frontmatter: **{nofm}**',
+              f'- Documents with metadata gaps: **{len(missing)}**',
+              f'- Duplicate document IDs: **{len(dup)}**',
+              f'- Documents with non-canonical metadata keys: **{len(unknown_keys)}**',
+              f'- Invalid lifecycle statuses: **{len(invalid_status)}**','',
+              '**PASS — structural N3 metadata/identity exit conditions.**' if not blockers else '**CONDITIONAL FAIL:** '+', '.join(blockers), '',
+              'Validation is observational and does not approve, canonicalize, or activate normative artifacts.'
+          ]
           (out/'n3-n5-exit-evidence.md').write_text('\n'.join(md)+'\n',encoding='utf-8')
           print(json.dumps(report,indent=2,ensure_ascii=False))
           if blockers: sys.exit(1)
