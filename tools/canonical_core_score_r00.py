@@ -10,7 +10,8 @@ import json, re, subprocess
 from collections import Counter, defaultdict
 from pathlib import Path
 
-ROOT=Path(__file__).resolve().parents[2]
+# This file lives at <repo>/tools/. parents[1] is therefore the repository root.
+ROOT=Path(__file__).resolve().parents[1]
 REPOS={
  'BHG-Governance': ROOT,
  'BHG-Ecosystem-Foundation': ROOT/'_corpus'/'BHG-Ecosystem-Foundation',
@@ -67,7 +68,6 @@ def main():
             docs.append(d); idmap.setdefault(did,[]).append(d)
     all_ids=set(idmap)
     for d in docs:
-        # Explicit IDs appearing anywhere in a document are treated as reference evidence.
         for rid in re.findall(r'\b[A-Z][A-Z0-9_-]{2,}(?:-[A-Z0-9]+)+\b',d['text']):
             if rid in all_ids and rid!=d['document_id']:
                 refs[rid].append(d['document_id'])
