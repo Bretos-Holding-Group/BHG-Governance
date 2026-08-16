@@ -1,0 +1,57 @@
+name: BHG Canonical Status Synchronization
+
+on:
+  push:
+    branches:
+      - governance/canonical-status-sync
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  synchronize-approved-status:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Synchronize approved canonical status
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          import subprocess
+
+          model_path = Path('docs/00-GOVERNANCE/BHG_CANONICAL_DOCUMENT_RELATIONSHIP_MODEL_V0_1.md')
+          registry_path = Path('docs/00-GOVERNANCE/BHG_CANONICAL_STATUS_REGISTRY.md')
+          model = model_path.read_text(encoding='utf-8')
+          registry = registry_path.read_text(encoding='utf-8')
+
+          if 'BHG-GOV-CDRM-001' not in model or 'BHG-GOV-CDRM-001' not in registry:
+              raise SystemExit('Required canonical relationship model registration not found.')
+          if 'model_status_authorized: Canonical + Effective' not in registry or 'registry_status: Effective' not in registry:
+              raise SystemExit('No approved Canonical + Effective transition is registered.')
+
+          updated = model
+          updated = re.sub(r'^status:\s*Draft\s*$', 'status: Effective', updated, count=1, flags=re.M)
+          updated = re.sub(r'^canonical:\s*false\s*$', 'canonical: true', updated, count=1, flags=re.M)
+          updated = re.sub(r'^effective:\s*false\s*$', 'effective: true', updated, count=1, flags=re.M)
+          updated = re.sub(r'^automation_ready:\s*false\s*$', 'automation_ready: true', updated, count=1, flags=re.M)
+          updated = re.sub(r'independent_verification: pending\nformal_approval: pending', 'independent_verification: complete\nformal_approval: complete', updated, count=1)
+          updated = re.sub(r'```text\nversion: 0\.1\.0\nstatus: Draft\ncanonical: false\neffective: false\nnormalization_target: true\nautomation_ready: false', '```text\nversion: 0.1.0\nstatus: Effective\ncanonical: true\neffective: true\nnormalization_target: true\nautomation_ready: true', updated, count=1)
+
+          if updated != model:
+              model_path.write_text(updated, encoding='utf-8')
+              subprocess.run(['git', 'config', 'user.name', 'BHG Governance Automation'], check=True)
+              subprocess.run(['git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'], check=True)
+              subprocess.run(['git', 'add', str(model_path)], check=True)
+              subprocess.run(['git', 'commit', '-m', 'governance: activate approved canonical relationship model'], check=True)
+              subprocess.run(['git', 'push'], check=True)
+          else:
+              print('Model already synchronized.')

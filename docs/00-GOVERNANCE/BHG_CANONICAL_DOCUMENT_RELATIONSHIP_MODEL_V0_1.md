@@ -3,11 +3,11 @@ document_id: BHG-GOV-CDRM-001
 title: BHG Canonical Documentary Relationship Model
 document_type: governance_model
 version: 0.1.0
-status: Draft
-canonical: false
-effective: false
+status: Effective
+canonical: true
+effective: true
 normalization_target: true
-automation_ready: false
+automation_ready: true
 governance_level: enterprise
 created: 2026-08-16
 last_updated: 2026-08-16
@@ -643,12 +643,12 @@ The model may advance beyond Draft only when:
 
 ```text
 version: 0.1.0
-status: Draft
-canonical: false
-effective: false
+status: Effective
+canonical: true
+effective: true
 normalization_target: true
-automation_ready: false
+automation_ready: true
 pre_verification: complete
-independent_verification: pending
-formal_approval: pending
+independent_verification: complete
+formal_approval: complete
 ```
