@@ -13,11 +13,10 @@ classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 governed_by:
-- BHG_CONSTITUTION
+- BHG-MIG-5456F6E19A27
 - BHG-GOV-CAM-001
 - BHG-GOV-CDRM-001
 depends_on:
-- BHG-GOV-N0-001
 - BHG-GOV-N1-001
 effective_date: null
 extensions:
@@ -28,6 +27,15 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: depends_on
+    target: BHG-GOV-N0-001
+    classification: missing_document_or_external_identifier
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 governs: []
 related_to: []
 ---

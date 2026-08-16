@@ -14,37 +14,60 @@ classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 governed_by:
-- BHG_CONSTITUTION.md
-- GOVERNANCE_MODEL.md
-- DOCUMENT_POLICY.md
-- DOCUMENT_METADATA_STANDARD.md
-- DOCUMENT_IDENTIFIER_STANDARD.md
-- DOCUMENT_CLASSIFICATION_STANDARD.md
-- LANGUAGE_POLICY.md
-- DOCUMENT_RELATIONSHIP_STANDARD.md
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-POL-002
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
+- DOCUMENT_CLASSIFICATION_STANDARD
+- LANGUAGE_POLICY
+- DOCUMENT_RELATIONSHIP_STANDARD
 governs:
-- DOCUMENT_HISTORY_MODEL.md
-- REPOSITORY_HISTORY_LEDGER.md
-- GOVERNANCE_DECISION_LOG.md
-- BASELINE_REGISTRY.md
-- DOCUMENT_VALIDATION_STANDARD.md
-- DOCUMENT_COMPILER_STANDARD.md
-- Corporate Compliance Engine
-- BKOs
-- BEiA
+- DOCUMENT_HISTORY_MODEL
+- DOCUMENT_VALIDATION_STANDARD
+- BHG-MIG-9783A5418C4A
 depends_on:
-- DOCUMENT_METADATA_STANDARD.md
-- DOCUMENT_IDENTIFIER_STANDARD.md
-- DOCUMENT_RELATIONSHIP_STANDARD.md
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
+- DOCUMENT_RELATIONSHIP_STANDARD
 related_to:
-- TRACEABILITY_STANDARD.md
-- DOCUMENT_SCHEMA_STANDARD.md
-- REPOSITORY_STANDARD.md
+- BHG-MIG-8327291A8F30
+- DOCUMENT_SCHEMA_STANDARD
+- BHG-MIG-D42CF4B63138
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governs
+    target: REPOSITORY_HISTORY_LEDGER.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: GOVERNANCE_DECISION_LOG.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: BASELINE_REGISTRY.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Corporate Compliance Engine
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: BKOs
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: BEiA
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Governance Registry Model

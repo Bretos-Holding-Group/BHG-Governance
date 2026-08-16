@@ -14,28 +14,42 @@ classification: Internal
 language: en
 repository: BHG Governance
 governed_by:
-- docs/00-FOUNDATION/BHG_CONSTITUTION.md
-- docs/00-FOUNDATION/AUTHORITY_MODEL.md
-- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-- docs/00-FOUNDATION/LEGAL_HIERARCHY.md
-- docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
-governs:
-- Governance conflict resolution process
-- Governance dispute escalation
-- Conflict decision records
+- BHG-MIG-5456F6E19A27
+- BHG-MIG-C43A05E01439
+- BHG-MIG-54D9BFC94609
+- BHG-LH-001
+- BHG-GOV-002
+governs: []
 depends_on:
-- docs/00-FOUNDATION/AUTHORITY_MODEL.md
-- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-- docs/00-FOUNDATION/LEGAL_HIERARCHY.md
+- BHG-MIG-C43A05E01439
+- BHG-MIG-54D9BFC94609
+- BHG-LH-001
 related_to:
-- docs/00-FOUNDATION/GOVERNANCE_PROPOSAL_STANDARD.md
-- docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
-- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
+- BHG-GPS-001
+- BHG-GOV-002
+- BHG-MIG-54D9BFC94609
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governs
+    target: Governance conflict resolution process
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Governance dispute escalation
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Conflict decision records
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Governance Conflict Resolution

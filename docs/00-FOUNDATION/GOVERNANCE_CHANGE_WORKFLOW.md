@@ -14,28 +14,45 @@ classification: Internal
 language: en
 repository: BHG Governance
 governed_by:
-- BHG_CONSTITUTION.md
-- GOVERNANCE_MODEL.md
-- FEDERATED_GOVERNANCE_MODEL.md
-- GOVERNANCE_APPROVAL_MODEL.md
-- AUTHORITY_MODEL.md
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- FEDERATED_GOVERNANCE_MODEL
+- GOVERNANCE-APPROVAL-MODEL
+- BHG-MIG-C43A05E01439
 governs:
-- GOVERNANCE_PROPOSAL_STANDARD.md
-- GOVERNANCE_REVIEW_STANDARD.md
-- GOVERNANCE_RELEASE_STANDARD.md
-- GOVERNANCE_AUDIT_STANDARD.md
-- AI_GOVERNANCE_ANALYSIS_STANDARD.md
+- BHG-GPS-001
 depends_on:
-- GOVERNANCE_APPROVAL_MODEL.md
+- GOVERNANCE-APPROVAL-MODEL
 related_to:
-- CHANGE_POLICY.md
-- GOVERNANCE_PIPELINE.md
-- VERSIONING_POLICY.md
+- BHG-MIG-DA57580E8D90
+- BHG-GOV-002
+- BHG-POL-VERSIONING
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governs
+    target: GOVERNANCE_REVIEW_STANDARD.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: GOVERNANCE_RELEASE_STANDARD.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: GOVERNANCE_AUDIT_STANDARD.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: AI_GOVERNANCE_ANALYSIS_STANDARD.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Governance Change Workflow

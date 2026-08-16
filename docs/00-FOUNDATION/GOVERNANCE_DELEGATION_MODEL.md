@@ -11,18 +11,18 @@ effective_date: 2026-01-01
 language: en
 classification: Internal
 governed_by:
-- BHG_CONSTITUTION.md
-- GOVERNANCE_MODEL.md
-- FEDERATED_GOVERNANCE_MODEL.md
-- GOVERNANCE_AUTONOMY_MODEL.md
-- AUTHORITY_MODEL.md
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- FEDERATED_GOVERNANCE_MODEL
+- GOVERNANCE_AUTONOMY_MODEL
+- BHG-MIG-C43A05E01439
 governs:
-- AUTHORITY_MATRIX.md
-- GOVERNANCE_COUNCIL.md
-- GOVERNANCE_ESCALATION_MODEL.md
-- GOVERNANCE_CONFLICT_RESOLUTION.md
-- COMPANY_CONSTITUTION_TEMPLATE.md
-- PROJECT_GOVERNANCE_MODEL.md
+- BHG-MIG-54D9BFC94609
+- BHG-MIG-B417AA972D08
+- BHG-MIG-58110D17685B
+- BHG-GOV-009
+- BHG-MIG-375CFA146C47
+- BHG-MIG-B6F5272CD7D6
 created: '2026-07-20'
 last_updated: '2026-07-20'
 repository: BHG-GOVERNANCE
@@ -34,6 +34,10 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
 depends_on: []
 related_to: []
 ---

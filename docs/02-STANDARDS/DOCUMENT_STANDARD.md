@@ -14,10 +14,10 @@ classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 governed_by:
-- BHG_CONSTITUTION
+- BHG-MIG-5456F6E19A27
 - GOVERNANCE_MODEL
-- DOCUMENT_POLICY
-- POLICY_HIERARCHY
+- BHG-POL-002
+- BHG-POL-001
 - LANGUAGE_POLICY
 governs:
 - DOCUMENT_METADATA_STANDARD
@@ -29,19 +29,23 @@ governs:
 - DOCUMENT_VALIDATION_STANDARD
 - DOCUMENT_LINTING_STANDARD
 depends_on:
-- DOCUMENT_POLICY
+- BHG-POL-002
 - DOCUMENT_CLASSIFICATION_STANDARD
 - LANGUAGE_POLICY
 related_to:
-- DOCUMENT_RENDERING_STANDARD
-- TRACEABILITY_STANDARD
-- DOCUMENT_TEMPLATE_ENGINE_STANDARD
-- DOCUMENT_COMPILER_STANDARD
+- BHG-MIG-49D1A6CF8892
+- BHG-MIG-8327291A8F30
+- BHG-MIG-DF2BC2DF9A4A
+- BHG-MIG-9783A5418C4A
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
 ---
 
 # Document Standard

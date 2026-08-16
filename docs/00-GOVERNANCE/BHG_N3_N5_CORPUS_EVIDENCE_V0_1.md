@@ -9,7 +9,7 @@ created: 2026-08-16
 last_updated: 2026-08-16
 approval_authority: BHG Governance Council
 governed_by:
-- BHG_CONSTITUTION
+- BHG-MIG-5456F6E19A27
 depends_on:
 - BHG-GOV-N3-IDR-001
 - BHG-GOV-N4-RNR-001
@@ -30,6 +30,10 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
 governs: []
 related_to: []
 ---

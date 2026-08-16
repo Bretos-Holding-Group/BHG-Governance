@@ -9,11 +9,11 @@ approval_authority: BHG Governance Council
 language: en
 classification: Internal
 governed_by:
-- AUTOMATION_CONSTITUTION.md
-- AI_AGENT_CONFIGURATION_STANDARD.md
-- AI_AGENT_DEPLOYMENT_STANDARD.md
-- AI_AGENT_RELEASE_STANDARD.md
-- SECURITY_STANDARD.md
+- BHG-MIG-2F763FF54F97
+- BHG-MIG-D13DBA24B680
+- BHG-MIG-304657D4691E
+- BHG-MIG-41AF04DE69C3
+- BHG-MIG-E9EA7A778331
 document_id: BHG-MIG-AB1A5B8A9156
 created: '2026-07-09'
 last_updated: '2026-07-09'
@@ -31,6 +31,10 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
 governs: []
 depends_on: []
 related_to: []

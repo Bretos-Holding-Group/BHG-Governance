@@ -14,24 +14,41 @@ classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 governed_by:
-- GOVERNANCE_MODEL.md
-- ENGINEERING_GOVERNANCE_MODEL.md
-- CHANGE_MANAGEMENT_README.md
-- GOVERNANCE_CHANGE_REQUEST_STANDARD.md
-governs:
-- Implementation Processes
+- GOVERNANCE_MODEL
+- GOVERNANCE_CHANGE_REQUEST_STANDARD
+governs: []
 depends_on:
-- GOVERNANCE_CHANGE_REQUEST_STANDARD.md
-- GOVERNANCE_CHANGE_REQUEST_TEMPLATE.md
+- GOVERNANCE_CHANGE_REQUEST_STANDARD
+- GOVERNANCE_CHANGE_REQUEST_TEMPLATE
 related_to:
-- ADR_STANDARD.md
-- VERSIONING_POLICY.md
-- CHANGELOG_POLICY.md
+- ADR_STANDARD
+- BHG-POL-VERSIONING
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governed_by
+    target: ENGINEERING_GOVERNANCE_MODEL.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governed_by
+    target: CHANGE_MANAGEMENT_README.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Implementation Processes
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: related_to
+    target: CHANGELOG_POLICY.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Governance Implementation Workflow

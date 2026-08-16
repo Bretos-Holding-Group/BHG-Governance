@@ -9,20 +9,13 @@ approval_authority: BHG Governance Council
 language: en
 classification: Internal
 governed_by:
-- BHG_CONSTITUTION.md
-- GOVERNANCE_MODEL.md
-- GOVERNANCE_PIPELINE.md
-- DOCUMENT_COMPILER_STANDARD.md
-- DOCUMENT_VALIDATION_STANDARD.md
-- DOCUMENT_RENDERING_STANDARD.md
-- DOCUMENT_EXPORT_STANDARD.md
-governs:
-- Genesis Automation Engine
-- Continuous Governance Pipeline
-- Documentation CI/CD
-- AI Automation Engine
-- Repository Automation
-- Governance Event Engine
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-GOV-002
+- BHG-MIG-9783A5418C4A
+- DOCUMENT_VALIDATION_STANDARD
+- BHG-MIG-49D1A6CF8892
+governs: []
 document_id: BHG-MIG-0D51FDB8DC4F
 created: '2026-07-09'
 last_updated: '2026-07-09'
@@ -36,6 +29,39 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governed_by
+    target: DOCUMENT_EXPORT_STANDARD.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Genesis Automation Engine
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Continuous Governance Pipeline
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Documentation CI/CD
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: AI Automation Engine
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Repository Automation
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Governance Event Engine
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 depends_on: []
 related_to: []
 ---

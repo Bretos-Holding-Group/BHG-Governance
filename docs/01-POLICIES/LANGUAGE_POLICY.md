@@ -14,28 +14,36 @@ classification: Internal
 language: en
 repository: BHG-Governance
 governed_by:
-- BHG_CONSTITUTION.md
-- GOVERNANCE_MODEL.md
-- LEGAL_HIERARCHY.md
-- POLICY_HIERARCHY.md
-- DOCUMENT_POLICY.md
-governs:
-- All Governance Documents
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-LH-001
+- BHG-POL-001
+- BHG-POL-002
+governs: []
 depends_on:
-- DOCUMENT_METADATA_STANDARD.md
-- DOCUMENT_IDENTIFIER_STANDARD.md
-- DOCUMENT_CLASSIFICATION_STANDARD.md
-- WRITING_STANDARD.md
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
+- DOCUMENT_CLASSIFICATION_STANDARD
+- BHG-MIG-563B1AE41D8F
 related_to:
-- DOCUMENT_STANDARD.md
-- DOCUMENT_SCHEMA_STANDARD.md
-- TRACEABILITY_STANDARD.md
-- VERSIONING_POLICY.md
+- DOCUMENT_STANDARD
+- DOCUMENT_SCHEMA_STANDARD
+- BHG-MIG-8327291A8F30
+- BHG-POL-VERSIONING
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governs
+    target: All Governance Documents
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Language Policy

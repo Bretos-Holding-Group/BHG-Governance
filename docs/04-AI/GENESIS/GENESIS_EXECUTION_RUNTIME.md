@@ -6,12 +6,7 @@ status: Approved
 owner: BHG Architecture Council
 effective_date: TBD
 classification: Internal
-governs:
-- Runtime Lifecycle
-- Runtime Execution
-- Runtime Scheduling
-- Runtime Validation
-- Runtime Shutdown
+governs: []
 document_type: AI Document
 governance_level: AI
 approval_authority: BHG Governance Council
@@ -37,6 +32,31 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governs
+    target: Runtime Lifecycle
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Runtime Execution
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Runtime Scheduling
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Runtime Validation
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Runtime Shutdown
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 governed_by: []
 depends_on: []
 related_to: []

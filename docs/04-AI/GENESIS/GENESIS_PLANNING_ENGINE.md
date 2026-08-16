@@ -8,16 +8,16 @@ created: 2026-07-11
 last_updated: 2026-07-11
 language: English
 depends_on:
-- GENESIS_PROFILE.md
-- GENESIS_EXECUTION_CONTRACT.md
-- GENESIS_COMMAND_PROTOCOL.md
-- GENESIS_CONTEXT_ENGINE.md
-- GENESIS_REPOSITORY_SCANNER.md
-- GENESIS_REPOSITORY_AUDITOR.md
-- GENESIS_HEALTH_MODEL.md
+- GENESIS-PROFILE
+- GENESIS-EXECUTION-CONTRACT
+- GENESIS-COMMAND-PROTOCOL
+- GENESIS-CONTEXT-ENGINE
+- GENESIS-REPOSITORY-SCANNER
+- GENESIS-REPOSITORY-AUDITOR
+- GENESIS-HEALTH-MODEL
 governs:
-- GENESIS_COPILOT_INTEGRATION.md
-- GENESIS_CERTIFICATION_ENGINE.md
+- GENESIS-COPILOT-INTEGRATION
+- GENESIS-CERTIFICATION-ENGINE
 document_type: AI Document
 governance_level: AI
 owner: BHG Governance Council
@@ -38,6 +38,10 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
 governed_by: []
 related_to: []
 ---

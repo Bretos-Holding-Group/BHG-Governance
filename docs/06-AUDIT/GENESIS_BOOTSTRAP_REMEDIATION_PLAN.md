@@ -6,10 +6,9 @@ status: Approved
 classification: Internal Engineering
 owner: BHG Architecture Council
 depends_on:
-- GENESIS_BOOTSTRAP_RESPONSE.md
-- RAI_MODEL.md
-related_to:
-- GENESIS_BOOTSTRAP_AUDIT_REPORT.md
+- GENESIS-BOOTSTRAP-RESPONSE
+- RAI-MODEL
+related_to: []
 document_type: Audit Record
 governance_level: Audit
 approval_authority: BHG Governance Council
@@ -25,6 +24,15 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: related_to
+    target: GENESIS_BOOTSTRAP_AUDIT_REPORT.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 governed_by: []
 governs: []
 ---

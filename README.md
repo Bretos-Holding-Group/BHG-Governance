@@ -14,24 +14,38 @@ classification: Public
 language: English
 repository: BHG Governance
 governed_by:
-- docs/00-FOUNDATION/BHG_CONSTITUTION.md
-- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-- ARCHITECTURE_MAP.md
-governs:
-- Repository navigation
-- Documentation discovery
-- Governance repository entry process
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG_GOVERNANCE_ARCHITECTURE_MAP
+governs: []
 depends_on:
-- docs/00-FOUNDATION/BHG_CONSTITUTION.md
-- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-- ARCHITECTURE_MAP.md
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG_GOVERNANCE_ARCHITECTURE_MAP
 related_to:
-- CHANGELOG.md
+- CHANGELOG
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governs
+    target: Repository navigation
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Documentation discovery
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Governance repository entry process
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # BHG Governance

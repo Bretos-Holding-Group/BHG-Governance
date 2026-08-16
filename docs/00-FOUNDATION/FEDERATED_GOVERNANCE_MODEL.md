@@ -14,28 +14,32 @@ classification: Internal
 language: en
 repository: BHG Governance
 governed_by:
-- BHG_CONSTITUTION
+- BHG-MIG-5456F6E19A27
 - GOVERNANCE_MODEL
-- AUTHORITY_MODEL
-- LEGAL_HIERARCHY
+- BHG-MIG-C43A05E01439
+- BHG-LH-001
 governs:
-- COMPANY_CONSTITUTION_TEMPLATE
-- ENTERPRISE_MODEL
-- PROJECT_GOVERNANCE_MODEL
-- SERVICE_MODEL
-- AI_CONSTITUTION
-- AUTOMATION_CONSTITUTION
+- BHG-MIG-375CFA146C47
+- BHG-MIG-6F1F2862B6EF
+- BHG-MIG-B6F5272CD7D6
+- BHG-MIG-6DD950A4121B
+- BHG-MIG-37146C17795F
+- BHG-MIG-2F763FF54F97
 depends_on:
-- BHG_CONSTITUTION
+- BHG-MIG-5456F6E19A27
 - GOVERNANCE_MODEL
 related_to:
-- AUTHORITY_MATRIX
-- GOVERNANCE_PIPELINE
+- BHG-MIG-54D9BFC94609
+- BHG-GOV-002
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
 ---
 
 # Federated Governance Model

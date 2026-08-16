@@ -14,24 +14,41 @@ classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 governed_by:
-- GOVERNANCE_MODEL.md
-- ENGINEERING_GOVERNANCE_MODEL.md
-- CHANGE_MANAGEMENT_README.md
+- GOVERNANCE_MODEL
 governs:
-- GOVERNANCE_CHANGE_REQUEST_TEMPLATE.md
-- GOVERNANCE_IMPLEMENTATION_WORKFLOW.md
+- GOVERNANCE_CHANGE_REQUEST_TEMPLATE
+- GOVERNANCE_IMPLEMENTATION_WORKFLOW
 depends_on:
-- CHANGE_MANAGEMENT_README.md
-- DOCUMENT_METADATA_STANDARD.md
-- VERSIONING_POLICY.md
+- DOCUMENT_METADATA_STANDARD
+- BHG-POL-VERSIONING
 related_to:
-- ADR_STANDARD.md
-- CHANGELOG_POLICY.md
+- ADR_STANDARD
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governed_by
+    target: ENGINEERING_GOVERNANCE_MODEL.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governed_by
+    target: CHANGE_MANAGEMENT_README.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: depends_on
+    target: CHANGE_MANAGEMENT_README.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: related_to
+    target: CHANGELOG_POLICY.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Governance Change Request Standard

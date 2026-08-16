@@ -14,22 +14,33 @@ classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 governed_by:
-- ADR_STANDARD.md
-- ENGINEERING_GOVERNANCE_MODEL.md
-governs:
-- Future ADR Documents
+- ADR_STANDARD
+governs: []
 depends_on:
-- ADR_STANDARD.md
-- DOCUMENT_METADATA_STANDARD.md
-- VERSIONING_POLICY.md
+- ADR_STANDARD
+- DOCUMENT_METADATA_STANDARD
+- BHG-POL-VERSIONING
 related_to:
-- GOVERNANCE_CHANGE_REQUEST_STANDARD.md
-- GOVERNANCE_IMPLEMENTATION_WORKFLOW.md
+- GOVERNANCE_CHANGE_REQUEST_STANDARD
+- GOVERNANCE_IMPLEMENTATION_WORKFLOW
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governed_by
+    target: ENGINEERING_GOVERNANCE_MODEL.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Future ADR Documents
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Architecture Decision Record Template

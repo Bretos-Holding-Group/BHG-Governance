@@ -14,7 +14,7 @@ classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 governed_by:
-- BHG_CONSTITUTION
+- BHG-MIG-5456F6E19A27
 - DOCUMENT_METADATA_STANDARD
 - DOCUMENT_IDENTIFIER_STANDARD
 governs: []
@@ -24,6 +24,10 @@ extensions:
   normalization:
     mode: canonical_keyset_enforcement
     performed: '2026-08-16'
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
 ---
 
 # BHG Document ID Migration Register v0.1

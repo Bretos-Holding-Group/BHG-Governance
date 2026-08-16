@@ -11,7 +11,7 @@ classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 governed_by:
-- BHG_CONSTITUTION
+- BHG-MIG-5456F6E19A27
 - BHG-GOV-CDRM-001
 owner: BHG Governance Council
 approval_authority: BHG Governance Council
@@ -24,6 +24,10 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
 governs: []
 depends_on: []
 related_to: []

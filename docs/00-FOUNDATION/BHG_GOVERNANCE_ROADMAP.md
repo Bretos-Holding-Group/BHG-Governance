@@ -14,32 +14,61 @@ classification: Internal
 language: en
 repository: BHG Governance
 governed_by:
-- BHG_CONSTITUTION.md
-- GOVERNANCE_MODEL.md
-- GOVERNANCE_EVOLUTION_MODEL.md
-- VERSIONING_POLICY.md
-- CHANGE_POLICY.md
-governs:
-- Baseline Planning
-- Repository Evolution
-- Governance Priorities
-- Bootstrap Closure
-- Long-Term Governance Development
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- GOVERNANCE_EVOLUTION_MODEL
+- BHG-POL-VERSIONING
+- BHG-MIG-DA57580E8D90
+governs: []
 depends_on:
-- GOVERNANCE_MODEL.md
-- GOVERNANCE_PIPELINE.md
-- GOVERNANCE_EVOLUTION_MODEL.md
+- GOVERNANCE_MODEL
+- BHG-GOV-002
+- GOVERNANCE_EVOLUTION_MODEL
 related_to:
-- CHANGELOG.md
-- DOCUMENT_HISTORY_MODEL.md
-- REPOSITORY_HISTORY_LEDGER.md
-- GOVERNANCE_DECISION_LOG.md
-- BASELINE_REGISTRY.md
+- CHANGELOG
+- DOCUMENT_HISTORY_MODEL
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governs
+    target: Baseline Planning
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Repository Evolution
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Governance Priorities
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Bootstrap Closure
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Long-Term Governance Development
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: related_to
+    target: REPOSITORY_HISTORY_LEDGER.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: related_to
+    target: GOVERNANCE_DECISION_LOG.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: related_to
+    target: BASELINE_REGISTRY.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # BHG Governance Roadmap

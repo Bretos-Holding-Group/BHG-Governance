@@ -18,15 +18,29 @@ governed_by:
 depends_on:
 - CANONICAL_STANDARDS_RECONCILIATION_MATRIX
 - BHG-AUD-NORM-001
-related_to:
-- BHG-Ecosystem-Foundation
-- bhg-knowledge
-- ZivaLatam
+related_to: []
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: related_to
+    target: BHG-Ecosystem-Foundation
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: related_to
+    target: bhg-knowledge
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: related_to
+    target: ZivaLatam
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 governs: []
 ---
 

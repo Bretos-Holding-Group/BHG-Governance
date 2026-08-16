@@ -6,12 +6,12 @@ status: Active
 classification: Internal Governance
 owner: BHG Governance Council
 depends_on:
-- VERSIONING_POLICY.md
-- CHANGE_POLICY.md
-- GOVERNANCE_MODEL.md
+- BHG-POL-VERSIONING
+- BHG-MIG-DA57580E8D90
+- GOVERNANCE_MODEL
 related_to:
-- README.md
-- ARCHITECTURE_MAP.md
+- AUDIT-EVIDENCE-2026-001
+- BHG_GOVERNANCE_ARCHITECTURE_MAP
 document_type: Repository Record
 governance_level: Repository
 approval_authority: BHG Governance Council
@@ -27,6 +27,10 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
 governed_by: []
 governs: []
 ---

@@ -8,11 +8,11 @@ created: 2026-07-13
 last_updated: 2026-07-13
 language: English
 depends_on:
-- BHG_CONSTITUTION.md
-- GOVERNANCE_MODEL.md
-- AUTHORITY_MODEL.md
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-MIG-C43A05E01439
 governs:
-- RAI_FRAMEWORK_SPECIFICATION.md
+- BHG-MIG-71BF9217C532
 document_type: Audit Record
 governance_level: Audit
 owner: BHG Governance Council
@@ -34,6 +34,10 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
 governed_by: []
 related_to: []
 ---

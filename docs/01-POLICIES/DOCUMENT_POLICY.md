@@ -14,35 +14,58 @@ classification: Internal
 language: English
 repository: BHG Governance
 governed_by:
-- README.md
-- ARCHITECTURE_MAP.md
-- docs/00-FOUNDATION/BHG_CONSTITUTION.md
-- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-- docs/00-FOUNDATION/AUTHORITY_MODEL.md
-- docs/00-FOUNDATION/LEGAL_HIERARCHY.md
-governs:
-- All official governance documents
-- Documentation lifecycle
-- Document metadata standards
-- Documentation review process
-- Documentation versioning
-- Documentation publication rules
+- AUDIT-EVIDENCE-2026-001
+- BHG_GOVERNANCE_ARCHITECTURE_MAP
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-MIG-C43A05E01439
+- BHG-LH-001
+governs: []
 depends_on:
-- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-- docs/00-FOUNDATION/AUTHORITY_MODEL.md
-- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-- docs/00-FOUNDATION/LEGAL_HIERARCHY.md
-- docs/00-FOUNDATION/GLOSSARY.md
+- GOVERNANCE_MODEL
+- BHG-MIG-C43A05E01439
+- BHG-MIG-54D9BFC94609
+- BHG-LH-001
+- BHG-FDN-002
 related_to:
-- docs/01-POLICIES/CHANGE_POLICY.md
-- docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
-- docs/00-FOUNDATION/GOVERNANCE_PROPOSAL_STANDARD.md
-- docs/00-FOUNDATION/GOVERNANCE_CONFLICT_RESOLUTION.md
+- BHG-MIG-DA57580E8D90
+- BHG-GOV-002
+- BHG-GPS-001
+- BHG-GOV-009
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governs
+    target: All official governance documents
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Documentation lifecycle
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Document metadata standards
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Documentation review process
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Documentation versioning
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Documentation publication rules
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Document Policy

@@ -9,16 +9,12 @@ approval_authority: BHG Governance Council
 language: en
 classification: Internal
 governed_by:
-- BHG_CONSTITUTION.md
-- GOVERNANCE_MODEL.md
-- GOVERNANCE_PIPELINE.md
-- DOCUMENT_GRAMMAR_STANDARD.md
-- DOCUMENT_SCHEMA_STANDARD.md
-governs:
-- Document Compiler
-- AI Document Generator
-- Document Rendering Engine
-- Documentation Automation
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-GOV-002
+- DOCUMENT_GRAMMAR_STANDARD
+- DOCUMENT_SCHEMA_STANDARD
+governs: []
 document_id: BHG-MIG-DF2BC2DF9A4A
 created: '2026-07-09'
 last_updated: '2026-07-09'
@@ -32,6 +28,27 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governs
+    target: Document Compiler
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: AI Document Generator
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Document Rendering Engine
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Documentation Automation
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 depends_on: []
 related_to: []
 ---

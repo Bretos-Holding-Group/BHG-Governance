@@ -6,15 +6,14 @@ status: Approved
 classification: Internal Certification
 owner: BHG Architecture Council
 depends_on:
-- GENESIS_BOOTSTRAP_AUDIT_REPORT.md
-- GENESIS_BOOTSTRAP_RESPONSE.md
-- GENESIS_BOOTSTRAP_REMEDIATION_PLAN.md
-- GENESIS_BOOTSTRAP_REVALIDATION_REQUEST.md
-- GENESIS_BOOTSTRAP_REAUDIT.md
+- GENESIS-BOOTSTRAP-RESPONSE
+- GENESIS-BOOTSTRAP-REMEDIATION-PLAN
+- GENESIS-BOOTSTRAP-REVALIDATION-REQUEST
+- GENESIS-BOOTSTRAP-REAUDIT
 related_to:
-- ARCHITECTURE_MAP.md
-- README.md
-- CHANGELOG.md
+- BHG_GOVERNANCE_ARCHITECTURE_MAP
+- AUDIT-EVIDENCE-2026-001
+- CHANGELOG
 document_type: Audit Record
 governance_level: Audit
 approval_authority: BHG Governance Council
@@ -30,6 +29,15 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: depends_on
+    target: GENESIS_BOOTSTRAP_AUDIT_REPORT.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 governed_by: []
 governs: []
 ---

@@ -9,20 +9,13 @@ approval_authority: BHG Governance Council
 language: en
 classification: Internal
 governed_by:
-- BHG_CONSTITUTION.md
-- GOVERNANCE_MODEL.md
-- DOCUMENT_SCHEMA_STANDARD.md
-- DOCUMENT_COMPILER_STANDARD.md
-- DOCUMENT_VALIDATION_STANDARD.md
-- DOCUMENT_DEPENDENCY_STANDARD.md
-governs:
-- Rendering Engine
-- Markdown Renderer
-- HTML Renderer
-- PDF Renderer
-- Documentation Portal
-- Genesis Preview Engine
-- AI Visualization Engine
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- DOCUMENT_SCHEMA_STANDARD
+- BHG-MIG-9783A5418C4A
+- DOCUMENT_VALIDATION_STANDARD
+- BHG-MIG-60CC86A5A2D3
+governs: []
 document_id: BHG-MIG-49D1A6CF8892
 created: '2026-07-09'
 last_updated: '2026-07-09'
@@ -36,6 +29,39 @@ extensions:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governs
+    target: Rendering Engine
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Markdown Renderer
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: HTML Renderer
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: PDF Renderer
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Documentation Portal
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Genesis Preview Engine
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: AI Visualization Engine
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 depends_on: []
 related_to: []
 ---

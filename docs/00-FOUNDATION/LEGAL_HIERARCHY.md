@@ -14,28 +14,45 @@ classification: Internal
 language: en
 repository: BHG Governance
 governed_by:
-- docs/00-FOUNDATION/BHG_CONSTITUTION.md
-- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-- docs/00-FOUNDATION/AUTHORITY_MODEL.md
-governs:
-- Normative hierarchy
-- Governance authority relationships
-- Document authority interpretation
-- Normative conflict resolution rules
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-MIG-C43A05E01439
+governs: []
 depends_on:
-- docs/00-FOUNDATION/BHG_CONSTITUTION.md
-- docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-- docs/00-FOUNDATION/AUTHORITY_MODEL.md
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-MIG-C43A05E01439
 related_to:
-- docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-- docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
-- docs/00-FOUNDATION/GOVERNANCE_CONFLICT_RESOLUTION.md
-- docs/00-FOUNDATION/GLOSSARY.md
+- BHG-MIG-54D9BFC94609
+- BHG-GOV-002
+- BHG-GOV-009
+- BHG-FDN-002
 extensions:
   normalization:
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
     performed: '2026-08-16'
     mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+  legacy_relationships:
+  - relationship: governs
+    target: Normative hierarchy
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Governance authority relationships
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Document authority interpretation
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Normative conflict resolution rules
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Legal Hierarchy
