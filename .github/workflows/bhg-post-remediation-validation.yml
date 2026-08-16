@@ -26,35 +26,57 @@ jobs:
           from pathlib import Path
           from collections import Counter, defaultdict
           import yaml, json, sys
+
+          # N3-N5 validates the governed documentary corpus. Audit reports,
+          # generated scoring artifacts, and workflow evidence are evidence
+          # about the corpus, not governed source documents themselves.
+          excluded_roots=('audit/', 'artifacts/', 'post-remediation-evidence/')
           docs=sorted(Path('.').rglob('*.md'))
           docs=[p for p in docs if '.git/' not in str(p)]
+          docs=[p for p in docs if not str(p).startswith(excluded_roots)]
+
           required=['title','document_id','document_type','version','status','governance_level','owner','approval_authority','created','last_updated','classification','language','repository']
           allowed_status={'Concept','Draft','Review','Approved','Active','Effective','Deprecated','Archived'}
-          ids=defaultdict(list); keysets=Counter(); invalid_status=[]; missing=[]; nofm=0
+          ids=defaultdict(list); keysets=Counter(); invalid_status=[]; missing=[]
+
           for p in docs:
               t=p.read_text(encoding='utf-8',errors='replace')
-              if not t.startswith('---\n'): nofm+=1; fm={}
+              if not t.startswith('---\n'):
+                  fm={}
               else:
                   end=t.find('\n---',4)
-                  try: fm=yaml.safe_load(t[4:end]) or {} if end>=0 else {}
-                  except Exception: fm={}
+                  try:
+                      fm=yaml.safe_load(t[4:end]) or {} if end>=0 else {}
+                  except Exception:
+                      fm={}
               miss=[k for k in required if k not in fm or fm[k] is None]
               if miss: missing.append((str(p),miss))
               did=fm.get('document_id')
               if did: ids[str(did)].append(str(p))
               keysets[tuple(sorted(fm.keys()))]+=1
               if fm.get('status') not in allowed_status: invalid_status.append((str(p),fm.get('status')))
+
           dup={k:v for k,v in ids.items() if len(v)>1}
           out=Path('post-remediation-evidence'); out.mkdir(exist_ok=True)
-          report={'documents':len(docs),'missing_frontmatter':nofm,'metadata_gap_documents':len(missing),'duplicate_ids':dup,'keyset_count':len(keysets),'keysets':{'|'.join(k):v for k,v in keysets.items()},'invalid_status':invalid_status}
+          report={
+              'scope':'governed_documentary_corpus',
+              'excluded_roots':list(excluded_roots),
+              'documents':len(docs),
+              'missing_frontmatter':len([p for p in docs if not (p.read_text(encoding='utf-8',errors='replace').startswith('---\n'))]),
+              'metadata_gap_documents':len(missing),
+              'duplicate_ids':dup,
+              'keyset_count':len(keysets),
+              'keysets':{'|'.join(k):v for k,v in keysets.items()},
+              'invalid_status':invalid_status
+          }
           (out/'n3-n5-exit-evidence.json').write_text(json.dumps(report,indent=2,ensure_ascii=False),encoding='utf-8')
           blockers=[]
-          if nofm:blockers.append('missing frontmatter')
-          if missing:blockers.append('required metadata gaps')
-          if dup:blockers.append('duplicate document IDs')
-          if len(keysets)!=1:blockers.append('multiple top-level metadata keysets')
-          if invalid_status:blockers.append('invalid lifecycle statuses')
-          md=['# BHG N3-N5 Post-Remediation Exit Evidence','',f'- Markdown documents: **{len(docs)}**',f'- Missing frontmatter: **{nofm}**',f'- Documents with metadata gaps: **{len(missing)}**',f'- Duplicate document IDs: **{len(dup)}**',f'- Frontmatter keysets: **{len(keysets)}**',f'- Invalid lifecycle statuses: **{len(invalid_status)}**','', '**PASS — structural N3 metadata/identity exit conditions.**' if not blockers else '**CONDITIONAL FAIL:** '+', '.join(blockers), '', 'This validation is observational and does not approve, canonicalize, or activate normative artifacts.']
+          if report['missing_frontmatter']: blockers.append('missing frontmatter')
+          if missing: blockers.append('required metadata gaps')
+          if dup: blockers.append('duplicate document IDs')
+          if len(keysets)!=1: blockers.append('multiple top-level metadata keysets')
+          if invalid_status: blockers.append('invalid lifecycle statuses')
+          md=['# BHG N3-N5 Post-Remediation Exit Evidence','',f'- Governed Markdown documents: **{len(docs)}**',f'- Excluded evidence/report roots: **{len(excluded_roots)}**',f'- Missing frontmatter: **{report["missing_frontmatter"]}**',f'- Documents with metadata gaps: **{len(missing)}**',f'- Duplicate document IDs: **{len(dup)}**',f'- Frontmatter keysets: **{len(keysets)}**',f'- Invalid lifecycle statuses: **{len(invalid_status)}**','', '**PASS — structural N3 metadata/identity exit conditions.**' if not blockers else '**CONDITIONAL FAIL:** '+', '.join(blockers), '', 'This validation is observational and does not approve, canonicalize, or activate normative artifacts.']
           (out/'n3-n5-exit-evidence.md').write_text('\n'.join(md)+'\n',encoding='utf-8')
           print(json.dumps(report,indent=2,ensure_ascii=False))
           if blockers: sys.exit(1)
