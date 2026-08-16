@@ -53,6 +53,9 @@ extensions:
     target: AI_GOVERNANCE_ANALYSIS_STANDARD.md
     classification: missing_document_target
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+normalization_state: normalized
+normalization_baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+normalization_date: '2026-08-16'
 ---
 
 # Governance Change Workflow

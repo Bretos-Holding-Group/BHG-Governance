@@ -42,6 +42,9 @@ extensions:
     classification: external_scope
     baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 governs: []
+normalization_state: normalized
+normalization_baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+normalization_date: '2026-08-16'
 ---
 
 # BHG Repository Authority Sequence

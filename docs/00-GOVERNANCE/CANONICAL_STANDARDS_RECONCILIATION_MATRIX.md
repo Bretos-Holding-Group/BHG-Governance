@@ -37,6 +37,9 @@ extensions:
     performed: '2026-08-16'
     mode: controlled_reconciliation
 governs: []
+normalization_state: normalized
+normalization_baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+normalization_date: '2026-08-16'
 ---
 
 # Canonical Standards Reconciliation Matrix
