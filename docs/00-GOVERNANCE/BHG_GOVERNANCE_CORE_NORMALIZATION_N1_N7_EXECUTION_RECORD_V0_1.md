@@ -31,14 +31,7 @@ This record establishes the controlled execution state of the BHG Governance Cor
 
 ## 2. Execution boundary
 
-The active baseline is:
-
-```text
-repository: Bretos-Holding-Group/BHG-Governance
-main commit: d3abf0044655021fe671e513740491143f5a3a3?
-```
-
-The exact baseline identity is governed by `BHG-GOV-N0-001`. No phase in this record may silently replace that baseline.
+The active baseline is the exact baseline recorded by `BHG-GOV-N0-001`. No phase in this record may silently replace that baseline.
 
 ## 3. Constitutional boundary
 
