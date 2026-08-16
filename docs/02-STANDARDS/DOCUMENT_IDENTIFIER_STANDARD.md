@@ -1,499 +1,166 @@
 ---
 title: Document Identifier Standard
 document_id: DOCUMENT_IDENTIFIER_STANDARD
-version: 1.2.0
-status: Approved
+version: 1.2.1
+status: Draft
 document_type: Standard
 governance_level: Enterprise
 owner: BHG Governance Council
 approval_authority: BHG Governance Council
 created: 2026-07-21
-last_updated: 2026-07-22
-effective_date: 2026-07-22
+last_updated: 2026-08-14
+effective_date: null
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 
 governed_by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - DOCUMENT_STANDARD.md
-  - DOCUMENT_METADATA_STANDARD.md
-  - DOCUMENT_SCHEMA_STANDARD.md
-  - VERSIONING_POLICY.md
-
-governs:
-  - DOCUMENT_CLASSIFICATION_STANDARD.md
-  - LANGUAGE_POLICY.md
-  - DOCUMENT_RELATIONSHIP_STANDARD.md
-  - GOVERNANCE_REGISTRY_MODEL.md
-  - DOCUMENT_HISTORY_MODEL.md
-  - BASELINE_REGISTRY.md
-  - GENESIS_VALIDATION_ENGINE.md
-  - All Governance Documents
+  - DOCUMENT_STANDARD
+  - VERSIONING_POLICY
 
 depends_on:
-  - DOCUMENT_METADATA_STANDARD.md
-  - DOCUMENT_SCHEMA_STANDARD.md
+  - DOCUMENT_METADATA_STANDARD
+  - GOVERNANCE_REGISTRY_MODEL
 
 related_to:
-  - DOCUMENT_VALIDATION_STANDARD.md
-  - DOCUMENT_COMPILER_STANDARD.md
-  - TRACEABILITY_STANDARD.md
-  - REPOSITORY_STANDARD.md
+  - DOCUMENT_VALIDATION_STANDARD
+  - DOCUMENT_COMPILER_STANDARD
+  - TRACEABILITY_STANDARD
+  - REPOSITORY_STANDARD
 ---
 
 # Document Identifier Standard
 
-> Defines the canonical corporate identity model for every governance document within the Breto's Holding Group ecosystem.
+## 1. Purpose
 
----
+This standard defines the canonical identity model for official BHG documents. The `document_id` is the permanent institutional identity of a documentary artifact and remains stable across versions, ownership changes, repository migrations and serialization changes.
 
-# Purpose
+## 2. Scope
 
-This standard establishes the Corporate Documentary Identity (CDI) model used to uniquely identify every governance document throughout its complete lifecycle.
+The standard applies to official governance documents and any other documentary asset for which BHG governance requires a permanent identity.
 
-A document identifier represents the permanent institutional identity of a governance artifact.
+## 3. Semantic ownership
 
-The identifier shall remain stable regardless of:
+DOCUMENT_IDENTIFIER_STANDARD is the canonical owner of identifier semantics. DOCUMENT_METADATA_STANDARD exposes the identifier as metadata, while DOCUMENT_STANDARD defines the umbrella documentary contract.
 
-- content modifications;
-- document version changes;
-- ownership changes;
-- repository migrations;
-- technology evolution;
-- serialization format changes.
+Identifier semantics shall not be redefined by metadata schemas, relationship standards, templates, linters, automation or repository placement.
 
-The Corporate Documentary Identity enables:
+## 4. Canonical identity field
 
-- deterministic governance;
-- documentary traceability;
-- repository interoperability;
-- automated validation;
-- knowledge graph construction;
-- long-term preservation of institutional knowledge.
+Every governed document shall expose:
 
----
+```yaml
+document_id: <canonical identifier>
+```
 
-# Objectives
+The identifier answers: **What document is this?**
 
-This standard shall:
+The identifier shall not encode the current version, lifecycle state, date or repository location.
 
-- establish a single documentary identity model;
-- guarantee global identifier uniqueness;
-- preserve permanent documentary identity;
-- support Metadata Contract compliance;
-- enable Genesis ecosystem processing;
-- support Governance Registry operations;
-- enable Baseline certification;
-- facilitate automated governance validation;
-- preserve institutional continuity.
+## 5. Identifier properties
 
----
+Identifiers shall be:
 
-# Corporate Documentary Identity
+- unique;
+- permanent;
+- immutable during normal lifecycle evolution;
+- machine-readable;
+- human-readable;
+- repository-independent;
+- technology-independent;
+- deterministic.
 
-Every governance document shall possess one and only one Corporate Documentary Identity (CDI).
+## 6. Naming convention
 
-The CDI represents the permanent identity of the governance artifact independent from:
+The canonical identifier syntax is:
 
-- file location;
-- storage technology;
-- repository;
-- document format;
-- implementation system.
-
-The CDI shall be considered the primary identity reference for every governance document.
-
----
-
-# Identity Principles
-
-Document identifiers shall be:
-
-- Unique.
-- Permanent.
-- Immutable.
-- Human-readable.
-- Machine-readable.
-- Repository-independent.
-- Technology-independent.
-- Globally traceable.
-- Deterministic.
-
----
-
-# Canonical Identifier
-
-Every governance document shall expose the metadata field:
-
-document_id:
-The document_id field constitutes the canonical identity of the governance artifact.
-
-No governance system shall infer identity from:
-
-filename;
-folder location;
-title;
-version number.
-
-The identifier shall always be explicitly declared.
-
----
-
-# Identifier Naming Convention
-
-Document identifiers shall follow the official BHG naming convention.
-
-The identifier format shall be:
+```text
 UPPERCASE_WORDS_SEPARATED_BY_UNDERSCORES
+```
 
-Requirements:
-
-* shall use uppercase characters;
-* shall use underscores as separators;
-* shall not contain spaces;
-* shall not contain special characters;
-* shall not include version numbers;
-* shall not include dates;
-* shall not include repository names;
-* shall represent the institutional concept being governed.
-
-Valid example:
-DOCUMENT_IDENTIFIER_STANDARD
-
-Invalid examples:
-DocumentIdentifierStandard
-DOCUMENT_IDENTIFIER_STANDARD_V1
-BHG_DOCUMENT_IDENTIFIER
-
-The identifier shall represent the document identity, not its storage location or current lifecycle state.
-
----
-
-# Identifier Assignment Rules
-
-A document identifier shall be assigned when the governance artifact is created.
-
-The assignment process shall guarantee:
-
-* uniqueness verification;
-* registry availability;
-* naming compliance;
-* governance alignment.
-
-Before approval, the identifier shall be validated against the Governance Registry.
-
-No document may become an official governance artifact without a valid identifier.
-
----
-
-# Identifier Immutability
-
-The following rule is mandatory:
-
-> Once assigned, a document identifier shall never change.
-
-The identifier shall remain immutable throughout the complete lifecycle of the document.
-
-The following changes shall not modify the identifier:
-
-* title changes;
-* version changes;
-* ownership changes;
-* governance-level changes;
-* repository migration;
-* document restructuring;
-* translation;
-* serialization format changes.
+Identifiers shall not contain spaces, version numbers, dates or repository names.
 
 Example:
 
-A document:
-DOCUMENT_METADATA_STANDARD
-version: 1.0.0
+```text
+DOCUMENT_IDENTIFIER_STANDARD
+```
 
-that evolves into:
-DOCUMENT_METADATA_STANDARD
-version: 2.0.0
+## 7. Assignment
 
-maintains the same:
-document_id: DOCUMENT_METADATA_STANDARD
+An identifier shall be assigned when the documentary artifact is created. Before the artifact becomes official, uniqueness and registry compatibility shall be validated.
 
----
+No official governance document may operate without a valid identifier.
 
-# Identity Separation Principle
+## 8. Identity and version separation
 
-Document identity and document version are separate concepts.
+`document_id` and `version` represent different semantics:
 
-The identifier answers:
-
-> What document is this?
-
-The version answers:
-
-> Which evolution state of this document exists?
-
-Therefore:
+```text
 document_id = permanent identity
-version = lifecycle evolution
+version     = controlled evolution state
+```
 
 A new version does not create a new document identity.
 
----
+## 9. Immutability
 
-# Identifier Lifecycle
+Once assigned, `document_id` shall not change as part of ordinary maintenance. Title, version, ownership, governance level, repository or serialization changes do not justify a new identifier.
 
-The Corporate Documentary Identity follows the following lifecycle:
+Exceptional identity migration requires explicit governance approval, preservation of the previous identity evidence and impact analysis of all affected references.
 
-1. Identification proposal.
-2. Uniqueness verification.
-3. Identifier assignment.
-4. Registry registration.
-5. Document publication.
-6. Version evolution.
-7. Historical preservation.
-8. Document retirement.
+## 10. Registry integration
 
-The identifier remains valid even after document retirement.
+The governance registry shall use `document_id` as the canonical reference key and maintain, as applicable:
 
-Archived documents shall preserve their original identity.
+- identifier;
+- title;
+- document type;
+- current version;
+- lifecycle status;
+- repository location;
+- ownership;
+- governance relationships.
 
----
+## 11. Relationship integration
 
-# Identifier Registry Integration
+Documentary relationships shall resolve to canonical document identities. Relationship semantics themselves are owned by DOCUMENT_RELATIONSHIP_STANDARD.
 
-Every document identifier shall be registered within the BHG Governance Registry.
+Filename, folder location or title shall never be treated as a sufficient substitute for `document_id` when canonical identity is required.
 
-The registry shall maintain:
+## 12. Validation
 
-* identifier;
-* title;
-* document type;
-* current version;
-* lifecycle status;
-* repository location;
-* ownership;
-* governance relationships.
+Identifier validation shall verify:
 
-The Governance Registry shall use `document_id` as the canonical reference key.
-
----
-
-# Baseline Registry Compatibility
-
-Genesis Baseline certification shall use document identifiers to:
-
-* verify document presence;
-* detect duplicates;
-* resolve dependencies;
-* validate governance coverage;
-* maintain certification evidence.
-
-A document without a valid identifier shall not participate in Genesis Baseline certification.
-
----
-
-# Relationship Graph Integration
-
-Document identifiers shall enable construction of the BHG Governance Knowledge Graph.
-
-Relationships including:
-
-* governed_by;
-* governs;
-* depends_on;
-* related_to;
-
-shall reference canonical document identifiers.
-
-The relationship graph shall never rely only on filenames.
-
----
-
-# Identifier Validation
-
-The Corporate Compliance Engine shall validate:
-
-* identifier existence;
-* identifier format;
-* identifier uniqueness;
-* registry registration;
-* metadata consistency;
-* relationship references;
-* lifecycle compatibility.
-
-Validation failures shall generate governance findings.
-
----
-
-# Genesis Engine Compatibility
-
-Genesis systems shall use document identifiers as the primary reference mechanism for:
-
-* repository discovery;
-* document parsing;
-* dependency resolution;
-* validation workflows;
-* baseline analysis;
-* compliance certification.
-
-The following Genesis components shall consume document identity information:
-
-* Genesis Parser Engine.
-* Genesis Dependency Engine.
-* Genesis Validation Engine.
-* Genesis Compiler Engine.
-
-Document identifiers shall allow Genesis to process documents deterministically without relying on contextual assumptions.
-
----
-
-# Artificial Intelligence Compatibility
-
-Artificial Intelligence systems shall use document identifiers to:
-
-* identify authoritative documents;
-* prevent duplicate knowledge creation;
-* reconstruct governance relationships;
-* maintain historical continuity;
-* resolve conflicting references.
-
-AI systems shall never generate or modify official identifiers without governance authorization.
-
----
-# Repository Compatibility
-
-Document identifiers shall remain independent from repository structure.
-
-A governance document may change:
-
-- repository;
-- folder location;
-- storage system;
-- serialization format;
-- documentation platform;
-
-without modifying its Corporate Documentary Identity.
-
-Repository migration shall preserve:
-
-- document_id;
-- version history;
-- governance relationships;
-- audit evidence.
-
-Repository systems shall use the identifier as the primary reference for document synchronization and validation.
-
----
-
-# Automation Compatibility
-
-Governance automation systems may use document identifiers to perform:
-
-- document discovery;
-- duplicate detection;
-- dependency resolution;
-- relationship mapping;
-- validation execution;
-- compliance verification.
-
-Automation systems shall not create conflicting identifiers.
-
-All automatically generated identifiers shall require governance validation before becoming official.
-
----
-
-# Document Duplication Prevention
-
-The BHG ecosystem shall maintain a single authoritative identity for every governance concept.
-
-The existence of multiple documents representing the same institutional concept shall be considered a governance risk.
-
-When duplication is detected, the governance process shall determine:
-
-- consolidation;
-- replacement;
-- deprecation;
-- clarification of scope.
-
-The identifier registry shall be the primary mechanism for detecting identity conflicts.
-
----
-
-# Identifier Migration
-
-In exceptional cases where a document identity requires migration due to governance restructuring, the following requirements apply:
-
-- migration approval is mandatory;
-- previous identity evidence shall be preserved;
-- historical references shall remain accessible;
-- affected dependencies shall be analyzed;
-- migration records shall be created.
-
-Document identifiers shall not be changed as a normal maintenance operation.
-
----
-
-# Audit Requirements
-
-Every identifier-related operation shall preserve audit evidence.
-
-Audit records shall allow reconstruction of:
-
-- identifier assignment;
-- validation results;
-- registry changes;
-- migration events;
-- ownership changes;
-- governance decisions.
-
-The audit history shall preserve documentary continuity.
-
----
-
-# Long-Term Institutional Preservation
-
-The Corporate Documentary Identity exists to preserve knowledge beyond:
-
-- organizational changes;
-- technology changes;
-- repository migrations;
-- personnel changes;
-- operational evolution.
-
-The identifier represents the permanent reference point of institutional knowledge.
-
-Future systems shall be able to locate and interpret historical governance artifacts through their immutable identifiers.
-
----
-
-# Compliance Requirements
-
-Compliance with this standard is mandatory for every governance document within the Breto's Holding Group ecosystem.
-
-A document shall not be considered an official governance artifact if it lacks:
-
-- valid metadata;
-- unique document_id;
+- field presence;
+- syntax compliance;
+- uniqueness;
 - registry compatibility;
-- identifier validation.
+- metadata consistency;
+- reference integrity.
 
-Non-compliant documents shall enter the established remediation process.
+Validation failures shall prevent certification where the applicable governance process requires certification.
 
----
+## 13. Baseline and automation compatibility
 
-# Institutional Principle
+Baseline systems and automation may use document identifiers for discovery, duplicate detection, dependency resolution and relationship mapping. Automation shall not create an official identifier without the required governance validation.
 
-> Identity precedes traceability.
+## 14. Duplication prevention
 
-> A permanent document identity allows institutional knowledge to remain discoverable, verifiable and governable across generations.
+Multiple documents representing the same institutional concept shall be treated as a governance risk. Resolution shall determine consolidation, replacement, deprecation or explicit scope separation.
 
----
+The identifier registry is the primary mechanism for detecting identity conflicts.
 
-# Document Change Summary
+## 15. Audit and preservation
 
-Version updated:
-previous_version: 1.1.0
-new_version: 1.2.0
-change_type: Minor
+Identifier assignment, validation, migration and registry changes shall preserve sufficient evidence to reconstruct the documentary identity history.
+
+Archived documents retain their original identifier.
+
+## 16. Compliance
+
+A document is not eligible for canonical baseline certification unless it has a valid unique identifier and satisfies the applicable registry and validation requirements.
+
+## 17. Institutional principle
+
+> Identity precedes traceability. A permanent document identity allows institutional knowledge to remain discoverable, verifiable and governable across generations.

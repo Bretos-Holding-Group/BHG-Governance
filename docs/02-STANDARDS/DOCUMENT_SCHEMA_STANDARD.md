@@ -1,231 +1,138 @@
 ---
 title: Document Schema Standard
-version: 1.1.0
-status: Approved
-document-type: Standard
-governance-level: Enterprise
+document_id: DOCUMENT_SCHEMA_STANDARD
+version: 1.2.0
+status: Draft
+document_type: Standard
+governance_level: Enterprise
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
-language: en
+approval_authority: BHG Governance Council
+created: 2026-07-21
+last_updated: 2026-08-14
+effective_date: null
 classification: Internal
+language: en
+repository: BHG-GOVERNANCE
 
-applies-to:
-  - Entire BHG Ecosystem
+governed_by:
+  - DOCUMENT_STANDARD
 
-governed-by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - GOVERNANCE_PIPELINE.md
-  - DOCUMENT_GRAMMAR_STANDARD.md
-  - DOCUMENT_STANDARD.md
+depends_on:
+  - DOCUMENT_METADATA_STANDARD
+  - DOCUMENT_IDENTIFIER_STANDARD
+  - DOCUMENT_RELATIONSHIP_STANDARD
 
-governs:
-  - Document Compiler
-  - Document Validator
-  - Document Registry
-  - Document Template Engine
-  - Document Generator
-  - Governance as Code
+related_to:
+  - DOCUMENT_GRAMMAR_STANDARD
+  - DOCUMENT_VALIDATION_STANDARD
+  - DOCUMENT_TEMPLATE_ENGINE_STANDARD
+  - DOCUMENT_COMPILER_STANDARD
 ---
 
 # Document Schema Standard
 
-> Defines the canonical data schema for every governance document within the BHG ecosystem.
+## 1. Purpose
 
----
+This standard defines the canonical structural schema used to represent official BHG documents as deterministic data. It owns structural representation, not the meaning of metadata fields, identifiers or documentary relationships.
 
-# Purpose
+## 2. Semantic boundaries
 
-This standard defines the canonical data model that represents every governance document inside Breto's Holding Group.
+- DOCUMENT_STANDARD owns the umbrella documentary contract.
+- DOCUMENT_METADATA_STANDARD owns metadata field semantics.
+- DOCUMENT_IDENTIFIER_STANDARD owns identifier semantics.
+- DOCUMENT_RELATIONSHIP_STANDARD owns relationship semantics.
+- DOCUMENT_SCHEMA_STANDARD owns structural representation and field arrangement.
+- DOCUMENT_GRAMMAR_STANDARD owns textual/Markdown representation rules.
+- DOCUMENT_VALIDATION_STANDARD and DOCUMENT_LINTING_STANDARD enforce approved contracts.
 
-The schema enables consistent interpretation across humans, software systems and artificial intelligence agents.
+A schema shall not silently redefine the semantic meaning owned by another standard.
 
-Every document shall be representable as structured data.
+## 3. Canonical document object
 
----
+The canonical document representation consists of:
 
-# Design Principles
+```text
+Document
+├── metadata
+├── content
+└── relationships
+```
 
-The schema shall be:
+Automation and validation data may be represented as controlled extension fields, but shall not alter normative meaning.
 
-- Canonical
-- Machine Readable
-- Technology Independent
-- Extensible
-- Versioned
-- Deterministic
-- Traceable
-- Backward Compatible whenever possible
+## 4. Metadata object
 
----
+The metadata object shall use the canonical field names defined by DOCUMENT_METADATA_STANDARD, including where applicable:
 
-# Schema Architecture
+- `title`
+- `document_id`
+- `document_type`
+- `version`
+- `status`
+- `governance_level`
+- `owner`
+- `approval_authority`
+- `created`
+- `last_updated`
+- `effective_date`
+- `classification`
+- `language`
+- `repository`
+- `governed_by`
+- `governs`
+- `depends_on`
+- `related_to`
 
-Every document shall contain the following logical objects:
+The schema defines where these fields appear and their structural constraints. Their semantic meanings remain owned by their canonical standards.
 
-- Identity
-- Governance
-- Content
-- Relationships
-- Automation
-- Lifecycle
+## 5. Content object
 
----
+The content object contains the controlled document body, including sections such as purpose, scope, principles, definitions, requirements, procedures, responsibilities, exceptions and institutional principles when applicable to the document class.
 
-# Identity Object
+DOCUMENT_GRAMMAR_STANDARD defines representation and formatting constraints for the content.
 
-Mandatory attributes:
+## 6. Relationship object
 
-- identifier
-- title
-- version
-- document-type
-- governance-level
-- owner
-- approval-authority
-- status
-- classification
-- language
+Relationships shall use the canonical vocabulary defined by DOCUMENT_RELATIONSHIP_STANDARD and shall resolve to canonical document identities where the target is a governed documentary artifact.
 
-The identifier shall remain immutable.
+## 7. Structural invariants
 
----
+A conforming schema shall ensure:
 
-# Governance Object
+1. required metadata fields are structurally present;
+2. field names are deterministic;
+3. field types are valid;
+4. identifier and relationship references are structurally valid;
+5. content is separable from metadata;
+6. extensions do not override canonical semantics;
+7. unknown fields are handled according to the approved schema policy rather than silently interpreted.
 
-Mandatory attributes:
+## 8. Serialization
 
-- purpose
-- scope
-- governed-by
-- governs
-- responsibilities
-- authority-level
+The canonical schema is representation-independent. Approved serializations may include YAML front matter, JSON and other governed representations.
 
----
+Serialization syntax shall not change the underlying semantic model.
 
-# Content Object
+## 9. Schema evolution
 
-May include:
+Schema revisions shall declare:
 
-- principles
-- definitions
-- policies
-- standards
-- procedures
-- models
-- rules
-- requirements
-- appendices
+- schema/document version;
+- compatibility impact;
+- migration requirements when applicable.
 
----
+Breaking structural changes require the applicable governance approval and migration plan.
 
-# Relationship Object
+## 10. Validation compatibility
 
-Every document shall declare explicit relationships.
+Schema validation shall verify structural conformance before approval, publication or baseline certification where required.
 
-Supported relationship types include:
+Structural validation does not create normative authority; it enforces the contracts defined by the canonical standards.
 
-- dependency
-- inheritance
-- reference
-- implementation
-- supersession
-- composition
-- association
+## 11. Automation and AI
 
-Relationship identifiers shall reference canonical document identifiers.
+Automation and AI systems may parse and validate the schema, resolve dependencies and inspect structure. They shall not modify governance authority or semantic ownership through schema interpretation.
 
----
+## 12. Institutional principle
 
-# Automation Object
-
-The schema shall support automation metadata including:
-
-- validation-rules
-- governance-gates
-- automation-level
-- ai-readable
-- executable-rules
-- compliance-checks
-
-Automation metadata shall never modify governance authority.
-
----
-
-# Lifecycle Object
-
-Mandatory lifecycle information includes:
-
-- creation-date
-- effective-date
-- review-cycle
-- next-review
-- previous-version
-- superseded-version
-- changelog-reference
-
----
-
-# Version Compatibility
-
-Every schema revision shall define:
-
-- schema-version
-- compatibility-level
-- migration-requirements
-
-Breaking schema changes require Governance Council approval.
-
----
-
-# Validation Requirements
-
-Every document shall successfully validate:
-
-- required fields
-- field types
-- authority references
-- relationship integrity
-- lifecycle consistency
-- governance hierarchy
-
-Documents failing validation shall not be approved.
-
----
-
-# Serialization
-
-The canonical schema shall be technology independent.
-
-Reference implementations may include:
-
-- YAML
-- JSON
-- XML
-- Markdown Front Matter
-
-Future serialization formats may be added without changing the canonical model.
-
----
-
-# Governance as Code
-
-The schema shall allow automated systems to:
-
-- validate metadata
-- resolve dependencies
-- verify authority chains
-- inspect document relationships
-- detect structural inconsistencies
-- enforce governance policies
-
-Automation shall assist governance without replacing human authority.
-
----
-
-# Institutional Principle
-
-> Every governance document is structured data before it is formatted text.
-
-> Consistent schemas transform documentation into computable institutional knowledge.
+> The schema defines how governed document data is structured; it does not redefine what that data means.

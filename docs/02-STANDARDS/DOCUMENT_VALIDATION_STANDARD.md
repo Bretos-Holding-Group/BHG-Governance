@@ -1,253 +1,137 @@
 ---
 title: Document Validation Standard
-version: 1.1.0
-status: Approved
-document-type: Standard
-governance-level: Enterprise
+document_id: DOCUMENT_VALIDATION_STANDARD
+version: 1.2.0
+status: Draft
+document_type: Standard
+governance_level: Enterprise
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
-language: en
+approval_authority: BHG Governance Council
+created: 2026-07-21
+last_updated: 2026-08-14
+effective_date: null
 classification: Internal
+language: en
+repository: BHG-GOVERNANCE
 
-applies-to:
-  - Entire BHG Ecosystem
+governed_by:
+  - DOCUMENT_STANDARD
 
-governed-by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - GOVERNANCE_PIPELINE.md
-  - DOCUMENT_GRAMMAR_STANDARD.md
-  - DOCUMENT_SCHEMA_STANDARD.md
-  - DOCUMENT_COMPILER_STANDARD.md
+depends_on:
+  - DOCUMENT_METADATA_STANDARD
+  - DOCUMENT_IDENTIFIER_STANDARD
+  - DOCUMENT_RELATIONSHIP_STANDARD
+  - DOCUMENT_SCHEMA_STANDARD
+  - DOCUMENT_GRAMMAR_STANDARD
 
-governs:
-  - Document Linting Engine
-  - Compliance Engine
-  - Governance Verification Engine
-  - AI Document Review Systems
-  - Genesis Validation Framework
+related_to:
+  - DOCUMENT_LINTING_STANDARD
+  - TRACEABILITY_STANDARD
+  - DOCUMENT_AUTOMATION_STANDARD
 ---
 
 # Document Validation Standard
 
-> Defines the official validation framework ensuring every governance document satisfies institutional, structural and machine-verifiable requirements before publication.
+## 1. Purpose
 
----
+This standard defines the canonical validation framework for determining technical and documentary conformance to approved BHG contracts. Validation enforces canonical standards; it does not create normative authority.
 
-# Purpose
+## 2. Scope
 
-The Document Validation Standard establishes the mandatory validation process applied to every governance document.
+Validation applies to official documents before applicable approval, publication, baseline certification or other governance gates.
 
-Validation guarantees that institutional knowledge remains structurally correct, internally consistent and fully compliant with the governance framework.
+## 3. Validation boundaries
 
-No document shall be considered official unless all mandatory validation stages have successfully completed.
+Validation shall evaluate contracts owned by the applicable standards. It shall not silently redefine those contracts.
 
----
+Human governance authorities retain responsibility for approval, exceptions and canonical adoption.
 
-# Objectives
+## 4. Validation levels
 
-The validation framework shall:
+### Level 1 — Serialization and syntax
 
-- Detect structural errors.
-- Verify governance compliance.
-- Ensure document consistency.
-- Prevent publication of invalid artifacts.
-- Support Governance as Code.
-- Produce reproducible validation results.
+Verify Markdown/front matter syntax, encoding and serialization constraints.
 
----
+### Level 2 — Grammar
 
-# Validation Principles
+Verify DOCUMENT_GRAMMAR_STANDARD requirements.
 
-Validation shall be:
+### Level 3 — Schema and metadata
 
-- Deterministic
-- Repeatable
-- Automated whenever possible
-- Human-reviewable
-- Independent of implementation technology
-- Fully traceable
+Verify DOCUMENT_SCHEMA_STANDARD and DOCUMENT_METADATA_STANDARD requirements.
 
----
+### Level 4 — Identity and relationships
 
-# Validation Levels
+Verify DOCUMENT_IDENTIFIER_STANDARD and DOCUMENT_RELATIONSHIP_STANDARD requirements, including target resolution and authority direction.
 
-Validation is divided into multiple levels.
+### Level 5 — Lifecycle and history
 
-## Level 1 — Syntax Validation
+Verify lifecycle and version continuity against DOCUMENT_HISTORY_MODEL and applicable versioning policy.
 
-Verifies:
+### Level 6 — Governance alignment
 
-- Markdown syntax
-- Front matter syntax
-- Reserved keywords
-- Character encoding
+Verify compatibility with the Canonical Authority Model and applicable superior governance documents.
 
----
+### Level 7 — Cross-standard consistency
 
-## Level 2 — Grammar Validation
+Verify that no document simultaneously violates the semantic ownership or dependency rules of the canonical standards stack.
 
-Verifies compliance with:
+### Level 8 — Automation readiness
 
-- Document Grammar Standard
-- Required sections
-- Section ordering
-- Mandatory headings
+Verify machine-readable structure and deterministic validation inputs where automation readiness is required.
 
----
+## 5. Result states
 
-## Level 3 — Schema Validation
-
-Verifies:
-
-- Required metadata
-- Data types
-- Enumerations
-- Field integrity
-- Identifier uniqueness
-
----
-
-## Level 4 — Relationship Validation
-
-Verifies:
-
-- governed-by references
-- governs references
-- dependency integrity
-- circular dependency detection
-- reference existence
-
----
-
-## Level 5 — Governance Validation
-
-Verifies:
-
-- authority chain
-- governance hierarchy
-- approval authority
-- document classification
-- lifecycle consistency
-
----
-
-## Level 6 — Standards Compliance
-
-Verifies conformity with:
-
-- Naming Standard
-- Repository Standard
-- Writing Standard
-- Traceability Standard
-- Documentation Standard
-
----
-
-## Level 7 — Institutional Validation
-
-Verifies:
-
-- constitutional consistency
-- policy compatibility
-- governance principles
-- institutional terminology
-- glossary compliance
-
----
-
-## Level 8 — AI Compatibility Validation
-
-Verifies whether the document is:
-
-- machine readable
-- deterministic
-- automatable
-- suitable for Governance as Code
-- compatible with AI review systems
-
----
-
-# Validation Results
-
-Each validation rule shall produce one of the following outcomes:
+Each validation rule shall produce:
 
 - PASS
 - WARNING
 - ERROR
 - CRITICAL
 
-Only PASS and approved WARNING results may proceed to publication.
+Blocking behavior shall be determined by the governing contract and applicable governance gate. Validation shall not invent blocking authority independently.
 
----
+## 6. Validation report
 
-# Validation Report
+A validation execution should record:
 
-Every execution shall generate a validation report containing:
+- validation identifier;
+- document identifier;
+- validator version;
+- validation timestamp;
+- rules executed;
+- results;
+- errors;
+- warnings;
+- recommendations;
+- relevant schema/grammar/standard versions.
 
-- Validation Identifier
-- Document Identifier
-- Validator Version
-- Validation Timestamp
-- Rules Executed
-- Results Summary
-- Errors
-- Warnings
-- Recommendations
+Reports used as governance evidence shall be preserved according to DOCUMENT_HISTORY_MODEL and the applicable audit requirements.
 
-Validation reports are immutable governance records.
+## 7. Reproducibility and traceability
 
----
+Validation shall be deterministic and repeatable. Where technically applicable, evidence should identify the input version, validator version, rule-set version and execution integrity reference.
 
-# Validation Traceability
+## 8. AI participation
 
-Every validation shall preserve:
+AI systems may execute validation, classify findings and recommend remediation. They shall not approve governance exceptions or override normative authority.
 
-- input version
-- validator version
-- schema version
-- grammar version
-- execution hash
+## 9. Automation
 
----
+Validation rules may be executed continuously, before pull requests, before publication and during scheduled audits according to repository governance.
 
-# AI Participation
+Automation is an enforcement mechanism over approved contracts.
 
-Artificial Intelligence may:
+## 10. Extensibility
 
-- execute validation
-- classify findings
-- recommend corrections
-- generate reports
+Validation modules may be added through controlled governance change. Every module shall identify the canonical contract it enforces and preserve deterministic behavior.
 
-Artificial Intelligence shall never approve governance exceptions.
+## 11. Compliance
 
-Human approval remains mandatory whenever governance authority is involved.
+A document that fails a mandatory validation gate is not eligible for the corresponding governance progression until remediated or formally excepted.
 
----
+Passing validation does not itself mean the document is approved, active or canonical.
 
-# Governance as Code
+## 12. Institutional principle
 
-The validation framework shall expose machine-verifiable rules enabling:
-
-- Continuous Governance
-- Repository Validation
-- Automated Compliance
-- Continuous Documentation
-- Continuous Certification
-
----
-
-# Extensibility
-
-Additional validation modules may be introduced without modifying the existing validation architecture.
-
-Every extension shall preserve deterministic behavior.
-
----
-
-# Institutional Principle
-
-> A document is trusted because it has been validated.
-
-> Validation protects governance before governance protects the organization.
+> Validation establishes evidence of conformance; governance authority determines approval and adoption.

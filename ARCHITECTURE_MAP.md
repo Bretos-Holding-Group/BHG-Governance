@@ -1,449 +1,192 @@
 ---
 title: BHG Governance Architecture Map
-document_id: BHG-AM-001
-version: 1.1.1
-status: Active
-document_type: Architecture Specification
-governance_level: Foundational
-owner: BHG Architecture Office
+document_id: BHG_GOVERNANCE_ARCHITECTURE_MAP
+document_type: Repository Architecture Map
+governance_level: Enterprise
+version: 2.0.0
+status: Draft
+owner: BHG Governance Council
 approval_authority: BHG Governance Council
-created: 2026-07-19
-last_updated: 2026-07-21
-effective_date: 2026-07-21
+created: 2026-08-14
+last_updated: 2026-08-14
+effective_date: null
 classification: Internal
-language: English
-repository: BHG Governance
+language: en
+repository: BHG-Governance
 
 governed_by:
-  - README.md
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-
-governs:
-  - Repository architecture
-  - Documentation domains
-  - Document placement rules
-  - Repository navigation model
-  - Genesis Bootstrap routing model
-
+  - BHG-GOV-CAM-001
 depends_on:
-  - README.md
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-
+  - BHG_REPOSITORY_AUTHORITY_SEQUENCE
 related_to:
-  - docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/06-AUDIT/*
-
+  - BHG_CONSTITUTION
+  - CANONICAL_STANDARDS_RECONCILIATION_MATRIX
 ---
 
-# BHG Governance — Architecture Map
+# BHG Governance Architecture Map
 
-> **Official architectural specification of the BHG Governance repository.**
+## 1. Purpose
 
----
+This document defines the structural architecture of the BHG-Governance repository.
 
-# Objective
+It is subordinate to the applicable BHG constitutional and governance authority. Repository placement, filename and historical creation order do not create normative authority.
 
-This document defines the official documentary architecture of the BHG Governance repository.
+## 2. Authority position
 
-Its purpose is to establish a stable, scalable and machine-readable structure capable of governing every normative document produced by Breto's Holding Group.
+BHG-Governance is the repository for the BHG governance system. Its scope includes governance models, policies, documentary standards, engineering governance, AI governance, automation governance and audit/validation artifacts.
 
-The Architecture Map provides the structural foundation used by humans, artificial intelligence systems, governance processes and future repositories derived from this governance model.
+It does not become an independent constitutional root and does not supersede the BHG Constitution or the approved cross-repository authority model.
 
-This document specifies repository architecture only.
+## 3. Domain sequence
 
-It does not define corporate policies, engineering standards or operational procedures.
-
----
-
-# Normative Authority
-
-## Governed By
-
-- README.md
-
-## Governs
-
-- Repository structure
-- Repository organization
-- Document placement
-- Domain hierarchy
-- Repository navigation
-- Genesis Bootstrap document routing
-- AI repository navigation
-- Future governance repositories
-
----
-
-# Scope
-
-This specification applies to every document contained within the BHG Governance repository.
-
-All current and future documentation shall comply with the architectural principles defined herein unless an officially approved governance change explicitly supersedes this document.
----
-
-# Architecture Principles
-
-The BHG Governance repository has been designed as a long-term governance platform rather than a conventional software repository.
-
-Its architecture prioritizes institutional continuity, documentary traceability, artificial intelligence interoperability and sustainable organizational growth.
-
-Every structural decision shall preserve these principles.
-
-## 1. Governance First
-
-Governance precedes implementation.
-
-No software, product, automation, artificial intelligence workflow or operational process shall be considered authoritative unless supported by the corresponding governance documentation.
-
-Documentation defines authority.
-
-Implementation applies authority.
-
----
-
-## 2. Single Source of Truth
-
-Every normative subject shall have one and only one authoritative document.
-
-Duplicate definitions are prohibited.
-
-When multiple documents discuss the same subject, only one document may establish normative authority while the others shall reference it.
-
----
-
-## 3. Explicit Authority
-
-Every document shall explicitly identify:
-
-- its governing authority;
-- the documents it governs;
-- its scope;
-- its version;
-- its lifecycle status.
-
-Normative authority shall never be implicit.
-
----
-
-## 4. Structural Stability
-
-The repository architecture is designed for long-term stability.
-
-Folders shall remain stable across repository evolution.
-
-Architectural changes require a formal governance approval process.
-
-Stability takes precedence over convenience.
-
----
-
-## 5. Separation of Responsibilities
-
-Each documentation domain exists for a single primary purpose.
-
-Normative content shall never be mixed with:
-
-- historical evidence;
-- temporary discussions;
-- implementation artifacts;
-- personal notes;
-- experimental documentation.
-
-Every document shall belong to the domain matching its primary responsibility.
-
----
-
-## 6. Traceability by Design
-
-Every significant governance decision shall remain traceable.
-
-Historical evidence shall be preserved without altering the current normative state.
-
-Repository evolution must remain reconstructable over time.
-
----
-
-## 7. Human and AI Readability
-
-Documentation shall be understandable by both humans and artificial intelligence systems.
-
-Documents shall prioritize:
-
-- explicit structure;
-- deterministic language;
-- stable terminology;
-- consistent metadata;
-- machine-readable hierarchy.
-
-Ambiguity should be minimized whenever possible.
-
----
-
-## 8. Scalability
-
-The architecture shall support decades of organizational growth without requiring structural redesign.
-
-New documents, standards and governance domains shall integrate into the existing hierarchy while preserving architectural consistency.
-
----
-
-## 9. Repository Independence
-
-The governance repository defines organizational authority independently of implementation repositories.
-
-Operational repositories consume governance.
-
-They do not redefine it.
-
----
-
-## 10. Genesis Compatibility
-
-Repository architecture shall remain compatible with Genesis Bootstrap and future AI governance engines.
-
-Artificial intelligence systems shall be capable of determining:
-
-- document classification;
-- authority hierarchy;
-- dependency relationships;
-- repository routing;
-- document lifecycle;
-- governance applicability
-
-without requiring external interpretation.
----
-
-# Repository Layer Model
-
-The BHG Governance repository is organized as a hierarchical governance system.
-
-Each documentation layer builds upon the authority established by the layers above it.
-
-Authority always flows downward.
-
-Compliance always flows upward.
-
-The repository follows the architectural model illustrated below.
+The repository is organized by functional governance layer:
 
 ```text
-                           README
-                              │
-                              ▼
-                    ARCHITECTURE_MAP
-                              │
-                              ▼
-                     00-FOUNDATION
-                              │
-                              ▼
-                      01-POLICIES
-                              │
-                              ▼
-                     02-STANDARDS
-                              │
-                              ▼
-                    03-ENGINEERING
-                              │
-          ┌───────────────────┼───────────────────┐
-          ▼                   ▼                   ▼
-       04-AI          05-AUTOMATION         06-AUDIT
-          │                   │                   │
-          └───────────────┬───┴───────────────────┘
-                          ▼
-                  07-GOVERNANCE
-                          │
-                          ▼
-                   08-TEMPLATES
-                          │
-                          ▼
-                  09-AI-PROFILES
-                          │
-                          ▼
-                  10-REFERENCE
-                          │
-                          ▼
-                      11-META
-                          │
-                          ▼
-                     99-HISTORY
+00-FOUNDATION
+    ↓
+00-GOVERNANCE
+    ↓
+01-POLICIES
+    ↓
+02-STANDARDS
+    ↓
+03-ENGINEERING
+    ↓
+04-AI
+    ↓
+05-AUTOMATION
+    ↓
+06-AUDIT
+    ↓
+99-HISTORY
 ```
 
-Every documentation domain has a clearly defined responsibility.
+This is a repository organization sequence, not a claim that every lower directory is normatively superior to every document in a higher directory. Normative authority is determined by the approved authority model and explicit relationships.
 
-Higher layers establish authority.
+## 4. Domain responsibilities
 
-Lower layers implement, support, validate or preserve that authority.
+### 00-FOUNDATION
 
-No lower layer may redefine the authority of a higher layer.
+Contains constitutional and foundational governance artifacts used by the governance repository.
 
----
+### 00-GOVERNANCE
 
-# Repository Dependency Model
+Contains canonical governance models, authority models and controlled reconciliation artifacts.
 
-The repository follows a strict dependency hierarchy.
+### 01-POLICIES
 
-Dependencies shall always point upward toward authoritative documents.
+Contains enterprise and domain policy contracts subordinate to applicable governance authority.
 
-Reverse dependencies are prohibited unless explicitly authorized by governance.
+### 02-STANDARDS
 
-The dependency model is defined below.
+Contains controlled documentary, repository and implementation standards. Shared semantic contracts require one canonical owner.
 
-| Domain | May Depend On |
-|----------|------------------------------|
-| 00-FOUNDATION | None |
-| 01-POLICIES | Foundation |
-| 02-STANDARDS | Foundation, Policies |
-| 03-ENGINEERING | Foundation, Policies, Standards |
-| 04-AI | Foundation, Policies, Standards, Engineering |
-| 05-AUTOMATION | Foundation, Policies, Standards, Engineering, AI |
-| 06-AUDIT | All normative domains |
-| 07-GOVERNANCE | All normative domains |
-| 08-TEMPLATES | All normative domains |
-| 09-AI-PROFILES | AI, Standards, Engineering |
-| 10-REFERENCE | External references only |
-| 11-META | Entire repository |
-| 99-HISTORY | Entire repository (read-only historical reference) |
+### 03-ENGINEERING
 
----
+Contains engineering policies, standards, ADRs and implementation governance subordinate to applicable policies and standards.
 
-# Dependency Rules
+### 04-AI
 
-The following repository rules are mandatory.
+Contains AI governance, standards and Genesis documentation. AI systems may analyze and enforce approved contracts but do not create normative authority.
 
-1. Documents shall never create circular dependencies.
+### 05-AUTOMATION
 
-2. Documents shall always reference the highest available normative authority.
+Contains automation governance and operational contracts. Automation implements approved rules and must not invent authority.
 
-3. Historical documents shall never become normative authority.
+### 06-AUDIT
 
-4. Reference documents shall never override internal governance.
+Contains validation, conflict registers, audit reports and readiness assessments. Audit artifacts record evidence; they do not become normative authority merely by detecting a finding.
 
-5. Templates shall not introduce new governance requirements.
+### 99-HISTORY
 
-6. Engineering documents shall comply with standards.
+Contains immutable historical records and evidence. Historical artifacts do not redefine current authority.
 
-7. Standards shall comply with policies.
+## 5. Authority versus placement
 
-8. Policies shall comply with foundation documents.
+The following rule is mandatory:
 
-9. Foundation documents define the highest level of internal authority.
+```text
+folder != authority
+filename != authority
+creation_order != authority
+approval_level != normative_level
+```
 
-10. Every dependency shall be explicit whenever technically feasible.
+Authority is resolved from the approved hierarchy and explicit normative relationships.
 
----
+## 6. Document creation sequence
 
-# Repository Evolution Model
+Every new normative or architectural document in this repository must follow:
 
-The BHG Governance repository is designed to evolve through controlled governance rather than through ad hoc structural modifications.
+```text
+Identify subject
+    ↓
+Resolve canonical owner
+    ↓
+Resolve superior authority
+    ↓
+Select canonical document_id
+    ↓
+Select document_type and lifecycle state
+    ↓
+Declare governed_by / depends_on / related_to
+    ↓
+Assess cross-repository impact
+    ↓
+Create on non-main branch
+    ↓
+Validate metadata and authority graph
+    ↓
+Independent review
+    ↓
+Approval / merge according to governance
+```
 
-Repository evolution shall preserve architectural stability while allowing the governance ecosystem to expand over time.
+No document should be created merely because a directory appears to need another document.
 
-New documentation domains may be introduced only when all of the following conditions are satisfied:
+## 7. Core documentary authority
 
-- a clearly defined governance responsibility exists;
-- no existing domain adequately fulfills that responsibility;
-- the Governance Authority formally approves the change;
-- dependency analysis confirms compatibility with the existing architecture;
-- Genesis Bootstrap validation confirms deterministic AI document routing.
+The documentary standards form a contract stack:
 
-Existing domains shall not be renamed, relocated or removed without an approved governance decision.
+```text
+DOCUMENT_STANDARD
+    ├── DOCUMENT_METADATA_STANDARD
+    ├── DOCUMENT_IDENTIFIER_STANDARD
+    ├── DOCUMENT_RELATIONSHIP_STANDARD
+    ├── DOCUMENT_SCHEMA_STANDARD
+    ├── DOCUMENT_GRAMMAR_STANDARD
+    ├── DOCUMENT_HISTORY_MODEL
+    └── DOCUMENT_VALIDATION_STANDARD
+             └── DOCUMENT_LINTING_STANDARD
+```
 
-Architectural evolution shall prioritize backward compatibility whenever technically feasible.
+The stack separates semantic ownership from dependency. A subordinate standard may specialize a contract but may not silently redefine the contract owned by another standard.
 
----
+## 8. Audit boundary
 
-# Genesis Bootstrap Integration
+Audit findings are evidence for remediation.
 
-Genesis Bootstrap is the authoritative document classification and governance routing framework for the BHG Governance repository.
+An audit report does not itself grant authority to create, delete, rename or supersede normative documents. Remediation must be evaluated against the applicable canonical contract and recorded through controlled change.
 
-The repository architecture has been designed to support deterministic document routing by both human contributors and Artificial Intelligence systems.
+## 9. Cross-repository boundary
 
-Every governance document shall be capable of being classified according to:
+BHG-Governance participates in the four-repository BHG normalization scope together with:
 
-- governance domain;
-- normative authority;
-- document lifecycle;
-- dependency relationships;
-- implementation scope;
-- repository location.
+- BHG-Ecosystem-Foundation;
+- bhg-knowledge;
+- ZivaLatam.
 
-Genesis Bootstrap shall use this Architecture Map as the primary reference for determining the correct location of newly created governance documentation.
+Cross-repository authority follows `BHG_REPOSITORY_AUTHORITY_SEQUENCE`.
 
----
+The governance repository does not acquire ownership of institutional architecture merely because it governs governance processes.
 
-# AI Navigation Model
+## 10. Baseline status
 
-Artificial Intelligence systems interacting with the repository shall interpret its structure according to the architectural hierarchy defined in this document.
+```text
+status: Draft
+canonical: false
+effective: false
+automation_ready: false
+```
 
-AI systems should always:
-
-- identify the governing authority before generating documentation;
-- determine the correct documentation domain;
-- verify dependency relationships;
-- avoid duplicate normative definitions;
-- preserve repository consistency;
-- maintain documentary traceability.
-
-When uncertainty exists, AI systems shall prioritize the highest available normative authority instead of generating conflicting governance content.
-
----
-
-# Recommended Reading Order
-
-For complete understanding of the governance model, documents should be consulted in the following order:
-
-1. README.md
-2. ARCHITECTURE_MAP.md
-3. BHG Constitution
-4. Governance Model
-5. Authority Model
-6. Policy documents
-7. Standards
-8. Engineering documentation
-9. AI governance
-10. Automation documentation
-11. Audit documentation
-
-This sequence ensures that governance authority is understood before implementation details.
----
-
-# Relationship with Future Repositories
-
-BHG Governance is the normative source of authority for all current and future repositories within the Breto's Holding Group ecosystem.
-
-Implementation repositories shall consume governance documentation but shall not redefine or supersede it.
-
-Examples of repositories governed by this architecture include, but are not limited to:
-
-- ZIVA Latam
-- ZIVA ID
-- BHG Knowledge
-- Future BHG products and services
-
-Each implementation repository shall declare the governance version it adopts and maintain traceability to the corresponding governance documents.
-
----
-
-# Architectural Stability
-
-The repository architecture defined in this document is considered stable for the Genesis Bootstrap phase.
-
-Structural modifications shall be exceptional and require formal governance approval.
-
-The creation, removal or relocation of documentation domains shall only occur when justified by organizational growth and supported by documented governance decisions.
-
-This approach preserves long-term consistency, minimizes technical debt and ensures compatibility with both human contributors and Artificial Intelligence systems.
-
----
-
-# Final Principle
-
-The architecture exists to organize governance.
-
-Governance exists to protect knowledge.
-
-Knowledge enables sustainable organizations.
-
-Every document, every decision and every future repository shall preserve these principles.
-
-The value of the governance system is measured not by the number of documents it contains, but by the clarity, consistency and longevity of the institutional knowledge it protects.
+This version intentionally remains Draft until the applicable authority model and repository-wide normalization have passed independent validation.

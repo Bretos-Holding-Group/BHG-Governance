@@ -1,714 +1,177 @@
 ---
 title: Document Standard
 document_id: DOCUMENT_STANDARD
-version: 1.1.0
-status: Approved
+version: 1.2.0
+status: Draft
 document_type: Standard
 governance_level: Enterprise
 owner: BHG Governance Council
 approval_authority: BHG Governance Council
 created: 2026-07-21
-last_updated: 2026-07-22
-effective_date: 2026-07-22
+last_updated: 2026-08-14
+effective_date: null
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
 
 governed_by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - DOCUMENT_POLICY.md
-  - POLICY_HIERARCHY.md
-  - LANGUAGE_POLICY.md
+  - BHG_CONSTITUTION
+  - GOVERNANCE_MODEL
+  - DOCUMENT_POLICY
+  - POLICY_HIERARCHY
+  - LANGUAGE_POLICY
 
 governs:
-  - DOCUMENT_METADATA_STANDARD.md
-  - DOCUMENT_IDENTIFIER_STANDARD.md
-  - DOCUMENT_RELATIONSHIP_STANDARD.md
-  - DOCUMENT_SCHEMA_STANDARD.md
-  - DOCUMENT_VALIDATION_STANDARD.md
-  - DOCUMENT_TEMPLATE_ENGINE_STANDARD.md
-  - All Official Governance Documents
+  - DOCUMENT_METADATA_STANDARD
+  - DOCUMENT_IDENTIFIER_STANDARD
+  - DOCUMENT_RELATIONSHIP_STANDARD
+  - DOCUMENT_SCHEMA_STANDARD
+  - DOCUMENT_GRAMMAR_STANDARD
+  - DOCUMENT_HISTORY_MODEL
+  - DOCUMENT_VALIDATION_STANDARD
+  - DOCUMENT_LINTING_STANDARD
 
 depends_on:
-  - DOCUMENT_POLICY.md
-  - DOCUMENT_METADATA_STANDARD.md
-  - DOCUMENT_IDENTIFIER_STANDARD.md
+  - DOCUMENT_POLICY
+  - DOCUMENT_CLASSIFICATION_STANDARD
+  - LANGUAGE_POLICY
 
 related_to:
-  - DOCUMENT_CLASSIFICATION_STANDARD.md
-  - DOCUMENT_HISTORY_MODEL.md
-  - DOCUMENT_LINTING_STANDARD.md
-  - DOCUMENT_RENDERING_STANDARD.md
-  - TRACEABILITY_STANDARD.md
+  - DOCUMENT_RENDERING_STANDARD
+  - TRACEABILITY_STANDARD
+  - DOCUMENT_TEMPLATE_ENGINE_STANDARD
+  - DOCUMENT_COMPILER_STANDARD
 ---
 
 # Document Standard
 
-> Corporate Standard defining the official structure, identity and operational requirements of documents within the Breto's Holding Group ecosystem.
+## 1. Purpose
 
----
+This standard establishes the umbrella contract for official documents within the Breto's Holding Group ecosystem. It defines the common documentary requirements and delegates specialized semantics to the standards that own those domains.
 
-# Purpose
+A BHG document is a governed institutional knowledge asset with identity, authority, lifecycle, relationships and historical value.
 
-This standard establishes the mandatory structure and quality requirements for every official document within the Breto's Holding Group ecosystem.
+## 2. Scope
 
-Its purpose is to ensure that all governance artifacts, standards, policies, procedures, technical documents and institutional records maintain:
+This standard applies to governance documents, policies, standards, procedures, technical specifications, engineering documentation, AI governance artifacts, repository documentation, knowledge assets and institutional records maintained in BHG-controlled repositories.
 
-- consistency;
-- traceability;
-- interoperability;
-- machine readability;
-- human comprehension;
-- long-term preservation.
+## 3. Normative authority and semantic ownership
 
-A document within BHG is not considered simple text.
+This document is the framework standard for the documentary system. It does not absorb the complete semantics of specialized standards.
 
-A document is a governed knowledge asset with identity, authority, relationships, lifecycle and historical value.
+The canonical semantic owners are:
 
----
+| Domain | Canonical owner |
+|---|---|
+| Common document contract | DOCUMENT_STANDARD |
+| Metadata fields and semantics | DOCUMENT_METADATA_STANDARD |
+| Document identity and identifiers | DOCUMENT_IDENTIFIER_STANDARD |
+| Inter-document relationships | DOCUMENT_RELATIONSHIP_STANDARD |
+| Structural schema | DOCUMENT_SCHEMA_STANDARD |
+| Content and Markdown grammar | DOCUMENT_GRAMMAR_STANDARD |
+| Version and history semantics | DOCUMENT_HISTORY_MODEL |
+| Conformance validation | DOCUMENT_VALIDATION_STANDARD |
+| Static linting and enforcement | DOCUMENT_LINTING_STANDARD |
 
-# Scope
+A specialized standard may constrain or extend implementation within its domain, but shall not redefine the meaning owned by another canonical standard.
 
-This standard applies to:
+## 4. Core principles
 
-- governance documents;
-- corporate policies;
-- standards;
-- procedures;
-- technical specifications;
-- engineering documentation;
-- AI governance artifacts;
-- repository documentation;
-- knowledge assets;
-- institutional records.
+Official documents shall be:
 
-Every official document stored inside a BHG-controlled repository shall comply with this standard.
+- uniquely identifiable;
+- structurally consistent;
+- machine-readable;
+- human-readable;
+- traceable;
+- auditable;
+- version-controlled;
+- explicitly related to authoritative sources;
+- modular and reusable;
+- preserved throughout their lifecycle.
 
----
+Every institutional concept shall have one authoritative source. Derived documents shall reference that source rather than redefine it.
 
-# Core Principles
+## 5. Minimum documentary contract
 
-## Principle 1 — Document as a Governed Asset
+Every official document shall provide, directly or through the canonical metadata contract:
 
-Every official document shall be treated as an institutional asset.
+1. identity;
+2. document type;
+3. version;
+4. lifecycle status;
+5. governance level;
+6. ownership and approval authority;
+7. classification and language;
+8. repository identity;
+9. normative relationships;
+10. controlled content structure.
 
-Documents shall have:
+The precise field names, data types and validation constraints are owned by DOCUMENT_METADATA_STANDARD and DOCUMENT_SCHEMA_STANDARD.
 
-- ownership;
-- authority;
-- version;
-- lifecycle;
-- classification;
-- traceability.
+## 6. Authority relationships
 
----
+Normative documents shall expose explicit relationships using the canonical relationship vocabulary.
 
-## Principle 2 — Single Source of Truth
+- `governed_by` identifies superior authority.
+- `governs` identifies documents deriving authority from the document.
+- `depends_on` identifies prerequisites for interpretation, implementation or validation that are not necessarily superior authorities.
+- `related_to` identifies contextual relationships without authority inheritance.
 
-Every official concept shall have one authoritative document.
+Relationship semantics are owned by DOCUMENT_RELATIONSHIP_STANDARD. A relationship shall not be inferred from repository placement, chronology or filename alone.
 
-Duplicate documents with identical institutional purpose shall not exist.
+## 7. Lifecycle
 
-Derived documents may reference the source document but shall never replace it.
+Official lifecycle states are:
 
----
+- Concept
+- Draft
+- Review
+- Approved
+- Active
+- Deprecated
+- Archived
 
-## Principle 3 — Traceability
+Lifecycle semantics and transition controls are subject to the applicable governance policies and DOCUMENT_HISTORY_MODEL.
 
-Every document shall allow reconstruction of:
+Approval status shall not be treated as proof of semantic correctness. A document may require reconciliation or normalization before it can become canonical.
 
-- origin;
-- modifications;
-- responsible authorities;
-- dependencies;
-- approvals;
-- historical evolution.
+## 8. Version control and history
 
----
+Every controlled modification shall preserve historical continuity. Version semantics are owned by DOCUMENT_HISTORY_MODEL and the applicable versioning policy.
 
-## Principle 4 — Consistency
+No modification shall silently erase a previous institutional state.
 
-All documents shall follow the same structural and metadata requirements defined by the BHG documentation governance system.
+## 9. Classification and language
 
----
+Every official document shall declare classification and language. Classification semantics are governed by DOCUMENT_CLASSIFICATION_STANDARD and language requirements by LANGUAGE_POLICY.
 
-## Principle 5 — Machine Readability
+## 10. Modularity and non-duplication
 
-Documents shall be structured to support:
+Documents shall maintain a clear scope and avoid duplicating semantics owned elsewhere. When a specialized rule already has a canonical owner, this standard shall reference that owner rather than restate the rule in a competing form.
 
-- automated validation;
-- semantic analysis;
-- dependency resolution;
-- AI-assisted interpretation;
-- governance automation.
+## 11. Human and machine readability
 
----
+Documents shall use deterministic metadata, stable identifiers, explicit relationships, predictable sections and controlled terminology so they can be interpreted by qualified humans and governance automation.
 
-## Principle 6 — Human Understanding
+AI systems and automation may interpret, validate or recommend changes, but shall not create or override normative authority.
 
-Documents shall remain understandable by qualified human readers without requiring undocumented external context.
+## 12. Compliance and validation
 
----
+Official documents shall be validated for metadata completeness, structural integrity, identifier consistency, relationship integrity, lifecycle consistency and governance alignment.
 
-# Document Standard
+Validation and linting are enforcement mechanisms over approved canonical contracts. Their implementation does not itself create normative authority.
 
-> Estándar Corporativo para Documentos de Breto's Holding Group
+## 13. Exceptions
 
----
+Exceptions shall be approved by the authority defined by the BHG Governance Model and shall record justification, affected documents, impact, approving authority and review or expiration date.
 
-# Estado
+## 14. Normalization rule
 
-Versión: 1.0.0
+Existing documents may contain legacy definitions, duplicated sections or historical metadata. During normalization, the canonical semantic owner shall be retained and competing or duplicated definitions shall be removed or explicitly classified as legacy.
 
-Estado: Activo
+An `Approved` status shall not prevent correction of an internally contradictory document through the applicable governance change process.
 
-Nivel Normativo: Estándar Corporativo (S0)
+## 15. Institutional principle
 
----
-
-# Propósito
-
-Este estándar define la estructura oficial que deberán seguir todos los documentos del ecosistema Breto's Holding Group.
-
-Su objetivo es que la documentación sea consistente, comprensible, trazable y preparada para el razonamiento asistido por inteligencia artificial.
-
----
-
-# Principios
-
-Todo documento deberá ser:
-
-* Claro.
-* Preciso.
-* Versionable.
-* Trazable.
-* Auditable.
-* Relacionable.
-* Modular.
-* Reutilizable.
-* Comprensible por personas.
-* Comprensible por sistemas.
-
----
-
-# Estructura mínima obligatoria
-
-Todo documento normativo deberá contener, como mínimo:
-
-1. Título.
-2. Propósito.
-3. Estado.
-4. Versión.
-5. Nivel normativo.
-6. Autoridad normativa.
-7. Alcance.
-8. Contenido.
-9. Principio final.
-
-Cuando corresponda, también deberá incluir:
-
-* Definiciones.
-* Responsabilidades.
-* Excepciones.
-* Referencias.
-* Historial de cambios.
-
----
-
-# Metadatos obligatorios
-
-Todo documento deberá declarar explícitamente:
-
-* Identificador único.
-* Nombre oficial.
-* Versión.
-* Estado.
-* Fecha de creación.
-* Fecha de última actualización.
-* Clasificación de seguridad.
-* Nivel normativo.
-* Repositorio de origen.
-* Responsable del documento.
-
----
-
-# Relación entre documentos
-
-Los documentos deberán establecer de forma explícita:
-
-* qué documentos los gobiernan;
-* qué documentos gobiernan;
-* dependencias relevantes;
-* referencias cruzadas cuando existan.
-
----
-
-# Unicidad
-
-Cada concepto institucional deberá tener una única fuente oficial.
-
-No se permitirá la duplicación innecesaria de definiciones.
-
----
-
-# Ciclo de vida
-
-Estados oficiales:
-
-* Concept
-* Draft
-* Review
-* Approved
-* Active
-* Deprecated
-* Archived
-
----
-
-# Identificación
-
-Cada documento deberá poder identificarse de forma inequívoca mediante:
-
-* nombre;
-* identificador;
-* versión;
-* ubicación.
-
----
-
-# Compatibilidad con BKOs
-
-BKOs deberá poder:
-
-* indexar automáticamente el documento;
-* reconstruir su evolución;
-* identificar relaciones;
-* detectar inconsistencias;
-* responder preguntas utilizando el documento como evidencia.
-
----
-
-# Compatibilidad con BEiA
-
-BEiA deberá poder:
-
-* explicar el propósito del documento;
-* localizar información relevante;
-* resumir contenido;
-* identificar conflictos;
-* recomendar mejoras.
-
----
-
-# Compatibilidad con el CCE
-
-El Corporate Compliance Engine verificará automáticamente:
-
-* presencia de metadatos obligatorios;
-* estructura;
-* coherencia;
-* relaciones;
-* cumplimiento del estándar.
-
----
-
-# Auditoría
-
-Todo documento deberá conservar evidencia suficiente para reconstruir su evolución completa.
-
----
-
-# Principio Final
-
-En Breto's Holding Group un documento no es únicamente texto.
-
-Es una unidad de conocimiento gobernado que forma parte del patrimonio intelectual del ecosistema y debe poder ser comprendida, relacionada y utilizada de forma consistente durante todo su ciclo de vida.
-
-# Document Structure Requirements
-
-## Document Identity
-
-Every official BHG document shall contain sufficient information to establish its identity within the ecosystem.
-
-The document identity shall allow:
-
-* unique identification;
-* repository location;
-* version tracking;
-* authority resolution;
-* lifecycle management;
-* automated processing.
-
-The minimum identity information shall include:
-
-* document title;
-* document identifier;
-* version;
-* status;
-* document type;
-* governance level;
-* owner;
-* repository.
-
----
-
-# Document Authority Model
-
-Every normative document shall explicitly declare its authority relationships.
-
-Documents shall define:
-
-## Governed By
-
-The documents, principles or authorities from which the document derives its legitimacy.
-
----
-
-## Governs
-
-The documents, systems or processes that depend on the authority provided by the document.
-
----
-
-## Depends On
-
-Documents, standards or references required for correct interpretation or implementation.
-
----
-
-## Related To
-
-Documents with contextual, operational or conceptual relationships.
-
----
-
-# Document Classification
-
-Every document shall declare its classification according to the official BHG classification model.
-
-Classification determines:
-
-* accessibility;
-* distribution;
-* preservation requirements;
-* review requirements;
-* handling restrictions.
-
-No official document shall exist without a defined classification level.
-
----
-
-# Document Lifecycle Requirements
-
-Every document shall follow the official lifecycle:
-
-1. Creation.
-2. Identification.
-3. Review.
-4. Approval.
-5. Publication.
-6. Maintenance.
-7. Revision.
-8. Deprecation.
-9. Archiving.
-
-Each lifecycle transition shall preserve:
-
-* previous versions;
-* decision records;
-* approval evidence;
-* change history.
-
----
-
-# Document Version Control
-
-All documents shall follow the official BHG versioning model.
-
-Each modification shall determine whether it represents:
-
-* major change;
-* minor change;
-* patch change.
-
-Version changes shall reflect the impact of the modification.
-
-A document version shall never be changed without preserving the previous state.
-
----
-
-# Document Relationship Model
-
-Official documents shall maintain explicit relationships with other governance artifacts.
-
-Relationships may include:
-
-* hierarchical relationships;
-* dependency relationships;
-* implementation relationships;
-* reference relationships;
-* lifecycle relationships.
-
-These relationships shall enable:
-
-* impact analysis;
-* dependency discovery;
-* governance validation;
-* automated reasoning.
-
----
-
-# Document Modularity
-
-Documents shall be designed as independent but interconnected governance units.
-
-A document should:
-
-* contain a clearly defined purpose;
-* avoid unnecessary duplication;
-* reference authoritative sources;
-* expose dependencies;
-* maintain separation of responsibilities.
-
-Large governance systems shall be constructed through composition of smaller controlled documents.
-
----
-
-# Document Traceability
-
-Every document shall preserve enough information to answer:
-
-* Who created it?
-* Why was it created?
-* Which authority approved it?
-* What documents influenced it?
-* What documents depend on it?
-* What changes affected it?
-* What decisions modified it?
-
-Traceability is mandatory for all governance artifacts.
-
----
-
-# Human and Machine Readability
-
-Documents shall be written to support:
-
-## Human Interpretation
-
-Documents shall provide:
-
-* clear structure;
-* understandable terminology;
-* consistent language;
-* logical organization.
-
----
-
-## Machine Interpretation
-
-Documents shall provide:
-
-* predictable metadata;
-* stable identifiers;
-* explicit relationships;
-* structured sections;
-* deterministic terminology.
-
----
-
-# Document Integrity
-
-Official documents shall maintain:
-
-* controlled ownership;
-* approved version history;
-* immutable historical references;
-* validated metadata.
-
-Unauthorized modification of official documents shall be considered a governance non-conformity.
-
----
-
-# Automated Validation Compatibility
-
-Documents shall be designed to support validation by governance automation systems.
-
-Validation may include:
-
-* metadata verification;
-* structural verification;
-* relationship verification;
-* terminology verification;
-* lifecycle verification.
-
-Documents failing mandatory validation requirements shall not be considered compliant.
-
-# Document Governance Compliance
-
-All official documents within the Breto's Holding Group ecosystem shall comply with this standard.
-
-A document shall be considered compliant only when it satisfies:
-
-* required metadata;
-* defined structure;
-* authority relationships;
-* lifecycle requirements;
-* versioning requirements;
-* traceability requirements;
-* classification requirements.
-
-Non-compliant documents shall be identified, reviewed and corrected through the applicable governance process.
-
----
-
-# Document Evolution Management
-
-Documents shall evolve through controlled modifications.
-
-Every modification shall preserve:
-
-* previous versions;
-* historical context;
-* modification rationale;
-* approval evidence;
-* dependency impact.
-
-Document evolution shall never eliminate institutional memory.
-
----
-
-# Document Review Requirements
-
-Documents shall be reviewed according to:
-
-* governance level;
-* operational impact;
-* dependency importance;
-* lifecycle status;
-* regulatory or strategic changes.
-
-Reviews shall determine whether the document remains:
-
-* valid;
-* accurate;
-* aligned;
-* applicable;
-* maintainable.
-
----
-
-# Document Deprecation and Archiving
-
-When a document is no longer applicable, it shall not be deleted.
-
-The document shall transition through the official lifecycle process.
-
-Deprecated documents shall:
-
-* preserve historical value;
-* maintain references;
-* indicate replacement documents when applicable;
-* remain available for audit purposes.
-
-Archived documents shall preserve institutional continuity.
-
----
-
-# Repository Integration
-
-Every official repository containing BHG documents shall maintain compatibility with this standard.
-
-Repositories shall support:
-
-* document discovery;
-* metadata extraction;
-* relationship analysis;
-* version tracking;
-* automated validation.
-
-Repository structures shall not create ambiguity regarding document ownership or authority.
-
----
-
-# Compatibility with BKOs
-
-BKOs shall use this standard to:
-
-* index institutional documents;
-* understand document hierarchy;
-* identify authoritative sources;
-* reconstruct knowledge relationships;
-* support governed knowledge retrieval.
-
-BKOs shall treat approved documents as controlled knowledge assets.
-
----
-
-# Compatibility with BEiA
-
-BEiA shall use this standard to:
-
-* interpret document purpose;
-* analyze governance relationships;
-* identify inconsistencies;
-* explain document authority;
-* assist with governance analysis.
-
-BEiA recommendations shall remain advisory.
-
-Document authority shall always originate from approved governance mechanisms.
-
----
-
-# Compatibility with Corporate Compliance Engine
-
-The Corporate Compliance Engine shall validate:
-
-* metadata completeness;
-* document structure;
-* identifier consistency;
-* relationship integrity;
-* lifecycle state;
-* governance alignment.
-
-Validation results shall become part of documentary evidence.
-
----
-
-# Document Quality Principles
-
-High-quality BHG documents shall demonstrate:
-
-* semantic precision;
-* structural consistency;
-* institutional relevance;
-* operational usefulness;
-* long-term preservation capability.
-
-Documentation quality is considered a governance capability.
-
----
-
-# Governance Exceptions
-
-Exceptions to this standard may only be approved by the authority defined within the BHG Governance Model.
-
-Every exception shall document:
-
-* justification;
-* affected documents;
-* impact;
-* approval authority;
-* expiration or review date.
-
----
-
-# Final Institutional Principle
-
-Documents are not passive records.
-
-Within Breto's Holding Group, every document represents a governed knowledge asset that preserves decisions, enables coordination, supports automation and protects institutional continuity.
-
-A strong document system creates the foundation for a scalable organization capable of evolving across generations.
+A BHG document is a governed knowledge asset. The document system shall remain understandable, auditable and evolvable without dependence on undocumented personal knowledge.

@@ -1,0 +1,70 @@
+name: BHG Documentary Relationship Validation
+
+on:
+  push:
+    branches: [main, normalization/canonical-standards-reconciliation]
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '.github/workflows/bhg-document-relationship-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  relationship-validation:
+    name: Validate canonical documentary relationships
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate relationship model and status registry
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          import sys
+
+          model = Path('docs/00-GOVERNANCE/BHG_CANONICAL_DOCUMENT_RELATIONSHIP_MODEL_V0_1.md')
+          registry = Path('docs/00-GOVERNANCE/BHG_CANONICAL_STATUS_REGISTRY.md')
+
+          if not model.exists():
+              raise SystemExit('FAIL: canonical documentary relationship model is missing')
+          if not registry.exists():
+              raise SystemExit('FAIL: canonical status registry is missing')
+
+          model_text = model.read_text(encoding='utf-8')
+          registry_text = registry.read_text(encoding='utf-8')
+
+          required = {
+              'document_id: BHG-GOV-CDRM-001': 'model identity',
+              'governed_by:': 'governance relationship',
+              '`governed_by`': 'canonical relationship semantics',
+              'ZivaID → ZivaLatam → BHG → BHG Constitution': 'Ziva ancestry chain',
+              'BHG Constitution → BHG → ZivaLatam → ZivaID': 'normative authority chain',
+          }
+          for needle, label in required.items():
+              if needle not in model_text:
+                  raise SystemExit(f'FAIL: missing {label}: {needle}')
+
+          if 'BHG-GOV-CDRM-001' not in registry_text:
+              raise SystemExit('FAIL: model is not registered')
+          if 'Canonical | Effective' not in registry_text and 'true | true' not in registry_text:
+              raise SystemExit('FAIL: effective canonical status is not registered')
+
+          # Guardrail: automation may validate approved state, but cannot silently
+          # promote a draft artifact. A direct metadata mismatch is reported.
+          frontmatter = model_text.split('---', 2)[1] if model_text.startswith('---') else ''
+          canonical = re.search(r'^canonical:\s*(true|false)\s*$', frontmatter, re.M)
+          effective = re.search(r'^effective:\s*(true|false)\s*$', frontmatter, re.M)
+          if not canonical or not effective:
+              raise SystemExit('FAIL: model canonical/effective flags are missing')
+
+          if canonical.group(1) == 'false' or effective.group(1) == 'false':
+              print('WARNING: registry authorizes Canonical + Effective, but model frontmatter has not yet been synchronized.')
+              print('VALIDATION MODE: structural validation only; no normative promotion performed by automation.')
+          else:
+              print('PASS: model frontmatter and registry both declare Canonical + Effective.')
+
+          print('PASS: documentary relationship model structure and authority chains are present.')
