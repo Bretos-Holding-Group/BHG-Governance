@@ -1,0 +1,63 @@
+name: BHG N3-N5 Corpus Evidence
+
+on:
+  push:
+    branches:
+      - normalization/N3-N5-corpus-evidence-v0.1
+
+permissions:
+  contents: read
+
+jobs:
+  corpus-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate N3-N5 evidence
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, re
+          from pathlib import Path
+          root = Path('.')
+          docs = sorted(root.rglob('*.md'))
+          rows=[]
+          id_map={}
+          rel_vocab=set()
+          required=['document_id','title','document_type','version','status']
+          for p in docs:
+              text=p.read_text(encoding='utf-8', errors='replace')
+              sha=hashlib.sha256(text.encode()).hexdigest()
+              fm={}
+              if text.startswith('---\n'):
+                  end=text.find('\n---',4)
+                  if end!=-1:
+                      block=text[4:end]
+                      for line in block.splitlines():
+                          m=re.match(r'^([A-Za-z0-9_-]+):\s*(.*)$', line)
+                          if m: fm[m.group(1)]=m.group(2).strip().strip('"\'')
+              rid=fm.get('document_id','')
+              missing=[k for k in required if k not in fm]
+              rels=[]
+              for key in ['governed_by','governs','depends_on','related_to','references','supersedes','superseded_by','replaces','replaced_by','implements','implemented_by']:
+                  if re.search(rf'^\s*-?\s*{re.escape(key)}\s*:', text, re.M):
+                      rels.append(key); rel_vocab.add(key)
+              row={'path':str(p),'sha256':sha,'document_id':rid,'title':fm.get('title',''),'document_type':fm.get('document_type',''),'version':fm.get('version',''),'status':fm.get('status',''),'canonical':fm.get('canonical',''),'effective':fm.get('effective',''),'missing_required':missing,'relations':sorted(set(rels))}
+              rows.append(row)
+              if rid: id_map.setdefault(rid,[]).append(str(p))
+          dup={k:v for k,v in id_map.items() if len(v)>1}
+          out=Path('artifacts'); out.mkdir(exist_ok=True)
+          (out/'n3-n5-corpus-evidence.json').write_text(json.dumps({'document_count':len(rows),'duplicate_document_ids':dup,'relationship_vocabulary':sorted(rel_vocab),'documents':rows},indent=2,ensure_ascii=False),encoding='utf-8')
+          lines=['# BHG N3-N5 Corpus Evidence','',f'- Markdown documents: **{len(rows)}**',f'- Duplicate document IDs: **{len(dup)}**',f'- Documents missing required core metadata: **{sum(bool(r["missing_required"]) for r in rows)}**','', '## Relationship vocabulary observed','', *[f'- `{x}`' for x in sorted(rel_vocab)]]
+          lines += ['', '## Duplicate IDs']
+          if dup:
+              for k,v in dup.items(): lines.append(f'- `{k}`: ' + ', '.join(v))
+          else: lines.append('- None detected.')
+          lines += ['', '## Exit interpretation','', 'This report is evidence only. It does not promote any document to Approved, Canonical, or Effective.']
+          (out/'n3-n5-corpus-evidence.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+          PY
+      - name: Upload evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhg-n3-n5-corpus-evidence
+          path: artifacts/
