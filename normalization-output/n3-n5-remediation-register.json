@@ -1,6 +1,6 @@
 {
   "mode": "loss_minimizing_structural_remediation",
-  "modified_count": 4,
+  "modified_count": 5,
   "records": [
     {
       "path": "ARCHITECTURE_MAP.md",
@@ -21,6 +21,11 @@
       "path": "README.md",
       "provisional": [],
       "document_id": "BHG-README"
+    },
+    {
+      "path": "docs/00-GOVERNANCE/BHG_RELATIONSHIP_TARGET_RECONCILIATION_V0_1.md",
+      "provisional": [],
+      "document_id": "BHG-GOV-RTRR-001"
     }
   ]
 }
