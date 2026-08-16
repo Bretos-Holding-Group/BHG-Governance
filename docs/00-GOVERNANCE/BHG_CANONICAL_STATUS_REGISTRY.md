@@ -2,7 +2,7 @@
 document_id: BHG-GOV-CSR-001
 title: BHG Canonical Status Registry
 document_type: governance_record
-version: 1.0.0
+version: 1.0.1
 status: Effective
 canonical: true
 effective: true
@@ -43,7 +43,8 @@ The relationship model governs the semantics of documentary relationships. Autom
 - Prior state: Draft / non-canonical / non-effective.
 - Approval event: repository owner approval recorded on 2026-08-16.
 - Controlled integration: PR #5 merged into the PR #4 integration branch.
-- Main-branch effectiveness: pending completion of the PR #4 integration merge.
+- Main-branch integration: PR #4 merged into `main` on 2026-08-16.
+- Status-synchronization gate: PR #6 merged into `main` on 2026-08-16.
 
 ## Status
 
@@ -51,5 +52,5 @@ The relationship model governs the semantics of documentary relationships. Autom
 registry_status: Effective
 model_status_authorized: Canonical + Effective
 execution_mode: governance-validation-enabled
-main_branch_activation: pending_PR4_merge
+main_branch_activation: complete
 ```
