@@ -13,23 +13,32 @@ effective_date: 2026-08-13
 classification: Internal
 language: en
 repository: BHG-Governance
-
 governed_by:
-  - GOVERNANCE_MODEL.md
-  - CHANGE_POLICY.md
-  - VERSIONING_POLICY.md
-  - DOCUMENT_POLICY.md
-  - DOCUMENT_VALIDATION_STANDARD.md
-  - DOCUMENT_IDENTIFIER_STANDARD.md
-
+- GOVERNANCE_MODEL
+- BHG-MIG-DA57580E8D90
+- BHG-POL-VERSIONING
+- BHG-POL-002
+- DOCUMENT_VALIDATION_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
 depends_on:
-  - GOVERNANCE_MODEL.md
-  - CHANGE_POLICY.md
-  - DOCUMENT_VALIDATION_STANDARD.md
-  - DOCUMENT_IDENTIFIER_STANDARD.md
-
+- GOVERNANCE_MODEL
+- BHG-MIG-DA57580E8D90
+- DOCUMENT_VALIDATION_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
 related_to:
-  - ARCHITECTURE_MAP.md
+- BHG_GOVERNANCE_ARCHITECTURE_MAP
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+governs: []
 ---
 
 # F-001 — Change Governance Validation

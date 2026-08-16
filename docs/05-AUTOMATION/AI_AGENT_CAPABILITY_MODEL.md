@@ -2,21 +2,41 @@
 title: AI Agent Capability Model
 version: 1.1.0
 status: Approved
-document-type: Capability Model
-governance-level: Automation
+document_type: Capability Model
+governance_level: Automation
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-applies-to:
-  - All Authorized AI Agents
-governed-by:
-  - AUTOMATION_CONSTITUTION.md
-  - AI_REPOSITORY_UPDATE_PROTOCOL.md
-  - DOCUMENT_UPDATE_WORKFLOW.md
-  - AI_AGENT_OPERATION_GUIDE.md
-related-documents:
-  - AI_AGENT_CERTIFICATION_STANDARD.md
+governed_by:
+- BHG-MIG-2F763FF54F97
+- BHG-MIG-B0AFE226CC65
+- BHG-MIG-7022A0E5539B
+- BHG-MIG-A34CC03890EC
+document_id: BHG-MIG-8BC565E56AFA
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - All Authorized AI Agents
+    related-documents:
+    - AI_AGENT_CERTIFICATION_STANDARD.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # AI Agent Capability Model

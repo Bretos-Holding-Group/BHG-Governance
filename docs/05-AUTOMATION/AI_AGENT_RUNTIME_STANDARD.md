@@ -2,24 +2,44 @@
 title: AI Agent Runtime Standard
 version: 1.1.0
 status: Approved
-document-type: Standard
-governance-level: Automation
+document_type: Standard
+governance_level: Automation
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-applies-to:
-  - All Authorized AI Agents
-governed-by:
-  - AUTOMATION_CONSTITUTION.md
-  - AI_AGENT_CONFIGURATION_STANDARD.md
-  - AI_AGENT_DEPLOYMENT_STANDARD.md
-  - AI_AGENT_RELEASE_STANDARD.md
-  - SECURITY_STANDARD.md
-related-documents:
-  - AI_AGENT_MONITORING_STANDARD.md
-  - AI_AGENT_LOGGING_STANDARD.md
-  - AI_AGENT_ENVIRONMENT_STANDARD.md
+governed_by:
+- BHG-MIG-2F763FF54F97
+- BHG-MIG-D13DBA24B680
+- BHG-MIG-304657D4691E
+- BHG-MIG-41AF04DE69C3
+- BHG-MIG-E9EA7A778331
+document_id: BHG-MIG-AB1A5B8A9156
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - All Authorized AI Agents
+    related-documents:
+    - AI_AGENT_MONITORING_STANDARD.md
+    - AI_AGENT_LOGGING_STANDARD.md
+    - AI_AGENT_ENVIRONMENT_STANDARD.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # AI Agent Runtime Standard

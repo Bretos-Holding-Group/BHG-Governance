@@ -14,26 +14,47 @@ classification: Internal
 language: en
 repository: BHG-Governance
 governed_by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - AUTHORITY_MODEL.md
-  - AUTHORITY_MATRIX.md
-  - LEGAL_HIERARCHY.md
-  - POLICY_HIERARCHY.md
-  - VERSIONING_POLICY.md
-  - CHANGE_POLICY.md
-governs:
-  - DECISION_RECORD_STANDARD.md
-  - DECISION_REVIEW_PROCEDURE.md
-  - GOVERNANCE_DECISION_WORKFLOW.md
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-MIG-C43A05E01439
+- BHG-MIG-54D9BFC94609
+- BHG-LH-001
+- BHG-POL-001
+- BHG-POL-VERSIONING
+- BHG-MIG-DA57580E8D90
+governs: []
 depends_on:
-  - GOVERNANCE_PIPELINE.md
-  - GOVERNANCE_PROPOSAL_STANDARD.md
-  - TRACEABILITY_STANDARD.md
-  - DOCUMENT_METADATA_STANDARD.md
+- BHG-GOV-002
+- BHG-GPS-001
+- BHG-MIG-8327291A8F30
+- DOCUMENT_METADATA_STANDARD
 related_to:
-  - GOVERNANCE_CONFLICT_RESOLUTION.md
-  - DOCUMENT_POLICY.md
+- BHG-GOV-009
+- BHG-POL-002
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+  legacy_relationships:
+  - relationship: governs
+    target: DECISION_RECORD_STANDARD.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: DECISION_REVIEW_PROCEDURE.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: GOVERNANCE_DECISION_WORKFLOW.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Decision Policy

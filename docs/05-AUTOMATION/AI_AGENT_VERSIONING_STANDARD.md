@@ -2,23 +2,47 @@
 title: AI Agent Versioning Standard
 version: 1.1.0
 status: Approved
-document-type: Standard
-governance-level: Automation
+document_type: Standard
+governance_level: Automation
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-applies-to:
-  - All Authorized AI Agents
-governed-by:
-  - AUTOMATION_CONSTITUTION.md
-  - AI_AGENT_CHANGE_MANAGEMENT.md
-  - AI_AGENT_LIFECYCLE.md
-  - AI_AGENT_REGISTRY.md
-  - VERSIONING_POLICY.md
-related-documents:
-  - AI_AGENT_RECERTIFICATION_STANDARD.md
-  - AI_AGENT_DEPLOYMENT_STANDARD.md
+governed_by:
+- BHG-MIG-2F763FF54F97
+- BHG-MIG-38F961165834
+- BHG-MIG-D140A7A5674C
+- BHG-POL-VERSIONING
+document_id: BHG-MIG-71A9F2A90F32
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - All Authorized AI Agents
+    related-documents:
+    - AI_AGENT_RECERTIFICATION_STANDARD.md
+    - AI_AGENT_DEPLOYMENT_STANDARD.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+  legacy_relationships:
+  - relationship: governed_by
+    target: AI_AGENT_REGISTRY.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # AI Agent Versioning Standard

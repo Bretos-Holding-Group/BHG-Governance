@@ -1,32 +1,35 @@
 ---
 title: Genesis Certification Engine
-
 document_id: GENESIS-CERTIFICATION-ENGINE
-
 version: 1.1.0
-
 status: Approved
-
 classification: Core Runtime
-
 governance_level: AI Core
-
 owner: BHG Governance Council
-
-maintainer: Genesis Architecture
-
-review_cycle: Continuous
-
-approval_required: Yes
-
 language: English
-
-authoritative: true
-
-generated_by: Human Governance
-
 last_updated: 2026-07-12
-
+document_type: AI Document
+approval_authority: BHG Governance Council
+created: '2026-07-11'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    maintainer: Genesis Architecture
+    review_cycle: Continuous
+    approval_required: true
+    authoritative: true
+    generated_by: Human Governance
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    state: normalized
+    date: '2026-08-16'
+governed_by: []
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # Genesis Certification Engine

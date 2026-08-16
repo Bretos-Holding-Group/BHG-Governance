@@ -4,21 +4,38 @@ document_id: GEN-BHG-RUN-017
 version: 1.1.0
 status: Approved
 owner: BHG Architecture Council
-review_authority: BHG Governance Council
 effective_date: TBD
 classification: Internal
-category: Runtime Diagnostics
-
-parent_documents:
-  - GENESIS_EXECUTION_CONTRACT.md
-  - GENESIS_RUNTIME_BOOTSTRAP.md
-  - GENESIS_RUNTIME_STATE_MACHINE.md
-  - GENESIS_EXECUTION_HISTORY_STANDARD.md
-
-related_documents:
-  - GENESIS_RUNTIME_RECOVERY_PROTOCOL.md
-  - GENESIS_EXECUTION_LOG_SCHEMA.md
-  - GENESIS_RUNTIME_OBSERVABILITY_STANDARD.md
+document_type: AI Document
+governance_level: AI
+approval_authority: BHG Governance Council
+created: '2026-07-11'
+last_updated: '2026-07-11'
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    review_authority: BHG Governance Council
+    category: Runtime Diagnostics
+    parent_documents:
+    - GENESIS_EXECUTION_CONTRACT.md
+    - GENESIS_RUNTIME_BOOTSTRAP.md
+    - GENESIS_RUNTIME_STATE_MACHINE.md
+    - GENESIS_EXECUTION_HISTORY_STANDARD.md
+    related_documents:
+    - GENESIS_RUNTIME_RECOVERY_PROTOCOL.md
+    - GENESIS_EXECUTION_LOG_SCHEMA.md
+    - GENESIS_RUNTIME_OBSERVABILITY_STANDARD.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    state: normalized
+    date: '2026-08-16'
+governed_by: []
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # Genesis Runtime Diagnostics

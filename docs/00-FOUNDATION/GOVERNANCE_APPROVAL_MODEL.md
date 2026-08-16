@@ -13,27 +13,38 @@ effective_date: 2026-07-20
 classification: Internal
 language: en
 repository: BHG Governance
-
 governed_by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - FEDERATED_GOVERNANCE_MODEL.md
-  - AUTHORITY_MODEL.md
-  - AUTHORITY_MATRIX.md
-
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- FEDERATED_GOVERNANCE_MODEL
+- BHG-MIG-C43A05E01439
+- BHG-MIG-54D9BFC94609
 governs:
-  - GOVERNANCE_CHANGE_WORKFLOW.md
-  - GOVERNANCE_APPROVAL_STANDARD.md
-  - GOVERNANCE_COUNCIL.md
-  - AI_GOVERNANCE_POLICY.md
-  - CHANGE_POLICY.md
-
+- GOVERNANCE-CHANGE-WORKFLOW
+- BHG-MIG-B417AA972D08
+- AI_GOVERNANCE_POLICY
+- BHG-MIG-DA57580E8D90
 depends_on:
-  - FEDERATED_GOVERNANCE_MODEL.md
-
+- FEDERATED_GOVERNANCE_MODEL
 related_to:
-  - GOVERNANCE_PIPELINE.md
-  - LEGAL_HIERARCHY.md
+- BHG-GOV-002
+- BHG-LH-001
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+  legacy_relationships:
+  - relationship: governs
+    target: GOVERNANCE_APPROVAL_STANDARD.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Governance Approval Model

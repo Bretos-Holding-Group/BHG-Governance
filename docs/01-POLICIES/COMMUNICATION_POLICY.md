@@ -14,25 +14,49 @@ classification: Internal
 language: en
 repository: BHG-Governance
 governed_by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - LEGAL_HIERARCHY.md
-  - POLICY_HIERARCHY.md
-  - DOCUMENT_POLICY.md
-  - VERSIONING_POLICY.md
-  - DECISION_POLICY.md
-governs:
-  - Institutional Communications
-  - System Communications
-  - AI Agent Communications
-  - Knowledge Communications
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-LH-001
+- BHG-POL-001
+- BHG-POL-002
+- BHG-POL-VERSIONING
+- BHG-POL-DECISION
+governs: []
 depends_on:
-  - DOCUMENT_CLASSIFICATION_STANDARD.md
-  - TRACEABILITY_STANDARD.md
+- DOCUMENT_CLASSIFICATION_STANDARD
+- BHG-MIG-8327291A8F30
 related_to:
-  - DOCUMENT_POLICY.md
-  - DECISION_POLICY.md
-  - AI_GOVERNANCE_POLICY.md
+- BHG-POL-002
+- BHG-POL-DECISION
+- AI_GOVERNANCE_POLICY
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+  legacy_relationships:
+  - relationship: governs
+    target: Institutional Communications
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: System Communications
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: AI Agent Communications
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Knowledge Communications
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 Communication Policy

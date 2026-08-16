@@ -13,31 +13,45 @@ effective_date: 2026-07-21
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
-
 governed_by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - DOCUMENT_POLICY.md
-  - DOCUMENT_METADATA_STANDARD.md
-  - DOCUMENT_IDENTIFIER_STANDARD.md
-  - SECURITY_STANDARD.md
-
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-POL-002
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
+- BHG-MIG-E9EA7A778331
 governs:
-  - LANGUAGE_POLICY.md
-  - DOCUMENT_RELATIONSHIP_STANDARD.md
-  - GOVERNANCE_REGISTRY_MODEL.md
-  - DOCUMENT_HISTORY_MODEL.md
-  - BASELINE_REGISTRY.md
-  - All Governance Documents
-
+- LANGUAGE_POLICY
+- DOCUMENT_RELATIONSHIP_STANDARD
+- GOVERNANCE_REGISTRY_MODEL
+- DOCUMENT_HISTORY_MODEL
 depends_on:
-  - DOCUMENT_METADATA_STANDARD.md
-  - DOCUMENT_IDENTIFIER_STANDARD.md
-
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
 related_to:
-  - DOCUMENT_VALIDATION_STANDARD.md
-  - TRACEABILITY_STANDARD.md
-  - REPOSITORY_STANDARD.md
+- DOCUMENT_VALIDATION_STANDARD
+- BHG-MIG-8327291A8F30
+- BHG-MIG-D42CF4B63138
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+  legacy_relationships:
+  - relationship: governs
+    target: BASELINE_REGISTRY.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: All Governance Documents
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Document Classification Standard

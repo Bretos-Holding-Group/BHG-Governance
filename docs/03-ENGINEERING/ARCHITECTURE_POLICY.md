@@ -1,3 +1,31 @@
+---
+title: Architecture Policy
+document_id: BHG-MIG-0E7900388A31
+document_type: Engineering Standard
+version: 0.1.0
+status: Draft
+governance_level: Engineering
+owner: BHG Governance Council
+approval_authority: BHG Governance Council
+created: '2026-07-06'
+last_updated: '2026-07-06'
+effective_date: null
+classification: Internal
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    state: normalized
+    date: '2026-08-16'
+governed_by: []
+governs: []
+depends_on: []
+related_to: []
+---
+
 # Architecture Policy
 
 > Política Corporativa de Arquitectura de Breto's Holding Group

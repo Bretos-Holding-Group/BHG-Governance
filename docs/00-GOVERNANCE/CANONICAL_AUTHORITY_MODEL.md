@@ -3,28 +3,45 @@ document_id: BHG-GOV-CAM-001
 document_type: governance_model
 governance_level: enterprise
 version: 0.2.1
-status: draft
+status: Draft
 created: 2026-08-14
 last_updated: 2026-08-14
 effective_date: null
 approval_authority: pending
 governed_by:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
 depends_on:
-  - docs/06-AUDIT/NORMATIVE_CONFLICT_REGISTER.md
-  - AUTHORITY_MODEL.md
-  - LEGAL_HIERARCHY.md
-  - POLICY_HIERARCHY.md
-  - GOVERNANCE_APPROVAL_MODEL.md
-  - GOVERNANCE_INTEROPERABILITY_MODEL.md
+- BHG-AUD-NORM-001
+- BHG-MIG-C43A05E01439
+- BHG-LH-001
+- BHG-POL-001
+- GOVERNANCE-APPROVAL-MODEL
+- GOVERNANCE_INTEROPERABILITY_MODEL
 related_to:
-  - AUTHORITY_MATRIX.md
-  - DOCUMENT_STANDARD.md
-  - DOCUMENT_METADATA_STANDARD.md
-  - DOCUMENT_SCHEMA_STANDARD.md
-  - DOCUMENT_GRAMMAR_STANDARD.md
-  - DOCUMENT_RELATIONSHIP_STANDARD.md
+- BHG-MIG-54D9BFC94609
+- DOCUMENT_STANDARD
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_SCHEMA_STANDARD
+- DOCUMENT_GRAMMAR_STANDARD
+- DOCUMENT_RELATIONSHIP_STANDARD
+title: Canonical Authority Model
+owner: BHG Governance Council
+classification: Internal
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+governs: []
 ---
 
 # Canonical Authority Model

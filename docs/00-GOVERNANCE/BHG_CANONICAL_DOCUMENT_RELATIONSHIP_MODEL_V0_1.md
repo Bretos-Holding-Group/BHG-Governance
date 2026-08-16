@@ -4,25 +4,36 @@ title: BHG Canonical Documentary Relationship Model
 document_type: governance_model
 version: 0.1.0
 status: Effective
-canonical: true
-effective: true
-normalization_target: true
-automation_ready: true
 governance_level: enterprise
 created: 2026-08-16
 last_updated: 2026-08-16
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
-
 governed_by:
-  - BHG-GOV-CAM-001
-  - DOCUMENT_RELATIONSHIP_STANDARD
+- BHG-GOV-CAM-001
+- DOCUMENT_RELATIONSHIP_STANDARD
 depends_on:
-  - DOCUMENT_METADATA_STANDARD
-  - DOCUMENT_IDENTIFIER_STANDARD
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
 related_to:
-  - CANONICAL_STANDARDS_RECONCILIATION_MATRIX
+- CANONICAL_STANDARDS_RECONCILIATION_MATRIX
+owner: BHG Governance Council
+approval_authority: BHG Governance Council
+effective_date: null
+extensions:
+  legacy_metadata:
+    canonical: true
+    effective: true
+    normalization_target: true
+    automation_ready: true
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    state: normalized
+    date: '2026-08-16'
+governs: []
 ---
 
 # BHG Canonical Documentary Relationship Model v0.1

@@ -13,28 +13,49 @@ effective_date: 2026-07-21
 classification: Internal
 language: en
 repository: BHG Governance
-
 governed_by:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-  - docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
-
-governs:
-  - Governance Proposal documents
-  - Governance change submissions
-  - Governance evaluation packages
-
+- BHG-MIG-5456F6E19A27
+- BHG-MIG-C43A05E01439
+- BHG-MIG-54D9BFC94609
+- BHG-GOV-002
+governs: []
 depends_on:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-  - docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
-
+- BHG-MIG-5456F6E19A27
+- BHG-MIG-C43A05E01439
+- BHG-MIG-54D9BFC94609
+- BHG-GOV-002
 related_to:
-  - docs/00-FOUNDATION/GOVERNANCE_CONFLICT_RESOLUTION.md
-  - docs/00-FOUNDATION/CHANGE_POLICY.md
+- BHG-GOV-009
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+  legacy_relationships:
+  - relationship: governs
+    target: Governance Proposal documents
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Governance change submissions
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Governance evaluation packages
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: related_to
+    target: docs/00-FOUNDATION/CHANGE_POLICY.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
+
 # Governance Proposal Standard
 
 > Official standard defining the mandatory structure for governance proposals inside Breto's Holding Group.

@@ -4,21 +4,38 @@ document_id: GEN-BHG-RUN-013
 version: 1.1.0
 status: Approved
 owner: BHG Architecture Council
-review_authority: BHG Governance Council
 effective_date: TBD
 classification: Internal
-category: Runtime
-
-parent_documents:
-  - GENESIS_PROFILE.md
-  - GENESIS_EXECUTION_CONTRACT.md
-  - GENESIS_CONTEXT_ENGINE.md
-  - GENESIS_CERTIFICATION_ENGINE.md
-
-related_documents:
-  - GENESIS_RUNTIME_STATE_MACHINE.md
-  - GENESIS_SESSION_CONTEXT.md
-  - GENESIS_EXECUTION_HISTORY_STANDARD.md
+document_type: AI Document
+governance_level: AI
+approval_authority: BHG Governance Council
+created: '2026-07-11'
+last_updated: '2026-07-11'
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    review_authority: BHG Governance Council
+    category: Runtime
+    parent_documents:
+    - GENESIS_PROFILE.md
+    - GENESIS_EXECUTION_CONTRACT.md
+    - GENESIS_CONTEXT_ENGINE.md
+    - GENESIS_CERTIFICATION_ENGINE.md
+    related_documents:
+    - GENESIS_RUNTIME_STATE_MACHINE.md
+    - GENESIS_SESSION_CONTEXT.md
+    - GENESIS_EXECUTION_HISTORY_STANDARD.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    state: normalized
+    date: '2026-08-16'
+governed_by: []
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # Genesis Runtime Bootstrap

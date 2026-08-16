@@ -3,13 +3,33 @@ title: Company Lifecycle
 version: 1.0.0
 status: Approved
 classification: Foundation
-owners:
-  - BHG Governance Council
-approvers:
-  - BHG Governance Council
-review_cycle: Annual
 effective_date: TBD
 language: English
+document_id: BHG-MIG-3BF586BB0FC3
+document_type: Governance Model
+governance_level: Enterprise
+owner: BHG Governance Council
+approval_authority: BHG Governance Council
+created: '2026-07-08'
+last_updated: '2026-07-08'
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    owners:
+    - BHG Governance Council
+    approvers:
+    - BHG Governance Council
+    review_cycle: Annual
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    state: normalized
+    date: '2026-08-16'
+governed_by: []
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # Company Lifecycle

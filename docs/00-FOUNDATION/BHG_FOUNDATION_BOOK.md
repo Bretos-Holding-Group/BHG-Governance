@@ -13,29 +13,46 @@ effective_date: 2026-07-21
 classification: Strategic
 language: English
 repository: BHG Governance
-
 governed_by:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - ARCHITECTURE_MAP.md
-  - README.md
-
-governs:
-  - Institutional philosophy interpretation
-  - Foundational principles interpretation
-  - Long-term organizational purpose
-
+- BHG-MIG-5456F6E19A27
+- BHG_GOVERNANCE_ARCHITECTURE_MAP
+- AUDIT-EVIDENCE-2026-001
+governs: []
 depends_on:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-
+- BHG-MIG-5456F6E19A27
+- BHG-MIG-C43A05E01439
+- GOVERNANCE_MODEL
 related_to:
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-  - docs/00-FOUNDATION/ECOSYSTEM_MODEL.md
-  - docs/00-FOUNDATION/ENTERPRISE_MODEL.md
-  - docs/00-FOUNDATION/SUBHOLDING_MODEL.md
-  - docs/00-FOUNDATION/SUBSIDIARY_MODEL.md
-  - docs/00-FOUNDATION/GLOSSARY.md
+- BHG-MIG-54D9BFC94609
+- BHG-MIG-7A0A081D01D7
+- BHG-MIG-6F1F2862B6EF
+- BHG-MIG-8040E24DD2E1
+- BHG-MIG-0A508CC2886A
+- BHG-FDN-002
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+  legacy_relationships:
+  - relationship: governs
+    target: Institutional philosophy interpretation
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Foundational principles interpretation
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Long-term organizational purpose
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Breto's Holding Group Foundation Book

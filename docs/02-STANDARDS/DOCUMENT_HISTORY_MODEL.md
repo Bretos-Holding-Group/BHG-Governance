@@ -13,22 +13,31 @@ effective_date: null
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
-
 governed_by:
-  - DOCUMENT_STANDARD
-  - VERSIONING_POLICY
-
+- DOCUMENT_STANDARD
+- BHG-POL-VERSIONING
 depends_on:
-  - DOCUMENT_METADATA_STANDARD
-  - DOCUMENT_IDENTIFIER_STANDARD
-  - DOCUMENT_RELATIONSHIP_STANDARD
-  - DOCUMENT_SCHEMA_STANDARD
-
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
+- DOCUMENT_RELATIONSHIP_STANDARD
+- DOCUMENT_SCHEMA_STANDARD
 related_to:
-  - TRACEABILITY_STANDARD
-  - CHANGE_POLICY
-  - DOCUMENT_VALIDATION_STANDARD
-  - REPOSITORY_STANDARD
+- BHG-MIG-8327291A8F30
+- BHG-MIG-DA57580E8D90
+- DOCUMENT_VALIDATION_STANDARD
+- BHG-MIG-D42CF4B63138
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+governs: []
 ---
 
 # Document History Model

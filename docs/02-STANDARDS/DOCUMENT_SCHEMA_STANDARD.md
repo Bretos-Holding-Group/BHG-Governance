@@ -13,20 +13,29 @@ effective_date: null
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
-
 governed_by:
-  - DOCUMENT_STANDARD
-
+- DOCUMENT_STANDARD
 depends_on:
-  - DOCUMENT_METADATA_STANDARD
-  - DOCUMENT_IDENTIFIER_STANDARD
-  - DOCUMENT_RELATIONSHIP_STANDARD
-
+- DOCUMENT_METADATA_STANDARD
+- DOCUMENT_IDENTIFIER_STANDARD
+- DOCUMENT_RELATIONSHIP_STANDARD
 related_to:
-  - DOCUMENT_GRAMMAR_STANDARD
-  - DOCUMENT_VALIDATION_STANDARD
-  - DOCUMENT_TEMPLATE_ENGINE_STANDARD
-  - DOCUMENT_COMPILER_STANDARD
+- DOCUMENT_GRAMMAR_STANDARD
+- DOCUMENT_VALIDATION_STANDARD
+- BHG-MIG-DF2BC2DF9A4A
+- BHG-MIG-9783A5418C4A
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+governs: []
 ---
 
 # Document Schema Standard

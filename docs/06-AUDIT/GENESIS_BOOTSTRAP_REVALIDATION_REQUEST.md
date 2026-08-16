@@ -5,16 +5,36 @@ version: 1.1.0
 status: Approved
 classification: Internal
 owner: BHG Governance Council
-approved_by: BHG Governance Council
-
 depends_on:
-  - docs/06-AUDIT/GENESIS_BOOTSTRAP_REMEDIATION_PLAN.md
-  - docs/06-AUDIT/RAI_FRAMEWORK_SPECIFICATION.md
-
+- GENESIS-BOOTSTRAP-REMEDIATION-PLAN
+- BHG-MIG-71BF9217C532
 related_to:
-  - docs/06-AUDIT/GENESIS_BOOTSTRAP_REAUDIT.md
-  - docs/06-AUDIT/GENESIS_BOOTSTRAP_CERTIFICATION.md
-  - docs/06-AUDIT/RAI_MODEL.md
+- GENESIS-BOOTSTRAP-REAUDIT
+- GENESIS-BOOTSTRAP-CERTIFICATION
+- RAI-MODEL
+document_type: Audit Record
+governance_level: Audit
+approval_authority: BHG Governance Council
+created: '2026-07-18'
+last_updated: '2026-07-19'
+effective_date: null
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    approved_by: BHG Governance Council
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+governed_by: []
+governs: []
 ---
 
 # Genesis Bootstrap Revalidation Request

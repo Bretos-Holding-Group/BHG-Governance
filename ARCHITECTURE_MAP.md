@@ -13,14 +13,23 @@ effective_date: null
 classification: Internal
 language: en
 repository: BHG-Governance
-
 governed_by:
-  - BHG-GOV-CAM-001
+- BHG-GOV-CAM-001
 depends_on:
-  - BHG_REPOSITORY_AUTHORITY_SEQUENCE
+- BHG_REPOSITORY_AUTHORITY_SEQUENCE
 related_to:
-  - BHG_CONSTITUTION
-  - CANONICAL_STANDARDS_RECONCILIATION_MATRIX
+- BHG-MIG-5456F6E19A27
+- CANONICAL_STANDARDS_RECONCILIATION_MATRIX
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+governs: []
 ---
 
 # BHG Governance Architecture Map

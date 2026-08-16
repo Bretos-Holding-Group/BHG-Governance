@@ -1,37 +1,29 @@
 ---
-
-title: Dependency Relationship Semantics
-document_id: ADR_0001_DEPENDENCY_RELATIONSHIP_SEMANTICS
-version: 1.0.0
+title: Adr 0001 Dependency Relationship Semantics
+document_id: BHG-MIG-B1D0077270AD
+document_type: Engineering Standard
+version: 0.1.0
 status: Draft
-document_type: ADR
-governance_level: Enterprise
+governance_level: Engineering
 owner: BHG Governance Council
 approval_authority: BHG Governance Council
-created: 2026-08-07
-last_updated: 2026-08-07
-effective_date: 2026-08-07
+created: '2026-08-07'
+last_updated: '2026-08-07'
+effective_date: null
 classification: Internal
 language: en
 repository: BHG-GOVERNANCE
-governed_by:
-
-- DOCUMENT_RELATIONSHIP_STANDARD.md
-- DOCUMENT_DEPENDENCY_STANDARD.md
-- DOCUMENT_METADATA_STANDARD.md
-- VERSIONING_POLICY.md
-  governs:
-- DOCUMENT_DEPENDENCY_STANDARD.md
-- DOCUMENT_RELATIONSHIP_STANDARD.md
-  depends_on:
-- DOCUMENT_RELATIONSHIP_STANDARD.md
-- DOCUMENT_DEPENDENCY_STANDARD.md
-- DOCUMENT_METADATA_STANDARD.md
-  related_to:
-- ADR_STANDARD.md
-- GENESIS_DEPENDENCY_ENGINE.md
-- GENESIS_VALIDATION_ENGINE.md
-
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    state: normalized
+    date: '2026-08-16'
+governed_by: []
+governs: []
+depends_on: []
+related_to: []
 ---
 
 ADR-0001 — Dependency Relationship Semantics

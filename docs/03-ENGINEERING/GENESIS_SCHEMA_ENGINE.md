@@ -5,12 +5,28 @@ version: 1.1.0
 status: Approved
 document_type: Engineering Standard
 classification: Internal
-bootstrap_phase: Phase 1 - Bootstrap
 owner: Breto's Holding Group
 language: English
-approved_by: BHG Governance
 effective_date: TBD
 last_updated: YYYY-MM-DD
+governance_level: Engineering
+approval_authority: BHG Governance Council
+created: '2026-07-10'
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    bootstrap_phase: Phase 1 - Bootstrap
+    approved_by: BHG Governance
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    state: normalized
+    date: '2026-08-16'
+governed_by: []
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # 1. Purpose

@@ -1,6 +1,6 @@
 ---
 title: Change Policy
-document_id: BHG-POL-001
+document_id: BHG-MIG-DA57580E8D90
 version: 1.1.0
 status: Approved
 document_type: Corporate Policy
@@ -13,27 +13,47 @@ effective_date: 2026-07-21
 classification: Internal
 language: en
 repository: BHG Governance
-
 governed_by:
-  - docs/00-FOUNDATION/BHG_CONSTITUTION.md
-  - docs/00-FOUNDATION/GOVERNANCE_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MODEL.md
-  - docs/00-FOUNDATION/AUTHORITY_MATRIX.md
-  - docs/00-FOUNDATION/LEGAL_HIERARCHY.md
-
-governs:
-  - Change management process
-  - Change registration
-  - Change evaluation
-  - Change approval lifecycle
-
+- BHG-MIG-5456F6E19A27
+- GOVERNANCE_MODEL
+- BHG-MIG-C43A05E01439
+- BHG-MIG-54D9BFC94609
+- BHG-LH-001
+governs: []
 depends_on:
-  - docs/00-FOUNDATION/GOVERNANCE_PIPELINE.md
-  - docs/00-FOUNDATION/GOVERNANCE_PROPOSAL_STANDARD.md
-
+- BHG-GOV-002
+- BHG-GPS-001
 related_to:
-  - docs/00-FOUNDATION/GOVERNANCE_CONFLICT_RESOLUTION.md
-  - docs/00-FOUNDATION/BHG_FOUNDATION_BOOK.md
+- BHG-GOV-009
+- BHG-FDN-001
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+  legacy_relationships:
+  - relationship: governs
+    target: Change management process
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Change registration
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Change evaluation
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+  - relationship: governs
+    target: Change approval lifecycle
+    classification: external_scope
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
 ---
 
 # Change Policy

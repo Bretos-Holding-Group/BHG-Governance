@@ -1,0 +1,26 @@
+{
+  "mode": "loss_minimizing_structural_remediation",
+  "modified_count": 4,
+  "records": [
+    {
+      "path": "ARCHITECTURE_MAP.md",
+      "provisional": [],
+      "document_id": "BHG_GOVERNANCE_ARCHITECTURE_MAP"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "provisional": [],
+      "document_id": "CHANGELOG"
+    },
+    {
+      "path": "GENESIS_BOOTSTRAP_REPORT_20260711.md",
+      "provisional": [],
+      "document_id": "BHG-MIG-F4226DB49F2D"
+    },
+    {
+      "path": "README.md",
+      "provisional": [],
+      "document_id": "BHG-README"
+    }
+  ]
+}

@@ -2,23 +2,43 @@
 title: AI Agent Operation Guide
 version: 1.1.0
 status: Approved
-document-type: Operational Guide
-governance-level: Automation
+document_type: Operational Guide
+governance_level: Automation
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-applies-to:
-  - All Authorized AI Agents
-governed-by:
-  - AUTOMATION_CONSTITUTION.md
-  - AI_REPOSITORY_UPDATE_PROTOCOL.md
-  - DOCUMENT_UPDATE_WORKFLOW.md
-  - AI_CONSTITUTION.md
-related-documents:
-  - AUTOMATED_IMPACT_ANALYSIS.md
-  - AUTOMATED_TRACEABILITY_STANDARD.md
-  - AUTOMATED_VALIDATION_PIPELINE.md
+governed_by:
+- BHG-MIG-2F763FF54F97
+- BHG-MIG-B0AFE226CC65
+- BHG-MIG-7022A0E5539B
+- BHG-MIG-37146C17795F
+document_id: BHG-MIG-A34CC03890EC
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - All Authorized AI Agents
+    related-documents:
+    - AUTOMATED_IMPACT_ANALYSIS.md
+    - AUTOMATED_TRACEABILITY_STANDARD.md
+    - AUTOMATED_VALIDATION_PIPELINE.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # AI Agent Operation Guide

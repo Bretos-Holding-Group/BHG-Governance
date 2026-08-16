@@ -2,23 +2,43 @@
 title: AI Agent Release Standard
 version: 1.1.0
 status: Approved
-document-type: Standard
-governance-level: Automation
+document_type: Standard
+governance_level: Automation
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-applies-to:
-  - All Authorized AI Agents
-governed-by:
-  - AUTOMATION_CONSTITUTION.md
-  - AI_AGENT_DEPLOYMENT_STANDARD.md
-  - AI_AGENT_VERSIONING_STANDARD.md
-  - AI_AGENT_RECERTIFICATION_STANDARD.md
-  - VERSIONING_POLICY.md
-related-documents:
-  - AI_AGENT_CONFIGURATION_STANDARD.md
-  - AI_AGENT_RUNTIME_STANDARD.md
+governed_by:
+- BHG-MIG-2F763FF54F97
+- BHG-MIG-304657D4691E
+- BHG-MIG-71A9F2A90F32
+- BHG-MIG-83A30C7D861D
+- BHG-POL-VERSIONING
+document_id: BHG-MIG-41AF04DE69C3
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - All Authorized AI Agents
+    related-documents:
+    - AI_AGENT_CONFIGURATION_STANDARD.md
+    - AI_AGENT_RUNTIME_STANDARD.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # AI Agent Release Standard

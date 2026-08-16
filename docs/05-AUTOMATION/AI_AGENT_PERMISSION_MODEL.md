@@ -2,23 +2,47 @@
 title: AI Agent Permission Model
 version: 1.1.0
 status: Approved
-document-type: Model
-governance-level: Automation
+document_type: Model
+governance_level: Automation
 owner: BHG Governance Council
-approval-authority: BHG Governance Council
+approval_authority: BHG Governance Council
 language: en
 classification: Internal
-applies-to:
-  - All Authorized AI Agents
-governed-by:
-  - AUTOMATION_CONSTITUTION.md
-  - AI_AGENT_IDENTITY_STANDARD.md
-  - AI_AGENT_CERTIFICATION_STANDARD.md
-  - AI_AGENT_REGISTRY.md
-  - AUTHORITY_MODEL.md
-related-documents:
-  - AI_AGENT_ACCESS_POLICY.md
-  - AI_AGENT_AUDIT_STANDARD.md
+governed_by:
+- BHG-MIG-2F763FF54F97
+- BHG-MIG-A3693040E527
+- BHG-MIG-83D9ED68E10F
+- BHG-MIG-C43A05E01439
+document_id: BHG-MIG-219314071203
+created: '2026-07-09'
+last_updated: '2026-07-09'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    applies-to:
+    - All Authorized AI Agents
+    related-documents:
+    - AI_AGENT_ACCESS_POLICY.md
+    - AI_AGENT_AUDIT_STANDARD.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+  legacy_relationships:
+  - relationship: governed_by
+    target: AI_AGENT_REGISTRY.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # AI Agent Permission Model

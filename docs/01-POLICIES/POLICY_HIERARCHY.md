@@ -13,33 +13,40 @@ effective_date: 2026-07-22
 classification: Internal
 language: English
 repository: BHG Governance
-
 governed_by:
-  - BHG_CONSTITUTION.md
-  - LEGAL_HIERARCHY.md
-  - GOVERNANCE_MODEL.md
-  - AUTHORITY_MODEL.md
-
+- BHG-MIG-5456F6E19A27
+- BHG-LH-001
+- GOVERNANCE_MODEL
+- BHG-MIG-C43A05E01439
 governs:
-  - CHANGE_POLICY.md
-  - DOCUMENT_POLICY.md
-  - DECISION_POLICY.md
-  - COMMUNICATION_POLICY.md
-  - LANGUAGE_POLICY.md
-  - VERSIONING_POLICY.md
-
+- BHG-MIG-DA57580E8D90
+- BHG-POL-002
+- BHG-POL-DECISION
+- BHG-POL-COM-001
+- LANGUAGE_POLICY
+- BHG-POL-VERSIONING
 depends_on:
-  - LEGAL_HIERARCHY.md
-  - GOVERNANCE_MODEL.md
-  - AUTHORITY_MODEL.md
-  - AUTHORITY_MATRIX.md
-
+- BHG-LH-001
+- GOVERNANCE_MODEL
+- BHG-MIG-C43A05E01439
+- BHG-MIG-54D9BFC94609
 related_to:
-  - GOVERNANCE_PIPELINE.md
-  - GOVERNANCE_PROPOSAL_STANDARD.md
-  - GOVERNANCE_CONFLICT_RESOLUTION.md
-  - DOCUMENT_POLICY.md
-  - CHANGE_POLICY.md
+- BHG-GOV-002
+- BHG-GPS-001
+- BHG-GOV-009
+- BHG-POL-002
+- BHG-MIG-DA57580E8D90
+extensions:
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
 ---
 
 # Policy Hierarchy

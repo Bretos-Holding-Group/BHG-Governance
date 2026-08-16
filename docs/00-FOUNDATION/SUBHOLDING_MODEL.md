@@ -3,18 +3,37 @@ title: SubHolding Model
 version: 1.0.0
 status: Approved
 classification: Foundation
-governing_documents:
-  - BHG_CONSTITUTION.md
-  - GOVERNANCE_MODEL.md
-  - AUTHORITY_MODEL.md
-  - ENTERPRISE_MODEL.md
-related_documents:
-  - SUBSIDIARY_MODEL.md
-  - COMPANY_CONSTITUTION_TEMPLATE.md
-  - PRODUCT_MODEL.md
 approval_authority: BHG Governance Council
 last_updated: 2026-07-08
 language: en
+document_id: BHG-MIG-8040E24DD2E1
+document_type: Governance Model
+governance_level: Enterprise
+owner: BHG Governance Council
+created: '2026-07-08'
+effective_date: null
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    governing_documents:
+    - BHG_CONSTITUTION.md
+    - GOVERNANCE_MODEL.md
+    - AUTHORITY_MODEL.md
+    - ENTERPRISE_MODEL.md
+    related_documents:
+    - SUBSIDIARY_MODEL.md
+    - COMPANY_CONSTITUTION_TEMPLATE.md
+    - PRODUCT_MODEL.md
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    state: normalized
+    date: '2026-08-16'
+governed_by: []
+governs: []
+depends_on: []
+related_to: []
 ---
 
 # SubHolding Model

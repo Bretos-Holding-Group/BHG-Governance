@@ -1,0 +1,46 @@
+name: BHG N3-N5 Controlled Remediation
+
+on:
+  push:
+    branches:
+      - normalization/N3-N5-remediation-v0.1
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: write
+
+jobs:
+  remediate:
+    if: ${{ github.event_name == 'push' || !contains(github.event.pull_request.head.commit.message, '[n3-n5-remediation]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+      - name: Install parser
+        run: python3 -m pip install pyyaml
+      - name: Execute controlled remediation
+        run: python3 tools/bhg_normalization/remediate_n3_n5_safe.py
+      - name: Finalize canonical top-level metadata schema
+        run: python3 tools/bhg_normalization/finalize_schema_v0_1.py
+      - name: Run normalization audit
+        run: python3 tools/bhg_normalization/normalization_audit.py
+      - name: Record generated evidence
+        run: |
+          git status --short
+          mkdir -p artifacts
+          cp normalization-output/n3-n5-remediation-register.json artifacts/ || true
+          cp normalization-output/schema-finalization-register.json artifacts/ || true
+          cp normalization-output/n1-inventory.json artifacts/ || true
+      - name: Commit remediation
+        run: |
+          git config user.name 'BHG Normalization Automation'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs tools normalization-output artifacts
+          if git diff --cached --quiet; then
+            echo 'No remediation changes.'
+          else
+            git commit -m 'chore(normalization): apply N3-N5 structural remediation [n3-n5-remediation]'
+            git push origin HEAD:${{ github.event.pull_request.head.ref || github.ref_name }}
+          fi

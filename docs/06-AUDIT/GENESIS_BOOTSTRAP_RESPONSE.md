@@ -4,27 +4,47 @@ document_id: GENESIS-BOOTSTRAP-RESPONSE
 version: 1.0.0
 status: Approved
 classification: Governance Response
-
-owners:
-  - BHG Architecture Council
-
-approvers:
-  - BHG Governance Council
-
-reviewers:
-  - Genesis Engineering
-
-audited_document:
-  - GENESIS-BOOTSTRAP-AUDIT-REPORT
-
 depends_on:
-  - RAI_MODEL.md
-  - RAI_FRAMEWORK_SPECIFICATION.md
-  - GENESIS_BOOTSTRAP_AUDIT_REPORT.md
-
+- RAI-MODEL
+- BHG-MIG-71BF9217C532
 governs:
-  - GENESIS_BOOTSTRAP_REMEDIATION_PLAN.md
-
+- GENESIS-BOOTSTRAP-REMEDIATION-PLAN
+document_type: Audit Record
+governance_level: Audit
+owner: BHG Governance Council
+approval_authority: BHG Governance Council
+created: '2026-07-18'
+last_updated: '2026-07-18'
+effective_date: null
+language: en
+repository: BHG-GOVERNANCE
+extensions:
+  legacy_metadata:
+    owners:
+    - BHG Architecture Council
+    approvers:
+    - BHG Governance Council
+    reviewers:
+    - Genesis Engineering
+    audited_document:
+    - GENESIS-BOOTSTRAP-AUDIT-REPORT
+  normalization:
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    performed: '2026-08-16'
+    mode: controlled_reconciliation
+    relationship_target_reconciliation:
+      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+      performed: '2026-08-16'
+      mode: canonicalize_or_classify_external
+    state: normalized
+    date: '2026-08-16'
+  legacy_relationships:
+  - relationship: depends_on
+    target: GENESIS_BOOTSTRAP_AUDIT_REPORT.md
+    classification: missing_document_target
+    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+governed_by: []
+related_to: []
 ---
 
 # Genesis Bootstrap Response
