@@ -13,7 +13,7 @@
       "status": "Approved",
       "document_type": "Constitution",
       "governance_level": "Foundation",
-      "inbound_references": 25,
+      "inbound_references": 26,
       "outbound_references": 3,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -23,7 +23,7 @@
         "constitutional/supreme",
         "foundational governance level",
         "governance-contract indicators",
-        "inbound centrality=25"
+        "inbound centrality=26"
       ]
     },
     {
@@ -33,7 +33,7 @@
       "status": "Approved",
       "document_type": "Constitution",
       "governance_level": "Supreme",
-      "inbound_references": 63,
+      "inbound_references": 64,
       "outbound_references": 1,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -43,7 +43,7 @@
         "constitutional/supreme",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=63"
+        "inbound centrality=64"
       ]
     },
     {
@@ -53,7 +53,7 @@
       "status": "Approved",
       "document_type": "Foundational Governance Model",
       "governance_level": "Foundation",
-      "inbound_references": 18,
+      "inbound_references": 19,
       "outbound_references": 7,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -64,49 +64,7 @@
         "shared contract/model type",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=18"
-      ]
-    },
-    {
-      "document_id": "BHG-MIG-54D9BFC94609",
-      "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/AUTHORITY_MATRIX.md",
-      "status": "Approved",
-      "document_type": "Governance Matrix",
-      "governance_level": "Foundation",
-      "inbound_references": 22,
-      "outbound_references": 2,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 70,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "foundation location",
-        "governance-contract indicators",
-        "inbound centrality=22"
-      ]
-    },
-    {
-      "document_id": "BHG-MIG-C43A05E01439",
-      "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/AUTHORITY_MODEL.md",
-      "status": "Approved",
-      "document_type": "Governance Model",
-      "governance_level": "Foundation",
-      "inbound_references": 31,
-      "outbound_references": 2,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 70,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "foundation location",
-        "governance-contract indicators",
-        "inbound centrality=31"
+        "inbound centrality=19"
       ]
     },
     {
@@ -116,17 +74,59 @@
       "status": "Draft",
       "document_type": "governance_model",
       "governance_level": "enterprise",
-      "inbound_references": 12,
+      "inbound_references": 13,
       "outbound_references": 18,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 69,
+      "score": 71,
       "reasons": [
         "foundational governance level",
         "shared contract/model type",
         "governance-contract indicators",
-        "inbound centrality=12"
+        "inbound centrality=13"
+      ]
+    },
+    {
+      "document_id": "BHG-MIG-54D9BFC94609",
+      "repository": "BHG-Governance",
+      "path": "docs/00-FOUNDATION/AUTHORITY_MATRIX.md",
+      "status": "Approved",
+      "document_type": "Governance Matrix",
+      "governance_level": "Foundation",
+      "inbound_references": 23,
+      "outbound_references": 2,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 70,
+      "reasons": [
+        "foundational governance level",
+        "shared contract/model type",
+        "foundation location",
+        "governance-contract indicators",
+        "inbound centrality=23"
+      ]
+    },
+    {
+      "document_id": "BHG-MIG-C43A05E01439",
+      "repository": "BHG-Governance",
+      "path": "docs/00-FOUNDATION/AUTHORITY_MODEL.md",
+      "status": "Approved",
+      "document_type": "Governance Model",
+      "governance_level": "Foundation",
+      "inbound_references": 32,
+      "outbound_references": 2,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 70,
+      "reasons": [
+        "foundational governance level",
+        "shared contract/model type",
+        "foundation location",
+        "governance-contract indicators",
+        "inbound centrality=32"
       ]
     },
     {
@@ -136,7 +136,7 @@
       "status": "Approved",
       "document_type": "Governance Process",
       "governance_level": "Foundation",
-      "inbound_references": 23,
+      "inbound_references": 24,
       "outbound_references": 9,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -146,7 +146,7 @@
         "foundational governance level",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=23"
+        "inbound centrality=24"
       ]
     },
     {
@@ -156,37 +156,18 @@
       "status": "Approved",
       "document_type": "Standard",
       "governance_level": "Foundation",
-      "inbound_references": 11,
+      "inbound_references": 12,
       "outbound_references": 5,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 65,
+      "score": 67,
       "reasons": [
         "foundational governance level",
         "shared contract/model type",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=11"
-      ]
-    },
-    {
-      "document_id": "BHG-POL-002",
-      "repository": "BHG-Governance",
-      "path": "docs/01-POLICIES/DOCUMENT_POLICY.md",
-      "status": "Approved",
-      "document_type": "Policy",
-      "governance_level": "Corporate Policy",
-      "inbound_references": 17,
-      "outbound_references": 14,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 59,
-      "reasons": [
-        "shared contract/model type",
-        "governance-contract indicators",
-        "inbound centrality=17"
+        "inbound centrality=12"
       ]
     },
     {
@@ -196,18 +177,37 @@
       "status": "Approved",
       "document_type": "Governance Model",
       "governance_level": "Foundation",
-      "inbound_references": 4,
+      "inbound_references": 5,
       "outbound_references": 11,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 57,
+      "score": 59,
       "reasons": [
         "foundational governance level",
         "shared contract/model type",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=4"
+        "inbound centrality=5"
+      ]
+    },
+    {
+      "document_id": "BHG-POL-002",
+      "repository": "BHG-Governance",
+      "path": "docs/01-POLICIES/DOCUMENT_POLICY.md",
+      "status": "Approved",
+      "document_type": "Policy",
+      "governance_level": "Corporate Policy",
+      "inbound_references": 18,
+      "outbound_references": 14,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 59,
+      "reasons": [
+        "shared contract/model type",
+        "governance-contract indicators",
+        "inbound centrality=18"
       ]
     },
     {
@@ -217,7 +217,7 @@
       "status": "Approved",
       "document_type": "Corporate Policy",
       "governance_level": "P0",
-      "inbound_references": 22,
+      "inbound_references": 23,
       "outbound_references": 12,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -226,7 +226,7 @@
       "reasons": [
         "shared contract/model type",
         "governance-contract indicators",
-        "inbound centrality=22"
+        "inbound centrality=23"
       ]
     },
     {
@@ -236,17 +236,17 @@
       "status": "Approved",
       "document_type": "Governance Process",
       "governance_level": "Foundation",
-      "inbound_references": 10,
+      "inbound_references": 11,
       "outbound_references": 6,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 54,
+      "score": 56,
       "reasons": [
         "foundational governance level",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=10"
+        "inbound centrality=11"
       ]
     },
     {
@@ -256,7 +256,7 @@
       "status": "Approved",
       "document_type": "Corporate Policy",
       "governance_level": "Policy",
-      "inbound_references": 15,
+      "inbound_references": 16,
       "outbound_references": 9,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -265,7 +265,27 @@
       "reasons": [
         "shared contract/model type",
         "governance-contract indicators",
-        "inbound centrality=15"
+        "inbound centrality=16"
+      ]
+    },
+    {
+      "document_id": "BHG-MIG-9783A5418C4A",
+      "repository": "BHG-Governance",
+      "path": "docs/02-STANDARDS/DOCUMENT_COMPILER_STANDARD.md",
+      "status": "Approved",
+      "document_type": "Standard",
+      "governance_level": "Enterprise",
+      "inbound_references": 9,
+      "outbound_references": 6,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 54,
+      "reasons": [
+        "foundational governance level",
+        "shared contract/model type",
+        "governance-contract indicators",
+        "inbound centrality=9"
       ]
     },
     {
@@ -309,23 +329,82 @@
       ]
     },
     {
-      "document_id": "BHG-MIG-9783A5418C4A",
+      "document_id": "BHG-FDN-001",
       "repository": "BHG-Governance",
-      "path": "docs/02-STANDARDS/DOCUMENT_COMPILER_STANDARD.md",
+      "path": "docs/00-FOUNDATION/BHG_FOUNDATION_BOOK.md",
       "status": "Approved",
-      "document_type": "Standard",
-      "governance_level": "Enterprise",
-      "inbound_references": 8,
-      "outbound_references": 6,
+      "document_type": "Institutional Foundation Book",
+      "governance_level": "Foundational",
+      "inbound_references": 6,
+      "outbound_references": 11,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 52,
+      "score": 51,
+      "reasons": [
+        "foundational governance level",
+        "foundation location",
+        "governance-contract indicators",
+        "inbound centrality=6"
+      ]
+    },
+    {
+      "document_id": "BHG-FDN-002",
+      "repository": "BHG-Governance",
+      "path": "docs/00-FOUNDATION/GLOSSARY.md",
+      "status": "Approved",
+      "document_type": "Foundation Reference",
+      "governance_level": "Foundation",
+      "inbound_references": 8,
+      "outbound_references": 7,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 51,
+      "reasons": [
+        "foundational governance level",
+        "foundation location",
+        "governance-contract indicators",
+        "inbound centrality=8"
+      ]
+    },
+    {
+      "document_id": "BHG-GOV-CDRM-001",
+      "repository": "BHG-Governance",
+      "path": "docs/00-GOVERNANCE/BHG_CANONICAL_DOCUMENT_RELATIONSHIP_MODEL_V0_1.md",
+      "status": "Effective",
+      "document_type": "governance_model",
+      "governance_level": "enterprise",
+      "inbound_references": 7,
+      "outbound_references": 7,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 51,
       "reasons": [
         "foundational governance level",
         "shared contract/model type",
         "governance-contract indicators",
-        "inbound centrality=8"
+        "inbound centrality=7"
+      ]
+    },
+    {
+      "document_id": "BHG-POL-001",
+      "repository": "BHG-Governance",
+      "path": "docs/01-POLICIES/POLICY_HIERARCHY.md",
+      "status": "Approved",
+      "document_type": "Corporate Policy",
+      "governance_level": "Policy (P0)",
+      "inbound_references": 11,
+      "outbound_references": 14,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 51,
+      "reasons": [
+        "shared contract/model type",
+        "governance-contract indicators",
+        "inbound centrality=11"
       ]
     },
     {
@@ -349,43 +428,45 @@
       ]
     },
     {
-      "document_id": "BHG-FDN-001",
+      "document_id": "BHG-MIG-6F1F2862B6EF",
       "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/BHG_FOUNDATION_BOOK.md",
+      "path": "docs/00-FOUNDATION/ENTERPRISE_MODEL.md",
       "status": "Approved",
-      "document_type": "Institutional Foundation Book",
-      "governance_level": "Foundational",
-      "inbound_references": 5,
-      "outbound_references": 11,
+      "document_type": "Governance Model",
+      "governance_level": "Enterprise",
+      "inbound_references": 4,
+      "outbound_references": 4,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 49,
+      "score": 50,
       "reasons": [
         "foundational governance level",
+        "shared contract/model type",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=5"
+        "inbound centrality=4"
       ]
     },
     {
-      "document_id": "BHG-FDN-002",
+      "document_id": "BHG-MIG-B417AA972D08",
       "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/GLOSSARY.md",
-      "status": "Approved",
-      "document_type": "Foundation Reference",
-      "governance_level": "Foundation",
-      "inbound_references": 7,
-      "outbound_references": 7,
+      "path": "docs/00-FOUNDATION/GOVERNANCE_COUNCIL.md",
+      "status": "Draft",
+      "document_type": "Governance Model",
+      "governance_level": "Enterprise",
+      "inbound_references": 6,
+      "outbound_references": 0,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 49,
+      "score": 50,
       "reasons": [
         "foundational governance level",
+        "shared contract/model type",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=7"
+        "inbound centrality=6"
       ]
     },
     {
@@ -469,14 +550,14 @@
       ]
     },
     {
-      "document_id": "BHG-GOV-CDRM-001",
+      "document_id": "BHG-MIG-B6F5272CD7D6",
       "repository": "BHG-Governance",
-      "path": "docs/00-GOVERNANCE/BHG_CANONICAL_DOCUMENT_RELATIONSHIP_MODEL_V0_1.md",
-      "status": "Effective",
-      "document_type": "governance_model",
-      "governance_level": "enterprise",
-      "inbound_references": 6,
-      "outbound_references": 7,
+      "path": "docs/00-FOUNDATION/PROJECT_GOVERNANCE_MODEL.md",
+      "status": "Review",
+      "document_type": "Governance Model",
+      "governance_level": "Enterprise",
+      "inbound_references": 5,
+      "outbound_references": 1,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
@@ -484,27 +565,9 @@
       "reasons": [
         "foundational governance level",
         "shared contract/model type",
+        "foundation location",
         "governance-contract indicators",
-        "inbound centrality=6"
-      ]
-    },
-    {
-      "document_id": "BHG-POL-001",
-      "repository": "BHG-Governance",
-      "path": "docs/01-POLICIES/POLICY_HIERARCHY.md",
-      "status": "Approved",
-      "document_type": "Corporate Policy",
-      "governance_level": "Policy (P0)",
-      "inbound_references": 10,
-      "outbound_references": 14,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 49,
-      "reasons": [
-        "shared contract/model type",
-        "governance-contract indicators",
-        "inbound centrality=10"
+        "inbound centrality=5"
       ]
     },
     {
@@ -568,31 +631,10 @@
       ]
     },
     {
-      "document_id": "BHG-MIG-6F1F2862B6EF",
+      "document_id": "BHG-MIG-375CFA146C47",
       "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/ENTERPRISE_MODEL.md",
-      "status": "Approved",
-      "document_type": "Governance Model",
-      "governance_level": "Enterprise",
-      "inbound_references": 3,
-      "outbound_references": 4,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 48,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "foundation location",
-        "governance-contract indicators",
-        "inbound centrality=3"
-      ]
-    },
-    {
-      "document_id": "BHG-MIG-B417AA972D08",
-      "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/GOVERNANCE_COUNCIL.md",
-      "status": "Draft",
+      "path": "docs/00-FOUNDATION/COMPANY_CONSTITUTION_TEMPLATE.md",
+      "status": "Review",
       "document_type": "Governance Model",
       "governance_level": "Enterprise",
       "inbound_references": 5,
@@ -607,6 +649,46 @@
         "foundation location",
         "governance-contract indicators",
         "inbound centrality=5"
+      ]
+    },
+    {
+      "document_id": "BHG-MIG-49D1A6CF8892",
+      "repository": "BHG-Governance",
+      "path": "docs/02-STANDARDS/DOCUMENT_RENDERING_STANDARD.md",
+      "status": "Approved",
+      "document_type": "Standard",
+      "governance_level": "Enterprise",
+      "inbound_references": 6,
+      "outbound_references": 6,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 48,
+      "reasons": [
+        "foundational governance level",
+        "shared contract/model type",
+        "governance-contract indicators",
+        "inbound centrality=6"
+      ]
+    },
+    {
+      "document_id": "BHG-AUD-NORM-001",
+      "repository": "BHG-Governance",
+      "path": "docs/06-AUDIT/NORMATIVE_CONFLICT_REGISTER.md",
+      "status": "Draft",
+      "document_type": "audit",
+      "governance_level": "enterprise",
+      "inbound_references": 5,
+      "outbound_references": 23,
+      "cross_repository_references": 0,
+      "conflict_evidence": 1,
+      "authority_cycle_participation": false,
+      "score": 48,
+      "reasons": [
+        "foundational governance level",
+        "governance-contract indicators",
+        "inbound centrality=5",
+        "conflict evidence present"
       ]
     },
     {
@@ -667,27 +749,6 @@
         "shared contract/model type",
         "foundation location",
         "governance-contract indicators"
-      ]
-    },
-    {
-      "document_id": "BHG-MIG-B6F5272CD7D6",
-      "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/PROJECT_GOVERNANCE_MODEL.md",
-      "status": "Review",
-      "document_type": "Governance Model",
-      "governance_level": "Enterprise",
-      "inbound_references": 4,
-      "outbound_references": 1,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 47,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "foundation location",
-        "governance-contract indicators",
-        "inbound centrality=4"
       ]
     },
     {
@@ -871,67 +932,6 @@
       ]
     },
     {
-      "document_id": "BHG-MIG-375CFA146C47",
-      "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/COMPANY_CONSTITUTION_TEMPLATE.md",
-      "status": "Review",
-      "document_type": "Governance Model",
-      "governance_level": "Enterprise",
-      "inbound_references": 4,
-      "outbound_references": 0,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 46,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "foundation location",
-        "governance-contract indicators",
-        "inbound centrality=4"
-      ]
-    },
-    {
-      "document_id": "BHG-MIG-49D1A6CF8892",
-      "repository": "BHG-Governance",
-      "path": "docs/02-STANDARDS/DOCUMENT_RENDERING_STANDARD.md",
-      "status": "Approved",
-      "document_type": "Standard",
-      "governance_level": "Enterprise",
-      "inbound_references": 5,
-      "outbound_references": 6,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 46,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "governance-contract indicators",
-        "inbound centrality=5"
-      ]
-    },
-    {
-      "document_id": "BHG-AUD-NORM-001",
-      "repository": "BHG-Governance",
-      "path": "docs/06-AUDIT/NORMATIVE_CONFLICT_REGISTER.md",
-      "status": "Draft",
-      "document_type": "audit",
-      "governance_level": "enterprise",
-      "inbound_references": 4,
-      "outbound_references": 23,
-      "cross_repository_references": 0,
-      "conflict_evidence": 1,
-      "authority_cycle_participation": false,
-      "score": 46,
-      "reasons": [
-        "foundational governance level",
-        "governance-contract indicators",
-        "inbound centrality=4",
-        "conflict evidence present"
-      ]
-    },
-    {
       "document_id": "BUSINESS_DOMAIN_MODEL",
       "repository": "BHG-Governance",
       "path": "_corpus/BHG-Ecosystem-Foundation/docs/03-ORGANIZATION/BUSINESS_DOMAIN_MODEL.md",
@@ -1037,7 +1037,7 @@
       "status": "Draft",
       "document_type": "Standard",
       "governance_level": "Standard",
-      "inbound_references": 19,
+      "inbound_references": 20,
       "outbound_references": 0,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -1046,7 +1046,7 @@
       "reasons": [
         "shared contract/model type",
         "governance-contract indicators",
-        "inbound centrality=19"
+        "inbound centrality=20"
       ]
     },
     {
@@ -4529,6 +4529,24 @@
       ]
     },
     {
+      "document_id": "canonical-core-qualification-matrix-r00",
+      "repository": "BHG-Governance",
+      "path": "audit/canonical-core-qualification-matrix-r00.md",
+      "status": null,
+      "document_type": null,
+      "governance_level": null,
+      "inbound_references": 0,
+      "outbound_references": 68,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": true,
+      "score": 12,
+      "reasons": [
+        "governance-contract indicators",
+        "authority-cycle participation; unresolved"
+      ]
+    },
+    {
       "document_id": "BHG-MIG-6B761EDB20E2",
       "repository": "BHG-Governance",
       "path": "docs/05-AUTOMATION/AI_AGENT_OBSERVABILITY_STANDARD.md",
@@ -5339,24 +5357,6 @@
       "document_id": "canonical-core-cycle-conflict-assessment-r00",
       "repository": "BHG-Governance",
       "path": "audit/canonical-core-cycle-conflict-assessment-r00.md",
-      "status": null,
-      "document_type": null,
-      "governance_level": null,
-      "inbound_references": 0,
-      "outbound_references": 8,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": true,
-      "score": 5,
-      "reasons": [
-        "governance-contract indicators",
-        "authority-cycle participation; unresolved"
-      ]
-    },
-    {
-      "document_id": "canonical-core-qualification-matrix-r00",
-      "repository": "BHG-Governance",
-      "path": "audit/canonical-core-qualification-matrix-r00.md",
       "status": null,
       "document_type": null,
       "governance_level": null,
@@ -8483,7 +8483,7 @@
       "status": "Approved",
       "document_type": "Constitution",
       "governance_level": "Foundation",
-      "inbound_references": 25,
+      "inbound_references": 26,
       "outbound_references": 3,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -8493,7 +8493,7 @@
         "constitutional/supreme",
         "foundational governance level",
         "governance-contract indicators",
-        "inbound centrality=25"
+        "inbound centrality=26"
       ]
     },
     {
@@ -8503,7 +8503,7 @@
       "status": "Approved",
       "document_type": "Constitution",
       "governance_level": "Supreme",
-      "inbound_references": 63,
+      "inbound_references": 64,
       "outbound_references": 1,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -8513,7 +8513,7 @@
         "constitutional/supreme",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=63"
+        "inbound centrality=64"
       ]
     },
     {
@@ -8523,7 +8523,7 @@
       "status": "Approved",
       "document_type": "Foundational Governance Model",
       "governance_level": "Foundation",
-      "inbound_references": 18,
+      "inbound_references": 19,
       "outbound_references": 7,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -8534,49 +8534,7 @@
         "shared contract/model type",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=18"
-      ]
-    },
-    {
-      "document_id": "BHG-MIG-54D9BFC94609",
-      "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/AUTHORITY_MATRIX.md",
-      "status": "Approved",
-      "document_type": "Governance Matrix",
-      "governance_level": "Foundation",
-      "inbound_references": 22,
-      "outbound_references": 2,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 70,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "foundation location",
-        "governance-contract indicators",
-        "inbound centrality=22"
-      ]
-    },
-    {
-      "document_id": "BHG-MIG-C43A05E01439",
-      "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/AUTHORITY_MODEL.md",
-      "status": "Approved",
-      "document_type": "Governance Model",
-      "governance_level": "Foundation",
-      "inbound_references": 31,
-      "outbound_references": 2,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 70,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "foundation location",
-        "governance-contract indicators",
-        "inbound centrality=31"
+        "inbound centrality=19"
       ]
     },
     {
@@ -8586,17 +8544,59 @@
       "status": "Draft",
       "document_type": "governance_model",
       "governance_level": "enterprise",
-      "inbound_references": 12,
+      "inbound_references": 13,
       "outbound_references": 18,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 69,
+      "score": 71,
       "reasons": [
         "foundational governance level",
         "shared contract/model type",
         "governance-contract indicators",
-        "inbound centrality=12"
+        "inbound centrality=13"
+      ]
+    },
+    {
+      "document_id": "BHG-MIG-54D9BFC94609",
+      "repository": "BHG-Governance",
+      "path": "docs/00-FOUNDATION/AUTHORITY_MATRIX.md",
+      "status": "Approved",
+      "document_type": "Governance Matrix",
+      "governance_level": "Foundation",
+      "inbound_references": 23,
+      "outbound_references": 2,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 70,
+      "reasons": [
+        "foundational governance level",
+        "shared contract/model type",
+        "foundation location",
+        "governance-contract indicators",
+        "inbound centrality=23"
+      ]
+    },
+    {
+      "document_id": "BHG-MIG-C43A05E01439",
+      "repository": "BHG-Governance",
+      "path": "docs/00-FOUNDATION/AUTHORITY_MODEL.md",
+      "status": "Approved",
+      "document_type": "Governance Model",
+      "governance_level": "Foundation",
+      "inbound_references": 32,
+      "outbound_references": 2,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 70,
+      "reasons": [
+        "foundational governance level",
+        "shared contract/model type",
+        "foundation location",
+        "governance-contract indicators",
+        "inbound centrality=32"
       ]
     },
     {
@@ -8606,7 +8606,7 @@
       "status": "Approved",
       "document_type": "Governance Process",
       "governance_level": "Foundation",
-      "inbound_references": 23,
+      "inbound_references": 24,
       "outbound_references": 9,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -8616,7 +8616,7 @@
         "foundational governance level",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=23"
+        "inbound centrality=24"
       ]
     },
     {
@@ -8626,37 +8626,18 @@
       "status": "Approved",
       "document_type": "Standard",
       "governance_level": "Foundation",
-      "inbound_references": 11,
+      "inbound_references": 12,
       "outbound_references": 5,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 65,
+      "score": 67,
       "reasons": [
         "foundational governance level",
         "shared contract/model type",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=11"
-      ]
-    },
-    {
-      "document_id": "BHG-POL-002",
-      "repository": "BHG-Governance",
-      "path": "docs/01-POLICIES/DOCUMENT_POLICY.md",
-      "status": "Approved",
-      "document_type": "Policy",
-      "governance_level": "Corporate Policy",
-      "inbound_references": 17,
-      "outbound_references": 14,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 59,
-      "reasons": [
-        "shared contract/model type",
-        "governance-contract indicators",
-        "inbound centrality=17"
+        "inbound centrality=12"
       ]
     },
     {
@@ -8666,18 +8647,37 @@
       "status": "Approved",
       "document_type": "Governance Model",
       "governance_level": "Foundation",
-      "inbound_references": 4,
+      "inbound_references": 5,
       "outbound_references": 11,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 57,
+      "score": 59,
       "reasons": [
         "foundational governance level",
         "shared contract/model type",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=4"
+        "inbound centrality=5"
+      ]
+    },
+    {
+      "document_id": "BHG-POL-002",
+      "repository": "BHG-Governance",
+      "path": "docs/01-POLICIES/DOCUMENT_POLICY.md",
+      "status": "Approved",
+      "document_type": "Policy",
+      "governance_level": "Corporate Policy",
+      "inbound_references": 18,
+      "outbound_references": 14,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 59,
+      "reasons": [
+        "shared contract/model type",
+        "governance-contract indicators",
+        "inbound centrality=18"
       ]
     },
     {
@@ -8687,7 +8687,7 @@
       "status": "Approved",
       "document_type": "Corporate Policy",
       "governance_level": "P0",
-      "inbound_references": 22,
+      "inbound_references": 23,
       "outbound_references": 12,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -8696,7 +8696,7 @@
       "reasons": [
         "shared contract/model type",
         "governance-contract indicators",
-        "inbound centrality=22"
+        "inbound centrality=23"
       ]
     },
     {
@@ -8706,17 +8706,17 @@
       "status": "Approved",
       "document_type": "Governance Process",
       "governance_level": "Foundation",
-      "inbound_references": 10,
+      "inbound_references": 11,
       "outbound_references": 6,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 54,
+      "score": 56,
       "reasons": [
         "foundational governance level",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=10"
+        "inbound centrality=11"
       ]
     },
     {
@@ -8726,7 +8726,7 @@
       "status": "Approved",
       "document_type": "Corporate Policy",
       "governance_level": "Policy",
-      "inbound_references": 15,
+      "inbound_references": 16,
       "outbound_references": 9,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -8735,7 +8735,27 @@
       "reasons": [
         "shared contract/model type",
         "governance-contract indicators",
-        "inbound centrality=15"
+        "inbound centrality=16"
+      ]
+    },
+    {
+      "document_id": "BHG-MIG-9783A5418C4A",
+      "repository": "BHG-Governance",
+      "path": "docs/02-STANDARDS/DOCUMENT_COMPILER_STANDARD.md",
+      "status": "Approved",
+      "document_type": "Standard",
+      "governance_level": "Enterprise",
+      "inbound_references": 9,
+      "outbound_references": 6,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 54,
+      "reasons": [
+        "foundational governance level",
+        "shared contract/model type",
+        "governance-contract indicators",
+        "inbound centrality=9"
       ]
     },
     {
@@ -8779,23 +8799,82 @@
       ]
     },
     {
-      "document_id": "BHG-MIG-9783A5418C4A",
+      "document_id": "BHG-FDN-001",
       "repository": "BHG-Governance",
-      "path": "docs/02-STANDARDS/DOCUMENT_COMPILER_STANDARD.md",
+      "path": "docs/00-FOUNDATION/BHG_FOUNDATION_BOOK.md",
       "status": "Approved",
-      "document_type": "Standard",
-      "governance_level": "Enterprise",
-      "inbound_references": 8,
-      "outbound_references": 6,
+      "document_type": "Institutional Foundation Book",
+      "governance_level": "Foundational",
+      "inbound_references": 6,
+      "outbound_references": 11,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 52,
+      "score": 51,
+      "reasons": [
+        "foundational governance level",
+        "foundation location",
+        "governance-contract indicators",
+        "inbound centrality=6"
+      ]
+    },
+    {
+      "document_id": "BHG-FDN-002",
+      "repository": "BHG-Governance",
+      "path": "docs/00-FOUNDATION/GLOSSARY.md",
+      "status": "Approved",
+      "document_type": "Foundation Reference",
+      "governance_level": "Foundation",
+      "inbound_references": 8,
+      "outbound_references": 7,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 51,
+      "reasons": [
+        "foundational governance level",
+        "foundation location",
+        "governance-contract indicators",
+        "inbound centrality=8"
+      ]
+    },
+    {
+      "document_id": "BHG-GOV-CDRM-001",
+      "repository": "BHG-Governance",
+      "path": "docs/00-GOVERNANCE/BHG_CANONICAL_DOCUMENT_RELATIONSHIP_MODEL_V0_1.md",
+      "status": "Effective",
+      "document_type": "governance_model",
+      "governance_level": "enterprise",
+      "inbound_references": 7,
+      "outbound_references": 7,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 51,
       "reasons": [
         "foundational governance level",
         "shared contract/model type",
         "governance-contract indicators",
-        "inbound centrality=8"
+        "inbound centrality=7"
+      ]
+    },
+    {
+      "document_id": "BHG-POL-001",
+      "repository": "BHG-Governance",
+      "path": "docs/01-POLICIES/POLICY_HIERARCHY.md",
+      "status": "Approved",
+      "document_type": "Corporate Policy",
+      "governance_level": "Policy (P0)",
+      "inbound_references": 11,
+      "outbound_references": 14,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 51,
+      "reasons": [
+        "shared contract/model type",
+        "governance-contract indicators",
+        "inbound centrality=11"
       ]
     },
     {
@@ -8819,43 +8898,45 @@
       ]
     },
     {
-      "document_id": "BHG-FDN-001",
+      "document_id": "BHG-MIG-6F1F2862B6EF",
       "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/BHG_FOUNDATION_BOOK.md",
+      "path": "docs/00-FOUNDATION/ENTERPRISE_MODEL.md",
       "status": "Approved",
-      "document_type": "Institutional Foundation Book",
-      "governance_level": "Foundational",
-      "inbound_references": 5,
-      "outbound_references": 11,
+      "document_type": "Governance Model",
+      "governance_level": "Enterprise",
+      "inbound_references": 4,
+      "outbound_references": 4,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 49,
+      "score": 50,
       "reasons": [
         "foundational governance level",
+        "shared contract/model type",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=5"
+        "inbound centrality=4"
       ]
     },
     {
-      "document_id": "BHG-FDN-002",
+      "document_id": "BHG-MIG-B417AA972D08",
       "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/GLOSSARY.md",
-      "status": "Approved",
-      "document_type": "Foundation Reference",
-      "governance_level": "Foundation",
-      "inbound_references": 7,
-      "outbound_references": 7,
+      "path": "docs/00-FOUNDATION/GOVERNANCE_COUNCIL.md",
+      "status": "Draft",
+      "document_type": "Governance Model",
+      "governance_level": "Enterprise",
+      "inbound_references": 6,
+      "outbound_references": 0,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
-      "score": 49,
+      "score": 50,
       "reasons": [
         "foundational governance level",
+        "shared contract/model type",
         "foundation location",
         "governance-contract indicators",
-        "inbound centrality=7"
+        "inbound centrality=6"
       ]
     },
     {
@@ -8939,14 +9020,14 @@
       ]
     },
     {
-      "document_id": "BHG-GOV-CDRM-001",
+      "document_id": "BHG-MIG-B6F5272CD7D6",
       "repository": "BHG-Governance",
-      "path": "docs/00-GOVERNANCE/BHG_CANONICAL_DOCUMENT_RELATIONSHIP_MODEL_V0_1.md",
-      "status": "Effective",
-      "document_type": "governance_model",
-      "governance_level": "enterprise",
-      "inbound_references": 6,
-      "outbound_references": 7,
+      "path": "docs/00-FOUNDATION/PROJECT_GOVERNANCE_MODEL.md",
+      "status": "Review",
+      "document_type": "Governance Model",
+      "governance_level": "Enterprise",
+      "inbound_references": 5,
+      "outbound_references": 1,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
       "authority_cycle_participation": false,
@@ -8954,27 +9035,9 @@
       "reasons": [
         "foundational governance level",
         "shared contract/model type",
+        "foundation location",
         "governance-contract indicators",
-        "inbound centrality=6"
-      ]
-    },
-    {
-      "document_id": "BHG-POL-001",
-      "repository": "BHG-Governance",
-      "path": "docs/01-POLICIES/POLICY_HIERARCHY.md",
-      "status": "Approved",
-      "document_type": "Corporate Policy",
-      "governance_level": "Policy (P0)",
-      "inbound_references": 10,
-      "outbound_references": 14,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 49,
-      "reasons": [
-        "shared contract/model type",
-        "governance-contract indicators",
-        "inbound centrality=10"
+        "inbound centrality=5"
       ]
     },
     {
@@ -9038,31 +9101,10 @@
       ]
     },
     {
-      "document_id": "BHG-MIG-6F1F2862B6EF",
+      "document_id": "BHG-MIG-375CFA146C47",
       "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/ENTERPRISE_MODEL.md",
-      "status": "Approved",
-      "document_type": "Governance Model",
-      "governance_level": "Enterprise",
-      "inbound_references": 3,
-      "outbound_references": 4,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 48,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "foundation location",
-        "governance-contract indicators",
-        "inbound centrality=3"
-      ]
-    },
-    {
-      "document_id": "BHG-MIG-B417AA972D08",
-      "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/GOVERNANCE_COUNCIL.md",
-      "status": "Draft",
+      "path": "docs/00-FOUNDATION/COMPANY_CONSTITUTION_TEMPLATE.md",
+      "status": "Review",
       "document_type": "Governance Model",
       "governance_level": "Enterprise",
       "inbound_references": 5,
@@ -9077,6 +9119,46 @@
         "foundation location",
         "governance-contract indicators",
         "inbound centrality=5"
+      ]
+    },
+    {
+      "document_id": "BHG-MIG-49D1A6CF8892",
+      "repository": "BHG-Governance",
+      "path": "docs/02-STANDARDS/DOCUMENT_RENDERING_STANDARD.md",
+      "status": "Approved",
+      "document_type": "Standard",
+      "governance_level": "Enterprise",
+      "inbound_references": 6,
+      "outbound_references": 6,
+      "cross_repository_references": 0,
+      "conflict_evidence": 0,
+      "authority_cycle_participation": false,
+      "score": 48,
+      "reasons": [
+        "foundational governance level",
+        "shared contract/model type",
+        "governance-contract indicators",
+        "inbound centrality=6"
+      ]
+    },
+    {
+      "document_id": "BHG-AUD-NORM-001",
+      "repository": "BHG-Governance",
+      "path": "docs/06-AUDIT/NORMATIVE_CONFLICT_REGISTER.md",
+      "status": "Draft",
+      "document_type": "audit",
+      "governance_level": "enterprise",
+      "inbound_references": 5,
+      "outbound_references": 23,
+      "cross_repository_references": 0,
+      "conflict_evidence": 1,
+      "authority_cycle_participation": false,
+      "score": 48,
+      "reasons": [
+        "foundational governance level",
+        "governance-contract indicators",
+        "inbound centrality=5",
+        "conflict evidence present"
       ]
     },
     {
@@ -9137,27 +9219,6 @@
         "shared contract/model type",
         "foundation location",
         "governance-contract indicators"
-      ]
-    },
-    {
-      "document_id": "BHG-MIG-B6F5272CD7D6",
-      "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/PROJECT_GOVERNANCE_MODEL.md",
-      "status": "Review",
-      "document_type": "Governance Model",
-      "governance_level": "Enterprise",
-      "inbound_references": 4,
-      "outbound_references": 1,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 47,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "foundation location",
-        "governance-contract indicators",
-        "inbound centrality=4"
       ]
     },
     {
@@ -9341,67 +9402,6 @@
       ]
     },
     {
-      "document_id": "BHG-MIG-375CFA146C47",
-      "repository": "BHG-Governance",
-      "path": "docs/00-FOUNDATION/COMPANY_CONSTITUTION_TEMPLATE.md",
-      "status": "Review",
-      "document_type": "Governance Model",
-      "governance_level": "Enterprise",
-      "inbound_references": 4,
-      "outbound_references": 0,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 46,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "foundation location",
-        "governance-contract indicators",
-        "inbound centrality=4"
-      ]
-    },
-    {
-      "document_id": "BHG-MIG-49D1A6CF8892",
-      "repository": "BHG-Governance",
-      "path": "docs/02-STANDARDS/DOCUMENT_RENDERING_STANDARD.md",
-      "status": "Approved",
-      "document_type": "Standard",
-      "governance_level": "Enterprise",
-      "inbound_references": 5,
-      "outbound_references": 6,
-      "cross_repository_references": 0,
-      "conflict_evidence": 0,
-      "authority_cycle_participation": false,
-      "score": 46,
-      "reasons": [
-        "foundational governance level",
-        "shared contract/model type",
-        "governance-contract indicators",
-        "inbound centrality=5"
-      ]
-    },
-    {
-      "document_id": "BHG-AUD-NORM-001",
-      "repository": "BHG-Governance",
-      "path": "docs/06-AUDIT/NORMATIVE_CONFLICT_REGISTER.md",
-      "status": "Draft",
-      "document_type": "audit",
-      "governance_level": "enterprise",
-      "inbound_references": 4,
-      "outbound_references": 23,
-      "cross_repository_references": 0,
-      "conflict_evidence": 1,
-      "authority_cycle_participation": false,
-      "score": 46,
-      "reasons": [
-        "foundational governance level",
-        "governance-contract indicators",
-        "inbound centrality=4",
-        "conflict evidence present"
-      ]
-    },
-    {
       "document_id": "BUSINESS_DOMAIN_MODEL",
       "repository": "BHG-Governance",
       "path": "_corpus/BHG-Ecosystem-Foundation/docs/03-ORGANIZATION/BUSINESS_DOMAIN_MODEL.md",
@@ -9507,7 +9507,7 @@
       "status": "Draft",
       "document_type": "Standard",
       "governance_level": "Standard",
-      "inbound_references": 19,
+      "inbound_references": 20,
       "outbound_references": 0,
       "cross_repository_references": 0,
       "conflict_evidence": 0,
@@ -9516,7 +9516,7 @@
       "reasons": [
         "shared contract/model type",
         "governance-contract indicators",
-        "inbound centrality=19"
+        "inbound centrality=20"
       ]
     },
     {
