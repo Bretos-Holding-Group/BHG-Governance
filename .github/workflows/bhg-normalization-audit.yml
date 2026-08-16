@@ -1,0 +1,54 @@
+name: BHG Normalization Audit
+
+on:
+  pull_request:
+    paths:
+      - '**.md'
+      - 'tools/bhg_normalization/**'
+      - '.github/workflows/bhg-normalization-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  n1-content-inventory:
+    name: N1 content inventory (read-only)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run N1 inventory auditor
+        run: python3 tools/bhg_normalization/normalization_audit.py
+      - name: Upload N1 evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhg-n1-normalization-evidence
+          path: normalization-output/
+
+  n2-n7-gates:
+    name: N2-N7 governance gates (non-authoritative)
+    runs-on: ubuntu-latest
+    needs: n1-content-inventory
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify approval boundary
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          targets = [
+            Path('docs/00-GOVERNANCE/CANONICAL_AUTHORITY_MODEL.md'),
+            Path('docs/02-STANDARDS/DOCUMENT_STANDARD.md'),
+            Path('docs/02-STANDARDS/DOCUMENT_METADATA_STANDARD.md'),
+            Path('docs/02-STANDARDS/DOCUMENT_IDENTIFIER_STANDARD.md'),
+            Path('docs/02-STANDARDS/DOCUMENT_SCHEMA_STANDARD.md'),
+            Path('docs/02-STANDARDS/DOCUMENT_RELATIONSHIP_STANDARD.md'),
+          ]
+          for p in targets:
+            t=p.read_text(encoding='utf-8')
+            first='\n'.join(t.splitlines()[:20]).lower()
+            if 'status: approved' in first:
+              print(f'{p}: approved')
+            else:
+              print(f'{p}: not-approved (non-blocking observational gate)')
+          print('N2-N7 gate remains non-authoritative: automation cannot approve normative artifacts.')
+          PY
