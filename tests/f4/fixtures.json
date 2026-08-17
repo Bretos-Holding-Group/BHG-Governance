@@ -1,0 +1,23 @@
+{
+  "fixture_set": "F4-SYNTHETIC-R00",
+  "version": "0.1",
+  "production_write_allowed": false,
+  "scenarios": [
+    {"id":"F4-001","from":"F0","to":"F1","evidence":"observation","expected":"PASS"},
+    {"id":"F4-002","from":"F1","to":"F2","evidence":"problem+proposed_solution+evidence+impact+risks","expected":"PASS"},
+    {"id":"F4-003","from":"F2","to":"F3","evidence":"sufficient","expected":"PASS"},
+    {"id":"F4-004","from":"F3","to":"F4","evidence":"experiment_plan+metrics+rollback+authorization","expected":"PASS"},
+    {"id":"F4-005","from":"F1","to":"F7","evidence":"sufficient","expected":"REJECT"},
+    {"id":"F4-006","from":"F3","to":"F9","evidence":"sufficient","expected":"REJECT"},
+    {"id":"F4-007","from":"F2","to":"F3","evidence":"missing_impact","expected":"REJECT"},
+    {"id":"F4-008","from":"F4","to":"F7","evidence":"experiment_failed","expected":"REJECT"},
+    {"id":"F4-009","from":"F4","to":"F5","evidence":"experiment_passed+limited_scope+rollback","expected":"PASS"},
+    {"id":"F4-010","from":"F1","to":"F2","evidence":"duplicate","expected":"DUPLICATE"},
+    {"id":"F4-011","from":"F2","to":"F3","evidence":"scope_creep","expected":"REJECT"},
+    {"id":"F4-012","from":"F2","to":"F3","evidence":"governance_bypass","expected":"REJECT"},
+    {"id":"F4-013","from":"F4","to":"F3","evidence":"good_faith_failure","expected":"RETURN_WITH_LEARNING"},
+    {"id":"F4-014","from":"F4","to":"F5","evidence":"missing_rollback","expected":"REJECT"},
+    {"id":"F4-015","from":"F4","to":"F5","evidence":"pass+limited_scope+rollback","expected":"PASS"},
+    {"id":"F4-016","from":"F3","to":"F4","evidence":"identical_fixture_replay","expected":"PASS"}
+  ]
+}
