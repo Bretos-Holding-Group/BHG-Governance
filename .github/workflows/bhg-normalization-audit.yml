@@ -45,6 +45,26 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
+  core-n3-n5-evidence:
+    name: N3-N5 core evidence (read-only)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install YAML parser
+        run: python3 -m pip install --disable-pip-version-check --no-input pyyaml
+      - name: Run N3-N5 evidence audit
+        run: python3 tools/bhg_normalization/core_n3_n5_evidence_audit.py
+      - name: Hash core evidence
+        shell: bash
+        run: sha256sum normalization-output/core-n3-n5-evidence/* | tee normalization-output/core-n3-n5-evidence/SHA256SUMS
+      - name: Upload N3-N5 evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bhg-core-n3-n5-evidence-${{ github.sha }}
+          path: normalization-output/core-n3-n5-evidence/
+          if-no-files-found: error
+          retention-days: 90
+
   n2-n7-gates:
     name: N2-N7 governance gates (non-authoritative)
     runs-on: ubuntu-latest
