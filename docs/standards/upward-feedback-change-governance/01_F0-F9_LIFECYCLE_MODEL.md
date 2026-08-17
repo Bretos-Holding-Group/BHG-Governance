@@ -2,10 +2,12 @@
 document_id: BHG-UFCG-MOD-001
 title: BHG Upward Feedback & Change Governance — F0-F9 Lifecycle Model
 version: 0.1.0
-status: proposed
-maturity: model
+status: Proposed
+governance_level: repository
 document_type: conceptual_model
 owner: BHG Governance
+approval_authority: BHG Governance review
+maturity: model
 operational_use: prohibited
 ---
 
