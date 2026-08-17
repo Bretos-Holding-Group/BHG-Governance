@@ -1,3 +1,14 @@
+---
+document_id: BHG-UFCG-F4-MAT-001
+title: F4 Execution Matrix
+version: 0.1.0
+status: Proposed
+document_type: execution_matrix
+governance_level: repository
+owner: BHG Governance
+approval_authority: BHG Governance review
+---
+
 # F4 Execution Matrix v0.1
 
 | Test | Input | Expected | Evidence |
