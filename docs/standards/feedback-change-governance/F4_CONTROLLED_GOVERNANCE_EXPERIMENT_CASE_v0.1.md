@@ -1,3 +1,14 @@
+---
+document_id: BHG-UFCG-F4-CASE-001
+title: F4 Synthetic Case — Document Lifecycle Reconciliation
+version: 0.1.0
+status: Proposed
+document_type: test_case
+governance_level: repository
+owner: BHG Governance
+approval_authority: BHG Governance review
+---
+
 # F4 Synthetic Case — Document Lifecycle Reconciliation
 
 **Case ID:** F4-BBX-001

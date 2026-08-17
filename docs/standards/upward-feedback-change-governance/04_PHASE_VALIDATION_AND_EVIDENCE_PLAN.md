@@ -2,10 +2,12 @@
 document_id: BHG-UFCG-EVD-001
 title: BHG Upward Feedback & Change Governance — Phase Validation and Evidence Plan
 version: 0.1.0
-status: proposed
-maturity: validation_plan
+status: Proposed
+governance_level: repository
 document_type: evidence_plan
 owner: BHG Governance
+approval_authority: BHG Governance review
+maturity: validation_plan
 operational_use: prohibited
 ---
 

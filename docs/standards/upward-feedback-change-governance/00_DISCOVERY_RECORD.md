@@ -2,10 +2,12 @@
 document_id: BHG-UFCG-DISC-001
 title: BHG Upward Feedback & Change Governance — Discovery Record
 version: 0.1.0
-status: proposed
-maturity: discovery
+status: Proposed
+governance_level: repository
 document_type: discovery_record
 owner: BHG Governance
+approval_authority: BHG Governance review
+maturity: discovery
 operational_use: prohibited
 governance_state: not_adopted
 ---

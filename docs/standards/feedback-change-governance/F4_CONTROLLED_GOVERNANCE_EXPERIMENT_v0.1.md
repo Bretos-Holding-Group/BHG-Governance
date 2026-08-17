@@ -1,3 +1,14 @@
+---
+document_id: BHG-UFCG-F4-EXP-001
+title: BHG F4 Controlled Governance Experiment
+version: 0.1.0
+status: Proposed
+document_type: controlled_experiment
+governance_level: repository
+owner: BHG Governance
+approval_authority: BHG Governance review
+---
+
 # BHG F4 Controlled Governance Experiment v0.1
 
 **Status:** Proposed experiment

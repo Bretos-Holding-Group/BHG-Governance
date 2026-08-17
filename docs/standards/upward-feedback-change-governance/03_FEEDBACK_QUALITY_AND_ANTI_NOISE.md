@@ -2,10 +2,12 @@
 document_id: BHG-UFCG-CTRL-001
 title: BHG Upward Feedback & Change Governance — Feedback Quality and Anti-Noise Controls
 version: 0.1.0
-status: proposed
-maturity: design
+status: Proposed
+governance_level: repository
 document_type: control_model
 owner: BHG Governance
+approval_authority: BHG Governance review
+maturity: design
 operational_use: prohibited
 ---
 

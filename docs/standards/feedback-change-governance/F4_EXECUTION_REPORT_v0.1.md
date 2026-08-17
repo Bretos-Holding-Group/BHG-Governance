@@ -1,3 +1,14 @@
+---
+document_id: BHG-UFCG-F4-RPT-001
+title: F4 Controlled Governance Experiment — Execution Report
+version: 0.1.0
+status: Proposed
+document_type: execution_report
+governance_level: repository
+owner: BHG Governance
+approval_authority: BHG Governance review
+---
+
 # F4 Controlled Governance Experiment — Execution Report v0.1
 
 **Status:** Pending execution
