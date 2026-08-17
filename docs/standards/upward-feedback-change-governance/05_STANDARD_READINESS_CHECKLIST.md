@@ -2,10 +2,12 @@
 document_id: BHG-UFCG-CHK-001
 title: BHG Upward Feedback & Change Governance — Institutional Standard Readiness Checklist
 version: 0.1.0
-status: proposed
-maturity: readiness
+status: Proposed
+governance_level: repository
 document_type: governance_checklist
 owner: BHG Governance
+approval_authority: BHG Governance review
+maturity: readiness
 operational_use: prohibited
 ---
 
