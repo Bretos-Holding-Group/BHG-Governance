@@ -2,24 +2,22 @@
 title: Naming Standard
 document_id: BHG-MIG-52D57B6334D2
 document_type: Standard
-version: 0.1.0
+version: 0.2.0
 status: Draft
 governance_level: Standard
 owner: BHG Governance Council
 approval_authority: BHG Governance Council
 created: '2026-07-06'
-last_updated: '2026-07-06'
+last_updated: '2026-08-19'
 effective_date: null
 classification: Internal
 language: en
-repository: BHG-GOVERNANCE
+repository: BHG-Governance
 extensions:
   normalization:
-    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
-    performed: '2026-08-16'
     mode: controlled_reconciliation
-    state: normalized
-    date: '2026-08-16'
+    state: post_rename_reconciled
+    date: '2026-08-19'
 governed_by: []
 governs: []
 depends_on: []
@@ -30,9 +28,7 @@ related_to: []
 
 > Estándar Corporativo de Nomenclatura de Breto's Holding Group
 
----
-
-# Estado
+## Estado
 
 Versión: 1.0.0
 
@@ -40,17 +36,13 @@ Estado: Activo
 
 Nivel Normativo: Estándar Corporativo (S0)
 
----
+## Propósito
 
-# Propósito
-
-Este estándar establece las reglas oficiales de nomenclatura para todos los activos del ecosistema BHG.
+Este estándar establece las reglas oficiales de nomenclatura para los activos del ecosistema BHG.
 
 Su finalidad es garantizar uniformidad, reducir ambigüedades y facilitar la comprensión humana y el procesamiento automatizado.
 
----
-
-# Principios
+## Principios
 
 Toda nomenclatura deberá ser:
 
@@ -63,24 +55,13 @@ Toda nomenclatura deberá ser:
 * Predecible.
 * Internacionalizable cuando sea necesario.
 
----
-
-# Idioma
+## Idioma
 
 Los nombres técnicos oficiales deberán utilizar inglés.
 
 Podrán utilizarse nombres comerciales o marcas registradas en su idioma correspondiente.
 
-Ejemplos:
-
-* `REPOSITORY_STANDARD.md`
-* `DOCUMENT_POLICY.md`
-* `BEiA`
-* `ZIVA Latam`
-
----
-
-# Archivos
+## Archivos
 
 Los documentos normativos utilizarán:
 
@@ -88,15 +69,7 @@ Los documentos normativos utilizarán:
 UPPER_SNAKE_CASE.md
 ```
 
-Ejemplos:
-
-* `AUTHORITY_MODEL.md`
-* `NAMING_STANDARD.md`
-* `AI_POLICY.md`
-
----
-
-# Carpetas
+## Carpetas
 
 Las carpetas utilizarán:
 
@@ -114,29 +87,36 @@ Las carpetas de gobernanza podrán utilizar la convención ya definida por el ec
 02-STANDARDS
 ```
 
----
+## Repositorios
 
-# Repositorios
+Los repositorios institucionales BHG utilizarán el prefijo canónico `BHG-` seguido de un nombre descriptivo en inglés, con palabras separadas por guiones.
 
-Formato recomendado:
+Ejemplos actuales:
 
 ```text
-bhg-governance
-bhg-knowledge
-ziva-backend
-bregpersonal-app
+BHG-Governance
+BHG-Ecosystem-Foundation
+BHG-Knowledge
 ```
 
-Características:
+La nomenclatura institucional no se aplica automáticamente a entidades o proyectos independientes.
 
-* minúsculas;
-* palabras separadas por guiones;
-* sin espacios;
-* sin caracteres especiales.
+Ejemplos:
 
----
+```text
+ZivaLatam
+Legalbreto
+```
 
-# APIs
+La identidad técnica de un repositorio es distinta de su pertenencia institucional. Un rename requiere un gate de cambio controlado y no crea autoridad, propiedad, integración o personalidad jurídica.
+
+### Canonical repository identity transition
+
+`BHG-Knowledge` is the canonical technical repository identity following the approved transition from the historical repository name `bhg-knowledge`.
+
+Historical records and baseline evidence may retain `bhg-knowledge` when rewriting would destroy provenance.
+
+## APIs
 
 Recursos:
 
@@ -152,9 +132,7 @@ Endpoints:
 kebab-case
 ```
 
----
-
-# Variables de entorno
+## Variables de entorno
 
 Formato obligatorio:
 
@@ -162,53 +140,19 @@ Formato obligatorio:
 UPPER_SNAKE_CASE
 ```
 
-Ejemplos:
+## Bases de datos
 
-```text
-DATABASE_URL
-JWT_SECRET
-SUPABASE_ANON_KEY
-```
-
----
-
-# Bases de datos
-
-Tablas:
+Tablas y columnas:
 
 ```text
 snake_case
 ```
 
-Columnas:
-
-```text
-snake_case
-```
-
-Claves primarias:
-
-```text
-id
-```
-
-Claves foráneas:
-
-```text
-<tabla>_id
-```
-
----
-
-# Código
+## Código
 
 Se aplicarán las convenciones del lenguaje de programación utilizado.
 
-Cuando existan varios estándares posibles, prevalecerá el estándar oficial del lenguaje.
-
----
-
-# Empresas
+## Empresas
 
 Las empresas utilizarán su denominación oficial registrada.
 
@@ -219,29 +163,15 @@ Ejemplos:
 * Frecuencia Latina
 * BREGPersonal
 
----
-
-# Productos
+## Productos
 
 Los productos podrán utilizar nombres comerciales siempre que estén documentados y aprobados.
 
----
-
-# IA
+## IA
 
 Los asistentes especializados seguirán una estructura uniforme.
 
-Ejemplos:
-
-* BEiA Core
-* BEiA Finance
-* BEiA Engineering
-* BEiA HR
-* BEiA Legal
-
----
-
-# Evitar
+## Evitar
 
 No deberán utilizarse:
 
@@ -250,9 +180,7 @@ No deberán utilizarse:
 * nombres temporales como `test`, `nuevo`, `final2`, `tmp`;
 * versiones en el nombre del archivo cuando exista control de versiones.
 
----
-
-# Compatibilidad con BKOs
+## Compatibilidad con BKOs
 
 BKOs utilizará este estándar para:
 
@@ -261,9 +189,7 @@ BKOs utilizará este estándar para:
 * detectar duplicados;
 * identificar inconsistencias de nomenclatura.
 
----
-
-# Compatibilidad con BEiA
+## Compatibilidad con BEiA
 
 BEiA deberá respetar este estándar al:
 
@@ -272,17 +198,12 @@ BEiA deberá respetar este estándar al:
 * sugerir nombres;
 * producir código.
 
----
-
-# Auditoría
+## Auditoría
 
 El incumplimiento de este estándar podrá ser detectado automáticamente por el Corporate Compliance Engine (CCE).
 
----
-
-# Principio Final
+## Principio Final
 
 Un buen nombre reduce la complejidad antes de que exista.
 
 La nomenclatura consistente es uno de los pilares fundamentales del conocimiento organizado.
-
