@@ -3,7 +3,7 @@ title: BHG Repository Authority Sequence
 document_id: BHG_REPOSITORY_AUTHORITY_SEQUENCE
 document_type: Governance Architecture
 governance_level: Enterprise
-version: 0.2.0
+version: 0.3.0
 status: Draft
 owner: BHG Governance Council
 approval_authority: BHG Governance Council
@@ -24,6 +24,19 @@ extensions:
     mode: controlled_reconciliation
     state: post_rename_reconciled
     date: '2026-08-19'
+  legacy_relationships:
+  - relationship: historically_referenced_as
+    target: bhg-knowledge
+    classification: historical_identity
+    disposition: preserved_for_provenance
+  - relationship: historically_referenced_as
+    target: BHG Knowledge
+    classification: historical_display_identity
+    disposition: preserved_as_historical_alias
+  - relationship: formerly_listed_in
+    target: BHG repository normalization scope
+    classification: historical_scope_reference
+    disposition: superseded_by_current_repository_identity_model
 governs: []
 ---
 
@@ -42,6 +55,8 @@ Repository location does not create normative authority.
 A repository may own a domain of knowledge or implementation without becoming an independent constitutional root.
 
 Cross-repository relationships shall distinguish normative authority, semantic ownership, dependency, specialization, implementation and evidence.
+
+Institutional scope must also be distinguished from independent projects and future-integration candidates.
 
 ## 3. Authority graph
 
@@ -76,6 +91,10 @@ LEVEL 8 — RECORDS / EVIDENCE
 
 The two Level-2 repositories are peer domains under the constitutional hierarchy. BHG-Ecosystem-Foundation does not govern BHG-Governance, and BHG-Governance does not govern the institutional architecture owned by the Foundation repository.
 
+ZivaLatam remains an independent entity and future-integration candidate. Its placement in the specialization sequence describes the intended relationship if and when applicable BHG contracts are consumed; it does not create present ownership, subsidiary status, legal subordination, or BHG governance authority over ZivaLatam.
+
+Independent projects outside the BHG institutional scope, including Legalbreto, are not nodes in this authority graph.
+
 ## 4. Domain ownership
 
 | Repository | Primary responsibility | Must not become authority for |
@@ -100,6 +119,8 @@ Shared concepts require one canonical semantic owner. A downstream repository ma
 ```
 
 The sequence is a resolution order: when a new document is created, its applicable superior authority must be identified before its local scope is defined.
+
+For an independent project, this sequence is informative only to the extent that the project voluntarily adopts compatible standards. Adoption does not create BHG affiliation or authority.
 
 ## 6. Future document creation gate
 
@@ -136,7 +157,7 @@ BHG-Governance owns the governance system, including governance models, policies
 
 BHG-Knowledge consumes applicable Foundation and Governance contracts and may specialize knowledge taxonomy, workflows and services.
 
-ZivaLatam consumes applicable Foundation and Governance contracts. Its Engineering Charter, ZES rules, ADRs and implementation contracts are local specializations and must not redefine enterprise governance semantics.
+ZivaLatam may consume applicable Foundation and Governance contracts as an independent entity. Its Engineering Charter, ZES rules, ADRs and implementation contracts are local specializations and must not redefine enterprise governance semantics.
 
 ## 9. Change sequencing
 
