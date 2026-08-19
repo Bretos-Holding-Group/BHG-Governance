@@ -3,12 +3,12 @@ title: BHG Governance Architecture Map
 document_id: BHG_GOVERNANCE_ARCHITECTURE_MAP
 document_type: Repository Architecture Map
 governance_level: Enterprise
-version: 2.0.0
+version: 2.1.0
 status: Draft
 owner: BHG Governance Council
 approval_authority: BHG Governance Council
 created: 2026-08-14
-last_updated: 2026-08-14
+last_updated: 2026-08-19
 effective_date: null
 classification: Internal
 language: en
@@ -22,12 +22,8 @@ related_to:
 - CANONICAL_STANDARDS_RECONCILIATION_MATRIX
 extensions:
   normalization:
-    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
-    performed: '2026-08-16'
     mode: controlled_reconciliation
     relationship_target_reconciliation:
-      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
-      performed: '2026-08-16'
       mode: canonicalize_or_classify_external
 governs: []
 ---
@@ -47,8 +43,6 @@ BHG-Governance is the repository for the BHG governance system. Its scope includ
 It does not become an independent constitutional root and does not supersede the BHG Constitution or the approved cross-repository authority model.
 
 ## 3. Domain sequence
-
-The repository is organized by functional governance layer:
 
 ```text
 00-FOUNDATION
@@ -179,11 +173,15 @@ An audit report does not itself grant authority to create, delete, rename or sup
 
 ## 9. Cross-repository boundary
 
-BHG-Governance participates in the four-repository BHG normalization scope together with:
+BHG-Governance participates in the current BHG normalization scope together with:
 
 - BHG-Ecosystem-Foundation;
-- bhg-knowledge;
+- BHG-Knowledge;
 - ZivaLatam.
+
+BHG-Knowledge is the canonical technical repository identity following the approved rename from `bhg-knowledge`.
+
+ZivaLatam remains an independent entity and future-integration candidate. Legalbreto is an independent project outside the BHG governance scope.
 
 Cross-repository authority follows `BHG_REPOSITORY_AUTHORITY_SEQUENCE`.
 
