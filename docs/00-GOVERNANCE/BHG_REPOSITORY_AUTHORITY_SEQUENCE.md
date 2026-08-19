@@ -3,12 +3,12 @@ title: BHG Repository Authority Sequence
 document_id: BHG_REPOSITORY_AUTHORITY_SEQUENCE
 document_type: Governance Architecture
 governance_level: Enterprise
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: BHG Governance Council
 approval_authority: BHG Governance Council
 created: 2026-08-14
-last_updated: 2026-08-14
+last_updated: 2026-08-19
 effective_date: null
 classification: Internal
 language: en
@@ -21,28 +21,9 @@ depends_on:
 related_to: []
 extensions:
   normalization:
-    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
-    performed: '2026-08-16'
     mode: controlled_reconciliation
-    relationship_target_reconciliation:
-      baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
-      performed: '2026-08-16'
-      mode: canonicalize_or_classify_external
-    state: normalized
-    date: '2026-08-16'
-  legacy_relationships:
-  - relationship: related_to
-    target: BHG-Ecosystem-Foundation
-    classification: external_scope
-    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
-  - relationship: related_to
-    target: bhg-knowledge
-    classification: external_scope
-    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
-  - relationship: related_to
-    target: ZivaLatam
-    classification: external_scope
-    baseline: 8685abae60b176dcb3042400ebacc01b7dea97a5
+    state: post_rename_reconciled
+    date: '2026-08-19'
 governs: []
 ---
 
@@ -50,7 +31,7 @@ governs: []
 
 ## 1. Purpose
 
-This document defines the cross-repository authority and implementation sequence for the four repositories currently included in the BHG normalization scope.
+This document defines the cross-repository authority and implementation sequence for the current BHG institutional repository scope.
 
 It is an implementation bridge for the draft Canonical Authority Model. It does not create authority above that model, the BHG Constitution, or any approved superior governance artifact.
 
@@ -80,7 +61,7 @@ LEVEL 2 — FOUNDATIONAL GOVERNANCE
                     ▼
 LEVEL 3/4 — DOMAIN SPECIALIZATION
         │
-        ├── bhg-knowledge
+        ├── BHG-Knowledge
         │     knowledge-system specialization
         │
         └── ZivaLatam
@@ -101,7 +82,7 @@ The two Level-2 repositories are peer domains under the constitutional hierarchy
 |---|---|---|
 | BHG-Ecosystem-Foundation | institutional and ecosystem architecture | governance procedures, product implementation |
 | BHG-Governance | governance models, policies, standards, validation | product-specific architecture or business implementation |
-| bhg-knowledge | organizational knowledge system and knowledge operations | constitutional authority or enterprise governance |
+| BHG-Knowledge | organizational knowledge system and knowledge operations | constitutional authority or enterprise governance |
 | ZivaLatam | Ziva product, architecture and engineering specialization | BHG-wide governance or constitutional authority |
 
 Shared concepts require one canonical semantic owner. A downstream repository may specialize a shared contract but must not silently redefine it.
@@ -153,7 +134,7 @@ BHG-Ecosystem-Foundation owns institutional and ecosystem architecture inside it
 
 BHG-Governance owns the governance system, including governance models, policies, documentary standards and compliance mechanisms inside its approved scope.
 
-bhg-knowledge consumes applicable Foundation and Governance contracts and may specialize knowledge taxonomy, workflows and services.
+BHG-Knowledge consumes applicable Foundation and Governance contracts and may specialize knowledge taxonomy, workflows and services.
 
 ZivaLatam consumes applicable Foundation and Governance contracts. Its Engineering Charter, ZES rules, ADRs and implementation contracts are local specializations and must not redefine enterprise governance semantics.
 
@@ -177,7 +158,28 @@ Validation and audit
 
 A downstream repository must not be normalized against an unresolved upstream contract when the downstream change depends on that unresolved meaning.
 
-## 10. Baseline status
+## 10. Repository identity transition rule
+
+A repository rename changes technical identity only when explicitly authorized through the applicable rename gate.
+
+After an approved rename:
+
+- active references shall use the canonical repository name;
+- automation references shall be validated;
+- historical records may retain the former technical name when required for provenance;
+- baseline evidence shall not be rewritten solely to erase historical identity.
+
+The approved transition is:
+
+```text
+bhg-knowledge
+      ↓
+BHG-Knowledge
+```
+
+No authority, ownership, institutional classification, or entity relationship is created or changed by this technical rename.
+
+## 11. Baseline status
 
 ```text
 status: Draft
