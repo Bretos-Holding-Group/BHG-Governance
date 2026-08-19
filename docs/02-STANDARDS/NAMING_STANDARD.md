@@ -2,8 +2,8 @@
 title: Naming Standard
 document_id: BHG-MIG-52D57B6334D2
 document_type: Standard
-version: 0.2.0
-status: Draft
+version: 1.0.1
+status: Active
 governance_level: Standard
 owner: BHG Governance Council
 approval_authority: BHG Governance Council
@@ -18,9 +18,12 @@ extensions:
     mode: controlled_reconciliation
     state: post_rename_reconciled
     date: '2026-08-19'
-governed_by: []
+    metadata_reconciled: true
+governed_by:
+- BHG-GOV-CAM-001
 governs: []
-depends_on: []
+depends_on:
+- BHG_REPOSITORY_AUTHORITY_SEQUENCE
 related_to: []
 ---
 
@@ -30,7 +33,7 @@ related_to: []
 
 ## Estado
 
-Versión: 1.0.0
+Versión: 1.0.1
 
 Estado: Activo
 
@@ -38,7 +41,7 @@ Nivel Normativo: Estándar Corporativo (S0)
 
 ## Propósito
 
-Este estándar establece las reglas oficiales de nomenclatura para los activos del ecosistema BHG.
+Este estándar establece las reglas oficiales de nomenclatura para los activos del ecosistema BHG dentro de su ámbito aprobado.
 
 Su finalidad es garantizar uniformidad, reducir ambigüedades y facilitar la comprensión humana y el procesamiento automatizado.
 
